@@ -3,6 +3,10 @@ import { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { TrustedByStrip, SecuritySection, PricingTeaser, FinalCTA, HomeFeaturesMockup } from '../components/HomeSections';
+import imgInstagramPost from '../assets/instagram-post.png';
+import CommentIcon from '../assets/icons/comment.png';
+import SmallLogo from '../assets/icons/sm-logo.png';
+import User from '../assets/icons/user.png';
 
 
 function Counter({ target, decimals = 0, suffix = '', duration = 1800 }: { target: number; decimals?: number; suffix?: string; duration?: number }) {
@@ -155,6 +159,8 @@ export default function Home() {
   const [heroTab, setHeroTab] = useState(0);
   const [heroProgress, setHeroProgress] = useState(0);
   const [chatStep, setChatStep] = useState(0);
+  const [igOverlayOpen, setIgOverlayOpen] = useState(false);
+  const [igPostShifted, setIgPostShifted] = useState(false);
   const [dashTab, setDashTab] = useState(0);
   const [dashProgress, setDashProgress] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -162,7 +168,7 @@ export default function Home() {
 
   useEffect(() => {
     const tickMs = 50;
-    const duration = 2800;
+    const duration = 6500;
     const id = setInterval(() => {
       setHeroProgress(p => {
         const next = p + (tickMs / duration) * 100;
@@ -179,14 +185,25 @@ export default function Home() {
   useEffect(() => {
     setChatStep(0);
     const timings = [500, 1100, 700, 1100, 800, 1200];
+    // Instagram tab shows a Reel first, then the comments overlay slides up — delay chatStep so typing starts after the sheet is up
+    const leadIn = heroTab === 1 ? 1500 : 0;
     let cancelled = false;
-    let total = 0;
+    let total = leadIn;
     const timeouts: ReturnType<typeof setTimeout>[] = [];
     timings.forEach((ms, i) => {
       total += ms;
       timeouts.push(setTimeout(() => { if (!cancelled) setChatStep(i + 1); }, total));
     });
     return () => { cancelled = true; timeouts.forEach(clearTimeout); };
+  }, [heroTab]);
+
+  useEffect(() => {
+    if (heroTab !== 1) { setIgOverlayOpen(false); setIgPostShifted(false); return; }
+    setIgOverlayOpen(false);
+    setIgPostShifted(false);
+    const t1 = setTimeout(() => setIgPostShifted(true), 1200);
+    const t2 = setTimeout(() => setIgOverlayOpen(true), 1500);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [heroTab]);
 
   useEffect(() => {
@@ -314,8 +331,8 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="border-[rgba(255,255,255,0.1)] border-r border-solid content-stretch flex flex-col min-h-[calc(100vh-160px)] items-start overflow-clip pr-px relative shrink-0 w-[600px]" data-node-id="467:996" data-name="Container">
-                      <div className="h-[calc(100vh-160px)] min-h-[640px] relative shrink-0 w-full" data-node-id="467:997" data-name="Container">
-                        <div className="bg-clip-padding border-0 border-[transparent] border-solid overflow-clip relative rounded-[inherit] size-full">
+                      <div className="h-[calc(100vh-150px)] min-h-[640px] relative shrink-0 w-full" data-node-id="467:997" data-name="Container">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid overflow-clip relative rounded-[inherit] size-full z-10">
                           <div className="-translate-x-1/2 absolute flex h-[80px] items-center justify-center left-[calc(50%+0.5px)] bottom-[450px] w-0">
                             <div className="flex-none rotate-90">
                               <div className="h-0 relative w-[80px]" data-node-id="467:998">
@@ -326,14 +343,14 @@ export default function Home() {
                             </div>
                           </div>
                           <div className="absolute bg-[#0b2e15] shadow-[0_0_0_10px_#15371f] bottom-[-30px] h-[480px] left-[132px] opacity-50 rounded-tl-[30px] rounded-tr-[30px] w-[338px]" data-node-id="467:999" />
-                          <div className="absolute bg-white shadow-[0_0_0_10px_rgba(255,255,255,0.05)] bottom-[-30px] h-[480px] left-[132px] rounded-tl-[30px] rounded-tr-[30px] w-[338px] overflow-hidden" data-node-id="467:1000">
+                          <div className="absolute bg-white shadow-[0_0_0_10px_rgba(255,255,255,0.05)] bottom-[10px] h-[480px] left-[132px] rounded-tl-[30px] rounded-tr-[30px] w-[338px] overflow-hidden" data-node-id="467:1000">
                             {heroTab === 0 && (
                               <div className="flex flex-col h-full bg-[#e5ddd5]" style={{ backgroundImage: 'radial-gradient(rgba(11,31,26,0.04) 1px, transparent 1px)', backgroundSize: '14px 14px' }}>
                                 <div className="bg-[#075E54] px-[12px] pt-[18px] pb-[10px] flex items-center gap-[8px]">
                                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                  <div className="size-[32px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128C7E] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[12px]">PS</div>
+                                  <div className="size-[32px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128C7E] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[12px]">PG</div>
                                   <div className="flex-1 flex flex-col">
-                                    <Typography className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold leading-none">Priya Sharma</Typography>
+                                    <Typography className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold leading-none">Prathik Gadde</Typography>
                                     <Typography className="text-[#a3d5b4] text-[9.5px] font-['Geist:Regular'] leading-none mt-[2px]">online</Typography>
                                   </div>
                                   <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M15.91 8.41c.39.39.39 1.02 0 1.42L12.83 12.9l3.08 3.07a.996.996 0 1 1-1.41 1.41L8.5 11.34a.996.996 0 0 1 0-1.41l5.99-5.99a.996.996 0 0 1 1.42 1.06z" transform="rotate(180 12 12)" /><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" /></svg>
@@ -385,72 +402,268 @@ export default function Home() {
                                   )}
                                 </div>
                                 <div className="bg-[#f0f2f5] px-[8px] py-[6px] flex items-center gap-[6px]">
-                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#54656F"><circle cx="12" cy="12" r="10" fill="none" stroke="#54656F" strokeWidth="2" /><circle cx="12" cy="12" r="2" /><path d="M8 8h.01M16 8h.01" strokeLinecap="round" stroke="#54656F" strokeWidth="2" /></svg>
-                                  <div className="flex-1 bg-white rounded-[18px] h-[24px] flex items-center px-[10px]"><Typography className="text-[#8696a0] text-[10px]">Message</Typography></div>
-                                  <div className="size-[26px] rounded-full bg-[#075E54] flex items-center justify-center"><svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg></div>
+                                  {/* Rounded pill input */}
+                                  <div className="flex-1 bg-white rounded-[999px] h-[30px] flex items-center pl-[6px] pr-[8px] gap-[6px] shadow-[0_1px_1px_rgba(0,0,0,0.04)]">
+                                    {/* Sticker/smiley face with tongue */}
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
+                                      <circle cx="8.6" cy="10" r="1.2" fill="#54656F" />
+                                      <circle cx="15.4" cy="10" r="1.2" fill="#54656F" />
+                                      <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.5" strokeLinecap="round" />
+                                      <path d="M13 15.5v1.7c0 .55-.45 1-1 1s-1-.45-1-1v-1.7" fill="#F5A623" />
+                                    </svg>
+                                    {/* Typed text — "yes please" reveals letter by letter, caret rides with the text */}
+                                    <div className="flex-1 min-w-0 overflow-hidden">
+                                      <div className="text-[#111b21] text-[11px] font-['Geist:Regular']" style={{ whiteSpace: 'pre', lineHeight: '13px' }}>
+                                        {'yes please'.split('').map((c, i) => (
+                                          <span key={i} className="wa-letter" style={{ animationDelay: `${400 + i * 90}ms` }}>{c}</span>
+                                        ))}
+                                        <span className="wa-caret ml-[1px] inline-block w-[1.5px] h-[13px] bg-[#00A884] align-middle" />
+                                      </div>
+                                    </div>
+                                    {/* Paperclip */}
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {/* Rupee in circle */}
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
+                                      <path d="M8 7.5h8M8 10.5h8M9 7.5c2.4 0 3.5 1.3 3.5 2.8s-1.1 2.8-3.5 2.8H8l6 4.4" stroke="#54656F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {/* Camera */}
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" />
+                                      <circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" />
+                                    </svg>
+                                  </div>
+                                  {/* Separate mic button */}
+                                  <div className="size-[30px] rounded-full bg-[#00A884] flex items-center justify-center shrink-0 shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
+                                  </div>
                                 </div>
+                                <style>{`
+                                  @keyframes waCaret { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+                                  .wa-caret { animation: waCaret 1s steps(2,start) infinite; }
+                                  .wa-letter { display: inline-block; max-width: 0; overflow: hidden; animation: waLetterReveal 90ms linear forwards; }
+                                  @keyframes waLetterReveal { to { max-width: 2em; } }
+                                `}</style>
                               </div>
                             )}
                             {heroTab === 1 && (
-                              <div className="flex flex-col h-full bg-white">
-                                <div className="px-[12px] pt-[18px] pb-[10px] flex items-center gap-[8px] border-b border-[#efefef]">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                                  <div className="size-[32px] rounded-full p-[2px]" style={{ background: INSTAGRAM_GRADIENT }}>
-                                    <div className="size-full rounded-full bg-white flex items-center justify-center text-[#0c221f] font-['Geist:Bold'] font-bold text-[12px]">PS</div>
+                              <div className="relative h-full overflow-hidden bg-white">
+                                {/* Post content — scrolls up 25px just before the comments sheet opens */}
+                                <div
+                                  className="h-full flex flex-col"
+                                  style={{
+                                    transform: igPostShifted ? 'translateY(-25px)' : 'translateY(0)',
+                                    transition: 'transform 450ms cubic-bezier(0.4, 0, 0.2, 1)'
+                                  }}
+                                >
+                                  {/* Post header — avatar + username + three-dot menu */}
+                                  <div className="flex items-center gap-[5px] px-[10px] py-[12px] shrink-0">
+                                    {/* <div className="size-[30px] rounded-full flex items-center justify-center text-white text-[12px] font-['Geist:Bold'] font-bold shrink-0" style={{ background: 'linear-gradient(135deg, #1FBD79 0%, #0f7d4d 100%)', boxShadow: '0 0 0 1.5px #fff, 0 0 0 2.5px #dbdbdb' }}>W</div> */}
+                                    <div className='flex flex-col items-center justify-center'>
+                                      <img src={SmallLogo} width={32} alt="" />
+                                    </div>
+                                    <div className="flex-1 flex items-center gap-[3px]">
+                                      <Typography className="text-[#0c221f] text-[12px] font-['Geist:SemiBold'] font-semibold leading-none">wenext.ai</Typography>
+                                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#0095F6"><path d="M23 12l-2.5-2.9.4-3.8-3.7-.8-2-3.3L11.5 2.4 8 .2 6 3.5l-3.7.8.4 3.8L.2 11l2.5 2.9-.4 3.8 3.7.8 2 3.3 3.5-1.4 3.5 1.4 2-3.3 3.7-.8-.4-3.8L23 12zm-12.7 4.7L6 12.4l1.4-1.4 2.9 2.9 6.3-6.3L18 9l-7.7 7.7z" /></svg>
+                                    </div>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0c221f"><circle cx="5" cy="12" r="1.7" /><circle cx="12" cy="12" r="1.7" /><circle cx="19" cy="12" r="1.7" /></svg>
                                   </div>
-                                  <div className="flex-1 flex flex-col">
-                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold leading-none flex items-center gap-[3px]">priyasharma_ <svg width="10" height="10" viewBox="0 0 24 24" fill="#0c221f"><path d="m12 1.75-2.45 2.45-3.4-.43-1.83 2.92-3.1 1.45.95 3.3-.95 3.3 3.1 1.45 1.83 2.92 3.4-.43L12 21.75l2.45-2.45 3.4.43 1.83-2.92 3.1-1.45-.95-3.3.95-3.3-3.1-1.45-1.83-2.92-3.4.43z" /></svg></Typography>
-                                    <Typography className="text-[#8e8e8e] text-[9.5px] font-['Geist:Regular'] leading-none mt-[2px]">Active now</Typography>
+
+                                  {/* Post image */}
+                                  <div className="w-full shrink-0 bg-[#fafafa]" style={{ height: 300 }}>
+                                    <img src={imgInstagramPost} alt="wenext.ai post" className="w-full h-full object-cover" />
                                   </div>
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2"><path d="M23 7l-7 5 7 5V7zM14 5H3a2 2 0 00-2 2v10a2 2 0 002 2h11a2 2 0 002-2V7a2 2 0 00-2-2z" /></svg>
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                                </div>
-                                <div className="flex-1 px-[10px] py-[12px] flex flex-col gap-[5px] overflow-hidden justify-end">
-                                  {chatStep >= 0 && (
-                                    <div className="self-start bg-[#efefef] rounded-[18px] rounded-bl-[4px] px-[12px] py-[7px] max-w-[78%] msg-in">
-                                      <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3]">Loved the kurta drop! Is M still available?</Typography>
-                                    </div>
-                                  )}
-                                  {chatStep === 1 && (
-                                    <div className="self-end rounded-[18px] rounded-br-[4px] px-[14px] py-[10px] flex gap-[4px] items-center msg-in" style={{ background: INSTAGRAM_GRADIENT }}>
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                    </div>
-                                  )}
-                                  {chatStep >= 2 && (
-                                    <div className="self-end rounded-[18px] rounded-br-[4px] px-[12px] py-[7px] max-w-[85%] flex flex-col msg-in" style={{ background: INSTAGRAM_GRADIENT }}>
-                                      <Typography className="text-white/80 text-[7.5px] font-['Geist:Medium'] mb-[1px]">WeNext AI · Reply</Typography>
-                                      <Typography className="text-white text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes 🛍️ Just 3 left in M. Sending you a 1‑tap checkout link.</Typography>
-                                    </div>
-                                  )}
-                                  {chatStep >= 3 && (
-                                    <div className="self-start bg-[#efefef] rounded-[18px] rounded-bl-[4px] px-[12px] py-[7px] max-w-[55%] msg-in">
-                                      <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3]">Please share!</Typography>
-                                    </div>
-                                  )}
-                                  {chatStep === 4 && (
-                                    <div className="self-end rounded-[18px] rounded-br-[4px] px-[14px] py-[10px] flex gap-[4px] items-center msg-in" style={{ background: INSTAGRAM_GRADIENT }}>
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                    </div>
-                                  )}
-                                  {chatStep >= 5 && (
-                                    <div className="self-end bg-white border border-[#dbdbdb] rounded-[16px] overflow-hidden max-w-[78%] msg-in">
-                                      <div className="h-[60px]" style={{ background: 'linear-gradient(135deg, #fff5e6, #fce0ec)' }} />
-                                      <div className="px-[12px] py-[10px]">
-                                        <Typography className="text-[#0c221f] text-[12px] font-['Geist:Bold'] font-bold leading-tight">Linen kurta · size M</Typography>
-                                        <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:Regular'] mt-[1px]">wenext.shop · checkout</Typography>
-                                        <div className="mt-[6px] rounded-[8px] py-[5px] text-center text-[10px] text-white font-['Geist:SemiBold'] font-semibold" style={{ background: INSTAGRAM_GRADIENT }}>Pay ₹2,490</div>
+
+                                  {/* Actions row: heart | comment | share ......... bookmark */}
+                                  <div className="flex items-center justify-between px-[10px] pt-[8px] pb-[4px] shrink-0">
+                                    <div className="flex items-center gap-[14px]">
+                                      {/* Like */}
+                                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#0c221f" strokeWidth="1.7" strokeLinejoin="round" />
+                                      </svg>
+                                      {/* Comment — carries the tap animation that motivates the sheet opening */}
+                                      <div className="ig-comment-tap" style={{ transformOrigin: 'center', lineHeight: 0 }}>
+                                        {/* <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" stroke="#0c221f" strokeWidth="1.7" strokeLinejoin="round" />
+                                      </svg> */}
+                                        <img src={CommentIcon} width={21} alt="" />
                                       </div>
+                                      {/* Share */}
+                                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <path d="M22 2L11 13" stroke="#0c221f" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M22 2l-7 20-4-9-9-4 20-7z" stroke="#0c221f" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                      </svg>
                                     </div>
-                                  )}
+                                    {/* Bookmark right */}
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                      <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" stroke="#0c221f" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                  </div>
+
+                                  {/* Meta: likes, caption, view comments, timestamp */}
+                                  <div className="px-[10px] pb-[6px] shrink-0">
+                                    <Typography className="text-[#0c221f] text-[11.5px] font-['Geist:SemiBold'] font-semibold leading-none">1,247 likes</Typography>
+                                    <Typography className="text-[#0c221f] text-[11.5px] mt-[4px] leading-[1.3]">
+                                      <span className="font-['Geist:SemiBold'] font-semibold">wenext.ai</span> Turn every conversation into a customer ✨ <span className="text-[#00376b]">#whatsapp</span>
+                                    </Typography>
+                                    <Typography className="text-[#8e8e8e] text-[11px] mt-[4px] leading-none">View all 892 comments</Typography>
+                                    <Typography className="text-[#8e8e8e] text-[9px] mt-[4px] tracking-[0.5px] leading-none uppercase">3 hours ago</Typography>
+                                  </div>
                                 </div>
-                                <div className="px-[10px] py-[7px] flex items-center gap-[8px] border-t border-[#efefef]">
-                                  <div className="size-[26px] rounded-full flex items-center justify-center" style={{ background: INSTAGRAM_GRADIENT }}><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 15.2A3.2 3.2 0 1 0 12 8.8a3.2 3.2 0 0 0 0 6.4zM9 2L7.17 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3.17L15 2H9zm3 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" /></svg></div>
-                                  <div className="flex-1 border border-[#dbdbdb] rounded-[20px] h-[26px] flex items-center px-[12px]"><Typography className="text-[#8e8e8e] text-[10px]">Message…</Typography></div>
-                                  <Typography className="text-[#0095f6] text-[10px] font-['Geist:SemiBold'] font-semibold">Send</Typography>
+
+                                {/* Comments sheet overlay — always at 60% when open, never full */}
+                                <div
+                                  className="absolute left-0 right-0 bottom-0 bg-white flex flex-col overflow-hidden z-20"
+                                  style={{
+                                    height: '66%',
+                                    transform: igOverlayOpen ? 'translateY(0)' : 'translateY(100%)',
+                                    transition: 'transform 500ms cubic-bezier(0.32, 0.72, 0.35, 1)',
+                                    borderTopLeftRadius: 14,
+                                    borderTopRightRadius: 14,
+                                    boxShadow: '0 -10px 30px rgba(0,0,0,0.25)'
+                                  }}
+                                >
+                                  {/* Comments sheet header */}
+                                  <div className="px-[12px] pt-[18px] pb-[8px] flex items-center gap-[8px] border-b border-[#efefef] relative">
+                                    <div className="absolute top-[8px] left-1/2 -translate-x-1/2 w-[32px] h-[3px] rounded-full bg-[#dbdbdb]" />
+                                    {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg> */}
+                                    <Typography className="flex-1 text-center text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold leading-none -translate-x-[6px]">Comments</Typography>
+                                    {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="#0c221f"><path d="M21 6.5A5.5 5.5 0 0 0 12 3a5.5 5.5 0 0 0-9 3.5C3 12 12 21 12 21s9-9 9-14.5z" fillOpacity="0" stroke="#0c221f" strokeWidth="1.8" /></svg> */}
+
+                                  </div>
+
+                                  {/* Reel context strip */}
+                                  {/* <div className="px-[10px] py-[6px] flex items-center gap-[8px] bg-[#fafafa] border-b border-[#efefef]">
+                                    <div className="size-[26px] rounded-[6px] relative overflow-hidden flex items-center justify-center" style={{ background: INSTAGRAM_GRADIENT }}>
+                                      <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z" /></svg>
+                                    </div>
+                                    <div className="size-[22px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[9px] shrink-0" style={{ background: 'linear-gradient(135deg, #1FBD79, #0f7d4d)' }}>W</div>
+                                    <div className='flex flex-col items-center justify-center'>
+                                      <img src={SmallLogo} width={32} alt="" />
+                                    </div>
+
+                                    <div className="flex-1 min-w-0 flex flex-col">
+                                      <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none flex items-center gap-[3px]">
+                                        wenext.ai
+                                        <svg width="9" height="9" viewBox="0 0 24 24" fill="#0095F6"><path d="M23 12l-2.5-2.9.4-3.8-3.7-.8-2-3.3L11.5 2.4 8 .2 6 3.5l-3.7.8.4 3.8L.2 11l2.5 2.9-.4 3.8 3.7.8 2 3.3 3.5-1.4 3.5 1.4 2-3.3 3.7-.8-.4-3.8L23 12zm-12.7 4.7L6 12.4l1.4-1.4 2.9 2.9 6.3-6.3L18 9l-7.7 7.7z" /></svg>
+                                      </Typography>
+                                      <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:Regular'] leading-none mt-[3px] truncate">Turn every conversation into a customer ✨</Typography>
+                                    </div>
+                                    <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:Medium']">892</Typography>
+                                  </div>  */}
+
+                                  {/* Comments list */}
+                                  <div className="flex-1 px-[10px] pt-[10px] pb-[6px] flex flex-col gap-[10px] overflow-hidden">
+                                    {/* Seed comment for context */}
+                                    <div className="flex gap-[8px] msg-in">
+                                      <div className="size-[26px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[10px] shrink-0" style={{ background: 'linear-gradient(135deg, #F5A16D, #E0653C)' }}>A</div>
+                                      <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-[4px]">
+                                          <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none">arjun_k</Typography>
+                                          <Typography className="text-[#8e8e8e] text-[9px] leading-none">· 3h</Typography>
+                                        </div>
+                                        <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3] mt-[2px]">This looks super clean 🔥</Typography>
+                                        <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:SemiBold'] font-semibold mt-[4px]">Reply</Typography>
+                                      </div>
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-[6px] shrink-0"><path d="M12 21s-7-4.5-9.5-9.2C.7 8.1 3.2 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.8 0 6.3 4.1 4.5 7.8C19 16.5 12 21 12 21z" stroke="#8e8e8e" strokeWidth="1.7" strokeLinejoin="round" /></svg>
+                                    </div>
+
+                                    {/* User's just-posted comment */}
+                                    {chatStep >= 2 && (
+                                      <div className="flex gap-[8px] msg-in">
+                                        <div className="size-[26px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[10px] shrink-0" style={{ background: 'linear-gradient(135deg, #F5A16D, #E0653C)' }}>K</div>
+
+                                        {/* <div className="size-[26px] rounded-full bg-gradient-to-br from-[#d0d5db] to-[#8f97a3] shrink-0" /> */}
+                                        <div className="flex-1 min-w-0">
+                                          <div className="flex items-center gap-[4px]">
+                                            <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none">Karthik Reddy</Typography>
+                                            <Typography className="text-[#8e8e8e] text-[9px] leading-none">· Just now</Typography>
+                                          </div>
+                                          <Typography className="text-[#0c221f] text-[12px] font-['Geist:SemiBold'] font-semibold leading-[1.3] mt-[2px] tracking-[0.5px]">WENEXT</Typography>
+                                          <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:SemiBold'] font-semibold mt-[4px]">Reply</Typography>
+                                        </div>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-[6px] shrink-0"><path d="M12 21s-7-4.5-9.5-9.2C.7 8.1 3.2 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.8 0 6.3 4.1 4.5 7.8C19 16.5 12 21 12 21z" stroke="#8e8e8e" strokeWidth="1.7" strokeLinejoin="round" /></svg>
+                                      </div>
+                                    )}
+
+                                    {/* wenext.ai auto-reply — appears at step 3 so it lands within the 2800ms tab window */}
+                                    {chatStep >= 3 && (
+                                      <div className="flex gap-[8px] pl-[34px] msg-in">
+                                        <div className='flex flex-col items-start justify-start'>
+                                          <img src={SmallLogo} width={32} alt="" />
+                                        </div>
+                                        {/* <div className="size-[22px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[9px] shrink-0" style={{ background: 'linear-gradient(135deg, #1FBD79, #0f7d4d)' }}>W</div> */}
+                                        <div className="flex-1 min-w-0">
+                                          <div className="flex items-center gap-[4px] flex-wrap">
+                                            <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none">wenext.ai</Typography>
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="#0095F6"><path d="M23 12l-2.5-2.9.4-3.8-3.7-.8-2-3.3L11.5 2.4 8 .2 6 3.5l-3.7.8.4 3.8L.2 11l2.5 2.9-.4 3.8 3.7.8 2 3.3 3.5-1.4 3.5 1.4 2-3.3 3.7-.8-.4-3.8L23 12zm-12.7 4.7L6 12.4l1.4-1.4 2.9 2.9 6.3-6.3L18 9l-7.7 7.7z" /></svg>
+                                            <Typography className="text-[#8e8e8e] text-[9px] leading-none">· Just now</Typography>
+                                          </div>
+                                          <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3] mt-[2px]">
+                                            Thank you for showing interest in Wenext, please check your DM ✨
+                                          </Typography>
+                                          <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:SemiBold'] font-semibold mt-[4px]">Reply</Typography>
+                                        </div>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-[6px] shrink-0"><path d="M12 21s-7-4.5-9.5-9.2C.7 8.1 3.2 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.8 0 6.3 4.1 4.5 7.8C19 16.5 12 21 12 21z" stroke="#8e8e8e" strokeWidth="1.7" strokeLinejoin="round" /></svg>
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  {/* Comment input */}
+                                  <div className="px-[10px] py-[7px] flex items-center gap-[8px] border-t border-[#efefef]">
+                                    <div>
+                                      <img src={User} alt="" width={22} />
+                                    </div>
+                                    {/* <div className="size-[26px] rounded-full bg-gradient-to-br from-[#d0d5db] to-[#8f97a3] shrink-0" /> */}
+                                    <div className={`flex-1 border rounded-[20px] h-[28px] flex items-center px-[12px] transition-colors ${chatStep < 2 ? 'border-[#0c221f]' : 'border-[#dbdbdb]'}`}>
+                                      {chatStep === 0 && (
+                                        <>
+                                          <Typography className="text-[#c7c7c7] text-[10px]">Add a comment for wenext.ai...</Typography>
+                                          <span className="ig-caret ml-[2px] inline-block w-[1.5px] h-[12px] bg-[#0095F6]" />
+                                        </>
+                                      )}
+                                      {chatStep === 1 && (
+                                        <>
+                                          <span className="text-[#0c221f] text-[11px] font-['Geist:SemiBold'] font-semibold tracking-[0.5px]">
+                                            {'WENEXT'.split('').map((c, i) => (
+                                              <span key={i} className="ig-letter" style={{ animationDelay: `${100 + i * 150}ms` }}>{c}</span>
+                                            ))}
+                                          </span>
+                                          <span className="ig-caret ml-[1px] inline-block w-[1.5px] h-[12px] bg-[#0095F6]" />
+                                        </>
+                                      )}
+                                      {chatStep >= 2 && (
+                                        <Typography className="text-[#8e8e8e] text-[10px]">Add a comment for wenext.ai...</Typography>
+                                      )}
+                                    </div>
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ transition: 'stroke 0.2s ease' }}>
+                                      <path d="M22 2L11 13" stroke={chatStep === 1 ? '#0c221f' : '#eee'} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                      <path d="M22 2l-7 20-4-9-9-4 20-7z" stroke={chatStep === 1 ? '#0c221f' : '#eee'} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {/* <Typography className="text-[11px] font-['Geist:SemiBold'] font-semibold" style={{ color: chatStep === 1 ? '#0095F6' : '#B2DFFC', transition: 'color 0.2s ease' }}>Post</Typography> */}
+                                  </div>
+
+                                  {/* Instagram mockup animations */}
+                                  <style>{`
+                                  @keyframes caretBlink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+                                  .ig-caret { animation: caretBlink 1s steps(2,start) infinite; }
+
+                                  /* Letter reveal — each letter appears at staggered delays */
+                                  .ig-letter { display: inline-block; opacity: 0; animation: igLetterIn 0.01s linear forwards; }
+                                  @keyframes igLetterIn { to { opacity: 1; } }
+
+                                  /* Comment icon tap right before overlay opens (~1400ms after Instagram tab activates) */
+                                  @keyframes igCommentTap {
+                                    0% { transform: scale(1); }
+                                    35% { transform: scale(0.82); }
+                                    65% { transform: scale(1.15); }
+                                    100% { transform: scale(1); }
+                                  }
+                                  .ig-comment-tap { animation: igCommentTap 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 1400ms both; }
+                                `}</style>
                                 </div>
                               </div>
                             )}
@@ -459,11 +672,11 @@ export default function Home() {
                                 <div className="px-[12px] pt-[18px] pb-[10px] flex items-center gap-[8px]">
                                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1877F2" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
                                   <div className="relative">
-                                    <div className="size-[32px] rounded-full bg-gradient-to-br from-[#1877F2] to-[#0d65d9] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[12px]">PS</div>
+                                    <div className="size-[32px] rounded-full bg-gradient-to-br from-[#1877F2] to-[#0d65d9] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[12px]">PG</div>
                                     <div className="absolute bottom-0 right-0 size-[10px] rounded-full bg-[#31a24c] border-2 border-white" />
                                   </div>
                                   <div className="flex-1 flex flex-col">
-                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold leading-none">Priya Sharma</Typography>
+                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold leading-none">Prathik Gadde</Typography>
                                     <Typography className="text-[#65676b] text-[9.5px] font-['Geist:Regular'] leading-none mt-[2px]">Active now</Typography>
                                   </div>
                                   <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M22 4.27v15.46c0 .65-.74 1.02-1.26.64L17 17.5V18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v.5l3.74-2.87c.52-.38 1.26-.01 1.26.64z" /></svg>
@@ -1847,7 +2060,7 @@ export default function Home() {
                           </div>
                           <div className="flex-1 overflow-hidden">
                             {[
-                              { name: 'Priya Sharma', preview: 'Yes, please share the UPI link', time: '10:38', ch: 'wa', count: 2, active: true },
+                              { name: 'Prathik Gadde', preview: 'Yes, please share the UPI link', time: '10:38', ch: 'wa', count: 2, active: true },
                               { name: 'Aanya Verma', preview: 'Loved your kurta drop! Available...', time: '09:12', ch: 'ig', count: 1, active: false },
                               { name: 'Karthik Iyer', preview: 'Is COD available on this?', time: '08:47', ch: 'fb', count: 4, active: false },
                               { name: 'Rahul Mehta', preview: 'Cotton shirt order status please', time: 'Yest', ch: 'wa', count: 0, active: false },
