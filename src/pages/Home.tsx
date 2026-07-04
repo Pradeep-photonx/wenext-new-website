@@ -7,6 +7,8 @@ import imgInstagramPost from '../assets/instagram-post.png';
 import CommentIcon from '../assets/icons/comment.png';
 import SmallLogo from '../assets/icons/sm-logo.png';
 import User from '../assets/icons/user.png';
+import BorderX from "../assets/borders.png";
+
 
 
 function Counter({ target, decimals = 0, suffix = '', duration = 1800 }: { target: number; decimals?: number; suffix?: string; duration?: number }) {
@@ -97,6 +99,15 @@ const HERO_TABS = [
   { name: 'Facebook', textPaint: '#1877F2', fillBg: '#1877F2', bgPale: '#ffffff', border: '#e6e6e6', shadow: 'rgba(24,119,242,0.25)', icon: '/figma/imgImage3.svg', iconPaint: '#1877F2' },
 ];
 
+const AI_QUERIES = [
+  'What are my top selling products this week?',
+  'Draft a Diwali campaign for regular customers',
+  'Show me abandoned carts from the last 24 hours',
+  "Which customers haven't ordered in 30 days?",
+  'Send follow-up messages to yesterday’s inquiries',
+  'Create a broadcast for new arrivals this season',
+];
+
 const FAQS = [
   { q: 'How long does it take to go live on WhatsApp?', a: "Most brands are live in 15 minutes. Sign up, connect your Meta accounts via guided OAuth, and our AI is trained on your catalog within a few clicks — no developer needed." },
   { q: 'Do I need a developer to set up WeNext?', a: 'Not at all. Every step — connecting channels, training the AI on your catalog, building automations — is no-code. Our setup wizard walks you through the full stack.' },
@@ -158,7 +169,12 @@ export default function Home() {
   const [progress, setProgress] = useState(0);
   const [heroTab, setHeroTab] = useState(0);
   const [heroProgress, setHeroProgress] = useState(0);
+  const [magicIdx, setMagicIdx] = useState(0);
+  const prevMagicIdxRef = useRef(0);
+  useEffect(() => { prevMagicIdxRef.current = magicIdx; }, [magicIdx]);
   const [chatStep, setChatStep] = useState(0);
+  const [waInputText, setWaInputText] = useState('');
+  const waInputScrollRef = useRef<HTMLDivElement>(null);
   const [igOverlayOpen, setIgOverlayOpen] = useState(false);
   const [igPostShifted, setIgPostShifted] = useState(false);
   const [dashTab, setDashTab] = useState(0);
@@ -168,7 +184,7 @@ export default function Home() {
 
   useEffect(() => {
     const tickMs = 50;
-    const duration = 6500;
+    const duration = 9000;
     const id = setInterval(() => {
       setHeroProgress(p => {
         const next = p + (tickMs / duration) * 100;
@@ -183,19 +199,49 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    setChatStep(0);
-    const timings = [500, 1100, 700, 1100, 800, 1200];
-    // Instagram tab shows a Reel first, then the comments overlay slides up — delay chatStep so typing starts after the sheet is up
-    const leadIn = heroTab === 1 ? 1500 : 0;
+    const id = setInterval(() => setMagicIdx(i => (i + 1) % AI_QUERIES.length), 2800);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    setWaInputText('');
     let cancelled = false;
-    let total = leadIn;
     const timeouts: ReturnType<typeof setTimeout>[] = [];
-    timings.forEach((ms, i) => {
-      total += ms;
-      timeouts.push(setTimeout(() => { if (!cancelled) setChatStep(i + 1); }, total));
-    });
+    const at = (ms: number, fn: () => void) => timeouts.push(setTimeout(() => { if (!cancelled) fn(); }, ms));
+
+    if (heroTab === 0) {
+      // WhatsApp: customer types the question in the input, sends as bubble, bot replies, customer types "yes please", sends, then UPI card
+      setChatStep(-1);
+      at(0, () => setWaInputText('Hi! Is the linen kurta still available?'));
+      at(2800, () => { setChatStep(0); setWaInputText(''); });
+      at(3300, () => setChatStep(1));
+      at(4400, () => setChatStep(2));
+      at(5100, () => setWaInputText('yes please'));
+      at(5900, () => { setChatStep(3); setWaInputText(''); });
+      at(7000, () => setChatStep(4));
+      at(7800, () => setChatStep(5));
+    } else {
+      setChatStep(0);
+      const timings = [500, 1100, 700, 1100, 800, 1200];
+      // Instagram tab shows a Reel first, then the comments overlay slides up — delay chatStep so typing starts after the sheet is up
+      const leadIn = heroTab === 1 ? 1500 : 0;
+      let total = leadIn;
+      timings.forEach((ms, i) => {
+        total += ms;
+        at(total, () => setChatStep(i + 1));
+      });
+    }
     return () => { cancelled = true; timeouts.forEach(clearTimeout); };
   }, [heroTab]);
+
+  useEffect(() => {
+    if (!waInputText || !waInputScrollRef.current) return;
+    const scroll = () => { if (waInputScrollRef.current) waInputScrollRef.current.scrollLeft = waInputScrollRef.current.scrollWidth; };
+    scroll();
+    const id = setInterval(scroll, 40);
+    const stop = setTimeout(() => clearInterval(id), waInputText.length * 60 + 200);
+    return () => { clearInterval(id); clearTimeout(stop); };
+  }, [waInputText]);
 
   useEffect(() => {
     if (heroTab !== 1) { setIgOverlayOpen(false); setIgPostShifted(false); return; }
@@ -361,7 +407,7 @@ export default function Home() {
                                 <div className="flex-1 px-[8px] pb-[8px] flex flex-col gap-[4px] overflow-hidden justify-end">
                                   {chatStep >= 0 && (
                                     <div className="self-start relative bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[78%] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in">
-                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Hi! Is the linen kurta in M still available?</Typography>
+                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Hi! Is the linen kurta still available?</Typography>
                                       <Typography className="text-[#667781] text-[8px] text-right mt-[1px]">10:34</Typography>
                                     </div>
                                   )}
@@ -375,7 +421,7 @@ export default function Home() {
                                   {chatStep >= 2 && (
                                     <div className="self-end relative bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[8px] py-[6px] max-w-[85%] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in">
                                       <Typography className="text-[#7a8f86] text-[7.5px] font-['Geist:Medium'] mb-[1px]">WeNext AI</Typography>
-                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes! M is in stock — 3 pieces left. Want me to share a secure UPI link?</Typography>
+                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</Typography>
                                       <Typography className="text-[#667781] text-[8px] text-right mt-[1px]">10:36 <span className="text-[#53bdeb]">✓✓</span></Typography>
                                     </div>
                                   )}
@@ -412,11 +458,11 @@ export default function Home() {
                                       <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.5" strokeLinecap="round" />
                                       <path d="M13 15.5v1.7c0 .55-.45 1-1 1s-1-.45-1-1v-1.7" fill="#F5A623" />
                                     </svg>
-                                    {/* Typed text — "yes please" reveals letter by letter, caret rides with the text */}
-                                    <div className="flex-1 min-w-0 overflow-hidden">
-                                      <div className="text-[#111b21] text-[11px] font-['Geist:Regular']" style={{ whiteSpace: 'pre', lineHeight: '13px' }}>
-                                        {'yes please'.split('').map((c, i) => (
-                                          <span key={i} className="wa-letter" style={{ animationDelay: `${400 + i * 90}ms` }}>{c}</span>
+                                    {/* Typed text — reveals letter by letter, caret rides with the text; text scrolls to keep the caret in view */}
+                                    <div className="flex-1 min-w-0 overflow-hidden" ref={waInputScrollRef}>
+                                      <div className="text-[#111b21] text-[11px] font-['Geist:Regular']" style={{ whiteSpace: 'pre', lineHeight: '13px' }} key={waInputText}>
+                                        {waInputText.split('').map((c, i) => (
+                                          <span key={i} className="wa-letter" style={{ animationDelay: `${i * 60}ms` }}>{c}</span>
                                         ))}
                                         <span className="wa-caret ml-[1px] inline-block w-[1.5px] h-[13px] bg-[#00A884] align-middle" />
                                       </div>
@@ -794,6 +840,7 @@ export default function Home() {
             </div>
           </div> */}
           <TrustedByStrip />
+
           <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1029" data-name="Container">
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1030">
               <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-center py-[40px] relative size-full">
@@ -1060,6 +1107,7 @@ export default function Home() {
               </div>
             </div>
           </div>
+
           <div className="content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1265">
             <div className="border-[#cec9b8] border-b border-l border-r border-solid content-stretch flex items-center relative shrink-0 w-full" data-node-id="467:1266">
               <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] items-start min-w-px p-[40px] relative" data-node-id="467:1267" data-name="Container">
@@ -2283,7 +2331,122 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
           </div>
+
+
+
+          {/* Magic AI Search — sits above the "Sound familiar?" band, matches the site's outer/inner border pattern */}
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" style={{ overflow: "hidden" }}>
+            <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full">
+              <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col items-center py-[100px] relative size-full">
+                {/* Eyebrow */}
+                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0">
+                  <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
+                  <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap">
+                    Ask WeNext AI
+                  </Typography>
+                </div>
+                {/* Heading */}
+                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.05] relative shrink-0 text-[#0c221f] text-[54px] tracking-[-1.6px] text-center mt-[16px]">
+                  NEW: Ask WeNext AI
+                </Typography>
+                <Typography className="font-['Geist:Regular'] leading-[1.5] text-[#60584c] text-[18px] text-center mt-[14px] max-w-[560px] relative">
+                  Ask questions about your customers, orders, and campaigns — get answers, insights, and actions in seconds.
+                </Typography>
+                {/* <a
+                  href="#"
+                  className="mt-[24px] inline-flex items-center bg-[#06b349] hover:bg-[#059940] text-white rounded-full px-[26px] py-[11px] font-['Geist:Medium'] font-medium text-[15px] tracking-[-0.2px] transition-colors relative shadow-[0_6px_18px_-6px_rgba(6,179,73,0.5)]"
+                >
+                  Learn More
+                </a> */}
+
+                {/* Rotating queries — wheel: rows slide up smoothly; wrapping rows snap silently */}
+                <div className="mt-[56px] relative w-full max-w-[720px] h-[320px] overflow-hidden">
+                  {AI_QUERIES.map((q, i) => {
+                    const half = AI_QUERIES.length / 2;
+                    const wrap = (raw: number) => {
+                      let o = raw;
+                      while (o > half) o -= AI_QUERIES.length;
+                      while (o < -half) o += AI_QUERIES.length;
+                      return o;
+                    };
+                    const offset = wrap(i - magicIdx);
+                    const prevOffset = wrap(i - prevMagicIdxRef.current);
+                    // If a row's offset changed by more than one slot, it's wrapping — snap its transform (skip transition on transform) so it doesn't roll through the visible area.
+                    const isWrapping = Math.abs(offset - prevOffset) > 1;
+                    const isCenter = offset === 0;
+                    const visible = Math.abs(offset) <= 2;
+                    const rowH = 62;
+                    // Center row hidden (pill overlays it); others fade by distance.
+                    const opacity = isCenter ? 0 : visible ? Math.max(0, 1 - Math.abs(offset) * 0.42) : 0;
+                    return (
+                      <div
+                        key={i}
+                        className="absolute left-0 right-0 flex justify-left pointer-events-none"
+                        style={{
+                          top: '50%',
+                          transform: `translate3d(0, calc(-50% + ${offset * rowH}px), 0)`,
+                          opacity,
+                          marginLeft: '50px',
+                          transition: isWrapping
+                            ? 'opacity 700ms cubic-bezier(0.32,0.72,0.35,1)'
+                            : 'transform 700ms cubic-bezier(0.32,0.72,0.35,1), opacity 700ms cubic-bezier(0.32,0.72,0.35,1)',
+                        }}
+                      >
+                        <Typography className="text-[18px] text-[#60584c] font-['Geist:Medium'] font-medium tracking-[-0.2px] whitespace-nowrap">
+                          {q}
+                        </Typography>
+                      </div>
+                    );
+                  })}
+
+                  {/* Fixed input pill at the center — its inner text slides up as the wheel scrolls under it */}
+                  <div
+                    className="absolute left-0 right-0 flex justify-left pointer-events-none"
+                    style={{ top: '50%', transform: 'translateY(-50%)' }}
+                  >
+                    <div className="w-full max-w-[600px] bg-white rounded-full pl-[6px] pr-[6px] py-[6px] flex items-center gap-[10px] border border-[#e0dac6] shadow-[0_12px_36px_-8px_rgba(6,179,73,0.25),0_2px_8px_rgba(11,34,17,0.06)] pointer-events-auto">
+                      <div className="w-[36px] h-[36px] rounded-full bg-[#f8f5ec] flex items-center justify-center shrink-0">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2" strokeLinecap="round">
+                          <line x1="12" y1="5" x2="12" y2="19" />
+                          <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 relative overflow-hidden h-[22px]">
+                        <div
+                          key={magicIdx}
+                          className="absolute inset-0 flex items-center text-[#0c221f] font-['Geist:Medium'] font-medium text-[17px] leading-none whitespace-nowrap magic-text-slide"
+                        >
+                          {AI_QUERIES[magicIdx]}
+                        </div>
+                      </div>
+                      <div className="w-[36px] h-[36px] rounded-full bg-[#06b349] flex items-center justify-center shrink-0">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="12" y1="19" x2="12" y2="5" />
+                          <polyline points="5 12 12 5 19 12" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <style>{`
+                  @keyframes magicTextSlide { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+                  .magic-text-slide { animation: magicTextSlide 650ms cubic-bezier(0.32, 0.72, 0.35, 1) both; }
+                `}</style>
+              </div>
+            </div>
+            {/* <img style={{
+              position: 'absolute',
+              top: "0px",
+              left: "74px",
+              width: "92.3%",
+              height: "60px",
+              borderBottom: "1px soild #ddd"
+            }} src={BorderX} /> */}
+          </div>
+
           <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1839" data-name="Container">
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1840">
               <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-start justify-center px-[50px] py-[40px] relative size-full">
