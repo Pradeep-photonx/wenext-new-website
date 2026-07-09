@@ -103,7 +103,7 @@ function FeatureRow({ eyebrow, heading, body, points, reverse = false, last = fa
     </div>
   );
   return (
-    <div className={`mx-[75px] border-x ${last ? 'border-b' : 'border-b'} border-[#e0dac6]`}>
+    <div className={`container mx-auto border-x ${last ? 'border-b' : 'border-b'} border-[#e0dac6]`}>
       <div className="grid grid-cols-2 min-h-[520px]">
         {reverse ? <>{viz}{text}</> : <>{text}{viz}</>}
       </div>
@@ -1191,17 +1191,17 @@ export default function Features() {
 
       {/* 1 · HERO */}
       <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="mx-[75px] border-x border-[rgba(255,255,255,0.08)] px-[75px] py-[96px] flex flex-col items-center text-center relative overflow-hidden">
+        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[96px] flex flex-col items-center text-center relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-[0.03]"><img alt="" className="size-full object-cover" src={imgImage27} /></div>
           <div className="flex gap-[10px] items-center justify-center mb-[20px] relative">
             <div className="bg-[#06b349] size-[8px] rounded-full" />
             <Typography className="font-['Courier_Prime'] text-[#06b349] text-[14px] uppercase tracking-[0.2em]">Features</Typography>
           </div>
           <Typography component="h1" className="font-['Geist:SemiBold'] font-semibold leading-[1.12] text-white text-[58px] tracking-[-2px] max-w-[820px] mb-[24px] relative">
-            Turn Conversations<br />Into Customers
+            Everything your business needs to sell, support, and scale
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[20px] max-w-[660px] leading-[1.6] mb-[44px] relative">
-            The complete automation suite that connects WhatsApp, Instagram and your entire business stack. No coding. No complexity. Just growth.
+            From the first message to the final purchase, WeNext brings every customer conversation, workflow, and teammate together in one intelligent workspace.
           </Typography>
           <div className="flex gap-[16px] items-center relative">
             <PrimaryButton label="Book a Demo" />
@@ -1224,8 +1224,8 @@ export default function Features() {
       </div>
 
       {/* 2 · OVERVIEW HEADER */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="py-[64px] px-[75px] flex flex-col items-center text-center">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="py-[64px] px-4 xl:px-[75px] flex flex-col items-center text-center">
           <Eyebrow label="Platform" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[44px] text-[#0c221f] tracking-[-1.5px] leading-[1.15] max-w-[720px]">
             Everything you need to automate &amp; scale
@@ -1245,15 +1245,15 @@ export default function Features() {
 
       {/* 3 · FEATURE SECTIONS */}
       {/* 3 · UNIFIED INBOX — full-width product showcase */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] px-4 xl:px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
           <div className="max-w-[560px]">
             <Eyebrow label="Unified Inbox" />
-            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Never miss a customer again</Typography>
-            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Manage every WhatsApp, Instagram and Facebook conversation from one shared dashboard — with assignment, tags, internal notes and full message history.</Typography>
+            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">One inbox. Every conversation</Typography>
+            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Stop jumping between WhatsApp, Instagram, Facebook, and web chat. Give your team one shared workspace to respond faster, collaborate better, and never miss an opportunity.</Typography>
           </div>
           <div className="flex flex-col gap-[14px]">
-            {['One inbox for every channel', 'Assign chats to the right agent', 'Tags, VIPs and shared context', 'Built-in AI assist on every chat'].map((p) => (
+            {['WhatsApp, Instagram, FB & Web chat', 'One shared workspace for your team', 'Respond faster & collaborate better', 'Never miss an opportunity'].map((p) => (
               <div key={p} className="flex items-center gap-[12px]">
                 <div className="size-[22px] rounded-full bg-[#e5f6e7] flex items-center justify-center shrink-0"><Check /></div>
                 <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[16px]">{p}</Typography>
@@ -1267,15 +1267,15 @@ export default function Features() {
       </div>
 
       {/* 4 · NO-CODE FLOW BUILDER — full-width product showcase */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] px-4 xl:px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
           <div className="max-w-[560px]">
-            <Eyebrow label="No-Code Flow Builder" />
-            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Build smart automations in minutes</Typography>
-            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Drag, drop and connect blocks to build sophisticated customer journeys — triggers, conditions and actions — without writing a single line of code.</Typography>
+            <Eyebrow label="CRM" />
+            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Know every customer before you reply</Typography>
+            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Every conversation comes with context—from previous chats and purchases to tags, notes, and order history—so every response feels personal.</Typography>
           </div>
           <div className="flex flex-col gap-[14px]">
-            {['18+ triggers to start any flow', 'Visual drag-and-drop canvas', 'Branch on keywords and intent', 'Validate &amp; publish in one click'].map((p) => (
+            {['Full context for every conversation', 'View previous chats & purchases', 'Access tags, notes & order history', 'Make every response personal'].map((p) => (
               <div key={p} className="flex items-center gap-[12px]">
                 <div className="size-[22px] rounded-full bg-[#e5f6e7] flex items-center justify-center shrink-0"><Check /></div>
                 <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[16px]">{p}</Typography>
@@ -1284,20 +1284,20 @@ export default function Features() {
           </div>
         </div>
         <div className="px-[40px] py-[50px] bg-[#f3efe3] relative overflow-hidden flex justify-center" style={gridCanvas}>
-          <FlowBuilderDashboard />
+          <InstagramAutomationDashboard />
         </div>
       </div>
 
       {/* 5 · SOCIAL SCHEDULER — full-width product showcase */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] px-4 xl:px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
           <div className="max-w-[560px]">
-            <Eyebrow label="Social Scheduler" />
-            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Post once, publish everywhere</Typography>
-            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Plan, schedule and publish across Facebook, Instagram and LinkedIn from one place. Batch your content and let WeNext post it at the perfect time.</Typography>
+            <Eyebrow label="Social Media" />
+            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Create once. Publish everywhere</Typography>
+            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Plan, schedule, and publish content across your social channels while keeping your customer conversations in the same workflow.</Typography>
           </div>
           <div className="flex flex-col gap-[14px]">
-            {['Schedule across every platform', 'Track comments &amp; likes per post', 'Published vs scheduled at a glance', 'AI-assisted captions in one click'].map((p) => (
+            {['Plan and schedule content', 'Publish across all channels', 'Unified conversation workflow', 'Create once, publish everywhere'].map((p) => (
               <div key={p} className="flex items-center gap-[12px]">
                 <div className="size-[22px] rounded-full bg-[#e5f6e7] flex items-center justify-center shrink-0"><Check /></div>
                 <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[16px]">{p}</Typography>
@@ -1311,15 +1311,15 @@ export default function Features() {
       </div>
 
       {/* 6 · INSTAGRAM AUTOMATION — full-width product showcase */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] px-4 xl:px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
           <div className="max-w-[560px]">
-            <Eyebrow label="Instagram Automation" />
-            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Convert DMs into rupees while you sleep</Typography>
-            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Build no-code Instagram flows that auto-reply to DMs and comments, then guide followers straight to purchase — 24/7. Every conversation becomes a sale.</Typography>
+            <Eyebrow label="Automation" />
+            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Put repetitive work on autopilot</Typography>
+            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Build workflows that follow up, assign conversations, send reminders, update customers, and keep your business moving—even after your team logs off.</Typography>
           </div>
           <div className="flex flex-col gap-[14px]">
-            {['Trigger on any DM or comment', 'Send DMs, carousels &amp; quick replies', 'AI responses with guardrails', 'Gate flows on follower checks'].map((p) => (
+            {['Automate follow-ups & assignments', 'Send reminders & updates', 'Keep your business moving', 'Works after your team logs off'].map((p) => (
               <div key={p} className="flex items-center gap-[12px]">
                 <div className="size-[22px] rounded-full bg-[#e5f6e7] flex items-center justify-center shrink-0"><Check /></div>
                 <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[16px]">{p}</Typography>
@@ -1328,7 +1328,7 @@ export default function Features() {
           </div>
         </div>
         <div className="px-[40px] py-[50px] bg-[#f3efe3] relative overflow-hidden flex justify-center" style={gridCanvas}>
-          <InstagramAutomationDashboard />
+          <FlowBuilderDashboard />
         </div>
       </div>
 
@@ -1345,15 +1345,15 @@ export default function Features() {
       </FeatureRow> */}
 
       {/* 8 · WHATSAPP AUTOMATIONS — full-width product showcase */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] px-4 xl:px-[75px] py-[56px] flex items-end justify-between gap-[50px] flex-wrap">
           <div className="max-w-[560px]">
-            <Eyebrow label="WhatsApp Automations" />
-            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Scale personal service at enterprise speed</Typography>
-            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Welcome flows, interactive buttons, list replies and order journeys — fully automated on the official WhatsApp Business API, right inside one shared conversation.</Typography>
+            <Eyebrow label="Conversational Commerce" />
+            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.15] mb-[16px]">Sell where conversations happen</Typography>
+            <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7]">Share products, collect payments, recover carts, and complete purchases without sending customers through complicated checkout journeys.</Typography>
           </div>
           <div className="flex flex-col gap-[14px]">
-            {['Interactive button & list templates', 'Official WhatsApp Business API', 'Captures replies into the flow', 'Personal at any volume'].map((p) => (
+            {['Share products in chat', 'Collect payments instantly', 'Recover abandoned carts', 'Skip complicated checkouts'].map((p) => (
               <div key={p} className="flex items-center gap-[12px]">
                 <div className="size-[22px] rounded-full bg-[#e5f6e7] flex items-center justify-center shrink-0"><Check /></div>
                 <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[16px]">{p}</Typography>
@@ -1367,8 +1367,8 @@ export default function Features() {
       </div>
 
       {/* 4 · RESULTS */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] py-[64px] px-[75px] flex flex-col items-center text-center">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[75px] flex flex-col items-center text-center">
           <Eyebrow label="Results" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.2px] leading-[1.2] max-w-[680px]">
             Results that speak volumes

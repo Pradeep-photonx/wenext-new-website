@@ -330,7 +330,7 @@ export default function About() {
           1 · HERO
       ══════════════════════════════════════════════════ */}
       <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="mx-[75px] border-x border-[rgba(255,255,255,0.08)] px-[75px] py-[100px] flex flex-col items-center text-center relative overflow-hidden">
+        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[100px] flex flex-col items-center text-center relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
             <img alt="" className="size-full object-cover" src={imgImage27} />
           </div>
@@ -380,11 +380,11 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           2 · SOCIAL PROOF
       ══════════════════════════════════════════════════ */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="px-[75px] pt-[44px] pb-[10px] text-center flex items-center justify-center">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="px-4 xl:px-[75px] pt-[44px] pb-[10px] text-center flex items-center justify-center">
           <Eyebrow label="Join 100+ brands and businesses growing on WeNext" />
         </div>
-        <div className="px-[75px] py-[28px] overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <div className="px-4 xl:px-[75px] py-[28px] overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
           <div className="flex items-center gap-[56px] w-max" style={{ animation: 'aboutMarquee 32s linear infinite' }}>
             {[...BRANDS, ...BRANDS].map((b, i) => (
               <Typography key={i} className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[24px] tracking-[-0.5px] opacity-30 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">{b}</Typography>
@@ -398,8 +398,8 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           6.5 · OUR VALUES
       ══════════════════════════════════════════════════ */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] py-[64px] px-[75px] flex flex-col items-center text-center">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[75px] flex flex-col items-center text-center">
           <Eyebrow label="What We Stand For" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.2px] leading-[1.2] max-w-[680px]">
             The principles behind every release
@@ -424,12 +424,12 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           7 · DATA AUTHORITY — big number + press
       ══════════════════════════════════════════════════ */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6] relative overflow-hidden">
+      <div className="container mx-auto border-x border-b border-[#e0dac6] relative overflow-hidden">
         {/* giant faded background number */}
         <Typography className="absolute -top-[20px] right-[20px] font-['Geist:SemiBold'] font-semibold text-[240px] leading-none text-[#0c221f] opacity-[0.03] select-none pointer-events-none tracking-[-10px] z-0">50M</Typography>
 
         {/* header row */}
-        <div className="border-b border-[#e0dac6] py-[56px] px-[75px] flex items-end justify-between gap-[40px] relative z-10">
+        <div className="border-b border-[#e0dac6] py-[56px] px-4 xl:px-[75px] flex items-end justify-between gap-[40px] relative z-10">
           <div className="max-w-[620px]">
             <Eyebrow label="By The Numbers" />
             <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[44px] tracking-[-1.5px] leading-[1.12]">
@@ -467,8 +467,8 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           8 · EVERYTHING YOU NEED — capabilities bento
       ══════════════════════════════════════════════════ */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] py-[64px] px-[75px] flex flex-col items-center text-center">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[75px] flex flex-col items-center text-center">
           <Eyebrow label="Platform" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.2px] leading-[1.2] max-w-[680px]">
             Everything you need to win on WhatsApp
@@ -622,7 +622,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mx-[75px] border-x border-b border-[#e0dac6] bg-[#fbf8f1] py-[80px] relative overflow-hidden">
+      <div className="container mx-auto border-x border-b border-[#e0dac6] bg-[#fbf8f1] py-[80px] relative overflow-hidden">
         <style>{`
           @keyframes scrollMarqueeLeft {
             0% { transform: translateX(-50%); }
@@ -647,7 +647,7 @@ export default function About() {
           }
         `}</style>
 
-        <div className="flex flex-col items-center text-center relative z-10 mb-[60px] px-[75px]">
+        <div className="flex flex-col items-center text-center relative z-10 mb-[60px] px-4 xl:px-[75px]">
           <Eyebrow label="Loved by Teams" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[52px] tracking-[-1.5px] leading-[1.1] max-w-[720px] mb-[16px]">
             The brands building on WeNext
@@ -733,7 +733,7 @@ export default function About() {
           8.5 · BACKED BY PHOTONX TECH — full-bleed highlight
       ══════════════════════════════════════════════════ */}
       <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="mx-[75px] border-x border-[rgba(255,255,255,0.08)] p-[75px] relative overflow-hidden flex flex-col items-center">
+        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] p-[75px] relative overflow-hidden flex flex-col items-center">
           {/* backdrop */}
           <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)', backgroundSize: '46px 46px', maskImage: 'radial-gradient(circle at 50% 50%, #000 30%, transparent 80%)', WebkitMaskImage: 'radial-gradient(circle at 50% 50%, #000 30%, transparent 80%)' }} />
           {/* <div className="absolute -top-[150px] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#06b349] opacity-[0.08] blur-[120px] rounded-full pointer-events-none" /> */}
@@ -864,7 +864,7 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           10 · FAQ
       ══════════════════════════════════════════════════ */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
         <div className="px-[50px] py-[60px] flex gap-[80px] items-start">
           {/* Left: heading + CTAs (Home FAQ layout) */}
           <div className="flex flex-col gap-[30px] shrink-0 w-[380px]">

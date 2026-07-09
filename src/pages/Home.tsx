@@ -8,6 +8,12 @@ import CommentIcon from '../assets/icons/comment.png';
 import SmallLogo from '../assets/icons/sm-logo.png';
 import User from '../assets/icons/user.png';
 import BorderX from "../assets/borders.png";
+import SignUp from "../assets/speed-scale/sign-up.png"
+import ConnectMeta from "../assets/speed-scale/Connect Meta accounts.png"
+import TrainAI from "../assets/speed-scale/Train the AI on your brand.png"
+import SetAutomation from "../assets/speed-scale/Set Automations.png"
+import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast..png"
+import ConversationalCommerce from "../assets/built-growth/ConversationalCommerce.png"
 
 
 
@@ -285,10 +291,10 @@ export default function Home() {
 
   return (
     <div className="bg-[#f8f5ec] relative size-full" data-node-id="467:951" data-name="Home">
-      <div className="content-stretch flex flex-col items-start w-full min-w-[1440px]" data-node-id="467:952">
+      <div className="content-stretch flex flex-col items-start w-full w-full" data-node-id="467:952">
         <Header />
         <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="467:971">
-          <div className="bg-[#092511] content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)]" data-node-id="467:972" data-name="Section">
+          <div className="bg-[#092511] content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)]" data-node-id="467:972" data-name="Section">
             <div className="relative shrink-0 w-full" data-node-id="467:973" data-name="Container">
               <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
                 <div className="absolute h-[860px] left-0 right-0 mix-blend-luminosity opacity-[0.02] top-0" data-node-id="467:974" data-name="image 27">
@@ -296,7 +302,7 @@ export default function Home() {
                 </div>
                 <div className="relative shrink-0 w-full" data-node-id="467:975">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start justify-between relative size-full">
-                    <div className="border-[rgba(255,255,255,0.1)] border-l border-solid content-stretch flex min-h-[calc(100vh-160px)] items-center min-w-px max-w-[690px] pl-px relative" data-node-id="467:976" data-name="Container">
+                    <div className="border-[rgba(255,255,255,0.1)] border-l border-solid content-stretch flex min-h-[calc(100vh-80px)] items-center min-w-px max-w-[690px] pl-px relative" data-node-id="467:976" data-name="Container">
                       <div className="flex-[1_0_0] min-w-px relative" data-node-id="467:977" data-name="Container">
                         <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[24px] items-start px-[64px] relative size-full">
                           <div className="relative shrink-0 w-full" data-node-id="467:978" data-name="Container">
@@ -377,7 +383,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="border-[rgba(255,255,255,0.1)] border-r border-solid content-stretch flex flex-col min-h-[calc(100vh-160px)] items-start overflow-clip pr-px relative shrink-0 w-[600px]" data-node-id="467:996" data-name="Container">
-                      <div className="h-[calc(100vh-150px)] min-h-[640px] relative shrink-0 w-full" data-node-id="467:997" data-name="Container">
+                      <div className="h-[calc(100vh-80px)] min-h-[640px] relative shrink-0 w-full" data-node-id="467:997" data-name="Container">
                         <div className="bg-clip-padding border-0 border-[transparent] border-solid overflow-clip relative rounded-[inherit] size-full z-10">
                           <div className="-translate-x-1/2 absolute flex h-[80px] items-center justify-center left-[calc(50%+0.5px)] bottom-[450px] w-0">
                             <div className="flex-none rotate-90">
@@ -815,7 +821,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="absolute h-[832px] left-[-20px] right-[-20px] top-[-20px] pointer-events-none overflow-hidden" data-node-id="467:1014">
+                <div className="absolute h-[930px] left-[-20px] right-[-20px] top-[-20px] pointer-events-none overflow-hidden" data-node-id="467:1014">
                   <div className="absolute inset-[-42.07%_-25.18%_-52.88%_-25.18%]">
                     <img alt="" className="block w-full h-full object-cover" src={imgGroup7} />
                   </div>
@@ -840,23 +846,22 @@ export default function Home() {
             </div>
           </div> */}
           <TrustedByStrip />
-
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1029" data-name="Container">
+          <div className="content-stretch flex flex-col items-start overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1029" data-name="Container">
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1030">
-              <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-center py-[40px] relative size-full">
-                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1031">
+              <div className="bg-clip-padding content-stretch flex flex-col items-start px-[50px] pt-[60px] pb-[40px] relative size-full">
+                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0 mb-4" data-node-id="467:1031">
                   <div className="bg-[#06b349] relative shrink-0 size-[10px]" data-node-id="467:1032" />
                   <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1033">
                     Pain Points
                   </Typography>
                 </div>
-                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[54px] text-center tracking-[-1px] w-[min-content]" data-node-id="467:1034">
-                  Sound familiar?
+                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1034">
+                  Every growing business <br /> hits this stage
                 </Typography>
               </div>
             </div>
           </div>
-          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1062">
+          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1062">
             <div className="border-[#e0dac6] border-l border-r border-solid content-stretch flex gap-[30px] items-center relative shrink-0 w-full" data-node-id="467:1063">
               <div className="bg-white border-[#e0dac6] border-r border-solid content-stretch flex flex-[1_0_0] items-center min-w-px overflow-clip p-[10px] relative spotlight-card" data-node-id="467:1064">
                 <div className="bg-[#f8f5ec] content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[420px] items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1065">
@@ -947,10 +952,10 @@ export default function Home() {
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1113">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1114">
-                      Messages slip the cracks.
+                      Customers don't wait.
                     </Typography>
                     <Typography className="font-['Geist:Regular'] font-normal leading-[1.4] relative shrink-0 text-[#60584c] text-[16px] w-full" data-node-id="467:1115">
-                      Three inboxes. Three teams. One missed customer.
+                      Your team shouldn't have to search across apps to find them.
                     </Typography>
                   </div>
                 </div>
@@ -994,10 +999,10 @@ export default function Home() {
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1165">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1166">
-                      Carts go cold.
+                      Intent doesn't last forever.
                     </Typography>
                     <div className="font-['Geist:Regular'] font-normal leading-[0] relative shrink-0 text-[#60584c] text-[16px] w-full" data-node-id="467:1167">
-                      <Typography className="leading-[1.4] mb-0">No nudge, no follow-up. Revenue walks away.</Typography>
+                      <Typography className="leading-[1.4] mb-0">Every delayed follow-up is a sale someone else wins.</Typography>
                       {/* <Typography className="leading-[1.4]">​</Typography> */}
                     </div>
                   </div>
@@ -1032,10 +1037,10 @@ export default function Home() {
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1217">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1218">
-                      Bots break real chats.
+                      Conversations aren't scripts.
                     </Typography>
                     <div className="font-['Geist:Regular'] font-normal leading-[0] relative shrink-0 text-[#60584c] text-[16px] w-full" data-node-id="467:1219">
-                      <Typography className="leading-[1.4] mb-0">Off-script questions kill the sale.</Typography>
+                      <Typography className="leading-[1.4] mb-0">Your AI should know when to answer—and when to bring in your team.</Typography>
                       {/* <Typography className="leading-[1.4]">​</Typography> */}
                     </div>
                   </div>
@@ -1043,24 +1048,24 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1220" data-name="Container">
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1220" data-name="Container">
             <div className="border-[#e0dac6] border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1221">
               <div className="bg-clip-padding border-[transparent] border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-start justify-center px-[50px] py-[40px] relative size-full">
                 <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1222">
                   <div className="bg-[#06b349] relative shrink-0 size-[10px]" data-node-id="467:1223" />
-                  <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1224">
-                    Pain Points
+                  <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1593">
+                    Features
                   </Typography>
                 </div>
-                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.2] min-w-full relative shrink-0 text-[#0c221f] text-[54px] tracking-[-1px] w-[min-content]" data-node-id="467:1225">
-                  Everything you need.
+                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.2] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1225">
+                  Everything your business needs
                   <br aria-hidden />
-                  Nothing you don’t
+                  to keep conversations moving.
                 </Typography>
               </div>
             </div>
           </div>
-          <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1226">
+          <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1226">
             <div className="border-[#e0dac6] border-l border-r border-solid border-t content-stretch flex flex-[1_0_0] items-center min-w-px relative" data-node-id="467:1227">
               {[
                 { label: 'Unified Inbox', icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></svg> },
@@ -1093,14 +1098,14 @@ export default function Home() {
               })}
             </div>
           </div>
-          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1259">
+          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1259">
             <div className="border-[#e0dac6] border-l border-r border-solid content-stretch flex items-center relative shrink-0 w-full" data-node-id="467:1260">
               <div className="bg-[rgba(9,37,17,0.8)] border-[rgba(206,201,184,0.5)] border-r border-solid content-stretch flex flex-[1_0_0] items-center min-w-px overflow-clip pt-[10px] px-[10px] relative" data-node-id="467:1261">
                 <div className="bg-[#092511] content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[780px] items-start min-w-px overflow-clip p-[40px] relative" data-node-id="467:1262">
                   <div className="absolute inset-0 mix-blend-luminosity opacity-[0.06] pointer-events-none" data-node-id="467:1263" data-name="image 27">
                     <img alt="" className="absolute inset-0 max-w-none object-cover size-full" src={imgImage27} />
                   </div>
-                  <div className="absolute top-[108px] h-[692px] left-1/2 -translate-x-1/2 w-[1280px]" data-node-id="467:1264" data-name="image 3145">
+                  <div className="absolute top-[108px] h-[692px] left-1/2 -translate-x-1/2 w-[85%]" data-node-id="467:1264" data-name="image 3145">
                     <HomeFeaturesMockup tab={dashTab} />
                   </div>
                 </div>
@@ -1108,71 +1113,71 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1265">
+          <div className="content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1265">
             <div className="border-[#cec9b8] border-b border-l border-r border-solid content-stretch flex items-center relative shrink-0 w-full" data-node-id="467:1266">
-              <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] items-start min-w-px p-[40px] relative" data-node-id="467:1267" data-name="Container">
+              <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] border-r-[1px] border-solid border-[#e0dac6] items-start min-w-px p-[40px] relative" data-node-id="467:1267" data-name="Container">
                 <div className="h-[60px] relative shrink-0 w-[108.258px]" data-node-id="467:1268" data-name="Heading 3">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro_Variable_Regular:Regular'] leading-[60px] left-[54.5px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1269"><Counter target={83} suffix="%" />
+                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute  leading-[60px] left-[54.5px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1269"><Counter target={83} suffix="%" />
                     </Typography>
                   </div>
                 </div>
                 <div className="relative shrink-0 w-[240px]" data-node-id="467:1270" data-name="Paragraph">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                    <Typography className="[word-break:break-word] font-['SF_Pro_Variable_Regular:Regular'] leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1271">
+                    <Typography className="[word-break:break-word]  leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1271">
                       Reduction in time to decision
                     </Typography>
                   </div>
                 </div>
-                <div className="absolute border-[#e4e4e4] border-r-[0.5px] border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1272" data-name="Text" />
+                <div className="absolute  border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1272" data-name="Text" />
               </div>
-              <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] items-start min-w-px p-[40px] relative" data-node-id="467:1273" data-name="Container">
+              <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] border-r-[1px] border-solid border-[#e0dac6] items-start min-w-px p-[40px] relative" data-node-id="467:1273" data-name="Container">
                 <div className="h-[60px] relative shrink-0 w-[109.016px]" data-node-id="467:1274" data-name="Heading 3">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro_Variable_Regular:Regular'] leading-[60px] left-[55px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1275"><Counter target={2.9} decimals={1} suffix="X" />
+                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute  leading-[60px] left-[55px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1275"><Counter target={2.9} decimals={1} suffix="X" />
                     </Typography>
                   </div>
                 </div>
                 <div className="relative shrink-0 w-[240px]" data-node-id="467:1276" data-name="Paragraph">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                    <Typography className="[word-break:break-word] font-['SF_Pro_Variable_Regular:Regular'] leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1277">
+                    <Typography className="[word-break:break-word]  leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1277">
                       Cases per team member
                     </Typography>
                   </div>
                 </div>
-                <div className="absolute border-[#e4e4e4] border-r-[0.5px] border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1278" data-name="Text" />
+                <div className="absolute  border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1278" data-name="Text" />
               </div>
-              <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] items-start min-w-px p-[40px] relative" data-node-id="467:1279" data-name="Container">
+              <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] border-r-[1px] border-solid border-[#e0dac6] items-start min-w-px p-[40px] relative" data-node-id="467:1279" data-name="Container">
                 <div className="h-[60px] relative shrink-0 w-[109.016px]" data-node-id="467:1280" data-name="Heading 3">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro_Variable_Regular:Regular'] leading-[60px] left-[55px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1281"><Counter target={2.9} decimals={1} suffix="X" />
+                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute  leading-[60px] left-[55px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1281"><Counter target={2.9} decimals={1} suffix="X" />
                     </Typography>
                   </div>
                 </div>
                 <div className="relative shrink-0 w-[240px]" data-node-id="467:1282" data-name="Paragraph">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                    <Typography className="[word-break:break-word] font-['SF_Pro_Variable_Regular:Regular'] leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1283">
+                    <Typography className="[word-break:break-word]  leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1283">
                       Cases per team member
                     </Typography>
                   </div>
                 </div>
-                <div className="absolute border-[#e4e4e4] border-r-[0.5px] border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1284" data-name="Text" />
+                <div className="absolute  border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1284" data-name="Text" />
               </div>
               <div className="content-stretch flex flex-[320_0_0] flex-col gap-[12px] h-[178px] items-start min-w-px p-[40px] relative" data-node-id="467:1285" data-name="Container">
                 <div className="h-[60px] relative shrink-0 w-[108.258px]" data-node-id="467:1286" data-name="Container">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid relative size-full">
-                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute font-['SF_Pro_Variable_Regular:Regular'] leading-[60px] left-[54px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1287"><Counter target={74} suffix="%" />
+                    <Typography className="-translate-x-1/2 [word-break:break-word] absolute  leading-[60px] left-[54px] not-italic text-[#222] text-[56px] text-center top-[0.5px] tracking-[-1.568px] whitespace-nowrap" data-node-id="467:1287"><Counter target={74} suffix="%" />
                     </Typography>
                   </div>
                 </div>
                 <div className="relative shrink-0 w-[240px]" data-node-id="467:1288" data-name="Paragraph">
                   <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                    <Typography className="[word-break:break-word] font-['SF_Pro_Variable_Regular:Regular'] leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1289">
+                    <Typography className="[word-break:break-word]  leading-[26px] not-italic relative shrink-0 text-[#646464] text-[18px] tracking-[-0.288px] whitespace-nowrap" data-node-id="467:1289">
                       Reduction in manual work
                     </Typography>
                   </div>
                 </div>
-                <div className="absolute border-[#e4e4e4] border-r-[0.5px] border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1290" data-name="Text" />
+                <div className="absolute  border-solid h-[178px] left-0 top-0 w-[320px]" data-node-id="467:1290" data-name="Text" />
               </div>
             </div>
             <div className="border-[#cec9b8] border-b border-l border-r border-solid h-[64px] overflow-clip relative shrink-0 w-full" data-node-id="467:1291">
@@ -2021,335 +2026,216 @@ export default function Home() {
                   <img alt="" className="block max-w-none size-full" src={imgVector4} />
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1461" data-name="Container">
-            <div className="border-[#e0dac6] border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1462">
-              <div className="bg-clip-padding border-[transparent] border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-center justify-center px-[50px] py-[40px] relative size-full">
-                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1463">
-                  <div className="bg-[#06b349] relative shrink-0 size-[10px]" data-node-id="467:1464" />
-                  <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1465">
-                    Pain Points
-                  </Typography>
+              <div className="absolute left-[1629.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
                 </div>
-                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.2] min-w-full relative shrink-0 text-[#0c221f] text-[54px] text-center tracking-[-1px] w-[min-content]" data-node-id="467:1466">
-                  Everything you need.
-                  <br aria-hidden />
-                  Nothing you don’t
-                </Typography>
+              </div>
+              <div className="absolute left-[1639.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1649.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1649.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1659.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1669.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1679.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1689.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1699.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1709.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1719.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1729.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1739.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1749.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1759.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
+              </div>
+              <div className="absolute left-[1769.5px] size-[93px] top-[-28.5px]" data-node-id="467:1461">
+                <div className="absolute inset-[-0.38%]">
+                  <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                </div>
               </div>
             </div>
           </div>
-          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1467" data-name="Section">
-            <div className="border-[#cec9b8] border-l border-r border-solid border-t relative shrink-0 w-full" data-node-id="467:1468" data-name="Container">
-              <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start pt-px px-px relative size-full">
-                <div className="flex-[1_0_0] min-w-px relative" data-node-id="467:1469">
-                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
-                    <div className="bg-[#f3efe3] border-[#e0dac6] border-r border-solid content-stretch flex w-1/3 shrink-0 flex-col gap-[18px] h-[906.953px] items-start min-h-[280px] overflow-clip pl-[32px] pr-[33px] py-[32px] relative" data-node-id="467:1470" data-name="Container">
-                      <div className="bg-[rgba(6,179,73,0.15)] flex items-center justify-center relative rounded-[12px] shrink-0 size-[44px]" data-node-id="467:1471"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></div>
-                      <div className="relative shrink-0 w-full" data-node-id="467:1473" data-name="Container">
-                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                          <Typography className="[word-break:break-word] font-['Geist:Bold'] font-bold leading-[26.4px] relative shrink-0 text-[#0b1f1a] text-[22px] tracking-[-0.44px] whitespace-nowrap" data-node-id="467:1474">
-                            Conversational Commerce
-                          </Typography>
-                        </div>
-                      </div>
-                      <div className="shrink-0 relative w-full" data-node-id="467:1475" data-name="Paragraph (auto margin alignment)">
-                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="467:1476" data-name="Paragraph">
-                            <Typography className="[word-break:break-word] font-['Geist:Regular'] font-normal leading-[21.7px] relative shrink-0 text-[#6b6354] text-[14px] w-[367px]" data-node-id="467:1477">
-                              WhatsApp, Instagram DMs, Facebook comments and web chat — all in one screen. Assign to teammates, tag, snooze, never lose a lead again.
-                            </Typography>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="absolute bottom-[-64px] left-[32px] right-[33px] flex flex-col gap-[40px] items-stretch" data-node-id="467:1478" data-name="MetricsAndMockup">
-                        <div className="flex gap-[20px] items-start w-[338px] self-center">
-                          <div className="flex flex-col gap-[6px] items-start flex-1">
-                            <div className="flex items-start gap-[3px]">
-                              <Typography className="font-['Geist:SemiBold'] font-semibold text-[#06b349] text-[20px] leading-[1]">28%</Typography>
-                              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" className="mt-[2px] shrink-0"><path d="M5 11V1M5 1L1 5M5 1L9 5" stroke="#06b349" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                            </div>
-                            <Typography className="font-['Geist:Regular'] font-normal text-[#0b1f1a] text-[12px] leading-[1.4]">Conversion Rate</Typography>
-                          </div>
-                          <div className="flex flex-col gap-[6px] items-start flex-1">
-                            <div className="flex items-start gap-[3px]">
-                              <Typography className="font-['Geist:SemiBold'] font-semibold text-[#06b349] text-[20px] leading-[1]">19%</Typography>
-                              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" className="mt-[2px] shrink-0"><path d="M5 11V1M5 1L1 5M5 1L9 5" stroke="#06b349" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                            </div>
-                            <Typography className="font-['Geist:Regular'] font-normal text-[#0b1f1a] text-[12px] leading-[1.4]">Avg. Order Value</Typography>
-                          </div>
-                          <div className="flex flex-col gap-[6px] items-start flex-1">
-                            <div className="flex items-start gap-[3px]">
-                              <Typography className="font-['Geist:SemiBold'] font-semibold text-[#06b349] text-[20px] leading-[1]">42%</Typography>
-                              <svg width="10" height="12" viewBox="0 0 10 12" fill="none" className="mt-[2px] shrink-0"><path d="M5 11V1M5 1L1 5M5 1L9 5" stroke="#06b349" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                            </div>
-                            <Typography className="font-['Geist:Regular'] font-normal text-[#0b1f1a] text-[12px] leading-[1.4]">Cart Recovery</Typography>
-                          </div>
-                        </div>
-                        <div className="self-center bg-white rounded-[20px] w-[338px] h-[573px] shadow-[0_0_0_10px_rgba(87,73,30,0.05)] overflow-hidden flex flex-col">
-                          <div className="px-[16px] pt-[18px] pb-[10px] border-b border-[#f3efe3] flex items-center justify-between">
-                            <div className="flex items-center gap-[8px]">
-                              <div className="size-[28px] rounded-[7px] bg-[#06b349] flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg></div>
-                              <div>
-                                <Typography className="text-[#0c221f] text-[12px] font-['Geist:SemiBold'] font-semibold leading-none">Unified Inbox</Typography>
-                                <Typography className="text-[#60584c] text-[9px] leading-none mt-[2px]">All channels · 27 unread</Typography>
-                              </div>
-                            </div>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60584c" strokeWidth="2"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.35-4.35" /></svg>
-                          </div>
-                          <div className="flex gap-[6px] px-[14px] py-[8px] border-b border-[#f3efe3]">
-                            <div className="bg-[#e5f6e7] px-[8px] py-[3px] rounded-full flex items-center gap-[3px]">
-                              <svg width="8" height="8" viewBox="0 0 24 24" fill="#06b349"><circle cx="12" cy="12" r="12" /></svg>
-                              <Typography className="text-[#06b349] text-[9px] font-['Geist:Medium']">All 27</Typography>
-                            </div>
-                            <div className="px-[8px] py-[3px] text-[#60584c] text-[9px]">Unread 12</div>
-                            <div className="px-[8px] py-[3px] text-[#60584c] text-[9px]">Mine 6</div>
-                          </div>
-                          <div className="flex-1 overflow-hidden">
-                            {[
-                              { name: 'Prathik Gadde', preview: 'Yes, please share the UPI link', time: '10:38', ch: 'wa', count: 2, active: true },
-                              { name: 'Aanya Verma', preview: 'Loved your kurta drop! Available...', time: '09:12', ch: 'ig', count: 1, active: false },
-                              { name: 'Karthik Iyer', preview: 'Is COD available on this?', time: '08:47', ch: 'fb', count: 4, active: false },
-                              { name: 'Rahul Mehta', preview: 'Cotton shirt order status please', time: 'Yest', ch: 'wa', count: 0, active: false },
-                              { name: 'Diya Patel', preview: 'Cotton dress size XL?', time: 'Yest', ch: 'ig', count: 1, active: false },
-                              { name: 'Vikram Singh', preview: 'Linen kurta tracking link?', time: '2d', ch: 'wa', count: 0, active: false },
-                            ].map((m, i) => {
-                              const chBg = m.ch === 'wa' ? '#25d366' : m.ch === 'ig' ? INSTAGRAM_GRADIENT : '#1877F2';
-                              return (
-                                <div key={i} className={`px-[14px] py-[8px] flex items-center gap-[8px] border-l-[3px] ${m.active ? 'bg-[#05b4481a] border-l-[#06b349]' : 'border-l-transparent hover:bg-[#fafaf6]'}`}>
-                                  <div className="relative shrink-0">
-                                    <div className="size-[32px] rounded-full bg-[#f3efe3] flex items-center justify-center text-[#0c221f] text-[11px] font-['Geist:Bold'] font-bold">{m.name.split(' ').map(n => n[0]).join('')}</div>
-                                    <div className="absolute -bottom-[1px] -right-[1px] size-[13px] rounded-full border-[1.5px] border-white flex items-center justify-center" style={{ background: chBg }}>
-                                      {m.ch === 'wa' && <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347" /></svg>}
-                                      {m.ch === 'ig' && <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 5.838a3.999 3.999 0 100 7.998 3.999 3.999 0 000-7.998z" /></svg>}
-                                      {m.ch === 'fb' && <svg width="7" height="7" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>}
-                                    </div>
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <div className="flex items-center justify-between">
-                                      <Typography className="text-[#0c221f] text-[11px] font-['Geist:SemiBold'] font-semibold truncate">{m.name}</Typography>
-                                      <Typography className="text-[#60584c] text-[9px] shrink-0 ml-[4px]">{m.time}</Typography>
-                                    </div>
-                                    <Typography className="text-[#60584c] text-[10px] truncate mt-[1px]">{m.preview}</Typography>
-                                  </div>
-                                  {m.count > 0 && <div className="size-[16px] rounded-full bg-[#06b349] flex items-center justify-center text-white text-[8px] font-['Geist:Bold'] font-bold shrink-0">{m.count}</div>}
-                                </div>
-                              );
-                            })}
-                          </div>
-                          <div className="px-[14px] py-[8px] border-t border-[#f3efe3] bg-[#fafaf6] flex items-center gap-[6px]">
-                            <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
-                            <Typography className="text-[#60584c] text-[9px]">WeNext AI replying · 4 active</Typography>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex w-2/3 shrink-0 flex-col items-start self-stretch">
-                      <div className="flex w-full relative">
-                        <div className="bg-white border-[#e0dac6] border-r border-solid content-stretch flex w-1/2 shrink-0 flex-col items-start relative">
-                          <div className="bg-[#f3efe3] border-[#e0dac6] border-b border-solid min-h-[280px] relative w-full" data-node-id="467:1506" data-name="Container">
-                            <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[18px] items-start min-h-[inherit] overflow-clip pb-[33px] pt-[32px] px-[32px] relative rounded-[inherit] size-full">
-                              <div className="bg-[rgba(6,179,73,0.15)] flex items-center justify-center relative rounded-[12px] shrink-0 size-[44px]" data-node-id="467:1507"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" /></svg></div>
-                              <div className="relative shrink-0 w-full" data-node-id="467:1509" data-name="Container">
-                                <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                                  <Typography className="[word-break:break-word] font-['Geist:Bold'] font-bold leading-[26.4px] relative shrink-0 text-[#0b1f1a] text-[22px] tracking-[-0.44px] whitespace-nowrap" data-node-id="467:1510">
-                                    Ads Management
-                                  </Typography>
-                                </div>
-                              </div>
-                              <div className="relative shrink-0 w-full" data-node-id="467:1511" data-name="Paragraph">
-                                <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start relative size-full">
-                                  <Typography className="[word-break:break-word] font-['Geist:Regular'] font-normal leading-[21.7px] relative shrink-0 text-[#6b6354] text-[14px] w-[327px]" data-node-id="467:1512">
-                                    See which broadcasts convert, which DMs become orders. Revenue attributed per channel, per template, per agent.
-                                  </Typography>
-                                </div>
-                              </div>
-                              <div className="bg-white border border-[rgba(11,31,26,0.1)] border-solid relative rounded-[14px] shrink-0 w-full overflow-hidden" data-node-id="467:1513">
-                                <div className="px-[14px] pt-[12px] pb-[10px] flex items-center gap-[6px] border-b border-[#f3efe3]">
-                                  <div className="flex items-center gap-[5px] bg-[#e5f6e7] border border-[rgba(6,179,73,0.35)] rounded-full px-[8px] py-[3px]"><svg width="10" height="10" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.49 0-1.96.93-1.96 1.89v2.25h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z" /></svg><Typography className="text-[#06824f] text-[9px] font-['Geist:SemiBold'] font-semibold">Meta Ads</Typography></div>
-                                  <div className="flex items-center gap-[5px] bg-[#f8f5ec] rounded-full px-[8px] py-[3px]"><svg width="10" height="10" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.13 2.06 2.06 0 010 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" /></svg><Typography className="text-[#60584c] text-[9px] font-['Geist:Medium']">LinkedIn</Typography></div>
-                                  <div className="flex items-center gap-[5px] bg-[#f8f5ec] rounded-full px-[8px] py-[3px]"><svg width="10" height="10" viewBox="0 0 24 24"><path fill="#EA4335" d="M12 10.2v3.9h5.45c-.24 1.4-.96 2.6-2.04 3.4l3.3 2.56C20.6 18.3 21.5 15.4 21.5 12c0-.66-.06-1.3-.17-1.9H12z" /><path fill="#34A853" d="M6.6 14.3l-.74.57-2.62 2.04C4.9 20 8.2 22 12 22c2.7 0 4.96-.9 6.6-2.44l-3.3-2.56c-.9.6-2.06.97-3.3.97-2.54 0-4.7-1.72-5.47-4.03z" /><path fill="#FBBC05" d="M3.24 7.1A9.9 9.9 0 002.5 12c0 1.6.4 3.1 1.07 4.4l3.35-2.6a5.94 5.94 0 010-3.8L3.24 7.1z" /><path fill="#4285F4" d="M12 6.5c1.47 0 2.78.5 3.82 1.5l2.85-2.85C16.95 3.5 14.7 2.5 12 2.5 8.2 2.5 4.9 4.5 3.24 7.1l3.35 2.6C7.3 8.2 9.46 6.5 12 6.5z" /></svg><Typography className="text-[#60584c] text-[9px] font-['Geist:Medium']">Google</Typography></div>
-                                </div>
-                                <div className="px-[14px] pt-[10px] pb-[8px] flex items-center justify-between">
-                                  <div>
-                                    <Typography className="text-[#0b1f1a] text-[14px] font-['Geist:SemiBold'] font-semibold leading-none">Meta Ads</Typography>
-                                    <div className="flex items-center gap-[4px] mt-[4px]"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#60584c" strokeWidth="2"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg><Typography className="text-[#60584c] text-[9px] font-['Courier_Prime:Regular']">₹11,271.24 balance</Typography></div>
-                                  </div>
-                                  <div className="flex items-center gap-[4px] bg-[#06b349] rounded-[7px] px-[9px] py-[5px]"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg><Typography className="text-white text-[9px] font-['Geist:SemiBold'] font-semibold">Create</Typography></div>
-                                </div>
-                                <div className="px-[14px] flex gap-[14px] border-b border-[#f3efe3]">
-                                  <div className="pb-[7px] border-b-2 border-[#06b349]"><Typography className="text-[#06b349] text-[10px] font-['Geist:Medium'] font-medium">Campaigns</Typography></div>
-                                  <Typography className="text-[#60584c] text-[10px] pb-[7px] font-['Geist:Medium']">Leads</Typography>
-                                  <Typography className="text-[#60584c] text-[10px] pb-[7px] font-['Geist:Medium']">Settings</Typography>
-                                </div>
-                                <div className="grid grid-cols-2 gap-[8px] px-[12px] py-[12px]">
-                                  {[
-                                    { v: '₹3.17L', l: 'Total Spend', d: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 3h12M6 8h12M9 13c4 0 6-2 6-5M6 13h4l6 8" /></svg> },
-                                    { v: '2,182', l: 'Total Messages', d: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 17 0z" /></svg> },
-                                    { v: '5', l: 'Active Campaigns', d: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" /><polyline points="17 6 23 6 23 12" /></svg> },
-                                    { v: '₹145.67', l: 'Cost / Result', d: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4" /><circle cx="12" cy="12" r="0.5" fill="#06b349" /></svg> },
-                                  ].map((s) => (
-                                    <div key={s.l} className="bg-[#fff] border  rounded-[10px] px-[10px] py-[8px]">
-                                      <Typography className="text-[#0b1f1a] text-[15px] font-['Geist:SemiBold'] font-semibold leading-none">{s.v}</Typography>
-                                      <div className="flex items-center justify-between mt-[5px]"><Typography className="text-[#60584c] text-[9px]">{s.l}</Typography>{s.d}</div>
-                                    </div>
-                                  ))}
-                                </div>
-                                {/* <div className="px-[12px] pt-[12px] pb-[12px] flex flex-col gap-[8px]">
-                                  {[
-                                    { n: 'Leads - 7th April — Copy', sp: '₹36,416', ld: '205', cpl: '₹177.64', hi: true },
-                                    { n: 'Leads-influ-repost-7th May', sp: '₹26,939', ld: '171', cpl: '₹157.54', hi: true },
-                                    { n: 'Leads-Claude-multiadset-12 May', sp: '₹23,690', ld: '109', cpl: '₹217.34', hi: true },
-                                    { n: 'Tailored messages campaign 22', sp: '₹20,324', ld: '573', cpl: '₹35.47', hi: false },
-                                  ].map((r, i) => (
-                                    <div key={i} className="flex items-center justify-between gap-[8px] border-b border-[#f6f3e8] pb-[7px] last:border-0 last:pb-0">
-                                      <div className="min-w-0">
-                                        <Typography className="text-[#06824f] text-[10px] font-['Geist:SemiBold'] font-semibold truncate">{r.n}</Typography>
-                                        <div className="flex items-center gap-[5px] mt-[2px]">
-                                          <Typography className="text-[#60584c] text-[8.5px] font-['Courier_Prime:Regular']">{r.sp}</Typography>
-                                          <span className="text-[#c9c2ad] text-[8.5px]">·</span>
-                                          <Typography className="text-[#60584c] text-[8.5px]">{r.ld} leads</Typography>
-                                          <span className="text-[#c9c2ad] text-[8.5px]">·</span>
-                                          <Typography className="text-[8.5px] font-['Geist:Medium']" style={{ color: r.hi ? '#dc2626' : '#06824f' }}>{r.cpl}</Typography>
-                                        </div>
-                                      </div>
-                                      <span className="flex items-center gap-[3px] bg-[#fdf3d6] text-[#a06a00] text-[8px] font-['Geist:Medium'] px-[6px] py-[2px] rounded-full shrink-0"><span className="size-[4px] rounded-full bg-[#d99a1c]" />Paused</span>
-                                    </div>
-                                  ))}
-                                </div> */}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="bg-white content-stretch flex w-1/2 shrink-0 flex-col items-start relative h-full">
-                          <div className="bg-[#f3efe3] border-[#e0dac6] border-b border-solid content-stretch flex flex-col gap-[18px] items-start min-h-[280px] overflow-clip pb-[33px] pt-[32px] px-[32px] relative w-full h-full">
-                            <div className="bg-[rgba(6,179,73,0.15)] flex items-center justify-center relative rounded-[12px] shrink-0 size-[44px]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg></div>
-                            <div className="shrink-0 w-full">
-                              <Typography className="font-['Geist:Bold'] font-bold leading-[26.4px] text-[#0b1f1a] text-[22px] tracking-[-0.44px] whitespace-nowrap">Smart Scheduling</Typography>
-                            </div>
-                            <div className="shrink-0 w-full">
-                              <Typography className="font-['Geist:Regular'] font-normal leading-[21.7px] text-[#6b6354] text-[14px] w-full">UPI, cards, COD-to-prepaid — every payment option drops into the conversation. No checkout drop-off.</Typography>
-                            </div>
-                            <div className="bg-white border border-[rgba(11,31,26,0.1)] border-solid relative rounded-[14px] shrink-0 w-full overflow-hidden mt-4">
-                              <div className="px-[14px] py-[10px] border-b border-[#f3efe3] flex items-center justify-between">
-                                <Typography className="text-[#0b1f1a] text-[12px] font-['Geist:SemiBold'] font-semibold">Payment for · Riya</Typography>
-                                <Typography className="text-[#0b1f1a] text-[14px] font-['Geist:SemiBold'] font-semibold">₹2,490</Typography>
-                              </div>
-                              <div className="p-[12px] flex flex-col gap-[6px]">
-                                <div className="flex items-center justify-between bg-[#fff] border rounded-[9px] px-[10px] py-[10px]">
-                                  <div className="flex items-center gap-[8px]"><div className="size-[22px] rounded-[6px] bg-[rgba(6,179,73,0.15)] flex items-center justify-center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2.5"><path d="M6 3h12l-1 7H7z" /><path d="M8 10l-1 8M16 10l1 8" /></svg></div><Typography className="text-[#0b1f1a] text-[11px] font-['Geist:Medium']">UPI · GPay / PhonePe</Typography></div>
-                                  <div className="size-[16px] rounded-full bg-[#06b349] flex items-center justify-center"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12" /></svg></div>
-                                </div>
-                                <div className="flex items-center justify-between bg-[#fff] border rounded-[9px] px-[10px] py-[10px]">
-                                  <div className="flex items-center gap-[8px]"><div className="size-[22px] rounded-[6px] bg-[rgba(6,179,73,0.15)] flex items-center justify-center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><rect x="2" y="5" width="20" height="14" rx="2" /><path d="M2 10h20" /></svg></div><Typography className="text-[#0b1f1a] text-[11px] font-['Geist:Medium']">Card · Visa / Master / Rupay</Typography></div>
-                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9c2ad" strokeWidth="2"><circle cx="12" cy="12" r="9" /></svg>
-                                </div>
-                                <div className="flex items-center justify-between bg-[#fff] border rounded-[9px] px-[10px] py-[10px]">
-                                  <div className="flex items-center gap-[8px]"><div className="size-[22px] rounded-[6px] bg-[rgba(6,179,73,0.15)] flex items-center justify-center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><rect x="1" y="3" width="15" height="13" rx="1" /><path d="M16 8h4l3 3v5h-7z" /><circle cx="5.5" cy="18.5" r="2" /><circle cx="18.5" cy="18.5" r="2" /></svg></div><Typography className="text-[#0b1f1a] text-[11px] font-['Geist:Medium']">Cash on Delivery <span className="text-[#a06a00]">→ Prepaid save ₹40</span></Typography></div>
-                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c9c2ad" strokeWidth="2"><circle cx="12" cy="12" r="9" /></svg>
-                                </div>
-                                <div className="bg-[#06b349] rounded-[9px] py-[12px] flex items-center justify-center gap-[6px] mt-[2px]"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg><Typography className="text-white text-[11px] font-['Geist:SemiBold'] font-semibold">Pay ₹2,490 securely</Typography></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex w-full relative h-full">
-                        <div className="bg-[#f3efe3] min-h-[280px] relative w-full" data-name="Container">
-                          <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-row items-stretch gap-[32px] min-h-[inherit] overflow-clip p-[32px] relative rounded-[inherit] size-full">
-                            <div className="flex flex-col justify-start gap-[18px] items-start w-[40%] shrink-0">
-                              <div className="bg-[rgba(6,179,73,0.15)] flex items-center justify-center relative rounded-[12px] shrink-0 size-[44px]"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="5" r="2.5" /><circle cx="5" cy="19" r="2.5" /><circle cx="19" cy="19" r="2.5" /><path d="M12 7.5v3M10.5 17.5 11.5 11M13.5 17.5 12.5 11" /></svg></div>
-                              <div className="relative shrink-0 w-full">
-                                <div className="flex flex-col gap-[10px] items-start w-full">
-                                  <Typography className="font-['Geist:Bold'] font-bold leading-[26.4px] text-[#0b1f1a] text-[22px] tracking-[-0.44px] w-full">Seamless Integrations</Typography>
-                                  <Typography className="font-['Geist:Regular'] font-normal leading-[21.7px] text-[#6b6354] text-[14px] w-full">Trained on your catalog, FAQs and tone. Speaks Hindi, English and Hinglish. Hands off to humans when it matters.</Typography>
-                                </div>
-                              </div>
-                            </div>
-                            <div className="bg-white border border-[rgba(11,31,26,0.1)] border-solid flex-1 min-h-[320px] relative rounded-[14px] overflow-hidden">
-                              {/* <div className="absolute inset-0" style={{ background: 'radial-gradient(115% 80% at 50% 46%, #ffffff 0%, #f4faf1 70%, #eef7ea 100%)' }} /> */}
-                              <svg viewBox="0 0 300 440" preserveAspectRatio="xMidYMid meet" className="absolute inset-0 w-full h-full">
-                                <defs>
-                                  <filter id="siTileShadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="3" stdDeviation="4" floodColor="#0b1f1a" floodOpacity="0.16" /></filter>
-                                  <filter id="siGlow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="2.2" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
-                                  <radialGradient id="siHubGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#06b349" stopOpacity="0.35" /><stop offset="100%" stopColor="#06b349" stopOpacity="0" /></radialGradient>
-                                  <linearGradient id="siIg" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stopColor="#F9CE34" /><stop offset="50%" stopColor="#EE2A7B" /><stop offset="100%" stopColor="#6228D7" /></linearGradient>
-                                </defs>
-                                <circle cx="150" cy="218" r="142" fill="none" stroke="#06b349" strokeOpacity="0.12" strokeWidth="1" strokeDasharray="2 9"><animateTransform attributeName="transform" type="rotate" from="0 150 218" to="360 150 218" dur="46s" repeatCount="indefinite" /></circle>
-                                <circle cx="150" cy="218" r="96" fill="none" stroke="#06b349" strokeOpacity="0.08" strokeWidth="1" strokeDasharray="1 10"><animateTransform attributeName="transform" type="rotate" from="360 150 218" to="0 150 218" dur="60s" repeatCount="indefinite" /></circle>
-                                <circle cx="150" cy="218" fill="none" stroke="#06b349" strokeWidth="1.4"><animate attributeName="r" values="34;150" dur="3.4s" repeatCount="indefinite" /><animate attributeName="stroke-opacity" values="0.32;0" dur="3.4s" repeatCount="indefinite" /></circle>
-                                <circle cx="150" cy="218" fill="none" stroke="#06b349" strokeWidth="1.4"><animate attributeName="r" values="34;150" dur="3.4s" begin="1.7s" repeatCount="indefinite" /><animate attributeName="stroke-opacity" values="0.32;0" dur="3.4s" begin="1.7s" repeatCount="indefinite" /></circle>
-                                {[
-                                  { id: 'siA', d: 'M150 76 Q136 147 150 218' }, { id: 'siB', d: 'M273 147 Q204.5 170.4 150 218' }, { id: 'siC', d: 'M273 289 Q218.5 241.4 150 218' },
-                                  { id: 'siD', d: 'M150 360 Q164 289 150 218' }, { id: 'siE', d: 'M27 289 Q95.5 265.6 150 218' }, { id: 'siF', d: 'M27 147 Q81.5 194.6 150 218' },
-                                ].map((p) => (
-                                  <path key={p.id} id={p.id} d={p.d} fill="none" stroke="#06b349" strokeOpacity="0.22" strokeWidth="1.4" />
-                                ))}
-                                {[
-                                  { p: 'siA', b: '0s' }, { p: 'siB', b: '0.35s' }, { p: 'siC', b: '0.7s' },
-                                  { p: 'siD', b: '1.05s' }, { p: 'siE', b: '1.4s' }, { p: 'siF', b: '1.75s' },
-                                ].map((m) => (
-                                  <circle key={m.p} r="3" fill="#0bd45a" filter="url(#siGlow)">
-                                    <animateMotion dur="2.1s" begin={m.b} repeatCount="indefinite" calcMode="linear"><mpath href={`#${m.p}`} /></animateMotion>
-                                    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="2.1s" begin={m.b} repeatCount="indefinite" />
-                                    <animate attributeName="r" values="2;3.4;2" dur="2.1s" begin={m.b} repeatCount="indefinite" />
-                                  </circle>
-                                ))}
-                                <circle cx="150" cy="218" r="46" fill="url(#siHubGlow)"><animate attributeName="r" values="40;52;40" dur="2.6s" repeatCount="indefinite" /></circle>
-                                <g filter="url(#siTileShadow)">
-                                  <rect x="122" y="190" width="56" height="56" rx="16" fill="#06b349"><animate attributeName="opacity" values="1;0.92;1" dur="2.6s" repeatCount="indefinite" /></rect>
-                                  <path d="M138 218 H166 M158 209 L167 218 L158 227" stroke="white" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                                </g>
-                                {[
-                                  { x: 150, y: 76, ic: 'sh', b: '0s' }, { x: 273, y: 147, ic: 'rz', b: '0.35s' }, { x: 273, y: 289, ic: 'wc', b: '0.7s' },
-                                  { x: 150, y: 360, ic: 'fb', b: '1.05s' }, { x: 27, y: 289, ic: 'ig', b: '1.4s' }, { x: 27, y: 147, ic: 'wa', b: '1.75s' },
-                                ].map((s) => (
-                                  <g key={s.ic}>
-                                    <circle cx={s.x} cy={s.y} r="24" fill="none" stroke="#06b349" strokeWidth="1.4"><animate attributeName="r" values="22;30;22" dur="2.1s" begin={s.b} repeatCount="indefinite" /><animate attributeName="stroke-opacity" values="0.5;0;0.5" dur="2.1s" begin={s.b} repeatCount="indefinite" /></circle>
-                                    <g transform={`translate(${s.x - 21},${s.y - 21})`} filter="url(#siTileShadow)">
-                                      <rect width="42" height="42" rx="50" fill="white" />
-                                      {s.ic === 'wa' && <><circle cx="21" cy="21" r="11" fill="#25D366" /><path d="M16 15c1.8 4.2 4.8 7.2 9 9l-1.6 1.4c-.3.3-.8.3-1.1.1-2.9-1.4-5.3-3.8-6.7-6.7-.2-.3-.1-.8.1-1.1z" fill="white" /></>}
-                                      {s.ic === 'ig' && <><rect x="10" y="10" width="22" height="22" rx="7" fill="url(#siIg)" /><rect x="15" y="15" width="12" height="12" rx="6" fill="none" stroke="white" strokeWidth="2" /><circle cx="27.5" cy="14.5" r="1.4" fill="white" /></>}
-                                      {s.ic === 'fb' && <><circle cx="21" cy="21" r="11" fill="#1877F2" /><path d="M23.5 21H21.8v7h-2.9v-7h-1.5v-2.4h1.5v-1.6c0-1.6.7-2.9 2.9-2.9h1.8v2.4h-1.1c-.6 0-.9.3-.9.8v1.3h2z" fill="white" /></>}
-                                      {s.ic === 'sh' && <><rect x="10" y="10" width="22" height="22" rx="7" fill="#5E8E3E" /><path d="M18 15l-2 2v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-8l-2-2z M16 17h10 M24 20a3 3 0 0 1-6 0" fill="none" stroke="white" strokeWidth="1.6" strokeLinejoin="round" /></>}
-                                      {s.ic === 'rz' && <><rect x="10" y="10" width="22" height="22" rx="7" fill="#0C4D9E" /><path d="M24 14l-6 14h2.6l6-14z" fill="#4a9bff" /><path d="M20 17l-4 11h2.6l3.2-9z" fill="white" /></>}
-                                      {s.ic === 'wc' && <><rect x="10" y="10" width="22" height="22" rx="7" fill="#7F54B3" /><text x="21" y="25.5" textAnchor="middle" fill="white" fontSize="12" fontWeight="700" fontFamily="Geist, sans-serif">W</text></>}
-                                    </g>
-                                  </g>
-                                ))}
-                              </svg>
-                              {/* <div className="absolute top-[13px] left-[14px] flex items-center gap-[6px]"><span className="size-[6px] rounded-full bg-[#06b349] step-live-dot" /><Typography className="text-[#0b1f1a] text-[11px] font-['Geist:SemiBold'] font-semibold">Live sync</Typography></div> */}
-                              {/* <div className="absolute top-[12px] right-[14px] flex items-center gap-[4px] bg-white/70 rounded-full px-[8px] py-[3px] border border-[#e8f4ec]"><span className="size-[5px] rounded-full bg-[#06b349]" /><Typography className="text-[#06824f] text-[9px] font-['Geist:SemiBold'] font-semibold">6 connected</Typography></div> */}
-                              {/* <div className="absolute bottom-[11px] left-0 right-0 text-center"><Typography className="text-[#60584c] text-12px] font-['Geist:Medium']">200+ apps · one unified hub</Typography></div> */}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          {/* Header — 2-column: highlighted title (left) + description (right) */}
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
+            <div className="border-[#e0dac6] border-l border-r border-solid relative shrink-0 w-full">
+              <div className="content-stretch flex flex-col md:flex-row gap-[32px] md:gap-[60px] items-start justify-between px-[50px] py-[64px] relative size-full">
+                <div className="flex-1 min-w-0">
+                  <div className="flex gap-[10px] items-center mb-[20px]">
+                    <div className="bg-[#06b349] shrink-0 size-[10px]" />
+                    <Typography className="font-['Courier_Prime:Regular'] text-[#0c221f] text-[16px] tracking-[0.5px]">Built for growth</Typography>
+                  </div>
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[46px] tracking-[-1.4px] leading-[1.05]">
+                    Built for the way
+                    <br aria-hidden />
+                    <span className="inline-block bg-[#f3efe3] px-[16px] py-[2px] mt-[8px] rounded-[6px]">modern businesses sell</span>
+                  </Typography>
+                </div>
+                <div className="w-full md:w-[38%] shrink-0 md:pt-[42px]">
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[16px] leading-[1.6]">
+                    WeNext is the first WhatsApp Commerce OS that turns every conversation into revenue — automating replies, cart recovery and campaigns end-to-end. Focus your team on high-value chats and let WeNext handle everything else.
+                  </Typography>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* 2x2 grid of feature cards — minimalist visualizations */}
+          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
+            <div className="border-[#cec9b8] border-l border-r border-solid border-t relative shrink-0 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {/* Card 1 — Conversational Commerce */}
+                <div className="border-r border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px]">
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                    Conversational Commerce
+                  </Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                    WeNext AI steers WhatsApp conversations through your funnel — answering, recommending and closing like your best agent.
+                  </Typography>
+
+                  {/* Visualization: topic pills → mock chat input */}
+                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
+                    <img src={ConversationalCommerce} />
+                  </div>
+                </div>
+
+                {/* Card 2 — Enterprise-grade security */}
+                <div className="border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px]">
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                    Enterprise-grade security
+                  </Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                    DPDP compliant, bank-grade encryption. Customer data stays in India, never shared or sold to third parties.
+                  </Typography>
+
+                  {/* Visualization: shield with lock + warning/check icons + DPDP badge */}
+                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
+                    <img src={ConversationalCommerce} />
+                  </div>
+                </div>
+
+                {/* Card 3 — Multimodal replies */}
+                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col min-h-[440px]">
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                    Multimodal replies
+                  </Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                    Send catalog cards, product videos, PDFs and price sheets — everything your buyer needs to decide, in one message.
+                  </Typography>
+
+                  {/* Visualization: preview card with placeholder lines + video chip */}
+                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
+                    <img src={ConversationalCommerce} />
+                  </div>
+                </div>
+
+                {/* Card 4 — Trained on your brand */}
+                <div className="p-[36px] flex flex-col min-h-[440px]">
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                    Trained on your brand
+                  </Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                    Upload your catalog, FAQs and tone of voice. WeNext AI learns to reply like your best agent within minutes.
+                  </Typography>
+
+                  {/* Visualization: bracket-framed training preview + chip */}
+                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
+                    <img src={ConversationalCommerce} />
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
+          <div className="content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1265">
+            <div className="border-[#cec9b8] border-b border-l border-r border-solid h-[64px] overflow-clip relative shrink-0 w-full" data-node-id="467:1291">
+              {Array.from({ length: 184 }).map((_, i) => (
+                <div key={i} className="absolute size-[93px] top-[-28.5px]" style={{ left: `${-60.5 + i * 10}px` }}>
+                  <div className="absolute inset-[-0.38%]">
+                    <img alt="" className="block max-w-none size-full" src={imgVector4} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
 
 
           {/* Magic AI Search — sits above the "Sound familiar?" band, matches the site's outer/inner border pattern */}
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" style={{ overflow: "hidden" }}>
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" style={{ overflow: "hidden" }}>
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full">
               <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col items-center py-[100px] relative size-full">
+                {/* Small green dot grid background */}
+                <div
+                  className="absolute inset-0 pointer-events-none z-0"
+                  aria-hidden
+                  style={{
+                    backgroundImage: 'radial-gradient(circle, rgb(81 93 86 / 17%) 1px, transparent 1.2px)',
+                    backgroundSize: '24px 24px',
+                  }}
+                />
+
                 {/* Eyebrow */}
-                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0">
+                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0 z-10">
                   <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
                   <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap">
                     Ask WeNext AI
                   </Typography>
                 </div>
                 {/* Heading */}
-                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.05] relative shrink-0 text-[#0c221f] text-[54px] tracking-[-1.6px] text-center mt-[16px]">
-                  NEW: Ask WeNext AI
+                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.05] relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1.6px] text-center mt-[16px]">
+                  NEXA AI
                 </Typography>
                 <Typography className="font-['Geist:Regular'] leading-[1.5] text-[#60584c] text-[18px] text-center mt-[14px] max-w-[560px] relative">
                   Ask questions about your customers, orders, and campaigns — get answers, insights, and actions in seconds.
@@ -2394,7 +2280,7 @@ export default function Home() {
                             : 'transform 700ms cubic-bezier(0.32,0.72,0.35,1), opacity 700ms cubic-bezier(0.32,0.72,0.35,1)',
                         }}
                       >
-                        <Typography className="text-[18px] text-[#60584c] font-['Geist:Medium'] font-medium tracking-[-0.2px] whitespace-nowrap">
+                        <Typography className="text-[26px] text-[#60584c] font-['Geist:Medium'] font-medium tracking-[-0.2px] whitespace-nowrap">
                           {q}
                         </Typography>
                       </div>
@@ -2406,7 +2292,7 @@ export default function Home() {
                     className="absolute left-0 right-0 flex justify-left pointer-events-none"
                     style={{ top: '50%', transform: 'translateY(-50%)' }}
                   >
-                    <div className="w-full max-w-[600px] bg-white rounded-full pl-[6px] pr-[6px] py-[6px] flex items-center gap-[10px] border border-[#e0dac6] shadow-[0_12px_36px_-8px_rgba(6,179,73,0.25),0_2px_8px_rgba(11,34,17,0.06)] pointer-events-auto">
+                    <div className="w-full max-w-[720px] bg-white rounded-full pl-[16px] pr-[16px] py-[16px] flex items-center gap-[10px] border border-[#e0dac6] shadow-[0_12px_36px_-8px_rgba(6,179,73,0.25),0_2px_8px_rgba(11,34,17,0.06)] pointer-events-auto">
                       <div className="w-[36px] h-[36px] rounded-full bg-[#f8f5ec] flex items-center justify-center shrink-0">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2" strokeLinecap="round">
                           <line x1="12" y1="5" x2="12" y2="19" />
@@ -2416,7 +2302,7 @@ export default function Home() {
                       <div className="flex-1 relative overflow-hidden h-[22px]">
                         <div
                           key={magicIdx}
-                          className="absolute inset-0 flex items-center text-[#0c221f] font-['Geist:Medium'] font-medium text-[17px] leading-none whitespace-nowrap magic-text-slide"
+                          className="absolute inset-0 flex items-center text-[#06b349] font-['Geist:Medium'] font-medium text-[26px] leading-none whitespace-nowrap magic-text-slide"
                         >
                           {AI_QUERIES[magicIdx]}
                         </div>
@@ -2447,7 +2333,245 @@ export default function Home() {
             }} src={BorderX} /> */}
           </div>
 
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1839" data-name="Container">
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
+            <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1793" data-name="Container">
+              <div className="grid grid-cols-2 relative size-full">
+                <div className="p-[60px] flex flex-col justify-center border-r border-[#e0dac6]">
+                  <div className="flex gap-[10px] items-center mb-[16px]">
+                    <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
+                    <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Speed & Scale</Typography>
+                  </div>
+                  <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.3px] leading-[1.12] mb-[18px]">
+                    From setup to selling <br />in 15 minutes.
+                  </Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7] mb-[28px] max-w-[460px]">
+                    Everything your front office handles today, done automatically and at any hour.
+                  </Typography>
+                  <div className="flex flex-col gap-[8px]">
+                    {STEPS.map((step, i) => {
+                      const isActive = i === activeStep;
+                      const ICONS = [imgIcon4, imgIcon5, imgIcon6, imgIcon7, imgIcon8];
+                      const activeIconFilter = 'brightness(0) saturate(100%) invert(48%) sepia(85%) saturate(1985%) hue-rotate(118deg) brightness(94%) contrast(92%)';
+                      const inactiveIconFilter = 'brightness(0) saturate(100%) opacity(0.7)';
+                      const handleSelect = () => { setActiveStep(i); setProgress(0); };
+                      return (
+                        <div
+                          key={i}
+                          role="button"
+                          tabIndex={0}
+                          onClick={handleSelect}
+                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelect(); } }}
+                          className={`relative shrink-0 w-full cursor-pointer transition-opacity outline-none ${isActive ? '' : 'opacity-50 hover:opacity-75'}`}
+                        >
+                          <div className={`flex flex-col items-start ${isActive ? 'pb-[15px]' : 'pb-[8px]'} relative`}>
+                            <div className="flex gap-[14px] items-center relative w-full">
+                              <div className={`relative shrink-0 size-[36px] rounded-full flex items-center justify-center ${isActive ? 'bg-[rgba(6,179,73,0.15)]' : 'bg-[#eeece3]'}`}>
+                                <div className="relative size-[16px]">
+                                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={ICONS[i]} style={{ filter: isActive ? activeIconFilter : inactiveIconFilter }} />
+                                </div>
+                              </div>
+                              <Typography className={`font-['Geist:Medium'] font-medium leading-none text-[17px] whitespace-nowrap ${isActive ? 'text-[#06b349]' : 'text-[#0c221f]'}`}>
+                                {step.title}
+                              </Typography>
+                            </div>
+                            {isActive && (
+                              <div className="relative w-full pl-[50px] mt-[8px] overflow-hidden">
+                                <Typography className="font-['Geist:Regular'] font-normal leading-[1.4] text-[#60584c] text-[15px]">
+                                  {step.sub}
+                                </Typography>
+                              </div>
+                            )}
+                            {isActive && (
+                              <div className="absolute bg-[#e0dac6] bottom-0 h-[2px] left-0 w-full overflow-hidden">
+                                <div className="bg-[#06b349] h-full transition-[width] duration-[50ms] ease-linear" style={{ width: `${progress}%` }} />
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-[#f8f5ec] to-[#f3efe3] relative self-stretch overflow-hidden flex items-center justify-center">
+                  <div className="absolute inset-0 pointer-events-none" />
+                  <div key={activeStep} className="relative w-full max-w-[100%] step-panel">
+                    {activeStep === 0 && (
+                      <div className="relative">
+                        <img style={{ width: "100" }} src={SignUp} alt="Sign Up" />
+                      </div>
+                    )}
+                    {activeStep === 1 && (
+                      <div className="relative">
+                        {/* <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
+                          <div className="px-[24px] pt-[22px] pb-[18px] border-b border-[#f3efe3] flex items-center justify-between">
+                            <div className="flex items-center gap-[10px]">
+                              <div className="relative">
+                                <div className="size-[36px] rounded-[10px] bg-[#0b1f1a] flex items-center justify-center">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#06b349"><path d="M3 12h4l3-9 4 18 3-9h4" /></svg>
+                                </div>
+                                <div className="absolute -bottom-[2px] -right-[2px] size-[12px] rounded-full bg-[#06b349] border-[2px] border-white" />
+                              </div>
+                              <div>
+                                <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold">Channel Hub</Typography>
+                                <Typography className="text-[#60584c] text-[10.5px]">3 of 3 connected · syncing live</Typography>
+                              </div>
+                            </div>
+                            <div className="bg-[#e5f6e7] text-[#06b349] text-[10px] px-[8px] py-[3px] rounded-full font-['Geist:Medium']">All live</div>
+                          </div>
+                          <div className="px-[18px] py-[16px] flex flex-col gap-[10px] step-stagger">
+                            {[
+                              { name: 'WhatsApp Business', detail: 'API · +91 80196 72323', color: '#25d366', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487m-3.421-12.18A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>, latency: '1.2s', volume: '8,412 chats/day' },
+                              { name: 'Instagram DMs', detail: '@linen.co · Posts + DMs', color: INSTAGRAM_GRADIENT, svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919zM12 8a4 4 0 100 8 4 4 0 000-8zm5.122-.838a.96.96 0 100-1.92.96.96 0 000 1.92z" /></svg>, latency: '0.9s', volume: '3,210 DMs/day' },
+                              { name: 'Facebook Pages', detail: 'Linen.co · Messages', color: '#1877F2', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>, latency: '1.1s', volume: '1,840 msgs/day' },
+                            ].map((c, i) => (
+                              <div key={i} className="step-shimmer bg-[#fbfaf2] border border-[#f0e9d7] rounded-[14px] p-[12px] flex items-center gap-[12px]">
+                                <div className="size-[40px] rounded-[12px] flex items-center justify-center shrink-0 shadow-[0_6px_16px_-6px_rgba(11,31,26,0.25)]" style={{ background: c.color }}>{c.svg}</div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center gap-[6px]">
+                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold truncate">{c.name}</Typography>
+                                    <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
+                                  </div>
+                                  <Typography className="text-[#60584c] text-[10.5px] mt-[1px] truncate">{c.detail}</Typography>
+                                  <div className="flex items-center gap-[10px] mt-[6px]">
+                                    <Typography className="text-[#60584c] text-[9.5px]">↗ {c.volume}</Typography>
+                                    <Typography className="text-[#60584c] text-[9.5px]">⚡ {c.latency} reply</Typography>
+                                    <div className="step-signal flex items-end gap-[2px] h-[11px] ml-auto">
+                                      {[6, 9, 5, 11, 7].map((h, k) => (<span key={k} className="w-[2.5px] rounded-full bg-[#06b349]" style={{ height: `${h}px` }} />))}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <div className="border-t border-[#f3efe3] px-[18px] py-[12px] flex items-center justify-between bg-[#fafaf6]">
+                            <Typography className="text-[#60584c] text-[10.5px]">Inbox synced 6 sec ago</Typography>
+                            <div className="flex items-center gap-[6px]">
+                              <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
+                              <Typography className="text-[#06b349] text-[10.5px] font-['Geist:Medium']">Auto-pilot ON</Typography>
+                            </div>
+                          </div>
+                        </div> */}
+                        <img style={{ width: "100" }} src={ConnectMeta} alt="Connect Meta" />
+                      </div>
+                    )}
+                    {activeStep === 2 && (
+                      <div className="relative">
+                        <img style={{ width: "100" }} src={TrainAI} alt="Sign Up" />
+
+                      </div>
+                    )}
+                    {activeStep === 3 && (
+                      <div className="relative">
+                        <img style={{ width: "100" }} src={SetAutomation} alt="Set Automation" />
+
+                      </div>
+                    )}
+                    {activeStep === 4 && (
+                      <div className="relative">
+                        <img style={{ width: "100" }} src={LaunchBroadcast} alt="Sign Up" />
+
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <SecuritySection /> */}
+
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1589" data-name="Container">
+            <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1590">
+              <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-start justify-center px-[50px] py-[40px] relative size-full">
+                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1591">
+                  <div className="bg-[#06b349] relative shrink-0 size-[10px]" data-node-id="467:1592" />
+                  <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1593">
+                    Pain Points
+                  </Typography>
+                </div>
+                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1594">
+                  Your customer data <br /> stays yours
+                </Typography>
+              </div>
+            </div>
+          </div>
+          <div className="border-[#e0dac6]  border-solid content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1595">
+            <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex items-center relative shrink-0 w-full overflow-hidden" data-node-id="467:1596">
+              <div
+                className="flex items-stretch w-full transition-transform duration-500 ease-in-out"
+                style={{ transform: `translate3d(-${activeTestimonial * 100}%, 0px, 0px)` }}
+              >
+                {TESTIMONIALS.map((testimonial, idx) => (
+                  <div key={idx} className="flex w-full shrink-0 items-stretch">
+                    <div className="bg-white border-[#e0dac6] border-r border-solid content-stretch flex items-center overflow-clip p-[10px] relative shrink-0 size-[400px]" data-node-id="467:1597">
+                      <div className="bg-[#e9e9e9] content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1598">
+                        <div className="-translate-x-1/2 absolute h-[354px] left-1/2 top-[41.05px] w-[530px]" data-node-id="467:1599" data-name="image 3147">
+                          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={testimonial.image} />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
+                      <div className="content-stretch flex flex-[1_0_0] h-full items-center min-w-px overflow-clip relative" data-node-id="467:1600">
+                        <div className="bg-[#f8f5ec] content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-between min-w-px overflow-clip p-[50px] relative" data-node-id="467:1601" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.02) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+                          <Typography className="[word-break:break-word] font-['Geist:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[#6b6354] text-[22px] w-[min-content] min-h-[140px]" data-node-id="467:1603">
+                            <span>{testimonial.quote}</span>
+                            <span className="font-['Geist:Medium'] font-medium text-[#0b1f1a] bg-[#d4ecc7] [box-decoration-break:clone] [-webkit-box-decoration-break:clone] px-[6px] py-[2px]">{testimonial.highlight}</span>
+                          </Typography>
+                          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="467:1604">
+                            <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start leading-[1.4] relative shrink-0 whitespace-nowrap" data-node-id="467:1605">
+                              <Typography className="font-['Geist:SemiBold'] font-semibold relative shrink-0 text-[#06b349] text-[20px]" data-node-id="467:1606">
+                                — {testimonial.author}
+                              </Typography>
+                              <Typography className="font-['Geist:Regular'] font-normal relative shrink-0 text-[#60584c] text-[16px]" data-node-id="467:1607">
+                                {testimonial.role}
+                              </Typography>
+                            </div>
+                            <div className="h-[60px] relative shrink-0 w-[107px]" data-node-id="467:1608" data-name="image 3148">
+                              <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={testimonial.logo} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex items-center justify-between px-[50px] py-[30px] relative shrink-0 w-full" data-node-id="467:1609">
+              <div className="flex gap-[8px] items-center" data-node-id="467:1610">
+                {TESTIMONIALS.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveTestimonial(idx)}
+                    className={`size-[10px] rounded-full border border-[#e0dac6] transition-all duration-300 ${idx === activeTestimonial ? 'bg-[#06b349] w-[24px]' : 'bg-[rgba(12,34,31,0.15)] hover:bg-[rgba(12,34,31,0.3)]'
+                      }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+              <div className="content-stretch flex gap-[15px] items-start relative shrink-0" data-node-id="467:1615">
+                <button
+                  onClick={() => setActiveTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
+                  className="bg-white border border-[#e0dac6] border-solid content-stretch flex items-center justify-center opacity-85 hover:opacity-100 hover:bg-[#f8f5ec] transition-all duration-150 p-px relative shrink-0 size-[40px] cursor-pointer"
+                  aria-label="Previous slide"
+                >
+                  <div className="relative shrink-0 size-[20px]" data-node-id="467:1617" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon2} />
+                  </div>
+                </button>
+                <button
+                  onClick={() => setActiveTestimonial((prev) => (prev + 1) % TESTIMONIALS.length)}
+                  className="bg-white border border-[#e0dac6] border-solid content-stretch flex items-center justify-center opacity-85 hover:opacity-100 hover:bg-[#f8f5ec] transition-all duration-150 p-px relative shrink-0 size-[40px] cursor-pointer"
+                  aria-label="Next slide"
+                >
+                  <div className="relative shrink-0 size-[20px]" data-node-id="467:1620" data-name="Icon">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1839" data-name="Container">
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1840">
               <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-start justify-center px-[50px] py-[40px] relative size-full">
                 <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1841">
@@ -2456,7 +2580,7 @@ export default function Home() {
                     Resources
                   </Typography>
                 </div>
-                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[54px] tracking-[-1px] w-[min-content]" data-node-id="467:1844">
+                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1844">
                   Sound familiar?
                 </Typography>
               </div>
@@ -2606,405 +2730,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full">
-            <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1793" data-name="Container">
-              <div className="grid grid-cols-2 relative size-full">
-                <div className="p-[60px] flex flex-col justify-center border-r border-[#e0dac6]">
-                  <div className="flex gap-[10px] items-center mb-[16px]">
-                    <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
-                    <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Speed & Scale</Typography>
-                  </div>
-                  <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.3px] leading-[1.12] mb-[18px]">
-                    Live on WhatsApp<br />in 15 minutes.
-                  </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7] mb-[28px] max-w-[460px]">
-                    Everything your front office handles today, done automatically and at any hour.
-                  </Typography>
-                  <div className="flex flex-col gap-[8px]">
-                    {STEPS.map((step, i) => {
-                      const isActive = i === activeStep;
-                      const ICONS = [imgIcon4, imgIcon5, imgIcon6, imgIcon7, imgIcon8];
-                      const activeIconFilter = 'brightness(0) saturate(100%) invert(48%) sepia(85%) saturate(1985%) hue-rotate(118deg) brightness(94%) contrast(92%)';
-                      const inactiveIconFilter = 'brightness(0) saturate(100%) opacity(0.7)';
-                      const handleSelect = () => { setActiveStep(i); setProgress(0); };
-                      return (
-                        <div
-                          key={i}
-                          role="button"
-                          tabIndex={0}
-                          onClick={handleSelect}
-                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelect(); } }}
-                          className={`relative shrink-0 w-full cursor-pointer transition-opacity outline-none ${isActive ? '' : 'opacity-50 hover:opacity-75'}`}
-                        >
-                          <div className={`flex flex-col items-start ${isActive ? 'pb-[15px]' : 'pb-[8px]'} relative`}>
-                            <div className="flex gap-[14px] items-center relative w-full">
-                              <div className={`relative shrink-0 size-[36px] rounded-full flex items-center justify-center ${isActive ? 'bg-[rgba(6,179,73,0.15)]' : 'bg-[#eeece3]'}`}>
-                                <div className="relative size-[16px]">
-                                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={ICONS[i]} style={{ filter: isActive ? activeIconFilter : inactiveIconFilter }} />
-                                </div>
-                              </div>
-                              <Typography className={`font-['Geist:Medium'] font-medium leading-none text-[17px] whitespace-nowrap ${isActive ? 'text-[#06b349]' : 'text-[#0c221f]'}`}>
-                                {step.title}
-                              </Typography>
-                            </div>
-                            {isActive && (
-                              <div className="relative w-full pl-[50px] mt-[8px] overflow-hidden">
-                                <Typography className="font-['Geist:Regular'] font-normal leading-[1.4] text-[#60584c] text-[15px]">
-                                  {step.sub}
-                                </Typography>
-                              </div>
-                            )}
-                            {isActive && (
-                              <div className="absolute bg-[#e0dac6] bottom-0 h-[2px] left-0 w-full overflow-hidden">
-                                <div className="bg-[#06b349] h-full transition-[width] duration-[50ms] ease-linear" style={{ width: `${progress}%` }} />
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-[#f8f5ec] to-[#f3efe3] relative self-stretch overflow-hidden flex items-center justify-center p-[50px]">
-                  <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.03) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-                  <div key={activeStep} className="relative w-full max-w-[460px] step-panel">
-                    {activeStep === 0 && (
-                      <div className="flex flex-col items-center gap-[18px]">
-                        <div className="relative w-full bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
-                          <div className="absolute inset-x-0 top-0 h-[120px] bg-gradient-to-b from-[#e5f6e7] via-[#f8f5ec] to-transparent pointer-events-none" />
-                          <div className="relative px-[28px] pt-[26px] pb-[22px]">
-                            <div className="flex items-center justify-between mb-[22px]">
-                              <div className="size-[36px] rounded-[10px] bg-[#06b349] flex items-center justify-center shadow-[0_8px_24px_-8px_rgba(6,179,73,0.6)]">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                              </div>
-                              <div className="flex items-center gap-[6px]">
-                                {[0, 1, 2, 3].map(s => (
-                                  <div key={s} className={`h-[3px] rounded-full transition-all ${s === 0 ? 'w-[24px] bg-[#06b349]' : 'w-[10px] bg-[#e0dac6]'}`} />
-                                ))}
-                              </div>
-                            </div>
-                            <Typography className="text-[#0c221f] text-[20px] font-['Geist:SemiBold'] font-semibold tracking-[-0.3px] leading-[1.2]">Start your free trial</Typography>
-                            <Typography className="text-[#60584c] text-[12px] mt-[4px]">No credit card · 14 days · Cancel anytime</Typography>
-                            <div className="mt-[22px] space-y-[12px]">
-                              <div>
-                                <Typography className="text-[#60584c] text-[10px] font-['Geist:Medium'] uppercase tracking-[1.2px] mb-[6px]">Work email</Typography>
-                                <div className="relative">
-                                  <div className="border-[1.5px] border-[#06b349] bg-[#fbfaf2] rounded-[10px] px-[14px] py-[11px] text-[#0c221f] text-[14px] font-['Geist:Medium'] pr-[36px]">sneha@linen.co</div>
-                                  <div className="step-pop absolute right-[12px] top-1/2 -translate-y-1/2 size-[18px] rounded-full bg-[#06b349] flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5"><polyline points="20 6 9 17 4 12" /></svg></div>
-                                </div>
-                              </div>
-                              <div>
-                                <Typography className="text-[#60584c] text-[10px] font-['Geist:Medium'] uppercase tracking-[1.2px] mb-[6px]">Brand name</Typography>
-                                <div className="border border-[#e0dac6] rounded-[10px] px-[14px] py-[11px] text-[#0c221f] text-[14px]">Linen.co</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="border-t border-[#f3efe3] px-[28px] py-[16px] flex items-center justify-between">
-                            <div className="flex items-center gap-[8px]">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                              <Typography className="text-[#60584c] text-[11px]">Bank-grade · DPDP compliant</Typography>
-                            </div>
-                            <div className="step-glow bg-[#06b349] text-white text-[13px] px-[18px] py-[9px] rounded-[10px] font-['Geist:Medium'] flex items-center gap-[6px]">
-                              Continue
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="step-float flex items-center gap-[10px] bg-white border border-[#e0dac6] rounded-full px-[16px] py-[7px] shadow-[0_8px_20px_-10px_rgba(11,31,26,0.15)]">
-                          <div className="flex -space-x-[6px]">
-                            {['#06b349', '#1877F2', '#E1306C', '#FF8A1F'].map((c, i) => (
-                              <div key={i} className="size-[18px] rounded-full border-[2px] border-white" style={{ background: c }} />
-                            ))}
-                          </div>
-                          <Typography className="text-[#0c221f] text-[11px] font-['Geist:Medium']">12,400 brands joined this week</Typography>
-                        </div>
-                      </div>
-                    )}
-                    {activeStep === 1 && (
-                      <div className="relative">
-                        <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
-                          <div className="px-[24px] pt-[22px] pb-[18px] border-b border-[#f3efe3] flex items-center justify-between">
-                            <div className="flex items-center gap-[10px]">
-                              <div className="relative">
-                                <div className="size-[36px] rounded-[10px] bg-[#0b1f1a] flex items-center justify-center">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#06b349"><path d="M3 12h4l3-9 4 18 3-9h4" /></svg>
-                                </div>
-                                <div className="absolute -bottom-[2px] -right-[2px] size-[12px] rounded-full bg-[#06b349] border-[2px] border-white" />
-                              </div>
-                              <div>
-                                <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold">Channel Hub</Typography>
-                                <Typography className="text-[#60584c] text-[10.5px]">3 of 3 connected · syncing live</Typography>
-                              </div>
-                            </div>
-                            <div className="bg-[#e5f6e7] text-[#06b349] text-[10px] px-[8px] py-[3px] rounded-full font-['Geist:Medium']">All live</div>
-                          </div>
-                          <div className="px-[18px] py-[16px] flex flex-col gap-[10px] step-stagger">
-                            {[
-                              { name: 'WhatsApp Business', detail: 'API · +91 80196 72323', color: '#25d366', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487m-3.421-12.18A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>, latency: '1.2s', volume: '8,412 chats/day' },
-                              { name: 'Instagram DMs', detail: '@linen.co · Posts + DMs', color: INSTAGRAM_GRADIENT, svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919zM12 8a4 4 0 100 8 4 4 0 000-8zm5.122-.838a.96.96 0 100-1.92.96.96 0 000 1.92z" /></svg>, latency: '0.9s', volume: '3,210 DMs/day' },
-                              { name: 'Facebook Pages', detail: 'Linen.co · Messages', color: '#1877F2', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>, latency: '1.1s', volume: '1,840 msgs/day' },
-                            ].map((c, i) => (
-                              <div key={i} className="step-shimmer bg-[#fbfaf2] border border-[#f0e9d7] rounded-[14px] p-[12px] flex items-center gap-[12px]">
-                                <div className="size-[40px] rounded-[12px] flex items-center justify-center shrink-0 shadow-[0_6px_16px_-6px_rgba(11,31,26,0.25)]" style={{ background: c.color }}>{c.svg}</div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center gap-[6px]">
-                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold truncate">{c.name}</Typography>
-                                    <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
-                                  </div>
-                                  <Typography className="text-[#60584c] text-[10.5px] mt-[1px] truncate">{c.detail}</Typography>
-                                  <div className="flex items-center gap-[10px] mt-[6px]">
-                                    <Typography className="text-[#60584c] text-[9.5px]">↗ {c.volume}</Typography>
-                                    <Typography className="text-[#60584c] text-[9.5px]">⚡ {c.latency} reply</Typography>
-                                    <div className="step-signal flex items-end gap-[2px] h-[11px] ml-auto">
-                                      {[6, 9, 5, 11, 7].map((h, k) => (<span key={k} className="w-[2.5px] rounded-full bg-[#06b349]" style={{ height: `${h}px` }} />))}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="border-t border-[#f3efe3] px-[18px] py-[12px] flex items-center justify-between bg-[#fafaf6]">
-                            <Typography className="text-[#60584c] text-[10.5px]">Inbox synced 6 sec ago</Typography>
-                            <div className="flex items-center gap-[6px]">
-                              <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
-                              <Typography className="text-[#06b349] text-[10.5px] font-['Geist:Medium']">Auto-pilot ON</Typography>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    {activeStep === 2 && (
-                      <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
-                        <div className="relative px-[24px] pt-[22px] pb-[20px] overflow-hidden">
-                          <div className="absolute inset-x-0 top-0 h-[140px] pointer-events-none" style={{ background: 'radial-gradient(120% 80% at 100% 0%, rgba(6,179,73,0.12) 0%, transparent 70%)' }} />
-                          <div className="step-scan absolute inset-x-0 top-0 h-[26px] pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(6,179,73,0.22) 0%, transparent 100%)' }} />
-                          <div className="relative flex items-center justify-between mb-[18px]">
-                            <div className="flex items-center gap-[10px]">
-                              <div className="size-[36px] rounded-[10px] bg-[#06b349] flex items-center justify-center shadow-[0_8px_24px_-8px_rgba(6,179,73,0.6)]">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.91 5.81 5.82 1.9-5.82 1.9L12 18.42l-1.91-5.81-5.82-1.9 5.82-1.9z" /></svg>
-                              </div>
-                              <div>
-                                <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold">Catalog Pro</Typography>
-                                <Typography className="text-[#60584c] text-[10.5px]">Trained on Linen.co · 142 SKUs</Typography>
-                              </div>
-                            </div>
-                            <div className="relative size-[64px]">
-                              <svg className="size-full -rotate-90" viewBox="0 0 36 36">
-                                <circle cx="18" cy="18" r="15" fill="none" stroke="#e0dac6" strokeWidth="2.5" />
-                                <circle className="step-ring-anim" cx="18" cy="18" r="15" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="94.25" strokeDashoffset="5.65" />
-                              </svg>
-                              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold leading-none">94%</Typography>
-                                <Typography className="text-[#60584c] text-[8px] leading-none mt-[2px]">accuracy</Typography>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="grid grid-cols-3 gap-[8px]">
-                            {[{ l: 'SKUs', v: '142', i: '📦' }, { l: 'FAQs', v: '48', i: '📄' }, { l: 'Languages', v: '3', i: '🌐' }].map((c, i) => (
-                              <div key={i} className="step-count bg-[#fbfaf2] border border-[#f0e9d7] rounded-[10px] p-[10px]">
-                                <Typography className="text-[#0c221f] text-[18px] font-['Geist:SemiBold'] leading-none">{c.v}</Typography>
-                                <Typography className="text-[#60584c] text-[10px] mt-[3px]">{c.l}</Typography>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        <div className="border-t border-[#f3efe3] px-[24px] py-[16px]">
-                          <Typography className="text-[#60584c] text-[10px] font-['Geist:Medium'] uppercase tracking-[1px] mb-[10px]">Training stream</Typography>
-                          {[{ a: 'Ingested', d: 'Linen kurta · 12 variants', t: '2m ago' }, { a: 'Trained', d: 'Returns policy · COD 7-day', t: '5m ago' }, { a: 'Updated', d: 'Hindi voice samples · 240', t: '8m ago' }].map((t, i) => (
-                            <div key={i} className="flex items-center gap-[10px] py-[7px] border-b border-[#f3efe3] last:border-0">
-                              <div className="step-pop size-[18px] rounded-full bg-[#e5f6e7] flex items-center justify-center shrink-0"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="4"><polyline points="20 6 9 17 4 12" /></svg></div>
-                              <div className="flex-1 min-w-0">
-                                <Typography className="text-[#0c221f] text-[11.5px] font-['Geist:Medium']"><span className="text-[#06b349]">{t.a}</span> · {t.d}</Typography>
-                              </div>
-                              <Typography className="text-[#60584c] text-[10px] shrink-0">{t.t}</Typography>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {activeStep === 3 && (
-                      <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
-                        <div className="px-[20px] pt-[18px] pb-[14px] border-b border-[#f3efe3] flex items-center justify-between">
-                          <div className="flex items-center gap-[10px]">
-                            <div className="size-[32px] rounded-[9px] bg-[#06b349] flex items-center justify-center shadow-[0_8px_24px_-8px_rgba(6,179,73,0.6)]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg></div>
-                            <div>
-                              <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold">Automation Flows</Typography>
-                              <Typography className="text-[#60584c] text-[10.5px]">4 active · auto-pilot ON</Typography>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-[5px] bg-[#e5f6e7] px-[10px] py-[3px] rounded-full"><div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" /><Typography className="text-[#06b349] text-[10px] font-['Geist:Medium']">Live</Typography></div>
-                        </div>
-                        <div className="p-[16px] flex flex-col gap-[10px] step-stagger">
-                          {[
-                            { n: 'Abandoned cart', d: 'Trigger · cart inactive 4h', m: '31% recovered', c: '#06b349', pct: 31 },
-                            { n: 'COD → Prepaid', d: 'Trigger · order placed', m: '+8% prepaid share', c: '#1877F2', pct: 88 },
-                            { n: 'Re-engage silent', d: 'Trigger · 30d no reply', m: '42% open · 11% reply', c: '#E1306C', pct: 42 },
-                            { n: 'Order tracking', d: 'Trigger · shipping update', m: '2.4K replies / day', c: '#FF8A1F', pct: 96 },
-                          ].map((a, i) => (
-                            <div key={i} className="step-shimmer bg-[#fbfaf2] border border-[#f0e9d7] rounded-[12px] p-[12px]">
-                              <div className="flex items-center gap-[10px] mb-[8px]">
-                                <div className="size-[28px] rounded-[8px] flex items-center justify-center shrink-0" style={{ background: `${a.c}1f` }}>
-                                  <div className="step-live-dot size-[8px] rounded-full" style={{ background: a.c }} />
-                                </div>
-                                <div className="flex-1 min-w-0">
-                                  <Typography className="text-[#0c221f] text-[12.5px] font-['Geist:SemiBold']">{a.n}</Typography>
-                                  <Typography className="text-[#60584c] text-[9.5px]">{a.d}</Typography>
-                                </div>
-                                <div className="relative w-[28px] h-[16px] rounded-full bg-[#06b349] shrink-0 flex items-center shadow-[inset_0_1px_2px_rgba(0,0,0,0.15)]"><div className="absolute right-[2px] size-[12px] rounded-full bg-white shadow-sm" /></div>
-                              </div>
-                              <div className="flex items-center justify-between gap-[10px]">
-                                <div className="flex-1 h-[4px] bg-[#f3efe3] rounded-full overflow-hidden"><div className="h-full rounded-full step-bar" style={{ width: `${a.pct}%`, background: a.c }} /></div>
-                                <Typography className="text-[#0c221f] text-[10px] font-['Geist:Medium'] shrink-0" style={{ color: a.c }}>{a.m}</Typography>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {activeStep === 4 && (
-                      <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
-                        <div className="relative px-[22px] pt-[20px] pb-[16px] border-b border-[#f3efe3]">
-                          <div className="absolute inset-x-0 top-0 h-[80px] pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(6,179,73,0.06) 0%, transparent 100%)' }} />
-                          <div className="relative flex items-center justify-between">
-                            <div className="flex items-center gap-[10px]">
-                              <div className="size-[36px] rounded-[10px] bg-[#06b349] flex items-center justify-center shadow-[0_8px_24px_-8px_rgba(6,179,73,0.6)]"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 11l18-5v12L3 14v-3zM11 18v3" /></svg></div>
-                              <div>
-                                <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold">Diwali pre-order · M.kurta</Typography>
-                                <Typography className="text-[#60584c] text-[10.5px]">Broadcast · WhatsApp</Typography>
-                              </div>
-                            </div>
-                            <div className="flex items-center gap-[6px] bg-[#fff1d6] text-[#a06a00] px-[8px] py-[3px] rounded-full"><svg width="9" height="9" viewBox="0 0 24 24" fill="#a06a00"><circle cx="12" cy="12" r="3" /></svg><Typography className="text-[10px] font-['Geist:Medium']">Scheduled</Typography></div>
-                          </div>
-                        </div>
-                        <div className="p-[18px]">
-                          <div className="flex items-center gap-[8px] mb-[10px]">
-                            <Typography className="text-[#60584c] text-[10px] font-['Geist:Medium'] uppercase tracking-[1px]">Audience</Typography>
-                            <div className="flex-1 h-px bg-[#f3efe3]" />
-                          </div>
-                          <div className="flex flex-wrap gap-[5px] mb-[14px]">
-                            {['D2C buyers · Mum', 'Cart value ≥ ₹2K', 'Active 30d', '+ COD users'].map((t, i) => (
-                              <div key={i} className="bg-[#fbfaf2] border border-[#f0e9d7] rounded-full px-[10px] py-[3px] text-[#0c221f] text-[10px] font-['Geist:Medium']">{t}</div>
-                            ))}
-                          </div>
-                          <div className="bg-[#fbfaf2] border border-[#f0e9d7] rounded-[12px] p-[12px] mb-[14px]">
-                            <div className="flex items-center gap-[6px] mb-[6px]"><div className="size-[14px] rounded-full bg-[#25d366] flex items-center justify-center"><svg width="8" height="8" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg></div><Typography className="text-[#60584c] text-[10px] font-['Geist:Medium'] uppercase tracking-[1px]">Preview</Typography></div>
-                            <Typography className="text-[#0c221f] text-[11.5px] leading-[1.5]">"Hey 👋 Linen drop is here. <span className="font-['Geist:SemiBold'] font-semibold">Pre-order today · ₹400 off</span> + free shipping. Reply <span className="text-[#06b349] font-['Geist:SemiBold'] font-semibold">YES</span> for the link."</Typography>
-                          </div>
-                          <div className="grid grid-cols-3 gap-[8px] mb-[14px]">
-                            {[{ l: 'Sent', v: '8,412', c: '#06b349' }, { l: 'Open', v: '82%', c: '#1877F2' }, { l: 'Reply', v: '31%', c: '#E1306C' }].map((s, i) => (
-                              <div key={i} className="step-count bg-white border border-[#f0e9d7] rounded-[10px] p-[10px]">
-                                <Typography className="text-[18px] font-['Geist:SemiBold'] leading-none" style={{ color: s.c }}>{s.v}</Typography>
-                                <Typography className="text-[#60584c] text-[10px] mt-[3px]">{s.l}</Typography>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-[6px]"><div className="size-[8px] rounded-full bg-[#06b349] step-live-dot" /><Typography className="text-[#60584c] text-[11px]">Live · 142 replies / 5 min</Typography></div>
-                            <div className="step-glow bg-[#06b349] text-white text-[12px] px-[16px] py-[8px] rounded-[10px] font-['Geist:Medium'] flex items-center gap-[6px]">Launch <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M5 12h14M13 6l6 6-6 6" /></svg></div>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <SecuritySection />
 
-          <div className="content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1589" data-name="Container">
-            <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1590">
-              <div className="bg-clip-padding border-[transparent] border-b border-l border-r border-solid content-stretch flex flex-col gap-[15px] items-start justify-center px-[50px] py-[40px] relative size-full">
-                <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1591">
-                  <div className="bg-[#06b349] relative shrink-0 size-[10px]" data-node-id="467:1592" />
-                  <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1593">
-                    Pain Points
-                  </Typography>
-                </div>
-                <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[54px] tracking-[-1px] w-[min-content]" data-node-id="467:1594">
-                  Sound familiar?
-                </Typography>
-              </div>
-            </div>
-          </div>
-          <div className="border-[#e0dac6]  border-solid content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1595">
-            <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex items-center relative shrink-0 w-full overflow-hidden" data-node-id="467:1596">
-              <div
-                className="flex items-stretch w-full transition-transform duration-500 ease-in-out"
-                style={{ transform: `translate3d(-${activeTestimonial * 100}%, 0px, 0px)` }}
-              >
-                {TESTIMONIALS.map((testimonial, idx) => (
-                  <div key={idx} className="flex w-full shrink-0 items-stretch">
-                    <div className="bg-white border-[#e0dac6] border-r border-solid content-stretch flex items-center overflow-clip p-[10px] relative shrink-0 size-[400px]" data-node-id="467:1597">
-                      <div className="bg-[#e9e9e9] content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1598">
-                        <div className="-translate-x-1/2 absolute h-[354px] left-1/2 top-[41.05px] w-[530px]" data-node-id="467:1599" data-name="image 3147">
-                          <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={testimonial.image} />
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex flex-[1_0_0] flex-row items-center self-stretch">
-                      <div className="content-stretch flex flex-[1_0_0] h-full items-center min-w-px overflow-clip relative" data-node-id="467:1600">
-                        <div className="bg-[#f8f5ec] content-stretch flex flex-[1_0_0] flex-col h-full items-start justify-between min-w-px overflow-clip p-[50px] relative" data-node-id="467:1601" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.02) 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
-                          <Typography className="[word-break:break-word] font-['Geist:Regular'] font-normal leading-[1.4] min-w-full relative shrink-0 text-[#6b6354] text-[22px] w-[min-content] min-h-[140px]" data-node-id="467:1603">
-                            <span>{testimonial.quote}</span>
-                            <span className="font-['Geist:Medium'] font-medium text-[#0b1f1a] bg-[#d4ecc7] [box-decoration-break:clone] [-webkit-box-decoration-break:clone] px-[6px] py-[2px]">{testimonial.highlight}</span>
-                          </Typography>
-                          <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" data-node-id="467:1604">
-                            <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start leading-[1.4] relative shrink-0 whitespace-nowrap" data-node-id="467:1605">
-                              <Typography className="font-['Geist:SemiBold'] font-semibold relative shrink-0 text-[#06b349] text-[20px]" data-node-id="467:1606">
-                                — {testimonial.author}
-                              </Typography>
-                              <Typography className="font-['Geist:Regular'] font-normal relative shrink-0 text-[#60584c] text-[16px]" data-node-id="467:1607">
-                                {testimonial.role}
-                              </Typography>
-                            </div>
-                            <div className="h-[60px] relative shrink-0 w-[107px]" data-node-id="467:1608" data-name="image 3148">
-                              <img alt="" className="absolute inset-0 max-w-none object-bottom pointer-events-none size-full" src={testimonial.logo} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex items-center justify-between px-[50px] py-[30px] relative shrink-0 w-full" data-node-id="467:1609">
-              <div className="flex gap-[8px] items-center" data-node-id="467:1610">
-                {TESTIMONIALS.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveTestimonial(idx)}
-                    className={`size-[10px] rounded-full border border-[#e0dac6] transition-all duration-300 ${idx === activeTestimonial ? 'bg-[#06b349] w-[24px]' : 'bg-[rgba(12,34,31,0.15)] hover:bg-[rgba(12,34,31,0.3)]'
-                      }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
-              <div className="content-stretch flex gap-[15px] items-start relative shrink-0" data-node-id="467:1615">
-                <button
-                  onClick={() => setActiveTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)}
-                  className="bg-white border border-[#e0dac6] border-solid content-stretch flex items-center justify-center opacity-85 hover:opacity-100 hover:bg-[#f8f5ec] transition-all duration-150 p-px relative shrink-0 size-[40px] cursor-pointer"
-                  aria-label="Previous slide"
-                >
-                  <div className="relative shrink-0 size-[20px]" data-node-id="467:1617" data-name="Icon">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon2} />
-                  </div>
-                </button>
-                <button
-                  onClick={() => setActiveTestimonial((prev) => (prev + 1) % TESTIMONIALS.length)}
-                  className="bg-white border border-[#e0dac6] border-solid content-stretch flex items-center justify-center opacity-85 hover:opacity-100 hover:bg-[#f8f5ec] transition-all duration-150 p-px relative shrink-0 size-[40px] cursor-pointer"
-                  aria-label="Next slide"
-                >
-                  <div className="relative shrink-0 size-[20px]" data-node-id="467:1620" data-name="Icon">
-                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon3} />
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-center justify-center overflow-clip px-[75px] relative shrink-0 w-full" data-node-id="467:1886" data-name="Container">
+          <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1886" data-name="Container">
             <div className="border-[#e0dac6] border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1887">
               <div className="bg-clip-padding border-[transparent] border-l border-r border-solid content-stretch flex flex-col items-start justify-center px-[50px] py-[40px] relative size-full">
                 <div className="content-stretch flex gap-[80px] items-start relative shrink-0 w-full" data-node-id="467:1888">
@@ -3016,7 +2743,7 @@ export default function Home() {
                           Faq’s
                         </Typography>
                       </div>
-                      <div className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[0] relative shrink-0 text-[#0c221f] text-[54px] tracking-[-1px] whitespace-nowrap" data-node-id="467:1894">
+                      <div className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[0] relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] whitespace-nowrap" data-node-id="467:1894">
                         <Typography className="leading-[1.4] mb-0 whitespace-pre">{`Frequently `}</Typography>
                         <Typography className="leading-[1.4] mb-0 whitespace-pre">{`asked `}</Typography>
                         <Typography className="leading-[1.4] whitespace-pre">questions</Typography>

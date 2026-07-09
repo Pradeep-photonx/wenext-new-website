@@ -8,7 +8,7 @@ const imgWenextLarge = "/figma/imgWenextLarge.svg";
 
 export default function Footer() {
   return (
-    <div className="border-[#e0dac6] border-b border-l border-r border-solid content-stretch flex flex-col items-start px-[75px] relative shrink-0 w-full" data-node-id="467:1964">
+    <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1964">
       <div className="border-[#cec9b8] border-b border-l border-r border-solid h-[64px] overflow-clip relative shrink-0 w-full" data-node-id="467:1965">
         {Array.from({ length: 169 }).map((_, idx) => (
           <div key={idx} className="absolute size-[93px] top-[-28.5px]" style={{ left: `${-60.5 + idx * 10}px` }}>

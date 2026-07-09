@@ -39,7 +39,7 @@ const gridCanvas: React.CSSProperties = {
 // light section frame matching Home (left/right + bottom borders)
 function Frame({ children }: { children: ReactNode }) {
   return (
-    <div className="content-stretch flex flex-col items-center px-[75px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col items-center container mx-auto relative shrink-0 w-full">
       <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full">{children}</div>
     </div>
   );
@@ -53,12 +53,12 @@ const BRANDS = ['StyleCo', 'FitGlow', 'PureBites', 'HomeDecor Hub', 'UrbanWear',
 export function TrustedByStrip() {
   return (
     <Frame>
-      <div className="px-[75px] pt-[40px] pb-[8px] text-center">
+      <div className="px-4 xl:px-[75px] pt-[40px] pb-[8px] text-center">
         <Typography className="font-['Geist:Regular'] text-[#60584c] text-[16px]">
           Join <span className="text-[#0c221f] font-['Geist:SemiBold'] font-semibold">100+ brands and businesses</span> growing on WeNext
         </Typography>
       </div>
-      <div className="px-[75px] py-[26px] overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+      <div className="px-4 xl:px-[75px] py-[26px] overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
         <div className="flex items-center gap-[56px] w-max" style={{ animation: 'logos-scroll 32s linear infinite' }}>
           {[...BRANDS, ...BRANDS].map((b, i) => (
             <Typography key={i} className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[24px] tracking-[-0.5px] opacity-30 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">{b}</Typography>
@@ -180,7 +180,7 @@ const PLANS = [
 export function PricingTeaser() {
   return (
     <Frame>
-      <div className="border-b border-[#e0dac6] py-[60px] px-[75px] flex flex-col items-center text-center">
+      <div className="border-b border-[#e0dac6] py-[60px] px-4 xl:px-[75px] flex flex-col items-center text-center">
         <Eyebrow label="Pricing" center />
         <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[48px] text-[#0c221f] tracking-[-1.5px] leading-[1.1]">
           Simple, transparent pricing
@@ -218,7 +218,7 @@ export function PricingTeaser() {
           </div>
         ))}
       </div>
-      <div className="py-[26px] px-[75px] flex items-center justify-center border-t border-[#e0dac6]">
+      <div className="py-[26px] px-4 xl:px-[75px] flex items-center justify-center border-t border-[#e0dac6]">
         <Link to="/pricing" className="group inline-flex items-center gap-[8px]">
           <Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[16px] border-b border-transparent group-hover:border-[#06b349] transition-colors duration-200">Compare full plans &amp; features</Typography>
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-[3px] transition-transform duration-200"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -238,7 +238,7 @@ const imgFacebook = '/figma/imgImage3.svg';
 export function FinalCTA() {
   return (
     <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-      <div className="mx-[75px] border-x border-[rgba(255,255,255,0.08)] px-[75px] py-[90px] flex flex-col items-center text-center relative overflow-hidden">
+      <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[90px] flex flex-col items-center text-center relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]"><img alt="" className="size-full object-cover" src={imgImage27} /></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#06b349] opacity-[0.08] blur-[120px] rounded-full pointer-events-none" />
         <div className="flex gap-[16px] items-center justify-center mb-[28px] relative">
@@ -310,20 +310,20 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
   const expanded = ['Channels', 'Marketing', 'Marketing', 'Customers', 'Marketing'][tab];
   const activeTop = [null, 'AI Agents', null, null, null][tab];
   const activeSub = ['Whatsapp', null, 'Campaigns', 'CRM', 'Social Media Posts'][tab];
-  const credits = ['500 / 500', '9.2 / 99', '500 / 500', '9.2 / 99', '9.2 / 99'][tab];
+  const credits = ['400 / 500', '400 / 500', '400 / 500', '400 / 500', '400 / 500'][tab];
   const title = ['Unified Inbox', 'AI Agents & Assistants', 'Campaigns', 'CRM', 'Social Media Posts'][tab];
 
   const convos = [
-    { i: 'Y', bg: '#d8f3e3', c: '#0a8f5a', n: 'Yashwanth', prev: '{"type":"whatsapp_flow","flowName":"…', t: '4d ago', sel: true },
-    { i: '+', bg: '#fde2e8', c: '#d9577e', n: '+919849710488', prev: 'Template message', t: '05/06/2026' },
-    { i: 'D', bg: '#fde2e8', c: '#d9577e', n: 'dsfferr', prev: 'No messages yet', t: '' },
-    { i: 'YM', bg: '#dbeafe', c: '#3f6cab', n: 'Yashwanth Mallam', prev: 'No messages yet', t: '' },
-    { i: '~K', bg: '#fde2e8', c: '#d9577e', n: '~Jeevana Komminni', badge: 'KV', prev: 'sfvsdfv', t: '01/06/2026' },
-    { i: 'F', bg: '#fde2e8', c: '#d9577e', n: 'fdsfewf', prev: 'No messages yet', t: '' },
-    { i: 'F', bg: '#d8f3e3', c: '#0a8f5a', n: 'fefergfe', prev: 'No messages yet', t: '' },
-    { i: 'YM', bg: '#dbeafe', c: '#3f6cab', n: 'Yashwanth Mallam', prev: 'No messages yet', t: '' },
+    { i: 'P', bg: '#d8f3e3', c: '#0a8f5a', n: 'Prathik', prev: 'Hello', t: '4d ago', sel: true },
+    { i: 'A', bg: '#fde2e8', c: '#d9577e', n: 'Arjun Kumar', prev: 'Template message', t: '05/06/2026' },
+    { i: 'S', bg: '#fde2e8', c: '#d9577e', n: 'Sarika Reddy', prev: 'I would like to know more about your products', t: '2m ago' },
+    { i: 'Y', bg: '#dbeafe', c: '#3f6cab', n: 'Yashwanth Mallam', prev: 'Hey AI', t: '1d ago' },
+    { i: 'K', bg: '#fde2e8', c: '#d9577e', n: 'Jeevana Komminni', badge: 'KV', prev: 'Hello Wenext', t: '01/06/2026' },
+    { i: 'F', bg: '#fde2e8', c: '#d9577e', n: 'Shiva', prev: 'I want to know more about your products', t: '1h ago' },
+    { i: 'F', bg: '#d8f3e3', c: '#0a8f5a', n: 'Ravi Kumar', prev: 'No messages yet', t: '2d ago' },
+    { i: 'Y', bg: '#dbeafe', c: '#3f6cab', n: 'Yashwanth Mallam', prev: 'No messages yet', t: '3d ago' },
   ];
-  const agents = [{ n: 'appzoi', d: 'Jun 12, 2026' }, { n: 'asd', d: 'Jun 23, 2026' }, { n: 'asd', d: 'Jun 23, 2026' }, { n: 'asdfd', d: 'Jun 20, 2026' }, { n: 'asdfghjkl', d: 'Jun 13, 2026' }, { n: 'asffs', d: 'Jun 23, 2026' }, { n: 'demo', d: 'Mar 27, 2026' }, { n: 'erthrdg', d: 'Jun 19, 2026' }];
+  const agents = [{ n: 'Gen', d: 'Jun 12, 2026' }, { n: 'asd', d: 'Jun 23, 2026' }, { n: 'asd', d: 'Jun 23, 2026' }, { n: 'asdfd', d: 'Jun 20, 2026' }, { n: 'asdfghjkl', d: 'Jun 13, 2026' }, { n: 'asffs', d: 'Jun 23, 2026' }, { n: 'demo', d: 'Mar 27, 2026' }, { n: 'erthrdg', d: 'Jun 19, 2026' }];
   const campaigns = [
     { n: 'new01', st: 'Completed', d: 'Sent Jun 1, 2026' }, { n: 'Campaign for thethis tag', st: 'Completed', d: 'Sent Jun 1, 2026' }, { n: 'X', st: 'Completed', d: 'Sent May 29, 2026' },
     { n: 'you', st: 'Failed', d: 'Created May 29, 2…' }, { n: 'thehthingss', st: 'Failed', d: 'Created May 29, 2…' }, { n: 'thehthing', st: 'Failed', d: 'Created May 29, 2…' },
@@ -417,7 +417,7 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
               <div className="flex items-end gap-[6px]"><Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[22px] leading-none">{credits}</Typography><Typography className="font-['Geist:Regular'] text-white/80 text-[12px] mb-[2px]">AI Credits</Typography></div>
             </div>
             <div className="flex items-center justify-between">
-              <div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px] leading-none">Nexus GenUI</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[3px]">Interactive experiences</Typography></div>
+              <div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px] leading-none">Nexus AI</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[3px]">Interactive experiences</Typography></div>
               <div className="w-[40px] h-[22px] rounded-full bg-[#d6dae0] p-[2px]"><div className="size-[18px] rounded-full bg-white shadow" /></div>
             </div>
           </div>
@@ -456,13 +456,13 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
               </div>
               <div className="flex-1 bg-white rounded-[14px] border border-[#eceff3] flex flex-col min-w-0 overflow-hidden">
                 <div className="px-[20px] py-[14px] flex items-center justify-between border-b border-[#f1f3f6]">
-                  <div className="flex items-center gap-[12px]"><div className="size-[44px] rounded-full bg-[#d8f3e3] flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[#0a8f5a] text-[15px]">Y</div><div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-none">Yashwanth</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[5px]">+919381828271</Typography></div></div>
+                  <div className="flex items-center gap-[12px]"><div className="size-[44px] rounded-full bg-[#d8f3e3] flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[#0a8f5a] text-[15px]">P</div><div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-none">Prathik</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[5px]">+919876567801</Typography></div></div>
                   <div className="flex items-center gap-[10px]">
                     <div className="flex items-center gap-[7px] border border-[#e5e7eb] rounded-[10px] px-[12px] py-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg><Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Unassigned</Typography><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div>
                     <div className="flex items-center gap-[7px] border border-[#e5e7eb] rounded-[10px] px-[12px] py-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Priority</Typography><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div>
                   </div>
                 </div>
-                <div className="bg-[#fdecec] py-[9px] flex items-center justify-center gap-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><Typography className="font-['Geist:Medium'] font-medium text-[#dc2626] text-[12.5px]">Outside 24h window · template messages only</Typography></div>
+                {/* <div className="bg-[#fdecec] py-[9px] flex items-center justify-center gap-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><Typography className="font-['Geist:Medium'] font-medium text-[#dc2626] text-[12.5px]">Outside 24h window · template messages only</Typography></div> */}
                 <div className="flex-1 overflow-hidden px-[24px] py-[18px] flex flex-col gap-[14px] justify-end" style={{ background: '#f5f7f9' }}>
                   {[{ side: 'out', t: '15:05' }, { side: 'in', t: '15:08' }, { side: 'out', t: '15:08' }, { side: 'in', t: '15:11' }, { side: 'out', t: '15:11' }, { side: 'in', t: '15:13' }].map((m, i) => m.side === 'in' ? (
                     <div key={i} className="self-start flex flex-col items-start gap-[3px]"><div className="bg-white rounded-[10px] rounded-tl-[3px] px-[16px] py-[10px] shadow-sm"><Typography className="text-[#0c221f] text-[13px]">Komminni</Typography></div><Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[10px] pl-[2px]">{m.t}</Typography></div>

@@ -479,7 +479,7 @@ export default function HealthCare() {
 
       {/* HERO */}
       <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="mx-[75px] border-x border-[rgba(255,255,255,0.08)] px-[75px] py-[96px] flex flex-col items-center text-center relative overflow-hidden">
+        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[96px] flex flex-col items-center text-center relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-[0.04]"><img alt="" className="size-full object-cover" src={imgImage27} /></div>
           <div className="absolute -top-[120px] left-1/2 -translate-x-1/2 size-[420px] bg-[#06b349] opacity-[0.14] blur-[110px] rounded-full pointer-events-none" />
           <div className="flex gap-[10px] items-center justify-center mb-[20px] relative">
@@ -508,8 +508,8 @@ export default function HealthCare() {
       </div>
 
       {/* INTRO */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="py-[60px] px-[75px] flex flex-col items-center text-center">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="py-[60px] px-4 xl:px-[75px] flex flex-col items-center text-center">
           <Eyebrow label="The Problem" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[44px] text-[#0c221f] tracking-[-1.5px] leading-[1.15] max-w-[760px]">
             Four things quietly costing your clinic
@@ -524,7 +524,7 @@ export default function HealthCare() {
       {SECTIONS.map((s, i) => {
         const Mock = s.Mock;
         return (
-          <div key={s.problem} className="mx-[75px] border-x border-b border-[#e0dac6]">
+          <div key={s.problem} className="container mx-auto border-x border-b border-[#e0dac6]">
             <div className="grid grid-cols-2 divide-x divide-[#e0dac6] border-b border-[#e0dac6]">
               {/* problem */}
               <Reveal className="px-[56px] py-[52px]">
@@ -570,8 +570,8 @@ export default function HealthCare() {
       })}
 
       {/* RESULTS */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
-        <div className="py-[60px] px-[75px] flex flex-col items-center text-center border-b border-[#e0dac6]">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="py-[60px] px-4 xl:px-[75px] flex flex-col items-center text-center border-b border-[#e0dac6]">
           <Eyebrow label="Results" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[44px] text-[#0c221f] tracking-[-1.5px] leading-[1.15] max-w-[700px]">
             Results that speak volumes
@@ -606,7 +606,7 @@ export default function HealthCare() {
       </div>
 
       {/* FAQ */}
-      <div className="mx-[75px] border-x border-b border-[#e0dac6]">
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
         <div className="grid grid-cols-[380px_1fr]">
           <div className="px-[60px] py-[60px] border-r border-[#e0dac6]">
             <Eyebrow label="FAQ's" />
@@ -637,7 +637,7 @@ export default function HealthCare() {
 
       {/* FINAL CTA */}
       <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="mx-[75px] border-x border-[rgba(255,255,255,0.08)] px-[75px] py-[90px] flex flex-col items-center text-center relative overflow-hidden">
+        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[90px] flex flex-col items-center text-center relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-[0.04]"><img alt="" className="size-full object-cover" src={imgImage27} /></div>
           <div className="absolute -bottom-[160px] left-1/2 -translate-x-1/2 size-[480px] bg-[#06b349] opacity-[0.14] blur-[120px] rounded-full pointer-events-none" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold leading-[1.12] text-white text-[46px] tracking-[-1.5px] max-w-[720px] mb-[18px] relative">

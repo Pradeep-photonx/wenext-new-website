@@ -123,7 +123,7 @@ export default function Header() {
 
       {/* ── Header bar (original clip-path fully restored, no change to hero) ── */}
       <div
-        className="fixed top-0 left-0 right-0 h-[80px] bg-[#092511] border-[rgba(255,255,255,0.1)] border-b border-solid flex items-center px-[100px]"
+        className="fixed top-0 left-0 right-0 h-[80px] bg-[#092511] border-[rgba(255,255,255,0.1)] border-b border-solid flex items-center w-full"
         style={{
           zIndex: 100,
           transform: (navHidden && !companyOpen && !industriesOpen) ? 'translateY(-100%)' : 'translateY(0)',
@@ -134,7 +134,7 @@ export default function Header() {
         data-node-id="467:953"
         data-name="Container"
       >
-        <div className="flex-[1_0_0] min-w-px relative" data-node-id="467:954" data-name="Container">
+        <div className="container mx-auto px-4 xl:px-0 relative h-full w-full" data-node-id="467:954" data-name="Container">
           <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center relative size-full">
 
             {/* Logo */}

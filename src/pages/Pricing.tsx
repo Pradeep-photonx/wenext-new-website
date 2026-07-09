@@ -185,7 +185,7 @@ export default function Pricing() {
       <Header />
 
       {/* Main Pricing Hero Container */}
-      <div className="border-[#e0dac6] border-l border-r border-solid content-stretch flex flex-col items-center mx-[75px] bg-[#f8f5ec]">
+      <div className="border-[#e0dac6] border-l border-r border-solid content-stretch flex flex-col items-center container mx-auto bg-[#f8f5ec]">
 
         {/* Hero Headline Section */}
         <div className="w-full py-[80px] px-[40px] border-b border-[#e0dac6] flex flex-col items-center text-center">
