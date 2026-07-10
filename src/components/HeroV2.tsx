@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type ReactElement } from 'react';
 
 type Channel = {
   key: string;
@@ -8,7 +8,7 @@ type Channel = {
   brandSoft: string;
   brandGradient?: string;
   count: number;
-  icon: JSX.Element;
+  icon: ReactElement;
   contact: {
     name: string;
     handle: string;
