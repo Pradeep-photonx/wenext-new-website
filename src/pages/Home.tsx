@@ -20,6 +20,252 @@ import EnterpriseGradeSecurity from "../assets/built-growth/Enterprise-grade sec
 
 
 
+/* ─────────────────────────────────────────────
+   iPhone 15+ Mockup with animated WhatsApp chat
+───────────────────────────────────────────────── */
+const WA_CHATS = [
+  {
+    contact: 'Priya Sharma', initials: 'PS', avatarBg: '#f6c453',
+    userMsg: 'Is the linen kurta still available in M?',
+    aiMsg: 'Yes! 3 left in M. Sending checkout link →',
+    product: 'Ivory Linen Kurta · M', price: '2,490',
+  },
+  {
+    contact: 'Rohit Menon', initials: 'RM', avatarBg: '#c8a882',
+    userMsg: 'Do you ship to Kochi? Need it by Sunday.',
+    aiMsg: "Yes, express delivery in 2 days. Here's the link →",
+    product: 'Block Print Shirt · L', price: '1,890',
+  },
+  {
+    contact: 'Sneha K.', initials: 'SK', avatarBg: '#a7c8b8',
+    userMsg: "Can I return the blue kurta if it doesn't fit?",
+    aiMsg: 'Absolutely! Free returns within 7 days. Link sent →',
+    product: 'Indigo Cotton Kurta · S', price: '2,790',
+  },
+];
+
+function IPhoneMockup() {
+  // Full sync: customer types the question in the composer → bubble sent →
+  // bot typing → bot reply → customer types "yes please" → bubble sent → bot typing → UPI card
+  const [chatStep, setChatStep] = useState(-1);
+  const [iphInputText, setIphInputText] = useState('');
+  const iphInputScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const seq: Array<{ type: 'typing' | 'send' | 'step'; text?: string; step?: number; wait: number }> = [
+      { type: 'typing', text: 'Hi! Is the linen kurta still available?', wait: 2600 },
+      { type: 'send', step: 0, wait: 700 },
+      { type: 'step', step: 1, wait: 1200 },
+      { type: 'step', step: 2, wait: 1600 },
+      { type: 'typing', text: 'yes please', wait: 900 },
+      { type: 'send', step: 3, wait: 700 },
+      { type: 'step', step: 4, wait: 1200 },
+      { type: 'step', step: 5, wait: 3400 },
+    ];
+    let i = 0;
+    let cancelled = false;
+    let t: ReturnType<typeof setTimeout>;
+    const run = () => {
+      if (cancelled) return;
+      const s = seq[i];
+      if (s.type === 'typing') {
+        // First typing in the loop starts a fresh cycle — clear previously-shown bubbles now so the UPI card stays visible for its full wait duration
+        if (i === 0) setChatStep(-1);
+        setIphInputText(s.text || '');
+      } else if (s.type === 'send') {
+        setChatStep(s.step ?? 0);
+        setIphInputText('');
+      } else {
+        setChatStep(s.step ?? 0);
+      }
+      i = (i + 1) % seq.length;
+      t = setTimeout(run, s.wait);
+    };
+    setChatStep(-1);
+    setIphInputText('');
+    t = setTimeout(run, 300);
+    return () => { cancelled = true; clearTimeout(t); };
+  }, []);
+
+  useEffect(() => {
+    if (!iphInputText || !iphInputScrollRef.current) return;
+    const scroll = () => { if (iphInputScrollRef.current) iphInputScrollRef.current.scrollLeft = iphInputScrollRef.current.scrollWidth; };
+    scroll();
+    const id = setInterval(scroll, 40);
+    const stop = setTimeout(() => clearInterval(id), iphInputText.length * 60 + 200);
+    return () => { clearInterval(id); clearTimeout(stop); };
+  }, [iphInputText]);
+
+  return (
+    <div className="flex-1 mt-[28px] flex items-end justify-center min-h-[480px]">
+      <style>{`
+        @keyframes iphMsgIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes iphTyping { 0%,60%,100% { transform:translateY(0); opacity:0.5; } 30% { transform:translateY(-3px); opacity:1; } }
+        @keyframes iphCaret { 0%,49% { opacity:1; } 50%,100% { opacity:0; } }
+        @keyframes iphFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
+        @keyframes iphLetterReveal { to { max-width: 2em; } }
+        .iph-msg-in    { animation: iphMsgIn 0.35s cubic-bezier(0.32,0.72,0.35,1) both; }
+        .iph-typing    { animation: iphTyping 1.2s ease-in-out infinite; }
+        .iph-caret     { animation: iphCaret 1s steps(2,start) infinite; }
+        .iph-float     { animation: iphFloat 6s ease-in-out infinite; }
+        .iph-letter    { display: inline-block; max-width: 0; overflow: hidden; animation: iphLetterReveal 90ms linear forwards; }
+      `}</style>
+
+      {/* iPhone 14 Pro — Deep Purple */}
+      <div className="relative" style={{ width: 280 }}>
+        {/* Outer purple aluminum frame */}
+        <div
+          className="relative rounded-[30px]"
+          style={{
+            background: 'linear-gradient(145deg, #1a1b1c 0%, #1f2023 42%, #18191a 60%, #201430 100%)',
+            padding: '4px',
+            boxShadow: '0 32px 80px -18px rgba(45,25,75,0.45), 0 8px 22px -6px rgba(30,15,55,0.32), inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.35)',
+          }}
+        >
+          {/* Inner black bezel */}
+          <div className="rounded-[30px] overflow-hidden bg-black" style={{ minHeight: 520 }}>
+
+            {/* Screen — WhatsApp UI (matches hero heroTab === 0) */}
+            <div className="relative flex flex-col h-full" style={{ background: '#e5ddd5', backgroundImage: 'radial-gradient(rgba(11,31,26,0.04) 1px, transparent 1px)', backgroundSize: '14px 14px', minHeight: 520 }}>
+
+              {/* Status bar — dark green, with Dynamic Island */}
+              <div className="bg-[#075E54] px-[16px] pt-[10px] pb-[6px] flex items-center justify-between shrink-0 relative">
+                <span className="text-white text-[9px] font-semibold">9:41</span>
+                {/* Dynamic Island — pill with front camera + IR sensor */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-[6px] bg-black rounded-full flex items-center justify-between px-[7px]" style={{ width: 84, height: 24 }}>
+                  <div className="size-[7px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #1c1c22 0%, #050505 90%)' }} />
+                  <div className="size-[11px] rounded-full flex items-center justify-center" style={{ background: 'radial-gradient(circle at 30% 30%, #2f2f3c 0%, #0a0a12 80%)' }}>
+                    <div className="size-[4px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #4a4a5c 0%, #050505 90%)' }} />
+                  </div>
+                </div>
+                <div className="flex items-center gap-[3px]">
+                  {/* signal bars */}
+                  <div className="flex items-end gap-[1px] h-[8px]">
+                    <div className="w-[2px] h-[3px] bg-white rounded-[0.5px]" />
+                    <div className="w-[2px] h-[5px] bg-white rounded-[0.5px]" />
+                    <div className="w-[2px] h-[6px] bg-white rounded-[0.5px]" />
+                    <div className="w-[2px] h-[8px] bg-white rounded-[0.5px]" />
+                  </div>
+                  {/* battery */}
+                  <div className="relative w-[18px] h-[8px] border border-white rounded-[2px] flex items-center p-[1px]"><div className="h-full w-[70%] bg-white rounded-[1px]" /><div className="absolute -right-[2px] top-[2px] w-[1px] h-[4px] bg-white rounded-r-[0.5px]" /></div>
+                </div>
+              </div>
+
+              {/* WhatsApp Header — Prathik Gadde */}
+              <div className="bg-[#075E54] px-[10px] pt-[10px] pb-[8px] flex items-center gap-[7px] shrink-0">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" className="shrink-0"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <div className="size-[26px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128C7E] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[10px] shrink-0">PG</div>
+                <div className="flex-1 flex flex-col min-w-0">
+                  <span className="text-white text-[11px] font-['Geist:SemiBold'] font-semibold leading-none truncate">Prathik Gadde</span>
+                  <span className="text-[#a3d5b4] text-[8.5px] font-['Geist:Regular'] leading-none mt-[2px]">online</span>
+                </div>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M15 8v8l6 4V4l-6 4zM4 5h9v14H4z" /></svg>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 00-1 .3l-2 2c-2.8-1.4-5-3.5-6.5-6.5l2-2c.3-.3.3-.7.2-1-.4-1.1-.6-2.3-.6-3.5A1 1 0 007.6 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z" /></svg>
+                <svg width="3" height="12" viewBox="0 0 4 24" fill="white" className="shrink-0"><circle cx="2" cy="5" r="2" /><circle cx="2" cy="12" r="2" /><circle cx="2" cy="19" r="2" /></svg>
+              </div>
+
+              {/* TODAY chip */}
+              <div className="text-center py-[4px] shrink-0">
+                <span className="bg-[#E1F2FB] text-[#54656F] text-[7.5px] font-['Geist:Medium'] font-medium px-[8px] py-[2px] rounded-[7px]">TODAY</span>
+              </div>
+
+              {/* Chat body — 6-step animation */}
+              <div className="flex-1 px-[8px] pb-[6px] flex flex-col gap-[4px] overflow-hidden justify-end">
+                {chatStep >= 0 && (
+                  <div className="self-start bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[80%] iph-msg-in" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                    <div className="text-[#111b21] text-[10px] font-['Geist:Regular'] leading-[1.3]">Hi! Is the linen kurta still available?</div>
+                    <div className="text-[#667781] text-[7.5px] text-right mt-[1px]">10:34</div>
+                  </div>
+                )}
+
+                {chatStep === 1 && (
+                  <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] iph-msg-in flex gap-[3px] items-center" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
+                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
+                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                  </div>
+                )}
+
+                {chatStep >= 2 && chatStep !== 1 && (
+                  <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[8px] py-[6px] max-w-[86%] iph-msg-in" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                    <div className="text-[#7a8f86] text-[7px] font-['Geist:Medium'] font-medium mb-[1px]">WeNext AI</div>
+                    <div className="text-[#111b21] text-[10px] font-['Geist:Regular'] leading-[1.3]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</div>
+                    <div className="text-[#667781] text-[7.5px] text-right mt-[1px]">10:36 <span className="text-[#53bdeb]">✓✓</span></div>
+                  </div>
+                )}
+
+                {chatStep >= 3 && (
+                  <div className="self-start bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[55%] iph-msg-in" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                    <div className="text-[#111b21] text-[10px] font-['Geist:Regular'] leading-[1.3]">Yes please.</div>
+                    <div className="text-[#667781] text-[7.5px] text-right mt-[1px]">10:37</div>
+                  </div>
+                )}
+
+                {chatStep === 4 && (
+                  <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] iph-msg-in flex gap-[3px] items-center" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
+                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
+                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                  </div>
+                )}
+
+                {chatStep >= 5 && (
+                  <div className="self-end bg-[#0f2a1e] rounded-[10px] px-[10px] py-[8px] flex flex-col items-start max-w-[80%] iph-msg-in" style={{ boxShadow: '0 2px 6px -1px rgba(11,20,26,0.24)' }}>
+                    <div className="flex items-center gap-[5px]">
+                      <div className="size-[13px] rounded-[3px] bg-[#FFD400] flex items-center justify-center text-[8px] font-['Geist:Bold'] font-bold text-[#0f2a1e]">₹</div>
+                      <span className="text-white text-[9px] font-['Geist:Medium'] font-medium">UPI Payment</span>
+                    </div>
+                    <span className="text-[#FFD400] text-[15px] font-['Geist:Bold'] font-bold leading-[1.1] mt-[4px]">₹2,490</span>
+                    <span className="text-[#a3d5b4] text-[7.5px] font-['Geist:Regular'] mt-[2px]">Tap to pay · 1 linen kurta · size M</span>
+                    <span className="text-[#7a8f86] text-[7px] mt-[3px] self-end">10:38 <span className="text-[#53bdeb]">✓✓</span></span>
+                  </div>
+                )}
+              </div>
+
+              {/* Composer — WhatsApp pill + green mic */}
+              <div className="bg-[#f0f2f5] px-[6px] py-[6px] flex items-center gap-[5px] shrink-0">
+                <div className="flex-1 bg-white rounded-full h-[26px] flex items-center pl-[5px] pr-[6px] gap-[4px]">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                    <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
+                    <circle cx="8.6" cy="10" r="1.1" fill="#54656F" />
+                    <circle cx="15.4" cy="10" r="1.1" fill="#54656F" />
+                    <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.4" strokeLinecap="round" />
+                  </svg>
+                  <div className="flex-1 min-w-0 overflow-hidden" ref={iphInputScrollRef}>
+                    <div className="text-[#111b21] text-[9px] font-['Geist:Regular']" style={{ whiteSpace: 'pre', lineHeight: '11px' }} key={iphInputText}>
+                      {iphInputText.length === 0 && <span className="text-[#54656F]">Message</span>}
+                      {iphInputText.split('').map((c, idx) => (
+                        <span key={idx} className="iph-letter" style={{ animationDelay: `${idx * 60}ms` }}>{c}</span>
+                      ))}
+                      <span className="iph-caret ml-[1px] inline-block w-[1px] h-[9px] bg-[#00A884] align-middle" />
+                    </div>
+                  </div>
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" /><circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" /></svg>
+                </div>
+                <div className="size-[26px] rounded-full bg-[#00A884] flex items-center justify-center shrink-0" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
+                </div>
+              </div>
+
+              {/* Home indicator */}
+              <div className="bg-[#f0f2f5] pt-[2px] pb-[6px] flex items-center justify-center shrink-0">
+                <div className="w-[86px] h-[3.5px] rounded-full bg-[#8a8898]" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Purple side buttons */}
+        <div className="absolute left-[-4px] top-[100px] w-[3px] h-[26px] rounded-l-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
+        <div className="absolute left-[-4px] top-[142px] w-[3px] h-[44px] rounded-l-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
+        <div className="absolute left-[-4px] top-[196px] w-[3px] h-[44px] rounded-l-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
+        <div className="absolute right-[-4px] top-[150px] w-[3px] h-[60px] rounded-r-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
+      </div>
+    </div>
+  );
+}
+
 function Counter({ target, decimals = 0, suffix = '', duration = 1800 }: { target: number; decimals?: number; suffix?: string; duration?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
   const [value, setValue] = useState(0);
@@ -969,39 +1215,41 @@ export default function Home() {
               <div className="bg-white border-[#e0dac6] border-l border-r border-solid content-stretch flex flex-[1_0_0] items-center min-w-px overflow-clip p-[10px] relative spotlight-card" data-node-id="467:1116">
                 <div className="bg-[#f8f5ec] content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[420px] items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1117">
                   <div className="absolute inset-0 pointer-events-none" data-node-id="467:1118" data-name="image 3134" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.02) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-                  <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px relative w-full">
-                    <div className="w-full bg-white rounded-[14px] border border-[#eceae3] shadow-[0_16px_38px_-22px_rgba(11,31,26,0.28)] overflow-hidden">
-                      <div className="flex items-center justify-between px-[16px] py-[13px] border-b border-[#f1f1f1]">
-                        <div className="flex items-center gap-[11px]">
-                          <div className="size-[36px] rounded-[10px] bg-[rgba(245,158,11,0.14)] flex items-center justify-center shrink-0"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#d97a00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></svg></div>
-                          <div>
-                            <Typography className="font-['Geist:SemiBold'] font-semibold text-[#092511] text-[14px] leading-none">Priya's cart</Typography>
-                            <Typography className="font-['Geist:Regular'] text-[#939393] text-[11px] mt-[4px]">Abandoned · 6h ago</Typography>
+                  <div className="content-stretch flex flex-[1_0_0] flex-col items-stretch justify-center min-h-px relative w-full gap-[10px]">
+                    {[
+                      { name: 'Linen Kurta', size: 'M', price: '₹1,499', qty: 'x2', total: '₹2,998', status: 'Order Received', filled: true, g: 'linear-gradient(135deg,#cfe4d4 0%,#9ec7ac 60%,#7fae94 100%)' },
+                    ].map((it) => (
+                      <div key={it.name} className="w-full h-full flex flex-col bg-white rounded-[14px] shadow-[0_10px_28px_-18px_rgba(11,31,26,0.28)] border border-[#eef0ec] p-[10px]">
+                        {/* Large Image Area to fill space */}
+                        <div className="w-full flex-1 rounded-[10px] bg-[#f4f4f0] flex items-center justify-center overflow-hidden mb-[14px]">
+                          <img src="/images/linen_kurta.png" alt="Linen Kurta" className="w-full h-full object-cover mix-blend-multiply" />
+                        </div>
+
+                        {/* Product Info */}
+                        <div className="px-[6px]">
+                          <div className="flex items-start justify-between gap-[10px]">
+                            <div>
+                              <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-[1.1] tracking-[-0.2px] whitespace-nowrap">{it.name}</Typography>
+                              <Typography className="font-['Geist:Regular'] text-[#8a8f8b] text-[11px] mt-[6px] leading-none">Size&nbsp;: {it.size} &nbsp;•&nbsp; Qty : {it.qty}</Typography>
+                            </div>
+                            <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[15px] leading-none tracking-[-0.2px]">{it.price}</Typography>
                           </div>
                         </div>
-                        <span className="bg-[#fff1e6] text-[#c2410c] rounded-full px-[10px] py-[4px] text-[11px] font-['Geist:Medium'] font-medium whitespace-nowrap">Cold</span>
-                      </div>
-                      <div className="px-[16px] py-[14px] flex flex-col gap-[13px]">
-                        {[{ n: 'Linen Kurta — Sage', q: 'Size M · Qty 1', p: '₹1,499', g: 'linear-gradient(135deg,#cdeed8,#a9dcc0)' }, { n: 'Silk Dupatta', q: 'Qty 1', p: '₹899', g: 'linear-gradient(135deg,#f6ddc4,#eec59c)' }].map((it) => (
-                          <div key={it.n} className="flex items-center gap-[12px]">
-                            <div className="size-[42px] rounded-[9px] shrink-0" style={{ background: it.g }} />
-                            <div className="flex-1 min-w-0">
-                              <Typography className="font-['Geist:Medium'] font-medium text-[#092511] text-[13px] truncate">{it.n}</Typography>
-                              <Typography className="font-['Geist:Regular'] text-[#939393] text-[11px] mt-[2px]">{it.q}</Typography>
-                            </div>
-                            <Typography className="font-['Geist:SemiBold'] font-semibold text-[#092511] text-[13px] shrink-0">{it.p}</Typography>
+
+                        {/* Footer / Total */}
+                        <div className="mt-[16px] pt-[12px] border-t border-[#eef0ec] flex items-center justify-between gap-[5px] px-[6px] pb-[4px]">
+                          <div className="shrink-0">
+                            <Typography className="font-['Geist:Regular'] text-[#8a8f8b] text-[10px] leading-none whitespace-nowrap">Estimate Total</Typography>
+                            <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] mt-[4px] leading-none tracking-[-0.2px] whitespace-nowrap">{it.total}</Typography>
                           </div>
-                        ))}
+                          <div className="flex items-center gap-[4px] shrink-0">
+                            <div className={`rounded-full px-[12px] py-[6px] text-[12px] font-['Geist:Medium'] font-medium leading-none whitespace-nowrap ${it.filled ? 'bg-[#06b349] text-white' : 'bg-white text-[#0c221f] border border-[#dcdfdb]'}`}>
+                              {it.status}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center justify-between px-[16px] py-[13px] border-t border-[#f1f1f1] bg-[#faf8f1]">
-                        <Typography className="font-['Geist:Medium'] font-medium text-[#60584c] text-[12px]">Cart total</Typography>
-                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#092511] text-[18px]">₹2,398</Typography>
-                      </div>
-                      <div className="flex items-center gap-[8px] px-[16px] py-[11px] border-t border-[#f1f1f1]">
-                        {/* <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c98a3a" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="15" y1="9" x2="9" y2="15" /><line x1="9" y1="9" x2="15" y2="15" /></svg> */}
-                        {/* <Typography className="font-['Geist:Medium'] font-medium text-[#a06a2a] text-[12px]">No follow-up sent</Typography> */}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1165">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1166">
@@ -1018,27 +1266,97 @@ export default function Home() {
                 <div className="bg-[#f8f5ec] content-stretch flex flex-[1_0_0] flex-col gap-[10px] h-[420px] items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1169">
                   <div className="absolute inset-0 pointer-events-none" data-node-id="467:1170" data-name="image 3134" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.02) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
                   <div className="content-stretch flex flex-[1_0_0] flex-col items-center justify-center min-h-px relative w-full">
-                    <div className="w-full bg-white rounded-[14px] border border-[#eceae3] shadow-[0_16px_38px_-22px_rgba(11,31,26,0.28)] overflow-hidden">
-                      <div className="flex items-center gap-[10px] px-[15px] py-[11px] border-b border-[#f1f1f1]">
-                        <div className="size-[34px] rounded-full bg-[#eceff3] flex items-center justify-center shrink-0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7c8694" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="10" rx="2" /><circle cx="12" cy="5" r="2" /><path d="M12 7v4" /><line x1="8" y1="16" x2="8" y2="16" /><line x1="16" y1="16" x2="16" y2="16" /></svg></div>
-                        <div className="flex-1 min-w-0">
-                          <Typography className="font-['Geist:SemiBold'] font-semibold text-[#092511] text-[13px] leading-none">Auto-reply Bot</Typography>
-                          <Typography className="font-['Geist:Regular'] text-[#939393] text-[11px] mt-[3px]">Keyword-only flow</Typography>
+                    <div className="w-full bg-white rounded-[16px] border border-[#eceae3] shadow-[0_16px_38px_-22px_rgba(11,31,26,0.28)] overflow-hidden">
+                      <style>{`
+                        @keyframes wenextTyping { 0%,60%,100% { transform:translateY(0); opacity:0.35; } 30% { transform:translateY(-3px); opacity:1; } }
+                        .wenext-typing { animation: wenextTyping 1.2s ease-in-out infinite; }
+                        @keyframes wenextMsgIn { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:translateY(0); } }
+                        .wenext-msg-in { animation: wenextMsgIn 0.4s cubic-bezier(0.32,0.72,0.35,1) both; }
+                      `}</style>
+
+                      {/* Chat body */}
+                      <div className="px-[18px] pt-[22px] pb-[16px] flex flex-col gap-[16px]">
+
+                        {/* Bot intro */}
+                        <div className="flex flex-col gap-[8px] wenext-msg-in">
+                          <div className="flex items-center gap-[8px]">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                              <rect x="4" y="9" width="16" height="11" rx="4" />
+                              <circle cx="9" cy="14" r="0.9" fill="#a1a1aa" stroke="none" />
+                              <circle cx="15" cy="14" r="0.9" fill="#a1a1aa" stroke="none" />
+                              <path d="M10 18h4" />
+                              <line x1="12" y1="6" x2="12" y2="9" />
+                              <circle cx="12" cy="5" r="1.2" fill="#a1a1aa" stroke="none" />
+                            </svg>
+                            <Typography className="text-[#a1a1aa] text-[13px] font-['Geist:Medium'] font-medium">WeNext AI</Typography>
+                          </div>
+                          <Typography className="text-[#0c221f] text-[13.5px] leading-[1.55] pl-[26px]">
+                            Hey, I'm WeNext AI. What do you want me to help you with?
+                          </Typography>
                         </div>
-                        <span className="bg-[#eceff3] text-[#7c8694] rounded-full px-[9px] py-[3px] text-[10px] font-['Geist:Medium'] font-medium">Bot</span>
-                      </div>
-                      <div className="px-[13px] py-[11px] flex flex-col gap-[7px]" style={{ background: '#f4f6f8' }}>
-                        <div className="self-start max-w-[88%] bg-white rounded-[11px] rounded-tl-[3px] px-[12px] py-[8px] shadow-sm"><Typography className="text-[#0c221f] text-[12px] leading-[1.4]">Do you have this in cotton, not linen? 🤔</Typography></div>
-                        <div className="self-end max-w-[92%] bg-[#fbe9e3] rounded-[11px] rounded-tr-[3px] px-[12px] py-[9px]">
-                          <div className="flex items-center gap-[6px] mb-[7px]"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#c2410c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg><Typography className="text-[#9a5a3f] text-[12px]">Sorry, I didn't understand.</Typography></div>
-                          <div className="flex flex-wrap gap-[5px]">{['Catalog', 'Orders', 'Support'].map((m) => (<span key={m} className="bg-white border border-[#ecd9cf] rounded-[6px] px-[7px] py-[3px] font-['Courier_Prime'] text-[#9a5a3f] text-[10px]">{m}</span>))}</div>
+
+                        {/* User message */}
+                        <div className="self-end max-w-[82%] relative wenext-msg-in" style={{ animationDelay: '0.4s' }}>
+                          <div className=" bg-white border border-[#eef0ec] rounded-[16px] rounded-br-[4px] px-[14px] py-[10px] ">
+                            <Typography className="text-[13px] leading-[1.5]">
+                              Draft a Diwali campaign for repeat customers with 15% off, launching next Friday.
+                            </Typography>
+                          </div>
+                          {/* <div className="absolute -bottom-[3px] -right-[6px] size-[7px] rounded-full bg-[#092511]" /> */}
+                          {/* <div className="absolute -bottom-[6px] -right-[10px] size-[3px] rounded-full bg-[#092511]" /> */}
                         </div>
-                        <div className="self-start max-w-[62%] bg-white rounded-[11px] rounded-tl-[3px] px-[12px] py-[8px] shadow-sm opacity-65"><Typography className="text-[#939393] text-[12px]">never mind 😕</Typography></div>
+
+                        {/* Bot typing */}
+                        <div className="flex flex-col gap-[8px] wenext-msg-in" style={{ animationDelay: '0.9s' }}>
+                          <div className="flex items-center gap-[8px]">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a1a1aa" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+                              <rect x="4" y="9" width="16" height="11" rx="4" />
+                              <circle cx="9" cy="14" r="0.9" fill="#a1a1aa" stroke="none" />
+                              <circle cx="15" cy="14" r="0.9" fill="#a1a1aa" stroke="none" />
+                              <path d="M10 18h4" />
+                              <line x1="12" y1="6" x2="12" y2="9" />
+                              <circle cx="12" cy="5" r="1.2" fill="#a1a1aa" stroke="none" />
+                            </svg>
+                            <Typography className="text-[#a1a1aa] text-[13px] font-['Geist:Medium'] font-medium">WeNext AI</Typography>
+                          </div>
+                          <div className="flex items-center gap-[5px] pl-[26px]">
+                            <span className="size-[6px] rounded-full bg-[#cbd5e1] wenext-typing" style={{ animationDelay: '0ms' }} />
+                            <span className="size-[6px] rounded-full bg-[#cbd5e1] wenext-typing" style={{ animationDelay: '180ms' }} />
+                            <span className="size-[7px] rounded-full bg-[#64748b] wenext-typing" style={{ animationDelay: '360ms' }} />
+                          </div>
+                        </div>
                       </div>
-                      <div className="flex items-center gap-[8px] px-[15px] py-[10px] border-t border-[#f1f1f1] bg-[#fff]">
-                        {/* <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e7480c" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="15" y1="9" x2="9" y2="15" /><line x1="9" y1="9" x2="15" y2="15" /></svg> */}
-                        {/* <Typography className="font-['Geist:SemiBold'] font-semibold text-[#c2410c] text-[12px]">Customer left · sale lost</Typography> */}
-                      </div>
+
+                      {/* Input pill */}
+                      {/* <div className="px-[16px] pb-[12px]">
+                        <div className="bg-[#f4f6f8] rounded-[14px] px-[14px] pt-[12px] pb-[10px]">
+                          <Typography className="text-[#a1a1aa] text-[13px] mb-[10px]">Reply....</Typography>
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-[14px]">
+                              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 5v14M5 12h14" />
+                              </svg>
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                <rect x="9" y="3" width="6" height="11" rx="3" />
+                                <path d="M5 11a7 7 0 0 0 14 0" />
+                                <line x1="12" y1="18" x2="12" y2="22" />
+                              </svg>
+                            </div>
+                            <button className="size-[30px] rounded-[9px] bg-[#092511] flex items-center justify-center">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M12 19V5M5 12l7-7 7 7" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div> */}
+
+                      {/* Footer */}
+                      {/* <div className="pb-[14px]">
+                        <Typography className="text-[#a1a1aa] text-[11px] text-center">
+                          WeNext AI may make mistakes. Verify info.
+                        </Typography>
+                      </div> */}
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1217">
@@ -2114,91 +2432,215 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* Header — 2-column: highlighted title (left) + description (right) */}
+          {/* ── HEADER — centered Pain Points eyebrow + large heading ── */}
           <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
             <div className="border-[#e0dac6] border-l border-r border-solid relative shrink-0 w-full">
-              <div className="content-stretch flex flex-col md:flex-row gap-[32px] md:gap-[60px] items-start justify-between px-[50px] py-[64px] relative size-full">
-                <div className="flex-1 min-w-0">
-                  <div className="flex gap-[10px] items-center mb-[20px]">
-                    <div className="bg-[#06b349] shrink-0 size-[10px]" />
-                    <Typography className="font-['Courier_Prime:Regular'] text-[#0c221f] text-[16px] tracking-[0.5px]">Built for growth</Typography>
-                  </div>
-                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[46px] tracking-[-1.4px] leading-[1.05]">
-                    Built for the way
-                    <br aria-hidden />
-                    <span className="inline-block bg-[#f3efe3] px-[16px] py-[2px] mt-[8px] rounded-[6px]">modern businesses sell</span>
-                  </Typography>
+              <div className="flex flex-col items-center text-center px-[50px] py-[72px]">
+                <div className="flex gap-[10px] items-center mb-[20px]">
+                  <div className="bg-[#06b349] shrink-0 size-[10px]" />
+                  <Typography className="font-['Courier_Prime:Regular'] text-[#0c221f] text-[16px] tracking-[0.5px]">Pain Points</Typography>
                 </div>
-                <div className="w-full md:w-[38%] shrink-0 md:pt-[42px]">
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[16px] leading-[1.6]">
-                    WeNext is the first WhatsApp Commerce OS that turns every conversation into revenue — automating replies, cart recovery and campaigns end-to-end. Focus your team on high-value chats and let WeNext handle everything else.
-                  </Typography>
-                </div>
+                <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[52px] tracking-[-2px] leading-[1.05] max-w-[700px]">
+                  Everything you need.<br />Nothing you don't
+                </Typography>
               </div>
             </div>
           </div>
-          {/* 2x2 grid of feature cards — minimalist visualizations */}
+
+          {/* ── BENTO GRID ── */}
           <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
             <div className="border-[#cec9b8] border-l border-r border-solid border-t relative shrink-0 w-full">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                {/* Card 1 — Conversational Commerce */}
-                <div className="border-r border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
+              {/* 3-column grid: left tall | centre stacked | right stacked */}
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr]">
+
+                {/* ── COL 1 — Conversational Commerce (tall, spans 2 rows) ── */}
+                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col  lg:row-span-2">
+                  {/* Icon */}
+                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                    </svg>
+                  </div> */}
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                     Conversational Commerce
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
-                    WeNext AI steers WhatsApp conversations through your funnel — answering, recommending and closing like your best agent.
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                    WhatsApp, Instagram DMs, Facebook comments and web chat — all in one screen. Assign to teammates, tag, snooze, never lose a lead again.
                   </Typography>
 
-                  {/* Visualization: topic pills → mock chat input */}
-                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
-                  </div>
+                  {/* Stats row */}
+                  {/* <div className="flex items-start gap-[28px] mt-[32px]">
+                    {[{ v: '28%', l: 'Conversion Rate' }, { v: '19%', l: 'Avg. Order Value' }, { v: '42%', l: 'Cart Recovery' }].map((s) => (
+                      <div key={s.l}>
+                        <div className="flex items-center gap-[4px]">
+                          <Typography className="font-['Geist:SemiBold'] font-semibold text-[#06b349] text-[22px] tracking-[-0.5px] leading-none">{s.v}</Typography>
+                          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="18 15 12 9 6 15" />
+                          </svg>
+                        </div>
+                        <Typography className="font-['Geist:Regular'] text-[#60584c] text-[11px] mt-[4px]">{s.l}</Typography>
+                      </div>
+                    ))}
+                  </div> */}
+
+                  {/* iPhone 15+ mockup with animated WhatsApp chat */}
+                  <IPhoneMockup />
                 </div>
 
-                {/* Card 2 — Enterprise-grade security */}
-                <div className="border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
+                {/* ── COL 2 ROW 1 — Ads Management ── */}
+                <div className="border-r border-b border-[#e0dac6] p-[36px] flex flex-col ">
+                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
+                    </svg>
+                  </div> */}
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Enterprise-grade security
+                    Ads Management
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
-                    DPDP compliant, bank-grade encryption. Customer data stays in India, never shared or sold to third parties.
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                    See which broadcasts convert, which DMs become orders. Revenue attributed per channel, per template, per agent.
                   </Typography>
 
-                  {/* Visualization: shield with lock + warning/check icons + DPDP badge */}
-                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
+                  {/* Bar chart visualization */}
+                  <div className="flex-1 mt-[24px] bg-white rounded-[14px] border border-[#e8ebef] p-[16px] min-h-[160px]">
+                    <div className="flex items-center justify-between mb-[12px]">
+                      <div className="flex items-center gap-[6px]">
+                        <div className="bg-[#0c221f] rounded-full px-[8px] py-[2px]">
+                          <span className="text-white text-[9px] font-semibold">Broadcasts</span>
+                        </div>
+                        <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#9ca3af" strokeWidth="2"><polyline points="7 17 17 7" /><polyline points="7 7 17 7 17 17" /></svg>
+                      </div>
+                    </div>
+                    {/* Bar chart */}
+                    <div className="flex items-end gap-[8px] h-[80px]">
+                      {[
+                        { h: '45%', month: 'Mar' },
+                        { h: '60%', month: 'Apr' },
+                        { h: '75%', month: 'May' },
+                        { h: '55%', month: 'Jun' },
+                        { h: '90%', month: 'Jul' },
+                        { h: '70%', month: 'Aug' },
+                      ].map((b) => (
+                        <div key={b.month} className="flex-1 flex flex-col items-center gap-[4px]">
+                          <div className="w-full rounded-t-[4px] bg-[#0c221f]" style={{ height: b.h }} />
+                          <span className="text-[8px] text-[#94a3b8]">{b.month}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Card 3 — Multimodal replies */}
-                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
+                {/* ── COL 3 ROW 1 — Smart Scheduling ── */}
+                <div className="border-b border-[#e0dac6] p-[36px] flex flex-col ">
+                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
+                    </svg>
+                  </div> */}
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Multimodal replies
+                    Smart Scheduling
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
-                    Send catalog cards, product videos, PDFs and price sheets — everything your buyer needs to decide, in one message.
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                    UPI, cards, COD-to-prepaid — every payment option drops into the conversation. No checkout drop-off.
                   </Typography>
 
-                  {/* Visualization: preview card with placeholder lines + video chip */}
-                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
+                  {/* UPI payment row visualization */}
+                  <div className="flex-1 mt-[24px] flex flex-col justify-end">
+                    <div className="bg-white rounded-[12px] border border-[#e8ebef] px-[16px] py-[14px] flex items-center gap-[12px] shadow-sm">
+                      {/* UPI logo */}
+                      <div className="size-[32px] rounded-[8px] bg-[#f3efe3] flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0c221f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 2v20M2 12h20" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px] leading-none">UPI · ₹2,490 · Riya</Typography>
+                      </div>
+                      <div className="size-[28px] rounded-full bg-[#e5f6e7] flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Card 4 — Trained on your brand */}
-                <div className="p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
+                {/* ── COL 2 ROW 2 — Seamless Integrations ── */}
+                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col ">
+                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
+                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                    </svg>
+                  </div> */}
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Trained on your brand
+                    Seamless Integrations
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
-                    Upload your catalog, FAQs and tone of voice. WeNext AI learns to reply like your best agent within minutes.
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                    Trained on your catalog, FAQs and tone. Speaks Hindi, English and Hinglish. Hands off to humans when it matters.
                   </Typography>
 
-                  {/* Visualization: bracket-framed training preview + chip */}
-                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
+                  {/* WeNext AI chat preview */}
+                  <div className="flex-1 mt-[24px] bg-white rounded-[14px] border border-[#e8ebef] overflow-hidden min-h-[130px]">
+                    <div className="px-[14px] py-[10px] flex items-center gap-[10px] border-b border-[#f1f3f6]">
+                      <div className="size-[30px] rounded-full bg-[#0c221f] flex items-center justify-center">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[12px] leading-none">WeNext AI</Typography>
+                        <div className="flex items-center gap-[4px] mt-[3px]">
+                          <div className="size-[5px] rounded-full bg-[#06b349]" />
+                          <Typography className="font-['Geist:Regular'] text-[#06b349] text-[10px]">Online · trained on 142 SKUs</Typography>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="px-[14px] py-[10px]">
+                      <div className="bg-[#f0fdf4] rounded-[8px] px-[12px] py-[8px]">
+                        <Typography className="font-['Geist:Regular'] text-[#0c221f] text-[12px] leading-[1.4]">Linen kurta size M · 3 left. Want a UPI link?</Typography>
+                      </div>
+                    </div>
                   </div>
                 </div>
+
+                {/* ── COL 3 ROW 2 — Dark CTA card ── */}
+                <div className="p-[36px] flex flex-col bg-[#0c221f] relative overflow-hidden">
+                  {/* subtle dot pattern */}
+                  <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+
+                  <div className="relative z-10 flex flex-col flex-1">
+                    <div className="size-[44px] rounded-[12px] bg-white/10 flex items-center justify-center mb-[20px]">
+                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </div>
+                    <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[22px] tracking-[-0.4px] leading-[1.2] mb-[12px]">
+                      Explore the recovery engine.
+                    </Typography>
+                    <Typography className="font-['Geist:Regular'] text-white/65 text-[14px] leading-[1.55] flex-1">
+                      Abandoned carts, COD-to-prepaid nudges, post-purchase re-engagement — the loops that quietly grow revenue.
+                    </Typography>
+                    <div className="bg-[#06b349] hover:bg-[#05a043] active:scale-[0.98] transition-all duration-150 relative rounded-[8px] shrink-0 cursor-pointer" data-node-id="467:989" data-name="Link">
+                      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[11.992px] justify-center items-center overflow-clip pl-[20px] pr-[15px] py-[15px] relative rounded-[inherit] size-full">
+                        <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[1410px] left-[calc(50%+0.5px)] mix-blend-color-burn top-1/2 w-[2115px]" data-node-id="467:990" data-name="image 27">
+                          <img alt="" className="absolute bg-clip-padding border-0 border-[transparent] border-solid inset-0 max-w-none object-cover opacity-25 pointer-events-none size-full" src={imgImage27} />
+                        </div>
+                        <Typography className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-none relative shrink-0 text-[18px] text-white whitespace-nowrap" data-node-id="467:991">
+                          Book a demo
+                        </Typography>
+                        <div className="relative shrink-0 size-[20px]" data-node-id="467:992" data-name="Icon">
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon1} />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
+
 
           <div className="content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1265">
             <div className="border-[#cec9b8] border-b border-l border-r border-solid h-[64px] overflow-clip relative shrink-0 w-full" data-node-id="467:1291">
@@ -2427,7 +2869,7 @@ export default function Home() {
                           </div>
                           <div className="px-[18px] py-[16px] flex flex-col gap-[10px] step-stagger">
                             {[
-                              { name: 'WhatsApp Business', detail: 'API · +91 80196 72323', color: '#25d366', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487m-3.421-12.18A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>, latency: '1.2s', volume: '8,412 chats/day' },
+                              { name: 'WhatsApp Business', detail: 'API · +91 98765 43210', color: '#25d366', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487m-3.421-12.18A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>, latency: '1.2s', volume: '8,412 chats/day' },
                               { name: 'Instagram DMs', detail: '@linen.co · Posts + DMs', color: INSTAGRAM_GRADIENT, svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919zM12 8a4 4 0 100 8 4 4 0 000-8zm5.122-.838a.96.96 0 100-1.92.96.96 0 000 1.92z" /></svg>, latency: '0.9s', volume: '3,210 DMs/day' },
                               { name: 'Facebook Pages', detail: 'Linen.co · Messages', color: '#1877F2', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>, latency: '1.1s', volume: '1,840 msgs/day' },
                             ].map((c, i) => (

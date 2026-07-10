@@ -311,58 +311,133 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
   const activeTop = [null, 'AI Agents', null, null, null][tab];
   const activeSub = ['Whatsapp', null, 'Campaigns', 'CRM', 'Social Media Posts'][tab];
   const credits = ['400 / 500', '400 / 500', '400 / 500', '400 / 500', '400 / 500'][tab];
+  const tier = ['ENTERPRISE', 'ENTERPRISE', 'ENTERPRISE', 'PRO TRIAL', 'ENTERPRISE'][tab];
   const title = ['Unified Inbox', 'AI Agents & Assistants', 'Campaigns', 'CRM', 'Social Media Posts'][tab];
 
-  const convos = [
-    { i: 'P', bg: '#d8f3e3', c: '#0a8f5a', n: 'Prathik', prev: 'Hello', t: '4d ago', sel: true },
-    { i: 'A', bg: '#fde2e8', c: '#d9577e', n: 'Arjun Kumar', prev: 'Template message', t: '05/06/2026' },
-    { i: 'S', bg: '#fde2e8', c: '#d9577e', n: 'Sarika Reddy', prev: 'I would like to know more about your products', t: '2m ago' },
-    { i: 'Y', bg: '#dbeafe', c: '#3f6cab', n: 'Yashwanth Mallam', prev: 'Hey AI', t: '1d ago' },
-    { i: 'K', bg: '#fde2e8', c: '#d9577e', n: 'Jeevana Komminni', badge: 'KV', prev: 'Hello Wenext', t: '01/06/2026' },
-    { i: 'F', bg: '#fde2e8', c: '#d9577e', n: 'Shiva', prev: 'I want to know more about your products', t: '1h ago' },
-    { i: 'F', bg: '#d8f3e3', c: '#0a8f5a', n: 'Ravi Kumar', prev: 'No messages yet', t: '2d ago' },
-    { i: 'Y', bg: '#dbeafe', c: '#3f6cab', n: 'Yashwanth Mallam', prev: 'No messages yet', t: '3d ago' },
+  const convos: { i: string; bg: string; c: string; n: string; prev: string; t: string; badge?: string; star?: boolean; sel?: boolean }[] = [
+    { i: 'G', bg: '#fce7ef', c: '#d9577e', n: 'Gireesha Vallabhaneni', badge: 'MK', prev: 'Thank you for your patience! Your ord...', t: '3/17/2026' },
+    { i: 'S', bg: '#fce7ef', c: '#d9577e', n: 'Sahith', badge: 'MK', star: true, prev: 'Template message', t: '3/17/2026', sel: true },
+    { i: 'T', bg: '#dbeafe', c: '#3f6cab', n: 'Thanmayee Koganti', badge: 'MK', prev: 'Message', t: '3/16/2026' },
+    { i: 'C', bg: '#dbeafe', c: '#3f6cab', n: 'Chaitanya Krishna', prev: 'Interactive message', t: '3/13/2026' },
+    { i: 'S', bg: '#f3f4f6', c: '#64748b', n: 'Sarika Reddy', star: true, prev: 'Interactive message', t: '3/12/2026' },
+    { i: 'P', bg: '#fce7ef', c: '#d9577e', n: 'Prakash R', badge: 'MK', prev: 'Template message', t: '3/13/2026' },
+    { i: 'N', bg: '#dbeafe', c: '#3f6cab', n: 'Nanne', prev: 'hiii', t: '3/12/2026' },
   ];
   const agents = [{ n: 'Gen', d: 'Jun 12, 2026' }, { n: 'asd', d: 'Jun 23, 2026' }, { n: 'asd', d: 'Jun 23, 2026' }, { n: 'asdfd', d: 'Jun 20, 2026' }, { n: 'asdfghjkl', d: 'Jun 13, 2026' }, { n: 'asffs', d: 'Jun 23, 2026' }, { n: 'demo', d: 'Mar 27, 2026' }, { n: 'erthrdg', d: 'Jun 19, 2026' }];
+
+  // AI Agents kanban board — same visual language as the CRM board
+  type AgentCard = { av: string; avbg: string; avc: string; n: string; type: string; score: number; scoreType: 'target' | 'flame' | 'pulse'; tag: string | null; tagColor: string | null; channel: 'whatsapp' | 'instagram' | 'facebook' | 'multi'; upd: string; author: string };
+  const agentBoard: { name: string; count: string; cards: AgentCard[]; peek: AgentCard }[] = [
+    {
+      name: 'Active', count: '8',
+      cards: [
+        { av: '✦', avbg: '#e5f6e7', avc: '#06824f', n: 'Sales Concierge', type: 'Conversational · Product recs', score: 96, scoreType: 'flame', tag: 'Retail', tagColor: 'green', channel: 'whatsapp', upd: '2h ago', author: 'MK' },
+        { av: '✦', avbg: '#dbeafe', avc: '#3f6cab', n: 'Support Assistant', type: 'FAQ · Ticket triage', score: 92, scoreType: 'flame', tag: 'Support', tagColor: 'purple', channel: 'multi', upd: '6h ago', author: 'AR' },
+      ],
+      peek: { av: '✦', avbg: '#fce7ef', avc: '#d9577e', n: 'Product Recommender', type: 'Catalog · Upsell', score: 88, scoreType: 'flame', tag: null, tagColor: null, channel: 'whatsapp', upd: '', author: '' },
+    },
+    {
+      name: 'In Training', count: '3',
+      cards: [
+        { av: '✦', avbg: '#fef3c7', avc: '#b45309', n: 'Cart Recovery Agent', type: 'Abandoned cart · Nudges', score: 78, scoreType: 'target', tag: 'D2C', tagColor: 'green', channel: 'whatsapp', upd: 'Yesterday', author: 'MK' },
+        { av: '✦', avbg: '#fed7aa', avc: '#ea580c', n: 'Booking Assistant', type: 'Appointments · Reminders', score: 82, scoreType: 'target', tag: 'Services', tagColor: 'blue', channel: 'whatsapp', upd: '3 days ago', author: 'PS' },
+      ],
+      peek: { av: '✦', avbg: '#e0e7ff', avc: '#4f46e5', n: 'Payment Reminder', type: 'COD · UPI nudges', score: 71, scoreType: 'target', tag: null, tagColor: null, channel: 'whatsapp', upd: '', author: '' },
+    },
+    {
+      name: 'Draft', count: '5',
+      cards: [
+        { av: '✦', avbg: '#f1f5f9', avc: '#64748b', n: 'Feedback Collector', type: 'CSAT · Post-purchase', score: 55, scoreType: 'pulse', tag: 'Marketing', tagColor: 'green', channel: 'whatsapp', upd: '4 days ago', author: 'MK' },
+        { av: '✦', avbg: '#f1f5f9', avc: '#64748b', n: 'FAQ Agent', type: 'Multi-channel knowledge base', score: 60, scoreType: 'pulse', tag: null, tagColor: null, channel: 'multi', upd: '1 week ago', author: 'AR' },
+      ],
+      peek: { av: '✦', avbg: '#f1f5f9', avc: '#64748b', n: 'Upsell Coach', type: 'Recommender · Bundle', score: 48, scoreType: 'pulse', tag: null, tagColor: null, channel: 'instagram', upd: '', author: '' },
+    },
+  ];
+  const channelIcon = (c: AgentCard['channel']) => c === 'instagram' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#d9577e" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="#d9577e" /></svg>
+  ) : c === 'facebook' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="#3f6cab"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+  ) : c === 'multi' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><circle cx="6" cy="12" r="3" /><circle cx="12" cy="6" r="3" /><circle cx="18" cy="12" r="3" /><circle cx="12" cy="18" r="3" /></svg>
+  ) : (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="#06b349"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51h-.57c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 0C5.495 0 .157 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413A11.815 11.815 0 0012.05 0z" /></svg>
+  );
+  const channelLabel = (c: AgentCard['channel']) => c === 'instagram' ? 'Instagram' : c === 'facebook' ? 'Facebook' : c === 'multi' ? 'All channels' : 'WhatsApp';
+
   const campaigns = [
     { n: 'new01', st: 'Completed', d: 'Sent Jun 1, 2026' }, { n: 'Campaign for thethis tag', st: 'Completed', d: 'Sent Jun 1, 2026' }, { n: 'X', st: 'Completed', d: 'Sent May 29, 2026' },
     { n: 'you', st: 'Failed', d: 'Created May 29, 2…' }, { n: 'thehthingss', st: 'Failed', d: 'Created May 29, 2…' }, { n: 'thehthing', st: 'Failed', d: 'Created May 29, 2…' },
     { n: 'thethis', st: 'Failed', d: 'Created May 29, 2…' }, { n: 'thethethis', st: 'Completed', d: 'Sent May 28, 2026' }, { n: 'thethe', st: 'Completed', d: 'Sent May 28, 2026' },
   ];
-  const board = [
+  type ScoreType = 'target' | 'flame' | 'pulse';
+  type BoardCard = { av: string; avbg: string; avc: string; n: string; ph: string; score: number; scoreType: ScoreType; tag: string | null; tagColor: string | null; upd: string };
+  const board: { name: string; count: string; cards: BoardCard[]; peek: BoardCard }[] = [
     {
-      name: 'In Conversation', count: '42', cards: [
-        { n: 'uma', ph: '+919876543210', av: 'U', avbg: '#fde2e8', avc: '#d9577e', upd: '29 Jun 2026', src: '-', agent: 'Not Assigned', tags: [{ t: 'Marketing Limit', c: 'green' }] },
-        { n: 'wsd', ph: '+919876543210', av: 'W', avbg: '#fde2e8', avc: '#d9577e', upd: '24 Jun 2026', src: 'Lead', agent: 'Not Assigned', tags: [{ t: 'Valid', c: 'blue' }, { t: '+2', c: 'grey' }] },
-      ], peek: { n: 'hussain', av: 'H', avbg: '#fde2e8', avc: '#d9577e' }
+      name: 'In Conversation', count: '39', cards: [
+        { av: 'S', avbg: '#e5e7eb', avc: '#64748b', n: 'Sahi', ph: '+91 91********', score: 75, scoreType: 'target', tag: 'Marketing Limit', tagColor: 'green', upd: '6 days ago' },
+        { av: 'J', avbg: '#fce7ef', avc: '#d9577e', n: 'Jeevana_komminni', ph: '+91 98********', score: 95, scoreType: 'flame', tag: null, tagColor: null, upd: '7 days ago' },
+      ], peek: { av: 'S', avbg: '#e0e7ff', avc: '#4f46e5', n: 'Sravani', ph: '+919176543214', score: 77, scoreType: 'target', tag: null, tagColor: null, upd: '' }
     },
     {
-      name: 'Proposal', count: '11', cards: [
-        { n: 'manish@photonxtech.com', ph: '+41012154466601', av: 'M', avbg: '#d8f3e3', avc: '#0a8f5a', upd: '23 Jun 2026', src: '-', agent: 'Not Assigned', tags: [{ t: 'Shopify', c: 'green' }] },
-        { n: 'Raghavendra', ph: '+919176543214', av: 'R', avbg: '#fde2e8', avc: '#d9577e', upd: '23 Jun 2026', src: '-', agent: 'Not Assigned', tags: [] },
-      ], peek: { n: 'google test1', av: 'G', avbg: '#d8f3e3', avc: '#0a8f5a' }
+      name: 'Proposal', count: '13', cards: [
+        { av: 'P', avbg: '#dbeafe', avc: '#3f6cab', n: 'Prasad', ph: '+91 91********', score: 55, scoreType: 'pulse', tag: 'Marketing Limit', tagColor: 'green', upd: 'about 1 hour ago' },
+        { av: '~K', avbg: '#e5e7eb', avc: '#64748b', n: 'Jeevan Komminni', ph: '+91 94********', score: 75, scoreType: 'target', tag: 'Premium Customer', tagColor: 'purple', upd: 'about 6 hours ago' },
+      ], peek: { av: 'SI', avbg: '#e0e7ff', avc: '#4f46e5', n: 'Sahith Illandula', ph: '+918341922323', score: 71, scoreType: 'target', tag: null, tagColor: null, upd: '' }
     },
     {
-      name: 'Prospects & Leads', count: '4,305', cards: [
-        { n: 'sruthi', ph: '+919876543210', av: 'S', avbg: '#d8f3e3', avc: '#0a8f5a', upd: '30 Jun 2026', src: 'Lead', agent: 'Not Assigned', tags: [{ t: 'Marketing Limit', c: 'green' }] },
-        { n: 'John Smith', ph: '+555555', av: 'J', avbg: '#fde2e8', avc: '#d9577e', upd: '30 Jun 2026', src: '-', agent: 'Not Assigned', tags: [{ t: 'Shopify', c: 'green' }] },
-      ], peek: { n: 'google test1', av: 'G', avbg: '#d8f3e3', avc: '#0a8f5a' }
-    },
-    {
-      name: 'Qualified', count: '8', cards: [
-        { n: 'meera', ph: '+919176543214', av: 'M', avbg: '#dbeafe', avc: '#3f6cab', upd: '28 Jun 2026', src: 'Lead', agent: 'Not Assigned', tags: [{ t: 'Valid', c: 'blue' }] },
-        { n: 'arjun', ph: '+919176543214', av: 'A', avbg: '#fde2e8', avc: '#d9577e', upd: '27 Jun 2026', src: '-', agent: 'Not Assigned', tags: [{ t: 'Shopify', c: 'green' }] },
-      ], peek: { n: 'test user', av: 'T', avbg: '#d8f3e3', avc: '#0a8f5a' }
+      name: 'Prospects & Leads', count: '4,223', cards: [
+        { av: 'P', avbg: '#e0e7ff', avc: '#4f46e5', n: 'Pavan Kumar', ph: '+91 91********', score: 60, scoreType: 'pulse', tag: 'Marketing Limit', tagColor: 'green', upd: '6 days ago' },
+        { av: 'GT', avbg: '#fed7aa', avc: '#ea580c', n: 'Karthik Kumar', ph: '+91 94********', score: 88, scoreType: 'flame', tag: null, tagColor: null, upd: '23 days ago' },
+      ], peek: { av: 'KN', avbg: '#fce7ef', avc: '#d9577e', n: 'Ravi Goud', ph: '+917032655524', score: 89, scoreType: 'flame', tag: null, tagColor: null, upd: '' }
     },
   ];
-  const tagCls = (c: string) => c === 'green' ? 'bg-[#e7f6ee] text-[#06824f]' : c === 'blue' ? 'bg-[#e7f0fe] text-[#3f6cab]' : 'bg-[#eceff3] text-[#64748b]';
+  const tagCls = (c: string | null) => c === 'green' ? 'bg-[#e7f6ee] text-[#06824f]' : c === 'blue' ? 'bg-[#e7f0fe] text-[#3f6cab]' : c === 'purple' ? 'bg-[#f3e8ff] text-[#7c3aed]' : 'bg-[#eceff3] text-[#64748b]';
+  const scoreCls = (t: ScoreType) => t === 'flame' ? 'bg-[#fed7aa] text-[#c2410c]' : t === 'target' ? 'bg-[#fef3c7] text-[#b45309]' : 'bg-[#dbeafe] text-[#1e40af]';
+  const scoreIcon = (t: ScoreType) => t === 'flame' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67z" /></svg>
+  ) : t === 'target' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" fill="currentColor" /></svg>
+  ) : (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
+  );
 
+  type Platform = 'instagram' | 'facebook' | 'linkedin' | 'youtube';
+  const platformIcon = (p: Platform) => p === 'instagram' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#d9577e" strokeWidth="2"><rect x="2" y="2" width="20" height="20" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="1" fill="#d9577e" /></svg>
+  ) : p === 'facebook' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="#3f6cab"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+  ) : p === 'linkedin' ? (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
+  ) : (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="#ef4444"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+  );
+  const platformLabel = (p: Platform) => p === 'instagram' ? 'Instagram' : p === 'facebook' ? 'Facebook' : p === 'linkedin' ? 'LinkedIn' : 'YouTube';
+  type PostCard = { av: string; avbg: string; avc: string; n: string; caption: string; hasScore: boolean; score: number; scoreType: ScoreType; tag: string | null; tagColor: string | null; platform: Platform; author: string; authorName: string; upd: string };
+  const postBoard: { name: string; count: string; cards: PostCard[]; peek: PostCard }[] = [
+    {
+      name: 'Drafts', count: '12', cards: [
+        { av: 'MK', avbg: '#e5e7eb', avc: '#64748b', n: 'Summer Collection 2026', caption: 'Get ready for the hottest trends...', hasScore: false, score: 0, scoreType: 'pulse', tag: 'Product Launch', tagColor: 'purple', platform: 'instagram', author: 'PG', authorName: 'Prathik Gadde', upd: '2 hours ago' },
+      ], peek: { av: 'AI', avbg: '#dbeafe', avc: '#3f6cab', n: 'Diwali Sale Teaser', caption: 'Sneak peek into our big sale...', hasScore: false, score: 0, scoreType: 'pulse', tag: 'Promo', tagColor: 'blue', platform: 'facebook', author: 'AI', authorName: 'Nexa AI', upd: '' }
+    },
+    {
+      name: 'Scheduled', count: '5', cards: [
+        { av: 'AR', avbg: '#fef3c7', avc: '#b45309', n: 'Linen Shirts Restock', caption: 'They are back! Shop the pure...', hasScore: true, score: 85, scoreType: 'flame', tag: 'Restock', tagColor: 'blue', platform: 'facebook', author: 'AR', authorName: 'Anjali R', upd: 'Scheduled for tomorrow' },
+      ], peek: { av: 'AI', avbg: '#dbeafe', avc: '#3f6cab', n: 'Flash Sale', caption: 'Ready, set, shop!', hasScore: false, score: 0, scoreType: 'pulse', tag: 'Promo', tagColor: 'blue', platform: 'instagram', author: 'AI', authorName: 'Nexa AI', upd: '' }
+    },
+    {
+      name: 'Published', count: '142', cards: [
+        { av: 'MK', avbg: '#e5e7eb', avc: '#64748b', n: 'Customer Testimonial', caption: '"Best quality ever" - see what...', hasScore: true, score: 92, scoreType: 'target', tag: 'Review', tagColor: 'green', platform: 'instagram', author: 'MK', authorName: 'Prathik Gadde', upd: 'Published 3 days ago' },
+      ], peek: { av: 'AI', avbg: '#dbeafe', avc: '#3f6cab', n: 'Behind the Scenes', caption: 'How we make our clothes...', hasScore: true, score: 78, scoreType: 'pulse', tag: 'Culture', tagColor: 'purple', platform: 'youtube', author: 'AI', authorName: 'Nexa AI', upd: '' }
+    }
+  ];
   return (
     <div className="absolute inset-0 bg-[#f5f7f9] rounded-[12px] overflow-hidden flex flex-col text-left">
       {/* TOP BAR */}
       <div className="h-[60px] bg-white border-b border-[#edf0f4] flex items-center shrink-0">
         <div className="w-[238px] flex items-center justify-between px-[18px] shrink-0">
-          <div className="flex items-center gap-[9px]"><div className="size-[28px] rounded-[8px] bg-[#06b349] flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 6l6 6-6 6" /></svg></div><span className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[19px] tracking-[-0.5px]">wenext</span></div>
+          <div className="flex items-center gap-[9px]">
+            <img alt="wenext" src="/figma/imgImageWenext.svg" style={{ width: "120px", height: "25px" }} />
+          </div>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="11 17 6 12 11 7" /><polyline points="18 17 13 12 18 7" /></svg>
         </div>
         <div className="flex-1 flex items-center justify-between px-[20px]">
@@ -371,7 +446,7 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
             <div className="h-[40px] rounded-[10px] px-[16px] flex items-center gap-[8px]" style={{ background: 'linear-gradient(135deg,#0aa25a,#16c46f)' }}><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" /></svg><span className="text-white text-[14px] font-['Geist:SemiBold'] font-semibold">NEXA AI</span></div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
             <div className="relative"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg><span className="absolute -top-[1px] -right-[1px] size-[8px] rounded-full bg-[#ef4444] border-2 border-white" /></div>
-            <div className="flex items-center gap-[10px]"><div className="size-[40px] rounded-[10px] bg-[#eceff3] flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[#64748b] text-[14px]">MK</div><div className="leading-none"><div className="flex items-center gap-[4px]"><span className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px]">Manish Kumar</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div><span className="font-['Courier_Prime'] text-[#9ca3af] text-[12px]">+91 80196 72323</span></div></div>
+            <div className="flex items-center gap-[10px]"><div className="size-[40px] rounded-[10px] bg-[#eceff3] flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[#64748b] text-[14px]">PG</div><div className="leading-none"><div className="flex items-center gap-[4px]"><span className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px]">Prathik Gadde</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div><span className="font-['Courier_Prime'] text-[#9ca3af] text-[12px]">+91 97********</span></div></div>
           </div>
         </div>
       </div>
@@ -413,7 +488,7 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
           </div>
           <div className="px-[14px] pb-[14px] flex flex-col gap-[14px]">
             <div className="rounded-[14px] p-[14px] text-white" style={{ background: 'linear-gradient(135deg,#0a8f4f,#15b866)' }}>
-              <div className="flex items-center gap-[6px] mb-[8px]"><Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[12px] tracking-[0.06em]">ENTERPRISE</Typography><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" opacity="0.8"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg></div>
+              <div className="flex items-center gap-[6px] mb-[8px]"><Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[12px] tracking-[0.06em]">{tier}</Typography><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" opacity="0.8"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg></div>
               <div className="flex items-end gap-[6px]"><Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[22px] leading-none">{credits}</Typography><Typography className="font-['Geist:Regular'] text-white/80 text-[12px] mb-[2px]">AI Credits</Typography></div>
             </div>
             <div className="flex items-center justify-between">
@@ -435,7 +510,7 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
                 </div>
                 <div className="px-[18px] flex items-center gap-[20px] border-b border-[#f1f3f6]">
                   <div className="pb-[11px] border-b-2 border-[#06b349] -mb-px"><Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[13px]">All</Typography></div>
-                  <Typography className="font-['Geist:Medium'] font-medium text-[#64748b] text-[13px] pb-[11px]">Unread <span className="text-[#06b349]">12</span></Typography>
+                  <Typography className="font-['Geist:Medium'] font-medium text-[#64748b] text-[13px] pb-[11px]">Unread <span className="text-[#0c221f]">9</span></Typography>
                   <Typography className="font-['Geist:Medium'] font-medium text-[#64748b] text-[13px] pb-[11px]">Assigned to agents <span className="text-[#0c221f]">27</span></Typography>
                 </div>
                 <div className="px-[14px] py-[12px] flex gap-[8px]">
@@ -444,10 +519,21 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
                 </div>
                 <div className="flex-1 overflow-hidden">
                   {convos.map((r, idx) => (
-                    <div key={idx} className={`px-[14px] py-[12px] flex items-start gap-[11px] border-b border-[#f6f7f9] ${r.sel ? 'bg-[#f5f7f9]' : ''}`}>
+                    <div key={idx} className={`relative px-[14px] py-[12px] flex items-start gap-[11px] border-b border-[#f6f7f9] ${r.sel ? 'bg-[#fafaf9] border-l-2 border-l-[#06b349]' : ''}`}>
                       <div className="size-[42px] rounded-full flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[13px] shrink-0" style={{ background: r.bg, color: r.c }}>{r.i}</div>
                       <div className="flex-1 min-w-0 pt-[1px]">
-                        <div className="flex items-center justify-between"><div className="flex items-center gap-[5px] min-w-0"><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px] truncate">{r.n}</Typography>{r.badge && <span className="bg-[#dbeafe] text-[#3f6cab] rounded-[4px] px-[4px] text-[9px] font-['Geist:SemiBold'] shrink-0">{r.badge}</span>}</div><svg width="15" height="15" viewBox="0 0 24 24" fill="#cbd5e1" className="shrink-0"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg></div>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-[5px] min-w-0">
+                            <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px] truncate">{r.n}</Typography>
+                            {r.star && (
+                              <svg width="11" height="11" viewBox="0 0 24 24" fill="#dc2626" className="shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                            )}
+                            {r.badge && (
+                              <span className="bg-[#fee2e2] text-[#dc2626] rounded-[4px] px-[4px] text-[9px] font-['Geist:SemiBold'] shrink-0">{r.badge}</span>
+                            )}
+                          </div>
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="#cbd5e1" className="shrink-0"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
+                        </div>
                         <div className="flex items-center justify-between gap-[8px] mt-[3px]"><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] truncate">{r.prev}</Typography>{r.t && <Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[11px] shrink-0">{r.t}</Typography>}</div>
                       </div>
                     </div>
@@ -455,26 +541,85 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
                 </div>
               </div>
               <div className="flex-1 bg-white rounded-[14px] border border-[#eceff3] flex flex-col min-w-0 overflow-hidden">
+                {/* Contact header — sahith + Manish dropdown + High priority */}
                 <div className="px-[20px] py-[14px] flex items-center justify-between border-b border-[#f1f3f6]">
-                  <div className="flex items-center gap-[12px]"><div className="size-[44px] rounded-full bg-[#d8f3e3] flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[#0a8f5a] text-[15px]">P</div><div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-none">Prathik</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[5px]">+919876567801</Typography></div></div>
+                  <div className="flex items-center gap-[12px]">
+                    <div className="size-[44px] rounded-full bg-[#fce7ef] flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[#d9577e] text-[16px]">s</div>
+                    <div>
+                      <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-none">Sahith</Typography>
+                      <Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[5px]">+91 97********</Typography>
+                    </div>
+                  </div>
                   <div className="flex items-center gap-[10px]">
-                    <div className="flex items-center gap-[7px] border border-[#e5e7eb] rounded-[10px] px-[12px] py-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg><Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Unassigned</Typography><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div>
-                    <div className="flex items-center gap-[7px] border border-[#e5e7eb] rounded-[10px] px-[12px] py-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg><Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Priority</Typography><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div>
+                    <div className="flex items-center gap-[7px] border border-[#e5e7eb] rounded-[10px] px-[12px] py-[8px]">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+                      <Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Manish</Typography>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg>
+                    </div>
+                    <div className="flex items-center gap-[7px] border border-[#fecaca] bg-[#fef2f2] rounded-[10px] px-[12px] py-[8px]">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="#dc2626"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
+                      <Typography className="text-[#dc2626] text-[13px] font-['Geist:SemiBold'] font-semibold">High</Typography>
+                    </div>
                   </div>
                 </div>
-                {/* <div className="bg-[#fdecec] py-[9px] flex items-center justify-center gap-[8px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><Typography className="font-['Geist:Medium'] font-medium text-[#dc2626] text-[12.5px]">Outside 24h window · template messages only</Typography></div> */}
-                <div className="flex-1 overflow-hidden px-[24px] py-[18px] flex flex-col gap-[14px] justify-end" style={{ background: '#f5f7f9' }}>
-                  {[{ side: 'out', t: '15:05' }, { side: 'in', t: '15:08' }, { side: 'out', t: '15:08' }, { side: 'in', t: '15:11' }, { side: 'out', t: '15:11' }, { side: 'in', t: '15:13' }].map((m, i) => m.side === 'in' ? (
-                    <div key={i} className="self-start flex flex-col items-start gap-[3px]"><div className="bg-white rounded-[10px] rounded-tl-[3px] px-[16px] py-[10px] shadow-sm"><Typography className="text-[#0c221f] text-[13px]">Komminni</Typography></div><Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[10px] pl-[2px]">{m.t}</Typography></div>
-                  ) : (
-                    <div key={i} className="self-end flex flex-col items-end gap-[3px] max-w-[55%]">
-                      <div className="bg-[#dcf8e8] rounded-[12px] rounded-tr-[4px] overflow-hidden w-full">
-                        {i > 0 && <div className="px-[14px] pt-[10px] pb-[8px]"><Typography className="text-[#0c221f] text-[13px]">Tap below to continue.</Typography></div>}
-                        <div className={`flex items-center justify-center gap-[7px] py-[11px] ${i > 0 ? 'border-t border-[#bfe6cd]' : ''}`}><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg><Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[13px]">Open form</Typography></div>
+
+                {/* Outside 24h warning banner */}
+                <div className="bg-[#fdecec] py-[9px] flex items-center justify-center gap-[8px]">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>
+                  <Typography className="font-['Geist:Medium'] font-medium text-[#dc2626] text-[12.5px]">Outside 24h window · template messages only</Typography>
+                </div>
+
+                {/* Chat body */}
+                <div className="flex-1 overflow-hidden px-[24px] py-[18px] flex flex-col gap-[10px] justify-end" style={{ background: '#f5f7f9' }}>
+                  {/* Bubble 1 — View options list */}
+                  <div className="self-end flex flex-col items-end gap-[3px] max-w-[62%]">
+                    <div className="bg-[#dcf8e8] rounded-[12px] rounded-tr-[4px] overflow-hidden w-full">
+                      <div className="flex items-center justify-center gap-[7px] py-[11px]">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                        <Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[13px]">View options</Typography>
                       </div>
-                      <div className="flex items-center gap-[3px] pr-[2px]"><Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[10px]">{m.t}</Typography>{wTicks}</div>
                     </div>
-                  ))}
+                    <div className="flex items-center gap-[3px] pr-[2px]"><Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[10px]">2:30 AM</Typography>{wTicks}</div>
+                  </div>
+
+                  {/* Bubble 2 — Click here to view products + View options */}
+                  <div className="self-end flex flex-col items-end gap-[3px] max-w-[62%]">
+                    <div className="bg-[#dcf8e8] rounded-[12px] rounded-tr-[4px] overflow-hidden w-full">
+                      <div className="px-[14px] pt-[10px] pb-[8px]">
+                        <Typography className="text-[#0c221f] text-[13px]">Click here to view products list:</Typography>
+                      </div>
+                      <div className="border-t border-[#bfe6cd] flex items-center justify-center gap-[7px] py-[11px]">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                        <Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[13px]">View options</Typography>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-[3px] pr-[2px]"><Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[10px]">6:02 AM</Typography>{wTicks}</div>
+                  </div>
+
+                  {/* Date separator */}
+                  <div className="self-center bg-white rounded-[8px] px-[12px] py-[4px] shadow-sm">
+                    <Typography className="text-[#94a3b8] text-[11px] font-['Geist:Medium'] font-medium">Mar 17, 2026</Typography>
+                  </div>
+
+                  {/* Bubble 3 — Order Details card */}
+                  <div className="self-end flex flex-col items-end gap-[3px] max-w-[62%]">
+                    <div className="bg-[#dcf8e8] rounded-[12px] rounded-tr-[4px] overflow-hidden w-full">
+                      <div className="px-[14px] pt-[12px] pb-[10px]">
+                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13.5px] leading-none">Your Order Details</Typography>
+                        <Typography className="text-[#0c221f] text-[12.5px] mt-[8px] leading-[1.45]">Thank you for your order of 5! Your order will be delivered to 6 soon.</Typography>
+                        <Typography className="text-[#64748b] text-[11.5px] mt-[10px] leading-[1.4]">You are receiving this because you opted in.</Typography>
+                      </div>
+                      <div className="border-t border-[#bfe6cd] flex items-center justify-center gap-[7px] py-[10px]">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+                        <Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[13px]">View Order</Typography>
+                      </div>
+                      <div className="border-t border-[#bfe6cd] flex items-center justify-center gap-[7px] py-[10px]">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                        <Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[13px]">Contact Us</Typography>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-[3px] pr-[2px]"><Typography className="font-['Geist:Regular'] text-[#9ca3af] text-[10px]">11:03 AM</Typography>{wTicks}</div>
+                  </div>
                 </div>
                 <div className="px-[20px] py-[14px] border-t border-[#f1f3f6] flex items-center justify-between bg-white">
                   <div className="flex items-start gap-[10px]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2" className="mt-[1px] shrink-0"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg><div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13.5px] leading-none">The 24-hour time window is completed</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px] mt-[5px]">Free-form replies are paused. Send an approved template to re-open the conversation.</Typography></div></div>
@@ -484,32 +629,151 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
             </div>
           )}
 
-          {/* TAB 1 — AI Agents */}
+          {/* TAB 1 — AI Agents & Assistants (kanban, matches CRM theme) */}
           {tab === 1 && (
-            <div className="flex-1 flex flex-col min-h-0 bg-[#fff]">
-              <div className="px-[26px] pt-[18px] flex items-center gap-[30px] border-b border-[#edf0f4]">
-                {['AI Agents', 'WhatsApp AI Agent', 'Voice Agents', 'Live Chat'].map((t, i) => (<div key={t} className={`pb-[14px] ${i === 0 ? 'border-b-2 border-[#06b349] -mb-px' : ''}`}><Typography className={`font-['Geist:Medium'] font-medium text-[14px] ${i === 0 ? 'text-[#06b349]' : 'text-[#64748b]'}`}>{t}</Typography></div>))}
+            <div className="flex-1 flex flex-col min-h-0 bg-white relative">
+              {/* Sub-tabs */}
+              <div className="px-[28px] pt-[18px] flex items-center gap-[30px] border-b border-[#edf0f4]">
+                {['AI Agents', 'Templates', 'Analytics'].map((t, i) => (
+                  <div key={t} className={`pb-[14px] ${i === 0 ? 'border-b-2 border-[#06b349] -mb-px' : ''}`}>
+                    <Typography className={`font-['Geist:Medium'] font-medium text-[14px] ${i === 0 ? 'text-[#06b349]' : 'text-[#64748b]'}`}>{t}</Typography>
+                  </div>
+                ))}
               </div>
-              <div className="px-[26px] py-[18px] flex items-center justify-between">
-                <div className="w-[360px] h-[42px] rounded-[10px] border border-[#e5e7eb] bg-white flex items-center px-[14px] gap-[9px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg><span className="text-[#9ca3af] text-[14px]">Search agents...</span></div>
-                <div className="h-[42px] rounded-[10px] bg-[#06b349] flex items-center px-[18px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg><span className="text-white text-[14px] font-['Geist:SemiBold'] font-semibold">Create Agent</span></div>
+
+              {/* Title + AI Insights + Create Agent */}
+              <div className="px-[28px] pt-[20px] flex items-start justify-between">
+                <div>
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[26px] tracking-[-0.6px] leading-none">AI Agents &amp; Assistants</Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[13px] mt-[6px]">Deploy, train, and manage your AI workforce across every channel</Typography>
+                </div>
+                <div className="flex items-center gap-[12px]">
+                  <div className="h-[40px] rounded-[10px] border border-[#a7e2c0] bg-[#f3fbf6] flex items-center px-[14px] gap-[8px]">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.9 5.8 5.8 1.9-5.8 1.9L12 18.4l-1.9-5.8L4.3 10.7l5.8-1.9z" /></svg>
+                    <span className="text-[#06824f] text-[13.5px] font-['Geist:Medium'] font-medium">AI Insights</span>
+                  </div>
+                  <div className="h-[40px] rounded-[10px] bg-[#06b349] flex items-center px-[16px] gap-[8px]">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                    <span className="text-white text-[13.5px] font-['Geist:SemiBold'] font-semibold">Create Agent</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex-1 px-[26px] overflow-hidden">
-                <div className="grid grid-cols-3 gap-[18px]">
-                  {agents.map((a, i) => (
-                    <div key={i} className="bg-white rounded-[14px] border border-[#e8ebef] p-[18px]">
-                      <div className="flex items-start justify-between"><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[17px]">{a.n}</Typography><svg width="16" height="16" viewBox="0 0 24 24" fill="#cbd5e1"><circle cx="12" cy="5" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="12" cy="19" r="1.6" /></svg></div>
-                      <span className="inline-block bg-[#eef1f4] text-[#64748b] rounded-[6px] px-[9px] py-[3px] text-[11px] font-['Geist:Medium'] font-medium mt-[10px]">General Agent</span>
-                      <div className="flex items-center gap-[6px] mt-[12px]"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[12px]">{a.d}</Typography></div>
-                      <div className="inline-flex items-center gap-[8px] bg-[#06b349] rounded-[8px] px-[16px] py-[9px] mt-[16px]"><Typography className="text-white text-[13px] font-['Geist:Medium'] font-medium">Configure</Typography><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></div>
+
+              {/* Search + view toggle */}
+              <div className="px-[28px] py-[16px] flex items-center">
+                <div className="flex-1 h-[42px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[9px]">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                  <span className="text-[#9ca3af] text-[14px]">Search agents by name, capability or channel...</span>
+                </div>
+                <div className="ml-[16px] flex items-center border border-[#e5e7eb] rounded-[10px] overflow-hidden h-[42px]">
+                  <div className="size-[42px] flex items-center justify-center border-r border-[#e5e7eb] bg-[#f1f9f4]">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /></svg>
+                  </div>
+                  <div className="size-[42px] flex items-center justify-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Kanban columns */}
+              <div className="flex-1 overflow-hidden px-[28px] pb-[8px]">
+                <div className="flex gap-[16px] h-full">
+                  {agentBoard.map((col) => (
+                    <div key={col.name} className="flex-1 min-w-0 bg-[#fafbfc] rounded-[14px] border border-[#eceff3] flex flex-col p-[14px]">
+                      {/* Column header */}
+                      <div className="flex items-center justify-between mb-[12px]">
+                        <div className="flex items-center gap-[8px] min-w-0">
+                          <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[15px] truncate">{col.name}</Typography>
+                          <div className="flex items-center gap-[4px]">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><path d="M12 3l1.9 5.8 5.8 1.9-5.8 1.9L12 18.4l-1.9-5.8L4.3 10.7l5.8-1.9z" /></svg>
+                            <Typography className="text-[#64748b] text-[12px] font-['Geist:Medium']">{col.count}</Typography>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-[8px] shrink-0">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="#94a3b8"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
+                        </div>
+                      </div>
+
+                      {/* Filter input */}
+                      <div className="h-[34px] rounded-[8px] border border-[#e5e7eb] bg-white flex items-center px-[10px] gap-[7px] mb-[12px]">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                        <span className="text-[#9ca3af] text-[12px]">Filter agents</span>
+                      </div>
+
+                      {/* Cards */}
+                      <div className="flex flex-col gap-[10px] overflow-hidden">
+                        {col.cards.map((cd, ci) => (
+                          <div key={ci} className="bg-white rounded-[12px] border border-[#eceff3] p-[12px]">
+                            {/* Row 1: checkbox + sparkle avatar + name/type + score pill */}
+                            <div className="flex items-start justify-between gap-[6px]">
+                              <div className="flex items-center gap-[8px] min-w-0">
+                                <div className="size-[14px] rounded-[4px] border-2 border-[#cbd5e1] shrink-0" />
+                                {/* <div className="size-[28px] rounded-full flex items-center justify-center text-[12px] font-['Geist:SemiBold'] font-semibold shrink-0" style={{ background: cd.avbg, color: cd.avc }}>{cd.av}</div> */}
+                                <div className="min-w-0">
+                                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13px] truncate">{cd.n}</Typography>
+                                  <Typography className="text-[#94a3b8] text-[10.5px] truncate">{cd.type}</Typography>
+                                </div>
+                              </div>
+                              {/* <div className={`inline-flex items-center gap-[3px] rounded-full px-[6px] py-[2px] shrink-0 ${scoreCls(cd.scoreType)}`}>
+                                {scoreIcon(cd.scoreType)}
+                                <span className="text-[10.5px] font-['Geist:SemiBold'] font-semibold">{cd.score}%</span>
+                              </div> */}
+                            </div>
+
+                            {/* Row 2: capability tag + channel indicator */}
+                            <div className="flex items-center justify-between gap-[8px] mt-[10px]">
+                              {cd.tag ? (
+                                <span className={`rounded-[6px] px-[8px] py-[3px] text-[10.5px] font-['Geist:Medium'] font-medium ${tagCls(cd.tagColor)}`}>{cd.tag}</span>
+                              ) : <span />}
+                              <div className="flex items-center gap-[5px]">
+                                {channelIcon(cd.channel)}
+                                <Typography className="text-[#64748b] text-[11px]">{channelLabel(cd.channel)}</Typography>
+                              </div>
+                            </div>
+
+                            {/* Row 3: creator + timestamp */}
+                            <div className="flex items-center justify-between gap-[8px] mt-[10px] pt-[10px] border-t border-[#f1f3f6]">
+                              <div className="flex items-center gap-[6px]">
+                                <div className="size-[18px] rounded-full bg-[#0c221f] flex items-center justify-center">
+                                  <span className="text-white text-[8px] font-['Geist:SemiBold'] font-semibold leading-none">{cd.author}</span>
+                                </div>
+                                <Typography className="text-[#64748b] text-[11px]">By {cd.author === 'MK' ? 'Manish' : cd.author === 'AR' ? 'Arjun' : 'Priya'}</Typography>
+                              </div>
+                              <Typography className="text-[#94a3b8] text-[11px]">{cd.upd}</Typography>
+                            </div>
+                          </div>
+                        ))}
+
+                        {/* Peek card */}
+                        <div className="bg-white rounded-[12px] border border-[#eceff3] p-[12px]">
+                          <div className="flex items-start justify-between gap-[6px]">
+                            <div className="flex items-center gap-[8px] min-w-0">
+                              <div className="size-[14px] rounded-[4px] border-2 border-[#cbd5e1] shrink-0" />
+                              <div className="size-[28px] rounded-full flex items-center justify-center text-[12px] font-['Geist:SemiBold'] font-semibold shrink-0" style={{ background: col.peek.avbg, color: col.peek.avc }}>{col.peek.av}</div>
+                              <div className="min-w-0">
+                                <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13px] truncate">{col.peek.n}</Typography>
+                                <Typography className="text-[#94a3b8] text-[10.5px] truncate">{col.peek.type}</Typography>
+                              </div>
+                            </div>
+                            <div className={`inline-flex items-center gap-[3px] rounded-full px-[6px] py-[2px] shrink-0 ${scoreCls(col.peek.scoreType)}`}>
+                              {scoreIcon(col.peek.scoreType)}
+                              <span className="text-[10.5px] font-['Geist:SemiBold'] font-semibold">{col.peek.score}%</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="px-[26px] py-[14px] border-t border-[#edf0f4] flex items-center justify-between bg-white">
-                <div className="flex items-center gap-[14px]"><Typography className="font-['Geist:Regular'] text-[#64748b] text-[12px]">Rows per page</Typography><div className="flex items-center gap-[6px] border border-[#e5e7eb] rounded-[7px] px-[10px] py-[5px]"><Typography className="text-[#0c221f] text-[12px]">8</Typography><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div><Typography className="font-['Geist:Regular'] text-[#64748b] text-[12px]">1 - 8 of 40</Typography></div>
-                <div className="flex items-center gap-[6px]"><div className="size-[28px] rounded-[7px] border border-[#e5e7eb] flex items-center justify-center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="15 18 9 12 15 6" /></svg></div>{['1', '2', '3', '…', '5'].map((p) => (<div key={p} className={`size-[28px] rounded-[7px] flex items-center justify-center text-[12px] font-['Geist:Medium'] ${p === '1' ? 'bg-[#06b349] text-white' : 'text-[#64748b]'}`}>{p}</div>))}<div className="size-[28px] rounded-[7px] border border-[#e5e7eb] flex items-center justify-center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg></div></div>
-              </div>
+
+              {/* Floating action button */}
+              {/* <div className="absolute bottom-[20px] right-[24px] size-[52px] rounded-full bg-[#06b349] flex items-center justify-center shadow-[0_10px_24px_-6px_rgba(6,179,73,0.5)]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 3l1.9 5.8 5.8 1.9-5.8 1.9L12 18.4l-1.9-5.8L4.3 10.7l5.8-1.9z" />
+                </svg>
+              </div> */}
             </div>
           )}
 
@@ -522,7 +786,7 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
               <div className="flex-1 overflow-hidden px-[28px] py-[20px]">
                 <div className="flex items-start justify-between mb-[18px]">
                   <div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[26px] tracking-[-0.6px] leading-none">Campaigns</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[13px] mt-[6px]">Create and manage WhatsApp marketing campaigns</Typography></div>
-                  <div className="h-[42px] rounded-[10px] flex items-center px-[18px] gap-[8px]" style={{ background: 'linear-gradient(135deg,#0aa25a,#16c46f)' }}><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg><span className="text-white text-[14px] font-['Geist:SemiBold'] font-semibold">New Campaign</span></div>
+                  <div className="h-[42px] rounded-[10px] bg-[#06b349] flex items-center px-[18px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg><span className="text-white text-[14px] font-['Geist:SemiBold'] font-semibold">New Campaign</span></div>
                 </div>
                 <div className="flex items-center justify-between mb-[18px]">
                   <div className="w-[400px] h-[44px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[9px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg><span className="text-[#9ca3af] text-[14px]">Search Campaigns...</span></div>
@@ -548,71 +812,168 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
             </div>
           )}
 
-          {/* TAB 3 — CRM Lead Boards */}
+          {/* TAB 3 — CRM Leads Board */}
           {tab === 3 && (
-            <div className="flex-1 flex flex-col min-h-0 bg-white">
+            <div className="flex-1 flex flex-col min-h-0 bg-white relative">
+              {/* Tabs */}
               <div className="px-[28px] pt-[18px] flex items-center gap-[30px] border-b border-[#edf0f4]">
-                {['Lead Boards', 'Tickets', 'Tags'].map((t, i) => (<div key={t} className={`pb-[14px] ${i === 0 ? 'border-b-2 border-[#06b349] -mb-px' : ''}`}><Typography className={`font-['Geist:Medium'] font-medium text-[14px] ${i === 0 ? 'text-[#06b349]' : 'text-[#64748b]'}`}>{t}</Typography></div>))}
+                {['Lead Board', 'Tickets', 'Tags'].map((t, i) => (
+                  <div key={t} className={`pb-[14px] ${i === 0 ? 'border-b-2 border-[#06b349] -mb-px' : ''}`}>
+                    <Typography className={`font-['Geist:Medium'] font-medium text-[14px] ${i === 0 ? 'text-[#06b349]' : 'text-[#64748b]'}`}>{t}</Typography>
+                  </div>
+                ))}
               </div>
-              <div className="px-[28px] pt-[18px] flex items-start justify-between">
-                <div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[26px] tracking-[-0.6px] leading-none">Lead Boards</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[13px] mt-[6px]">Default Kanban board for managing leads</Typography></div>
+
+              {/* Title + AI Lead Analysis + Add Leads */}
+              <div className="px-[28px] pt-[20px] flex items-start justify-between">
+                <div>
+                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[26px] tracking-[-0.6px] leading-none">Leads Board</Typography>
+                  <Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[13px] mt-[6px]">Default Kanban board for managing leads</Typography>
+                </div>
                 <div className="flex items-center gap-[12px]">
-                  <div className="h-[40px] rounded-[10px] border border-[#a7e2c0] bg-[#f3fbf6] flex items-center px-[14px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.9 5.8 5.8 1.9-5.8 1.9L12 18.4l-1.9-5.8L4.3 10.7l5.8-1.9z" /></svg><span className="text-[#06824f] text-[13.5px] font-['Geist:Medium'] font-medium">AI Lead Analysis</span></div>
-                  <div className="h-[40px] rounded-[10px] bg-[#06b349] flex items-center px-[16px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" /></svg><span className="text-white text-[13.5px] font-['Geist:SemiBold'] font-semibold">Add Leads</span></div>
+                  <div className="h-[40px] rounded-[10px] border border-[#a7e2c0] bg-[#f3fbf6] flex items-center px-[14px] gap-[8px]">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.9 5.8 5.8 1.9-5.8 1.9L12 18.4l-1.9-5.8L4.3 10.7l5.8-1.9z" /></svg>
+                    <span className="text-[#06824f] text-[13.5px] font-['Geist:Medium'] font-medium">AI Lead Analysis</span>
+                  </div>
+                  <div className="h-[40px] rounded-[10px] bg-[#06b349] flex items-center px-[16px] gap-[8px]">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" /></svg>
+                    <span className="text-white text-[13.5px] font-['Geist:SemiBold'] font-semibold">Add Leads</span>
+                  </div>
                 </div>
               </div>
-              <div className="px-[28px] py-[16px] flex items-center justify-between">
-                <div className="w-[420px] h-[42px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[9px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg><span className="text-[#9ca3af] text-[14px]">Search by name, phone or email...</span></div>
-                <div className="flex items-center gap-[12px]">
-                  <div className="h-[42px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3" /></svg><Typography className="text-[#475569] text-[13.5px] font-['Geist:Medium'] font-medium">Filters</Typography></div>
-                  <div className="flex items-center border border-[#e5e7eb] rounded-[10px] overflow-hidden h-[42px]"><div className="size-[42px] flex items-center justify-center border-r border-[#e5e7eb] bg-[#f1f9f4]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /></svg></div><div className="size-[42px] flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg></div></div>
+
+              {/* Search bar + view toggle */}
+              <div className="px-[28px] py-[16px] flex items-center">
+                <div className="flex-1 h-[42px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[9px]">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                  <span className="text-[#9ca3af] text-[14px]">Search by name, phone or email...</span>
+                </div>
+                <div className="ml-[16px] flex items-center border border-[#e5e7eb] rounded-[10px] overflow-hidden h-[42px]">
+                  <div className="size-[42px] flex items-center justify-center border-r border-[#e5e7eb] bg-[#f1f9f4]">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /></svg>
+                  </div>
+                  <div className="size-[42px] flex items-center justify-center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+                  </div>
                 </div>
               </div>
+
+              {/* Kanban columns */}
               <div className="flex-1 overflow-hidden px-[28px] pb-[8px]">
                 <div className="flex gap-[16px] h-full">
                   {board.map((col) => (
-                    <div key={col.name} className="w-[300px] bg-[#fafbfc] rounded-[14px] border border-[#eceff3] flex flex-col shrink-0 p-[14px]">
-                      <div className="flex items-center justify-between mb-[10px]">
-                        <div className="flex items-center gap-[9px] min-w-0"><div className="size-[16px] rounded-[4px] border-2 border-[#cbd5e1]" /><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[15px] truncate">{col.name}</Typography></div>
-                        <div className="flex items-center gap-[8px] shrink-0"><div className="flex items-center gap-[4px] bg-[#eef1f4] rounded-full px-[8px] py-[2px]"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg><Typography className="text-[#64748b] text-[11px] font-['Geist:Medium']">{col.count}</Typography></div><svg width="15" height="15" viewBox="0 0 24 24" fill="#cbd5e1"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg></div>
+                    <div key={col.name} className="flex-1 min-w-0 bg-[#fafbfc] rounded-[14px] border border-[#eceff3] flex flex-col p-[14px]">
+                      {/* Column header */}
+                      <div className="flex items-center justify-between mb-[12px]">
+                        <div className="flex items-center gap-[8px] min-w-0">
+                          <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[15px] truncate">{col.name}</Typography>
+                          <div className="flex items-center gap-[4px]">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+                            <Typography className="text-[#64748b] text-[12px] font-['Geist:Medium']">{col.count}</Typography>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-[8px] shrink-0">
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg>
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="#94a3b8"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
+                        </div>
                       </div>
-                      <div className="h-[34px] rounded-[8px] border border-[#e5e7eb] bg-white flex items-center px-[10px] gap-[7px] mb-[10px]"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg><span className="text-[#9ca3af] text-[12px]">Search Contact</span></div>
+
+                      {/* Search Contact input */}
+                      <div className="h-[34px] rounded-[8px] border border-[#e5e7eb] bg-white flex items-center px-[10px] gap-[7px] mb-[12px]">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+                        <span className="text-[#9ca3af] text-[12px]">Search Contact</span>
+                      </div>
+
+                      {/* Cards */}
                       <div className="flex flex-col gap-[10px] overflow-hidden">
                         {col.cards.map((cd, ci) => (
                           <div key={ci} className="bg-white rounded-[12px] border border-[#eceff3] p-[12px]">
-                            <div className="flex items-start justify-between">
-                              <div className="flex items-center gap-[8px] min-w-0"><div className="size-[14px] rounded-[4px] border-2 border-[#cbd5e1] shrink-0" /><div className="size-[28px] rounded-full flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[11px] shrink-0" style={{ background: cd.avbg, color: cd.avc }}>{cd.av}</div><div className="min-w-0"><Typography className="font-['Geist:SemiBold'] font-semibold italic text-[#0c221f] text-[13px] truncate">{cd.n}</Typography><Typography className="font-['Courier_Prime'] text-[#94a3b8] text-[11px]">{cd.ph}</Typography></div></div>
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="#cbd5e1" className="shrink-0"><circle cx="5" cy="12" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="19" cy="12" r="1.6" /></svg>
+                            {/* Row 1: checkbox + avatar + name/phone + score pill */}
+                            <div className="flex items-start justify-between gap-[6px]">
+                              <div className="flex items-center gap-[8px] min-w-0">
+                                <div className="size-[14px] rounded-[4px] border-2 border-[#cbd5e1] shrink-0" />
+                                <div className="size-[28px] rounded-full flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[11px] shrink-0" style={{ background: cd.avbg, color: cd.avc }}>{cd.av}</div>
+                                <div className="min-w-0">
+                                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13px] truncate">{cd.n}</Typography>
+                                  <Typography className="font-['Courier_Prime'] text-[#94a3b8] text-[10.5px] truncate">{cd.ph}</Typography>
+                                </div>
+                              </div>
+                              <div className={`inline-flex items-center gap-[3px] rounded-full px-[6px] py-[2px] shrink-0 ${scoreCls(cd.scoreType)}`}>
+                                {scoreIcon(cd.scoreType)}
+                                <span className="text-[10.5px] font-['Geist:SemiBold'] font-semibold">{cd.score}</span>
+                              </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-[8px] mt-[10px]">
-                              <div><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[10px]">Updated on</Typography><div className="flex items-center gap-[4px] mt-[2px]"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="3" y1="10" x2="21" y2="10" /></svg><Typography className="text-[#0c221f] text-[11px]">{cd.upd}</Typography></div></div>
-                              <div><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[10px]">Source</Typography><div className="flex items-center gap-[4px] mt-[2px]"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" /><line x1="7" y1="7" x2="7.01" y2="7" /></svg><Typography className="text-[#0c221f] text-[11px]">{cd.src}</Typography></div></div>
+
+                            {/* Row 2: tag + Lead indicator */}
+                            <div className="flex items-center justify-between gap-[8px] mt-[10px]">
+                              {cd.tag ? (
+                                <span className={`rounded-[6px] px-[8px] py-[3px] text-[10.5px] font-['Geist:Medium'] font-medium ${tagCls(cd.tagColor)}`}>{cd.tag}</span>
+                              ) : <span />}
+                              <div className="flex items-center gap-[4px]">
+                                <span className="size-[6px] rounded-full bg-[#94a3b8]" />
+                                <Typography className="text-[#64748b] text-[11px]">Lead</Typography>
+                              </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-[8px] mt-[10px]">
-                              <div><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[10px]">Agent</Typography><div className="inline-flex items-center gap-[5px] border border-[#e5e7eb] rounded-[7px] px-[8px] py-[4px] mt-[3px]"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg><Typography className="text-[#475569] text-[10.5px]">{cd.agent}</Typography><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="3"><polyline points="6 9 12 15 18 9" /></svg></div></div>
-                              <div><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[10px]">Tags</Typography><div className="flex items-center gap-[4px] mt-[3px]">{cd.tags.length ? cd.tags.map((tg) => (<span key={tg.t} className={`rounded-[5px] px-[6px] py-[2px] text-[10px] font-['Geist:Medium'] ${tagCls(tg.c)}`}>{tg.t}</span>)) : <Typography className="text-[#cbd5e1] text-[12px]">—</Typography>}</div></div>
+
+                            {/* Row 3: Unassigned + timestamp */}
+                            <div className="flex items-center justify-between gap-[8px] mt-[10px] pt-[10px] border-t border-[#f1f3f6]">
+                              <div className="flex items-center gap-[6px]">
+                                <div className="size-[18px] rounded-full bg-[#f1f5f9] flex items-center justify-center">
+                                  <span className="text-[#94a3b8] text-[10px] leading-none">—</span>
+                                </div>
+                                <Typography className="text-[#64748b] text-[11px]">Unassigned</Typography>
+                              </div>
+                              <Typography className="text-[#94a3b8] text-[11px]">{cd.upd}</Typography>
                             </div>
                           </div>
                         ))}
-                        <div className="bg-white rounded-[12px] border border-[#eceff3] p-[12px] flex items-center gap-[8px]"><div className="size-[14px] rounded-[4px] border-2 border-[#cbd5e1] shrink-0" /><div className="size-[28px] rounded-full flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[11px]" style={{ background: col.peek.avbg, color: col.peek.avc }}>{col.peek.av}</div><Typography className="font-['Geist:SemiBold'] font-semibold italic text-[#0c221f] text-[13px] truncate">{col.peek.n}</Typography></div>
+
+                        {/* Peek card (partially visible next-in-column preview) */}
+                        <div className="bg-white rounded-[12px] border border-[#eceff3] p-[12px]">
+                          <div className="flex items-start justify-between gap-[6px]">
+                            <div className="flex items-center gap-[8px] min-w-0">
+                              <div className="size-[14px] rounded-[4px] border-2 border-[#cbd5e1] shrink-0" />
+                              <div className="size-[28px] rounded-full flex items-center justify-center font-['Geist:SemiBold'] font-semibold text-[11px] shrink-0" style={{ background: col.peek.avbg, color: col.peek.avc }}>{col.peek.av}</div>
+                              <div className="min-w-0">
+                                <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13px] truncate">{col.peek.n}</Typography>
+                                <Typography className="font-['Courier_Prime'] text-[#94a3b8] text-[10.5px] truncate">{col.peek.ph}</Typography>
+                              </div>
+                            </div>
+                            <div className={`inline-flex items-center gap-[3px] rounded-full px-[6px] py-[2px] shrink-0 ${scoreCls(col.peek.scoreType)}`}>
+                              {scoreIcon(col.peek.scoreType)}
+                              <span className="text-[10.5px] font-['Geist:SemiBold'] font-semibold">{col.peek.score}</span>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
+
+              {/* Floating action button — bottom right */}
+              {/* <div className="absolute bottom-[20px] right-[24px] size-[52px] rounded-full bg-[#06b349] flex items-center justify-center shadow-[0_10px_24px_-6px_rgba(6,179,73,0.5)]">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </div> */}
             </div>
           )}
 
-          {/* TAB 4 — Social Media Posts */}
+          {/* TAB 4 — Social Media Posts (original design + CRM polish: Content Insights + view toggle) */}
           {tab === 4 && (
             <div className="flex-1 flex flex-col min-h-0 bg-white">
               <div className="px-[28px] pt-[18px] flex items-center gap-[28px] border-b border-[#edf0f4]">
                 {['All Platforms', 'Instagram', 'Facebook', 'LinkedIn', 'YouTube'].map((t, i) => (<div key={t} className={`pb-[14px] ${i === 0 ? 'border-b-2 border-[#06b349] -mb-px' : ''}`}><Typography className={`font-['Geist:Medium'] font-medium text-[14px] ${i === 0 ? 'text-[#06b349]' : 'text-[#64748b]'}`}>{t}</Typography></div>))}
               </div>
               <div className="flex-1 overflow-hidden px-[28px] py-[20px]">
+                {/* Title + Content Insights (NEW · CRM-theme) + Create Post */}
                 <div className="flex items-start justify-between mb-[18px]">
                   <div><Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[26px] tracking-[-0.6px] leading-none">Social Media Posts</Typography><Typography className="font-['Geist:Regular'] text-[#94a3b8] text-[13px] mt-[6px]">Create, manage and publish content that drives conversations and revenue</Typography></div>
-                  <div className="h-[42px] rounded-[10px] bg-[#06b349] flex items-center px-[18px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg><span className="text-white text-[14px] font-['Geist:SemiBold'] font-semibold">Create Post</span></div>
+                  <div className="flex items-center gap-[12px]">
+                    <div className="h-[42px] rounded-[10px] border border-[#a7e2c0] bg-[#f3fbf6] flex items-center px-[14px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.9 5.8 5.8 1.9-5.8 1.9L12 18.4l-1.9-5.8L4.3 10.7l5.8-1.9z" /></svg><span className="text-[#06824f] text-[13.5px] font-['Geist:Medium'] font-medium">Content Insights</span></div>
+                    <div className="h-[42px] rounded-[10px] bg-[#06b349] flex items-center px-[18px] gap-[8px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg><span className="text-white text-[14px] font-['Geist:SemiBold'] font-semibold">Create Post</span></div>
+                  </div>
                 </div>
                 <div className="grid grid-cols-4 gap-[16px] mb-[18px]">
                   {[
@@ -627,9 +988,14 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
                     </div>
                   ))}
                 </div>
-                <div className="flex items-center justify-between mb-[18px]">
-                  <div className="w-[400px] h-[44px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[9px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg><span className="text-[#9ca3af] text-[14px]">Search Posts...</span></div>
-                  <div className="h-[44px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[16px] gap-[40px]"><Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Published</Typography><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div>
+                {/* Search + Published dropdown + view toggle (NEW · CRM-theme) */}
+                <div className="flex items-center mb-[18px]">
+                  <div className="flex-1 h-[44px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[14px] gap-[9px]"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg><span className="text-[#9ca3af] text-[14px]">Search Posts...</span></div>
+                  <div className="ml-[12px] h-[44px] rounded-[10px] border border-[#e5e7eb] flex items-center px-[16px] gap-[24px]"><Typography className="text-[#475569] text-[13px] font-['Geist:Medium'] font-medium">Published</Typography><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg></div>
+                  <div className="ml-[12px] flex items-center border border-[#e5e7eb] rounded-[10px] overflow-hidden h-[44px]">
+                    <div className="size-[44px] flex items-center justify-center border-r border-[#e5e7eb] bg-[#f1f9f4]"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /></svg></div>
+                    <div className="size-[44px] flex items-center justify-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg></div>
+                  </div>
                 </div>
                 <div className="grid grid-cols-3 gap-[20px]">
                   {[
@@ -643,7 +1009,18 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
                         <div className="flex items-center gap-[8px]"><span className="flex items-center gap-[5px] bg-[#e5f6e7] text-[#06824f] rounded-full px-[9px] py-[3px] text-[11px] font-['Geist:Medium']"><span className="size-[5px] rounded-full bg-[#06b349]" />Published</span><svg width="15" height="15" viewBox="0 0 24 24" fill="#cbd5e1"><circle cx="12" cy="5" r="1.6" /><circle cx="12" cy="12" r="1.6" /><circle cx="12" cy="19" r="1.6" /></svg></div>
                       </div>
                       <div className="mx-[12px] h-[240px] rounded-[10px] overflow-hidden">
-                        {p.kind === 'empty' && <div className="w-full h-full bg-[#eef1f4] flex items-center justify-center"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c2c9d2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" /></svg></div>}
+                        {p.kind === 'empty' && (
+                          <div className="relative w-full h-full" style={{ background: 'linear-gradient(135deg, #0c221f 0%, #1a4a2e 50%, #06b349 130%)' }}>
+                            <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px)', backgroundSize: '18px 18px' }} />
+                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-[14px]">
+                              <Typography className="font-['Geist:Medium'] text-white/50 text-[8px] tracking-[0.22em] mb-[6px]">@ WENEXT</Typography>
+                              <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[28px] leading-[0.95] tracking-[-1px]">EVERY STORY</Typography>
+                              <Typography className="font-['Geist:SemiBold'] font-semibold text-[32px] leading-[0.95] tracking-[-1px] mt-[2px]" style={{ color: '#a3f0c2' }}>INSPIRES</Typography>
+                              <Typography className="font-['Geist:Medium'] text-white/60 text-[8px] tracking-[0.16em] mt-[8px]">SHARE. CONNECT. CONVERT.</Typography>
+                            </div>
+                            <div className="absolute bottom-0 inset-x-0 py-[6px] text-center" style={{ background: 'rgba(6,179,73,0.85)' }}><Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[10px] tracking-[0.12em]">START YOUR FREE TRIAL</Typography></div>
+                          </div>
+                        )}
                         {p.kind === 'sound' && (
                           <div className="relative w-full h-full" style={{ background: 'radial-gradient(circle at 50% 38%, #20420f, #0a1407 75%)' }}>
                             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-[14px]">
