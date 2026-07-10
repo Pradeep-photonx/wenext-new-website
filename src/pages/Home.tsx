@@ -3,17 +3,20 @@ import { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { TrustedByStrip, SecuritySection, PricingTeaser, FinalCTA, HomeFeaturesMockup } from '../components/HomeSections';
+import HeroV2 from '../components/HeroV2';
+import HeroV3 from '../components/HeroV3';
 import imgInstagramPost from '../assets/instagram-post.png';
 import CommentIcon from '../assets/icons/comment.png';
 import SmallLogo from '../assets/icons/sm-logo.png';
 import User from '../assets/icons/user.png';
 import BorderX from "../assets/borders.png";
 import SignUp from "../assets/speed-scale/sign-up.png"
-import ConnectMeta from "../assets/speed-scale/Connect Meta accounts.png"
+import ConnectMeta from "../assets/speed-scale/ConnectMeta.png"
 import TrainAI from "../assets/speed-scale/Train the AI on your brand.png"
 import SetAutomation from "../assets/speed-scale/Set Automations.png"
-import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast..png"
+import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast.png"
 import ConversationalCommerce from "../assets/built-growth/ConversationalCommerce.png"
+import EnterpriseGradeSecurity from "../assets/built-growth/Enterprise-grade security.png"
 
 
 
@@ -95,7 +98,7 @@ const STEPS = [
   { title: 'Connect Meta accounts', sub: 'Link WhatsApp Business, Instagram and Facebook in one click — guided OAuth, no developer required.' },
   { title: 'Train the AI on your brand', sub: 'Upload your catalog, FAQs and tone of voice. The AI learns to reply like your best agent in minutes.' },
   { title: 'Set Automations', sub: 'Choose templates for cart recovery, COD-to-prepaid nudges and re-engagement — or build your own flows.' },
-  { title: 'Launch your first broadcast.', sub: 'Schedule, segment and send. Watch replies, payments and recoveries land in real time.' },
+  { title: 'Launch your first broadcast', sub: 'Schedule, segment and send. Watch replies, payments and recoveries land in real time.' },
 ];
 
 const INSTAGRAM_GRADIENT = 'linear-gradient(45deg, #F58529 0%, #DD2A7B 35%, #8134AF 65%, #515BD4 100%)';
@@ -293,6 +296,8 @@ export default function Home() {
     <div className="bg-[#f8f5ec] relative size-full" data-node-id="467:951" data-name="Home">
       <div className="content-stretch flex flex-col items-start w-full w-full" data-node-id="467:952">
         <Header />
+        {/* <HeroV3 /> */}
+        <HeroV2 />
         <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="467:971">
           <div className="bg-[#092511] content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)]" data-node-id="467:972" data-name="Section">
             <div className="relative shrink-0 w-full" data-node-id="467:973" data-name="Container">
@@ -308,31 +313,32 @@ export default function Home() {
                           <div className="relative shrink-0 w-full" data-node-id="467:978" data-name="Container">
                             <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[16px] items-start relative size-full">
                               <Typography className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.2] min-w-full relative shrink-0 text-[68px] text-white tracking-[-1px] w-[min-content]" data-node-id="467:979">
-                                Turn every <span className="invisible inline-block w-[340px] align-middle"></span> chat into revenue.
+                                Turn every <span className="invisible inline-block w-[310px] align-middle"></span> chat into revenue.
                               </Typography>
                               <Typography className="[word-break:break-word] font-['Geist:Regular'] font-normal leading-[1.4] relative shrink-0 text-[#b7b7b7] text-[22px] w-[521px]" data-node-id="467:980">
                                 WeNext unifies your WhatsApp inbox, automates replies, runs campaigns, and converts leads — all powered by AI built.
                               </Typography>
                               <div
-                                className="absolute border-[1.5px] border-solid h-[84px] left-[2px] rounded-[22px] top-[85px] w-[340px]"
-                                style={{ background: HERO_TABS[heroTab].bgPale, borderColor: HERO_TABS[heroTab].border, boxShadow: `0px 18px 40px -20px ${HERO_TABS[heroTab].shadow}` }}
+                                className="absolute h-[84px] left-[2px] top-[85px] w-[310px]"
                                 data-node-id="467:981"
                               >
-                                <div className="flex items-center justify-center overflow-clip px-[24px] py-[1.5px] relative rounded-[inherit] size-full gap-[16px]">
-                                  <div
-                                    className="shrink-0 size-[40px]"
-                                    style={{
-                                      background: HERO_TABS[heroTab].iconPaint,
-                                      WebkitMaskImage: `url(${HERO_TABS[heroTab].icon})`,
-                                      maskImage: `url(${HERO_TABS[heroTab].icon})`,
-                                      WebkitMaskSize: 'contain',
-                                      maskSize: 'contain',
-                                      WebkitMaskRepeat: 'no-repeat',
-                                      maskRepeat: 'no-repeat',
-                                      WebkitMaskPosition: 'center',
-                                      maskPosition: 'center',
-                                    }}
-                                  />
+                                <div className="flex items-center overflow-clip py-[1.5px] relative rounded-[inherit] size-full gap-[16px]">
+                                  <div className="bg-white shrink-0 size-[60px] rounded-[16px] flex items-center justify-center">
+                                    <div
+                                      className="shrink-0 size-[40px]"
+                                      style={{
+                                        background: HERO_TABS[heroTab].iconPaint,
+                                        WebkitMaskImage: `url(${HERO_TABS[heroTab].icon})`,
+                                        maskImage: `url(${HERO_TABS[heroTab].icon})`,
+                                        WebkitMaskSize: 'contain',
+                                        maskSize: 'contain',
+                                        WebkitMaskRepeat: 'no-repeat',
+                                        maskRepeat: 'no-repeat',
+                                        WebkitMaskPosition: 'center',
+                                        maskPosition: 'center',
+                                      }}
+                                    />
+                                  </div>
                                   <Typography
                                     className="font-['Geist:SemiBold'] font-semibold leading-[48px] text-[48px] tracking-[-1.2px] whitespace-nowrap"
                                     style={
@@ -351,7 +357,7 @@ export default function Home() {
                                     {HERO_TABS[heroTab].name}
                                   </Typography>
                                 </div>
-                                <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.6)]" />
+                                {/* <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.6)]" /> */}
                               </div>
                             </div>
                           </div>
@@ -2136,62 +2142,58 @@ export default function Home() {
             <div className="border-[#cec9b8] border-l border-r border-solid border-t relative shrink-0 w-full">
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Card 1 — Conversational Commerce */}
-                <div className="border-r border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px]">
+                <div className="border-r border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                     Conversational Commerce
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
                     WeNext AI steers WhatsApp conversations through your funnel — answering, recommending and closing like your best agent.
                   </Typography>
 
                   {/* Visualization: topic pills → mock chat input */}
-                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
-                    <img src={ConversationalCommerce} />
+                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
                   </div>
                 </div>
 
                 {/* Card 2 — Enterprise-grade security */}
-                <div className="border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px]">
+                <div className="border-b border-[#e0dac6] p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                     Enterprise-grade security
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
                     DPDP compliant, bank-grade encryption. Customer data stays in India, never shared or sold to third parties.
                   </Typography>
 
                   {/* Visualization: shield with lock + warning/check icons + DPDP badge */}
-                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
-                    <img src={ConversationalCommerce} />
+                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
                   </div>
                 </div>
 
                 {/* Card 3 — Multimodal replies */}
-                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col min-h-[440px]">
+                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                     Multimodal replies
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
                     Send catalog cards, product videos, PDFs and price sheets — everything your buyer needs to decide, in one message.
                   </Typography>
 
                   {/* Visualization: preview card with placeholder lines + video chip */}
-                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
-                    <img src={ConversationalCommerce} />
+                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
                   </div>
                 </div>
 
                 {/* Card 4 — Trained on your brand */}
-                <div className="p-[36px] flex flex-col min-h-[440px]">
+                <div className="p-[36px] flex flex-col min-h-[440px] bg-[#fbf7f0]">
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                     Trained on your brand
                   </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-[380px]">
+                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55] max-w-400px]">
                     Upload your catalog, FAQs and tone of voice. WeNext AI learns to reply like your best agent within minutes.
                   </Typography>
 
                   {/* Visualization: bracket-framed training preview + chip */}
-                  <div className="flex-1 relative mt-[24px] min-h-[240px]">
-                    <img src={ConversationalCommerce} />
+                  <div className="flex-1 relative mt-[24px] min-h-[280px]">
                   </div>
                 </div>
               </div>
@@ -2335,74 +2337,79 @@ export default function Home() {
 
           <div className="content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1793" data-name="Container">
-              <div className="grid grid-cols-2 relative size-full">
-                <div className="p-[60px] flex flex-col justify-center border-r border-[#e0dac6]">
-                  <div className="flex gap-[10px] items-center mb-[16px]">
-                    <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
-                    <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Speed & Scale</Typography>
-                  </div>
-                  <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.3px] leading-[1.12] mb-[18px]">
-                    From setup to selling <br />in 15 minutes.
-                  </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7] mb-[28px] max-w-[460px]">
-                    Everything your front office handles today, done automatically and at any hour.
-                  </Typography>
-                  <div className="flex flex-col gap-[8px]">
-                    {STEPS.map((step, i) => {
-                      const isActive = i === activeStep;
-                      const ICONS = [imgIcon4, imgIcon5, imgIcon6, imgIcon7, imgIcon8];
-                      const activeIconFilter = 'brightness(0) saturate(100%) invert(48%) sepia(85%) saturate(1985%) hue-rotate(118deg) brightness(94%) contrast(92%)';
-                      const inactiveIconFilter = 'brightness(0) saturate(100%) opacity(0.7)';
-                      const handleSelect = () => { setActiveStep(i); setProgress(0); };
-                      return (
-                        <div
-                          key={i}
-                          role="button"
-                          tabIndex={0}
-                          onClick={handleSelect}
-                          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelect(); } }}
-                          className={`relative shrink-0 w-full cursor-pointer transition-opacity outline-none ${isActive ? '' : 'opacity-50 hover:opacity-75'}`}
-                        >
-                          <div className={`flex flex-col items-start ${isActive ? 'pb-[15px]' : 'pb-[8px]'} relative`}>
-                            <div className="flex gap-[14px] items-center relative w-full">
-                              <div className={`relative shrink-0 size-[36px] rounded-full flex items-center justify-center ${isActive ? 'bg-[rgba(6,179,73,0.15)]' : 'bg-[#eeece3]'}`}>
-                                <div className="relative size-[16px]">
-                                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={ICONS[i]} style={{ filter: isActive ? activeIconFilter : inactiveIconFilter }} />
+              <div
+                className='flex flex-col items-center justify-center w-full'
+                style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #e0dac6 0, #e0dac6 1px, transparent 1px, transparent 8px)' }}
+              >
+                <div className="grid grid-cols-2 relative w-[90%] bg-[#f8f5ec] border-l border-r border-[#e0dac6]">
+                  <div className="p-[60px] flex flex-col justify-center border-r border-[#e0dac6]">
+                    <div className="flex gap-[10px] items-center mb-[16px]">
+                      <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
+                      <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Speed & Scale</Typography>
+                    </div>
+                    <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.3px] leading-[1.12] mb-[18px]">
+                      From setup to selling <br />in 15 minutes.
+                    </Typography>
+                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7] mb-[28px] max-w-[460px]">
+                      Everything your front office handles today, done automatically and at any hour.
+                    </Typography>
+                    <div className="flex flex-col gap-[8px]">
+                      {STEPS.map((step, i) => {
+                        const isActive = i === activeStep;
+                        const ICONS = [imgIcon4, imgIcon5, imgIcon6, imgIcon7, imgIcon8];
+                        const activeIconFilter = 'brightness(0) saturate(100%) invert(48%) sepia(85%) saturate(1985%) hue-rotate(118deg) brightness(94%) contrast(92%)';
+                        const inactiveIconFilter = 'brightness(0) saturate(100%) opacity(0.7)';
+                        const handleSelect = () => { setActiveStep(i); setProgress(0); };
+                        return (
+                          <div
+                            key={i}
+                            role="button"
+                            tabIndex={0}
+                            onClick={handleSelect}
+                            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSelect(); } }}
+                            className={`relative shrink-0 w-full cursor-pointer transition-opacity outline-none ${isActive ? '' : 'opacity-50 hover:opacity-75'}`}
+                          >
+                            <div className={`flex flex-col items-start ${isActive ? 'pb-[15px]' : 'pb-[8px]'} relative`}>
+                              <div className="flex gap-[14px] items-center relative w-full">
+                                <div className={`relative shrink-0 size-[36px] rounded-full flex items-center justify-center ${isActive ? 'bg-[rgba(6,179,73,0.15)]' : 'bg-[#eeece3]'}`}>
+                                  <div className="relative size-[16px]">
+                                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={ICONS[i]} style={{ filter: isActive ? activeIconFilter : inactiveIconFilter }} />
+                                  </div>
                                 </div>
-                              </div>
-                              <Typography className={`font-['Geist:Medium'] font-medium leading-none text-[17px] whitespace-nowrap ${isActive ? 'text-[#06b349]' : 'text-[#0c221f]'}`}>
-                                {step.title}
-                              </Typography>
-                            </div>
-                            {isActive && (
-                              <div className="relative w-full pl-[50px] mt-[8px] overflow-hidden">
-                                <Typography className="font-['Geist:Regular'] font-normal leading-[1.4] text-[#60584c] text-[15px]">
-                                  {step.sub}
+                                <Typography className={`font-['Geist:Medium'] font-medium leading-none text-[17px] whitespace-nowrap ${isActive ? 'text-[#06b349]' : 'text-[#0c221f]'}`}>
+                                  {step.title}
                                 </Typography>
                               </div>
-                            )}
-                            {isActive && (
-                              <div className="absolute bg-[#e0dac6] bottom-0 h-[2px] left-0 w-full overflow-hidden">
-                                <div className="bg-[#06b349] h-full transition-[width] duration-[50ms] ease-linear" style={{ width: `${progress}%` }} />
-                              </div>
-                            )}
+                              {isActive && (
+                                <div className="relative w-full pl-[50px] mt-[8px] overflow-hidden">
+                                  <Typography className="font-['Geist:Regular'] font-normal leading-[1.4] text-[#60584c] text-[15px]">
+                                    {step.sub}
+                                  </Typography>
+                                </div>
+                              )}
+                              {isActive && (
+                                <div className="absolute bg-[#e0dac6] bottom-0 h-[2px] left-0 w-full overflow-hidden">
+                                  <div className="bg-[#06b349] h-full transition-[width] duration-[50ms] ease-linear" style={{ width: `${progress}%` }} />
+                                </div>
+                              )}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-                <div className="bg-gradient-to-br from-[#f8f5ec] to-[#f3efe3] relative self-stretch overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 pointer-events-none" />
-                  <div key={activeStep} className="relative w-full max-w-[100%] step-panel">
-                    {activeStep === 0 && (
-                      <div className="relative">
-                        <img style={{ width: "100" }} src={SignUp} alt="Sign Up" />
-                      </div>
-                    )}
-                    {activeStep === 1 && (
-                      <div className="relative">
-                        {/* <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
+                  <div className="bg-gradient-to-br from-[#f8f5ec] to-[#f3efe3] relative self-stretch overflow-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 pointer-events-none" />
+                    <div key={activeStep} className="relative w-full max-w-[80%] step-panel">
+                      {activeStep === 0 && (
+                        <div className="relative">
+                          {/* <img style={{ width: "100" }} src={ConnectMeta} alt="Sign Up" /> */}
+                          <img style={{ width: "100" }} src={SignUp} alt="Sign Up" />
+                        </div>
+                      )}
+                      {activeStep === 1 && (
+                        <div className="relative">
+                          {/* <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
                           <div className="px-[24px] pt-[22px] pb-[18px] border-b border-[#f3efe3] flex items-center justify-between">
                             <div className="flex items-center gap-[10px]">
                               <div className="relative">
@@ -2451,27 +2458,28 @@ export default function Home() {
                             </div>
                           </div>
                         </div> */}
-                        <img style={{ width: "100" }} src={ConnectMeta} alt="Connect Meta" />
-                      </div>
-                    )}
-                    {activeStep === 2 && (
-                      <div className="relative">
-                        <img style={{ width: "100" }} src={TrainAI} alt="Sign Up" />
+                          <img style={{ width: "100" }} src={ConnectMeta} alt="Connect Meta" />
+                        </div>
+                      )}
+                      {activeStep === 2 && (
+                        <div className="relative">
+                          <img style={{ width: "100" }} src={TrainAI} alt="Train the AI on your brand" />
 
-                      </div>
-                    )}
-                    {activeStep === 3 && (
-                      <div className="relative">
-                        <img style={{ width: "100" }} src={SetAutomation} alt="Set Automation" />
+                        </div>
+                      )}
+                      {activeStep === 3 && (
+                        <div className="relative">
+                          <img style={{ width: "100" }} src={SetAutomation} alt="Set Automation" />
 
-                      </div>
-                    )}
-                    {activeStep === 4 && (
-                      <div className="relative">
-                        <img style={{ width: "100" }} src={LaunchBroadcast} alt="Sign Up" />
+                        </div>
+                      )}
+                      {activeStep === 4 && (
+                        <div className="relative">
+                          <img style={{ width: "100" }} src={LaunchBroadcast} alt="Launch your first broadcast" />
 
-                      </div>
-                    )}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
