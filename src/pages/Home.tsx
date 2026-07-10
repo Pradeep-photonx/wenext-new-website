@@ -297,7 +297,7 @@ export default function Home() {
       <div className="content-stretch flex flex-col items-start w-full w-full" data-node-id="467:952">
         <Header />
         {/* <HeroV3 /> */}
-        <HeroV2 />
+        {/* <HeroV2 /> */}
         <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="467:971">
           <div className="bg-[#092511] content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)]" data-node-id="467:972" data-name="Section">
             <div className="relative shrink-0 w-full" data-node-id="467:973" data-name="Container">
