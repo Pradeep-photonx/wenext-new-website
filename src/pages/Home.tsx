@@ -13,7 +13,7 @@ import BorderX from "../assets/borders.png";
 import SignUp from "../assets/speed-scale/sign-up.png"
 import ConnectMeta from "../assets/speed-scale/ConnectMeta.png"
 import TrainAI from "../assets/speed-scale/Train the AI on your brand.png"
-import SetAutomation from "../assets/speed-scale/Set Automations.png"
+import SetAutomation from "../assets/speed-scale/Set Automations.jpg"
 import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast.png"
 import ConversationalCommerce from "../assets/built-growth/ConversationalCommerce.png"
 import EnterpriseGradeSecurity from "../assets/built-growth/Enterprise-grade security.png"
@@ -53,7 +53,7 @@ function IPhoneMockup() {
 
   useEffect(() => {
     const seq: Array<{ type: 'typing' | 'send' | 'step'; text?: string; step?: number; wait: number }> = [
-      { type: 'typing', text: 'Hi! Is the linen kurta still available?', wait: 2600 },
+      { type: 'typing', text: 'Hi! linen kurta still available?', wait: 2600 },
       { type: 'send', step: 0, wait: 700 },
       { type: 'step', step: 1, wait: 1200 },
       { type: 'step', step: 2, wait: 1600 },
@@ -96,171 +96,312 @@ function IPhoneMockup() {
     return () => { clearInterval(id); clearTimeout(stop); };
   }, [iphInputText]);
 
+  // iPhone 15 Pro — Natural Titanium. Real 19.5:9 screen ratio (300 × 650 → 274 × 594 screen).
   return (
-    <div className="flex-1 mt-[28px] flex items-end justify-center min-h-[480px]">
+    <div className="flex-1 mt-[28px] flex items-end justify-center min-h-[640px]">
       <style>{`
-        @keyframes iphMsgIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
-        @keyframes iphTyping { 0%,60%,100% { transform:translateY(0); opacity:0.5; } 30% { transform:translateY(-3px); opacity:1; } }
+        @keyframes iphMsgIn { from { opacity:0; transform:translateY(4px) scale(0.98); } to { opacity:1; transform:translateY(0) scale(1); } }
+        @keyframes iphTyping { 0%,60%,100% { transform:translateY(0); opacity:0.45; } 30% { transform:translateY(-3px); opacity:1; } }
         @keyframes iphCaret { 0%,49% { opacity:1; } 50%,100% { opacity:0; } }
-        @keyframes iphFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-6px); } }
         @keyframes iphLetterReveal { to { max-width: 2em; } }
-        .iph-msg-in    { animation: iphMsgIn 0.35s cubic-bezier(0.32,0.72,0.35,1) both; }
+        .iph-msg-in    { animation: iphMsgIn 0.32s cubic-bezier(0.32,0.72,0.35,1) both; }
         .iph-typing    { animation: iphTyping 1.2s ease-in-out infinite; }
         .iph-caret     { animation: iphCaret 1s steps(2,start) infinite; }
-        .iph-float     { animation: iphFloat 6s ease-in-out infinite; }
         .iph-letter    { display: inline-block; max-width: 0; overflow: hidden; animation: iphLetterReveal 90ms linear forwards; }
       `}</style>
 
-      {/* iPhone 14 Pro — Deep Purple */}
-      <div className="relative" style={{ width: 280 }}>
-        {/* Outer purple aluminum frame */}
+      {/* iPhone 15 Pro — Natural Titanium */}
+      <div className="relative" style={{ width: 320, height: 600 }}>
+        {/* Soft ground shadow */}
         <div
-          className="relative rounded-[30px]"
+          className="absolute rounded-full pointer-events-none"
           style={{
-            background: 'linear-gradient(145deg, #1a1b1c 0%, #1f2023 42%, #18191a 60%, #201430 100%)',
-            padding: '4px',
-            boxShadow: '0 32px 80px -18px rgba(45,25,75,0.45), 0 8px 22px -6px rgba(30,15,55,0.32), inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -1px 0 rgba(0,0,0,0.35)',
+            left: '10%', right: '10%', bottom: '-14px', height: 22,
+            background: 'radial-gradient(ellipse at center, rgba(12,34,31,0.28) 0%, rgba(12,34,31,0) 70%)',
+            filter: 'blur(6px)',
+          }}
+        />
+
+        {/* Titanium outer frame — brushed metal look */}
+        <div
+          className="relative w-full h-full rounded-[46px]"
+          style={{
+            background: 'linear-gradient(135deg, #b8b0a4 0%, #8a8377 24%, #d4ccbe 50%, #7d7669 74%, #b0a99b 100%)',
+            padding: '3px',
+            boxShadow: [
+              '0 40px 90px -30px rgba(20,25,30,0.55)',
+              '0 12px 30px -10px rgba(20,25,30,0.32)',
+              'inset 0 1px 0 rgba(255,255,255,0.55)',
+              'inset 0 -1px 0 rgba(0,0,0,0.35)',
+              'inset 1px 0 0 rgba(255,255,255,0.18)',
+              'inset -1px 0 0 rgba(0,0,0,0.22)',
+            ].join(', '),
           }}
         >
-          {/* Inner black bezel */}
-          <div className="rounded-[30px] overflow-hidden bg-black" style={{ minHeight: 520 }}>
-
-            {/* Screen — WhatsApp UI (matches hero heroTab === 0) */}
-            <div className="relative flex flex-col h-full" style={{ background: '#e5ddd5', backgroundImage: 'radial-gradient(rgba(11,31,26,0.04) 1px, transparent 1px)', backgroundSize: '14px 14px', minHeight: 520 }}>
-
-              {/* Status bar — dark green, with Dynamic Island */}
-              <div className="bg-[#075E54] px-[16px] pt-[10px] pb-[6px] flex items-center justify-between shrink-0 relative">
-                <span className="text-white text-[9px] font-semibold">9:41</span>
-                {/* Dynamic Island — pill with front camera + IR sensor */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-[6px] bg-black rounded-full flex items-center justify-between px-[7px]" style={{ width: 84, height: 24 }}>
-                  <div className="size-[7px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #1c1c22 0%, #050505 90%)' }} />
-                  <div className="size-[11px] rounded-full flex items-center justify-center" style={{ background: 'radial-gradient(circle at 30% 30%, #2f2f3c 0%, #0a0a12 80%)' }}>
-                    <div className="size-[4px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #4a4a5c 0%, #050505 90%)' }} />
+          {/* Inner black bezel — thin, iPhone 15 Pro style */}
+          <div
+            className="relative w-full h-full rounded-[44px] overflow-hidden"
+            style={{
+              background: '#0a0a0a',
+              padding: '9px',
+              boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.03)',
+            }}
+          >
+            {/* Screen */}
+            <div
+              className="relative w-full h-full rounded-[36px] overflow-hidden flex flex-col"
+              style={{
+                background: '#e4ddd4',
+                backgroundImage: [
+                  "radial-gradient(rgba(11,31,26,0.045) 1px, transparent 1.4px)",
+                ].join(', '),
+                backgroundSize: '18px 18px',
+              }}
+            >
+              {/* Screen top status area — behind Dynamic Island */}
+              <div className="relative shrink-0" style={{ background: '#075E54' }}>
+                {/* iOS status bar — time / signal / battery, sized like real iOS */}
+                <div className="flex items-center justify-between pt-[10px] pb-[8px] px-[22px] relative" style={{ height: 48 }}>
+                  <span className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold tracking-[-0.2px] leading-none">9:41</span>
+                  <div className="flex items-center gap-[5px]">
+                    {/* signal */}
+                    <div className="flex items-end gap-[1.5px] h-[10px]">
+                      <div className="w-[3px] h-[4px] bg-white rounded-[0.5px]" />
+                      <div className="w-[3px] h-[6px] bg-white rounded-[0.5px]" />
+                      <div className="w-[3px] h-[8px] bg-white rounded-[0.5px]" />
+                      <div className="w-[3px] h-[10px] bg-white rounded-[0.5px]" />
+                    </div>
+                    {/* wifi */}
+                    <svg width="14" height="10" viewBox="0 0 16 11" fill="white">
+                      <path d="M8 11l2-2.5a2.5 2.5 0 00-4 0L8 11zM3 5.2l1.6 1.6a4.8 4.8 0 016.8 0L13 5.2a7 7 0 00-10 0zM0 2.2l1.5 1.5a9.1 9.1 0 0113 0L16 2.2a11.2 11.2 0 00-16 0z" />
+                    </svg>
+                    {/* battery */}
+                    <div className="relative flex items-center">
+                      <div className="w-[25px] h-[11px] rounded-[3px] border border-white/85 p-[1.5px] flex">
+                        <div className="h-full w-[78%] bg-white rounded-[1.5px]" />
+                      </div>
+                      <div className="w-[1.5px] h-[4px] bg-white/85 rounded-r-[1px] ml-[0.5px]" />
+                    </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-[3px]">
-                  {/* signal bars */}
-                  <div className="flex items-end gap-[1px] h-[8px]">
-                    <div className="w-[2px] h-[3px] bg-white rounded-[0.5px]" />
-                    <div className="w-[2px] h-[5px] bg-white rounded-[0.5px]" />
-                    <div className="w-[2px] h-[6px] bg-white rounded-[0.5px]" />
-                    <div className="w-[2px] h-[8px] bg-white rounded-[0.5px]" />
+
+                {/* Dynamic Island — sits inside status bar area */}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 rounded-full flex items-center justify-between"
+                  style={{ top: 11, left: 130, width: 108, height: 30, background: '#000', paddingLeft: 12, paddingRight: 12 }}
+                >
+                  {/* front camera lens (right) rendered inside island */}
+                  <div className="flex-1" />
+                  <div className="size-[14px] rounded-full relative" style={{ background: 'radial-gradient(circle at 32% 30%, #333947 0%, #0a0a12 70%)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.05)' }}>
+                    <div className="absolute inset-[3px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #4a5164 0%, #0a0a12 80%)' }} />
+                    <div className="absolute top-[3px] left-[3px] size-[3px] rounded-full bg-white/25" />
                   </div>
-                  {/* battery */}
-                  <div className="relative w-[18px] h-[8px] border border-white rounded-[2px] flex items-center p-[1px]"><div className="h-full w-[70%] bg-white rounded-[1px]" /><div className="absolute -right-[2px] top-[2px] w-[1px] h-[4px] bg-white rounded-r-[0.5px]" /></div>
                 </div>
               </div>
 
-              {/* WhatsApp Header — Prathik Gadde */}
-              <div className="bg-[#075E54] px-[10px] pt-[10px] pb-[8px] flex items-center gap-[7px] shrink-0">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" className="shrink-0"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                <div className="size-[26px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128C7E] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[10px] shrink-0">PG</div>
+              {/* WhatsApp header — Prathik Gadde */}
+              <div className="shrink-0 flex items-center gap-[8px] px-[10px] pt-[8px] pb-[10px]" style={{ background: '#075E54', boxShadow: '0 1px 0 rgba(0,0,0,0.05)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.4" className="shrink-0"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <div className="size-[30px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[11px] shrink-0" style={{ background: 'linear-gradient(135deg, #f4b860 0%, #d97a3f 100%)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)' }}>PG</div>
                 <div className="flex-1 flex flex-col min-w-0">
-                  <span className="text-white text-[11px] font-['Geist:SemiBold'] font-semibold leading-none truncate">Prathik Gadde</span>
-                  <span className="text-[#a3d5b4] text-[8.5px] font-['Geist:Regular'] leading-none mt-[2px]">online</span>
+                  <span className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold leading-none tracking-[-0.1px] truncate">Prathik Gadde</span>
+                  <span className="text-[#b8dcc9] text-[10px] font-['Geist:Regular'] leading-none mt-[3px]">online</span>
                 </div>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M15 8v8l6 4V4l-6 4zM4 5h9v14H4z" /></svg>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 00-1 .3l-2 2c-2.8-1.4-5-3.5-6.5-6.5l2-2c.3-.3.3-.7.2-1-.4-1.1-.6-2.3-.6-3.5A1 1 0 007.6 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z" /></svg>
-                <svg width="3" height="12" viewBox="0 0 4 24" fill="white" className="shrink-0"><circle cx="2" cy="5" r="2" /><circle cx="2" cy="12" r="2" /><circle cx="2" cy="19" r="2" /></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M15 8v8l6 4V4l-6 4zM4 5h9v14H4z" /></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 00-1 .3l-2 2c-2.8-1.4-5-3.5-6.5-6.5l2-2c.3-.3.3-.7.2-1-.4-1.1-.6-2.3-.6-3.5A1 1 0 007.6 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z" /></svg>
+                <svg width="4" height="14" viewBox="0 0 4 24" fill="white" className="shrink-0"><circle cx="2" cy="5" r="2" /><circle cx="2" cy="12" r="2" /><circle cx="2" cy="19" r="2" /></svg>
               </div>
 
               {/* TODAY chip */}
-              <div className="text-center py-[4px] shrink-0">
-                <span className="bg-[#E1F2FB] text-[#54656F] text-[7.5px] font-['Geist:Medium'] font-medium px-[8px] py-[2px] rounded-[7px]">TODAY</span>
+              <div className="text-center pt-[8px] pb-[4px] shrink-0">
+                <span className="text-[#54656F] text-[9px] font-['Geist:Medium'] font-medium px-[9px] py-[3px] rounded-[6px]" style={{ background: '#f7f2e8', boxShadow: '0 1px 0.5px rgba(11,20,26,0.08)' }}>TODAY</span>
               </div>
 
-              {/* Chat body — 6-step animation */}
-              <div className="flex-1 px-[8px] pb-[6px] flex flex-col gap-[4px] overflow-hidden justify-end">
+              {/* Chat body */}
+              <div className="flex-1 px-[10px] pb-[8px] flex flex-col gap-[6px] overflow-hidden justify-end">
                 {chatStep >= 0 && (
-                  <div className="self-start bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[80%] iph-msg-in" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                    <div className="text-[#111b21] text-[10px] font-['Geist:Regular'] leading-[1.3]">Hi! Is the linen kurta still available?</div>
-                    <div className="text-[#667781] text-[7.5px] text-right mt-[1px]">10:34</div>
+                  <div className="self-start relative iph-msg-in max-w-[78%]">
+                    <div className="bg-white px-[10px] py-[7px] relative" style={{ borderRadius: '10px 10px 10px 0px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.3]">Hi! linen kurta still available?</div>
+                      <div className="text-[#667781] text-[9px] text-right mt-[2px] font-['Geist:Regular']">10:34</div>
+                    </div>
+                    {/* left tail */}
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute left-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M8 0 L8 13 L0 0 Z" fill="white" />
+                    </svg> */}
                   </div>
                 )}
 
                 {chatStep === 1 && (
-                  <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] iph-msg-in flex gap-[3px] items-center" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
-                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
-                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                  <div className="self-end relative iph-msg-in">
+                    <div className="px-[12px] py-[9px] flex gap-[3.5px] items-center" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
+                    </svg> */}
                   </div>
                 )}
 
                 {chatStep >= 2 && chatStep !== 1 && (
-                  <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[8px] py-[6px] max-w-[86%] iph-msg-in" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                    <div className="text-[#7a8f86] text-[7px] font-['Geist:Medium'] font-medium mb-[1px]">WeNext AI</div>
-                    <div className="text-[#111b21] text-[10px] font-['Geist:Regular'] leading-[1.3]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</div>
-                    <div className="text-[#667781] text-[7.5px] text-right mt-[1px]">10:36 <span className="text-[#53bdeb]">✓✓</span></div>
+                  <div className="self-end relative iph-msg-in max-w-[84%]">
+                    <div className="px-[10px] py-[7px] relative" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <div className="text-[#06846f] text-[9.5px] font-['Geist:SemiBold'] font-semibold mb-[2px] leading-none">WeNext AI</div>
+                      <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.35]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</div>
+                      <div className="flex items-center justify-end gap-[3px] mt-[2px]">
+                        <span className="text-[#667781] text-[9px] font-['Geist:Regular']">10:36</span>
+                        <svg width="14" height="9" viewBox="0 0 16 11" fill="#53bdeb"><path d="M11.1.4L4.9 6.6 2.4 4.1 1 5.5l3.9 3.9L12.5 1.8zm4 0L8.9 6.6 6.6 4.3 5.2 5.7 8.9 9.4 16.5 1.8z" /></svg>
+                      </div>
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
+                    </svg> */}
                   </div>
                 )}
 
                 {chatStep >= 3 && (
-                  <div className="self-start bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[55%] iph-msg-in" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                    <div className="text-[#111b21] text-[10px] font-['Geist:Regular'] leading-[1.3]">Yes please.</div>
-                    <div className="text-[#667781] text-[7.5px] text-right mt-[1px]">10:37</div>
+                  <div className="self-start relative iph-msg-in max-w-[52%]">
+                    <div className="bg-white px-[10px] py-[7px]" style={{ borderRadius: '10px 10px 10px 0px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.3]">Yes please.</div>
+                      <div className="text-[#667781] text-[9px] text-right mt-[2px] font-['Geist:Regular']">10:37</div>
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute left-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M8 0 L8 13 L0 0 Z" fill="white" />
+                    </svg> */}
                   </div>
                 )}
 
                 {chatStep === 4 && (
-                  <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] iph-msg-in flex gap-[3px] items-center" style={{ boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
-                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
-                    <span className="size-[4px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                  <div className="self-end relative iph-msg-in">
+                    <div className="px-[12px] py-[9px] flex gap-[3.5px] items-center" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
+                    </svg> */}
                   </div>
                 )}
 
                 {chatStep >= 5 && (
-                  <div className="self-end bg-[#0f2a1e] rounded-[10px] px-[10px] py-[8px] flex flex-col items-start max-w-[80%] iph-msg-in" style={{ boxShadow: '0 2px 6px -1px rgba(11,20,26,0.24)' }}>
-                    <div className="flex items-center gap-[5px]">
-                      <div className="size-[13px] rounded-[3px] bg-[#FFD400] flex items-center justify-center text-[8px] font-['Geist:Bold'] font-bold text-[#0f2a1e]">₹</div>
-                      <span className="text-white text-[9px] font-['Geist:Medium'] font-medium">UPI Payment</span>
+                  <div className="self-end relative iph-msg-in max-w-[82%]">
+                    <div
+                      className="px-[12px] py-[10px] flex flex-col items-start relative overflow-hidden"
+                      style={{
+                        background: '#FFF',
+                        borderRadius: '12px 12px 0px 12px',
+                        boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)',
+                      }}
+                    >
+                      {/* subtle radial highlight */}
+                      <div className="absolute -top-4 -right-4 size-[70px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)' }} />
+                      <div className="flex items-center gap-[6px] relative">
+                        <div className="size-[16px] rounded-[4px] flex items-center justify-center text-[10.5px] font-['Geist:Bold'] font-bold text-white" style={{ background: '#111b21', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>₹</div>
+                        <span className="text-[#111b21] text-[10.5px] font-['Geist:SemiBold'] font-semibold tracking-[-0.1px]">UPI Payment Link</span>
+                      </div>
+                      <span className="text-[#111b21] text-[20px] font-['Geist:Bold'] font-bold leading-[1] mt-[8px] tracking-[-0.5px] relative">₹2,490</span>
+                      <span className="text-[#667781] text-[9px] font-['Geist:Regular'] mt-[3px] relative">Ivory Linen Kurta · Size M · Qty 1</span>
+                      <div className="h-[1px] w-full mt-[8px] mb-[6px] relative" style={{ background: 'rgba(17,27,33,0.08)' }} />
+                      <div className="flex items-center justify-between w-full relative">
+                        <span className="text-[#00A884] text-[10px] font-['Geist:Medium'] font-medium">Tap to pay →</span>
+                        <div className="flex items-center gap-[3px]">
+                          <span className="text-[#667781] text-[9px]">10:38</span>
+                          <svg width="14" height="9" viewBox="0 0 16 11" fill="#53bdeb"><path d="M11.1.4L4.9 6.6 2.4 4.1 1 5.5l3.9 3.9L12.5 1.8zm4 0L8.9 6.6 6.6 4.3 5.2 5.7 8.9 9.4 16.5 1.8z" /></svg>
+                        </div>
+                      </div>
                     </div>
-                    <span className="text-[#FFD400] text-[15px] font-['Geist:Bold'] font-bold leading-[1.1] mt-[4px]">₹2,490</span>
-                    <span className="text-[#a3d5b4] text-[7.5px] font-['Geist:Regular'] mt-[2px]">Tap to pay · 1 linen kurta · size M</span>
-                    <span className="text-[#7a8f86] text-[7px] mt-[3px] self-end">10:38 <span className="text-[#53bdeb]">✓✓</span></span>
                   </div>
                 )}
               </div>
 
-              {/* Composer — WhatsApp pill + green mic */}
-              <div className="bg-[#f0f2f5] px-[6px] py-[6px] flex items-center gap-[5px] shrink-0">
-                <div className="flex-1 bg-white rounded-full h-[26px] flex items-center pl-[5px] pr-[6px] gap-[4px]">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" className="shrink-0">
+              {/* Composer */}
+              <div className="shrink-0 px-[7px] pt-[6px] pb-[4px] flex items-end gap-[6px]" style={{ background: '#f0f2f5' }}>
+                <div className="flex-1 bg-white rounded-[20px] min-h-[34px] flex items-center pl-[8px] pr-[8px] gap-[6px]" style={{ boxShadow: '0 1px 1px rgba(11,20,26,0.06)' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0">
                     <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
-                    <circle cx="8.6" cy="10" r="1.1" fill="#54656F" />
-                    <circle cx="15.4" cy="10" r="1.1" fill="#54656F" />
+                    <circle cx="8.6" cy="10.5" r="1.1" fill="#54656F" />
+                    <circle cx="15.4" cy="10.5" r="1.1" fill="#54656F" />
                     <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.4" strokeLinecap="round" />
                   </svg>
                   <div className="flex-1 min-w-0 overflow-hidden" ref={iphInputScrollRef}>
-                    <div className="text-[#111b21] text-[9px] font-['Geist:Regular']" style={{ whiteSpace: 'pre', lineHeight: '11px' }} key={iphInputText}>
-                      {iphInputText.length === 0 && <span className="text-[#54656F]">Message</span>}
+                    <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] flex items-center w-max" style={{ lineHeight: '15px' }} key={iphInputText}>
+                      {iphInputText.length === 0 && <span className="text-[#8696a0]">Message</span>}
                       {iphInputText.split('').map((c, idx) => (
-                        <span key={idx} className="iph-letter" style={{ animationDelay: `${idx * 60}ms` }}>{c}</span>
+                        <span key={idx} className="iph-letter" style={{ animationDelay: `${idx * 60}ms`, whiteSpace: 'pre' }}>{c}</span>
                       ))}
-                      <span className="iph-caret ml-[1px] inline-block w-[1px] h-[9px] bg-[#00A884] align-middle" />
+                      <span className="iph-caret ml-[1px] block w-[1.5px] h-[14px] bg-[#00A884]" />
                     </div>
                   </div>
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" /><circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" /></svg>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" /><circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" /></svg>
                 </div>
-                <div className="size-[26px] rounded-full bg-[#00A884] flex items-center justify-center shrink-0" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
+                <div className="size-[34px] rounded-full flex items-center justify-center shrink-0" style={{ background: '#00A884', boxShadow: '0 2px 4px rgba(0,168,132,0.35)' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
                 </div>
               </div>
 
               {/* Home indicator */}
-              <div className="bg-[#f0f2f5] pt-[2px] pb-[6px] flex items-center justify-center shrink-0">
-                <div className="w-[86px] h-[3.5px] rounded-full bg-[#8a8898]" />
+              <div className="shrink-0 flex items-center justify-center pb-[7px] pt-[4px]" style={{ background: '#f0f2f5' }}>
+                <div className="w-[110px] h-[4px] rounded-full bg-[#0a0a0a]" />
               </div>
             </div>
           </div>
+
+          {/* Screen glare — very subtle */}
+          <div
+            className="absolute inset-[3px] rounded-[43px] pointer-events-none"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.04) 100%)',
+              mixBlendMode: 'overlay',
+            }}
+          />
         </div>
 
-        {/* Purple side buttons */}
-        <div className="absolute left-[-4px] top-[100px] w-[3px] h-[26px] rounded-l-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
-        <div className="absolute left-[-4px] top-[142px] w-[3px] h-[44px] rounded-l-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
-        <div className="absolute left-[-4px] top-[196px] w-[3px] h-[44px] rounded-l-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
-        <div className="absolute right-[-4px] top-[150px] w-[3px] h-[60px] rounded-r-[2px] bg-[#2a1c40]" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)' }} />
+        {/* Side buttons — titanium — LEFT: silent switch + volume up + volume down */}
+        <div
+          className="absolute left-[-3px] rounded-l-[1.5px]"
+          style={{
+            top: 110, width: 3, height: 30,
+            background: 'linear-gradient(90deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        <div
+          className="absolute left-[-3px] rounded-l-[1.5px]"
+          style={{
+            top: 158, width: 3, height: 52,
+            background: 'linear-gradient(90deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        <div
+          className="absolute left-[-3px] rounded-l-[1.5px]"
+          style={{
+            top: 224, width: 3, height: 52,
+            background: 'linear-gradient(90deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        {/* RIGHT: action button (top) + power button (larger) */}
+        <div
+          className="absolute right-[-3px] rounded-r-[1.5px]"
+          style={{
+            top: 130, width: 3, height: 36,
+            background: 'linear-gradient(270deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        <div
+          className="absolute right-[-3px] rounded-r-[1.5px]"
+          style={{
+            top: 184, width: 3, height: 76,
+            background: 'linear-gradient(270deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
       </div>
     </div>
   );
@@ -342,7 +483,7 @@ const STEP_DURATION_MS = 5000;
 const STEPS = [
   { title: 'Sign up free', sub: 'No card needed. 14 days free on every channel. Cancel any time, keep your data.' },
   { title: 'Connect Meta accounts', sub: 'Link WhatsApp Business, Instagram and Facebook in one click — guided OAuth, no developer required.' },
-  { title: 'Train the AI on your brand', sub: 'Upload your catalog, FAQs and tone of voice. The AI learns to reply like your best agent in minutes.' },
+  // { title: 'Train the AI on your brand', sub: 'Upload your catalog, FAQs and tone of voice. The AI learns to reply like your best agent in minutes.' },
   { title: 'Set Automations', sub: 'Choose templates for cart recovery, COD-to-prepaid nudges and re-engagement — or build your own flows.' },
   { title: 'Launch your first broadcast', sub: 'Schedule, segment and send. Watch replies, payments and recoveries land in real time.' },
 ];
@@ -467,7 +608,7 @@ export default function Home() {
     if (heroTab === 0) {
       // WhatsApp: customer types the question in the input, sends as bubble, bot replies, customer types "yes please", sends, then UPI card
       setChatStep(-1);
-      at(0, () => setWaInputText('Hi! Is the linen kurta still available?'));
+      at(0, () => setWaInputText('Hi! linen kurta still available?'));
       at(2800, () => { setChatStep(0); setWaInputText(''); });
       at(3300, () => setChatStep(1));
       at(4400, () => setChatStep(2));
@@ -665,15 +806,15 @@ export default function Home() {
                                 <div className="flex-1 px-[8px] pb-[8px] flex flex-col gap-[4px] overflow-hidden justify-end">
                                   {chatStep >= 0 && (
                                     <div className="self-start relative bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[78%] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in">
-                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Hi! Is the linen kurta still available?</Typography>
+                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Hi! linen kurta still available?</Typography>
                                       <Typography className="text-[#667781] text-[8px] text-right mt-[1px]">10:34</Typography>
                                     </div>
                                   )}
                                   {chatStep === 1 && (
                                     <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in flex gap-[3px] items-center">
-                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '360ms' }} />
                                     </div>
                                   )}
                                   {chatStep >= 2 && (
@@ -691,17 +832,25 @@ export default function Home() {
                                   )}
                                   {chatStep === 4 && (
                                     <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in flex gap-[3px] items-center">
-                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '360ms' }} />
                                     </div>
                                   )}
                                   {chatStep >= 5 && (
-                                    <div className="self-end relative bg-[#0f2a1e] rounded-[10px] px-[10px] py-[8px] shadow flex flex-col items-start max-w-[78%] msg-in">
-                                      <div className="flex items-center gap-[5px]"><div className="size-[14px] rounded-[3px] bg-[#FFD400] flex items-center justify-center text-[8px] font-bold text-[#0f2a1e]">₹</div><Typography className="text-white text-[10px] font-['Geist:Medium']">UPI Payment</Typography></div>
-                                      <Typography className="text-[#FFD400] text-[16px] font-['Geist:Bold'] font-bold leading-[1.1] mt-[4px]">₹2,490</Typography>
-                                      <Typography className="text-[#a3d5b4] text-[8.5px] font-['Geist:Regular'] mt-[2px]">Tap to pay · 1 linen kurta · size M</Typography>
-                                      <Typography className="text-[#7a8f86] text-[7.5px] mt-[3px] self-end">10:38 <span className="text-[#53bdeb]">✓✓</span></Typography>
+                                    <div className="self-end relative bg-[#FFF] rounded-[10px] rounded-tr-[0px] px-[10px] py-[8px] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] flex flex-col items-start max-w-[78%] msg-in overflow-hidden">
+                                      <div className="absolute -top-4 -right-4 size-[60px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)' }} />
+                                      <div className="flex items-center gap-[5px] relative">
+                                        <div className="size-[14px] rounded-[3px] bg-[#111b21] shadow-[0_1px_2px_rgba(0,0,0,0.1)] flex items-center justify-center text-[8px] font-bold text-white">₹</div>
+                                        <Typography className="text-[#111b21] text-[10px] font-['Geist:SemiBold'] tracking-[-0.1px]">UPI Payment Link</Typography>
+                                      </div>
+                                      <Typography className="text-[#111b21] text-[16px] font-['Geist:Bold'] font-bold leading-[1.1] mt-[6px] tracking-[-0.5px] relative">₹2,490</Typography>
+                                      <Typography className="text-[#667781] text-[8.5px] font-['Geist:Regular'] mt-[2px] relative">Ivory Linen Kurta · Size M · Qty 1</Typography>
+                                      <div className="h-[1px] w-full mt-[6px] mb-[5px] relative" style={{ background: 'rgba(17,27,33,0.08)' }} />
+                                      <div className="flex items-center justify-between w-full relative">
+                                        <Typography className="text-[#00A884] text-[9px] font-['Geist:Medium']">Tap to pay →</Typography>
+                                        <Typography className="text-[#667781] text-[8px]">10:38 <span className="text-[#53bdeb]">✓✓</span></Typography>
+                                      </div>
                                     </div>
                                   )}
                                 </div>
@@ -718,11 +867,11 @@ export default function Home() {
                                     </svg>
                                     {/* Typed text — reveals letter by letter, caret rides with the text; text scrolls to keep the caret in view */}
                                     <div className="flex-1 min-w-0 overflow-hidden" ref={waInputScrollRef}>
-                                      <div className="text-[#111b21] text-[11px] font-['Geist:Regular']" style={{ whiteSpace: 'pre', lineHeight: '13px' }} key={waInputText}>
+                                      <div className="text-[#111b21] text-[11px] font-['Geist:Regular'] flex items-center w-max" style={{ lineHeight: '13px' }} key={waInputText}>
                                         {waInputText.split('').map((c, i) => (
-                                          <span key={i} className="wa-letter" style={{ animationDelay: `${i * 60}ms` }}>{c}</span>
+                                          <span key={i} className="wa-letter" style={{ animationDelay: `${i * 60}ms`, whiteSpace: 'pre' }}>{c}</span>
                                         ))}
-                                        <span className="wa-caret ml-[1px] inline-block w-[1.5px] h-[13px] bg-[#00A884] align-middle" />
+                                        <span className="wa-caret ml-[1px] block w-[1.5px] h-[13px] bg-[#00A884]" />
                                       </div>
                                     </div>
                                     {/* Paperclip */}
@@ -750,6 +899,8 @@ export default function Home() {
                                   .wa-caret { animation: waCaret 1s steps(2,start) infinite; }
                                   .wa-letter { display: inline-block; max-width: 0; overflow: hidden; animation: waLetterReveal 90ms linear forwards; }
                                   @keyframes waLetterReveal { to { max-width: 2em; } }
+                                  @keyframes typingDot { 0%,60%,100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-3px); opacity: 1; } }
+                                  .typing-dot { animation: typingDot 1.2s ease-in-out infinite; }
                                 `}</style>
                               </div>
                             )}
@@ -926,7 +1077,7 @@ export default function Home() {
                                       {chatStep === 0 && (
                                         <>
                                           <Typography className="text-[#c7c7c7] text-[10px]">Add a comment for wenext.ai...</Typography>
-                                          <span className="ig-caret ml-[2px] inline-block w-[1.5px] h-[12px] bg-[#0095F6]" />
+                                          <span className="ig-caret ml-[2px] block w-[1.5px] h-[12px] bg-[#0095F6]" />
                                         </>
                                       )}
                                       {chatStep === 1 && (
@@ -936,7 +1087,7 @@ export default function Home() {
                                               <span key={i} className="ig-letter" style={{ animationDelay: `${100 + i * 150}ms` }}>{c}</span>
                                             ))}
                                           </span>
-                                          <span className="ig-caret ml-[1px] inline-block w-[1.5px] h-[12px] bg-[#0095F6]" />
+                                          <span className="ig-caret ml-[1px] block w-[1.5px] h-[12px] bg-[#0095F6]" />
                                         </>
                                       )}
                                       {chatStep >= 2 && (
@@ -994,9 +1145,9 @@ export default function Home() {
                                   )}
                                   {chatStep === 1 && (
                                     <div className="self-end bg-gradient-to-br from-[#0084ff] to-[#0064d8] rounded-[18px] rounded-br-[4px] px-[14px] py-[10px] flex gap-[4px] items-center msg-in">
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '360ms' }} />
                                     </div>
                                   )}
                                   {chatStep >= 2 && (
@@ -1012,9 +1163,9 @@ export default function Home() {
                                   )}
                                   {chatStep === 4 && (
                                     <div className="self-end bg-gradient-to-br from-[#0084ff] to-[#0064d8] rounded-[18px] rounded-br-[4px] px-[14px] py-[10px] flex gap-[4px] items-center msg-in">
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
-                                      <span className="size-[5px] rounded-full bg-white typing-dot" />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '360ms' }} />
                                     </div>
                                   )}
                                   {chatStep >= 5 && (
@@ -1288,10 +1439,10 @@ export default function Home() {
                               <line x1="12" y1="6" x2="12" y2="9" />
                               <circle cx="12" cy="5" r="1.2" fill="#a1a1aa" stroke="none" />
                             </svg>
-                            <Typography className="text-[#a1a1aa] text-[13px] font-['Geist:Medium'] font-medium">WeNext AI</Typography>
+                            <Typography className="text-[#a1a1aa] text-[13px] font-['Geist:Medium'] font-medium">NEXA.AI</Typography>
                           </div>
                           <Typography className="text-[#0c221f] text-[13.5px] leading-[1.55] pl-[26px]">
-                            Hey, I'm WeNext AI. What do you want me to help you with?
+                            Hey, I'm NEXA AI. What do you want me to help you with?
                           </Typography>
                         </div>
 
@@ -1317,7 +1468,7 @@ export default function Home() {
                               <line x1="12" y1="6" x2="12" y2="9" />
                               <circle cx="12" cy="5" r="1.2" fill="#a1a1aa" stroke="none" />
                             </svg>
-                            <Typography className="text-[#a1a1aa] text-[13px] font-['Geist:Medium'] font-medium">WeNext AI</Typography>
+                            <Typography className="text-[#a1a1aa] text-[13px] font-['Geist:Medium'] font-medium">NEXA.AI</Typography>
                           </div>
                           <div className="flex items-center gap-[5px] pl-[26px]">
                             <span className="size-[6px] rounded-full bg-[#cbd5e1] wenext-typing" style={{ animationDelay: '0ms' }} />
@@ -2692,7 +2843,7 @@ export default function Home() {
                 </a> */}
 
                 {/* Rotating queries — wheel: rows slide up smoothly; wrapping rows snap silently */}
-                <div className="mt-[56px] relative w-full max-w-[720px] h-[320px] overflow-hidden">
+                <div className="mt-[56px] relative w-full max-w-[760px] h-[320px] overflow-hidden">
                   {AI_QUERIES.map((q, i) => {
                     const half = AI_QUERIES.length / 2;
                     const wrap = (raw: number) => {
@@ -2736,14 +2887,14 @@ export default function Home() {
                     className="absolute left-0 right-0 flex justify-left pointer-events-none"
                     style={{ top: '50%', transform: 'translateY(-50%)' }}
                   >
-                    <div className="w-full max-w-[720px] bg-white rounded-full pl-[16px] pr-[16px] py-[16px] flex items-center gap-[10px] border border-[#e0dac6] shadow-[0_12px_36px_-8px_rgba(6,179,73,0.25),0_2px_8px_rgba(11,34,17,0.06)] pointer-events-auto">
+                    <div className="w-full max-w-[760px] bg-white rounded-full pl-[16px] pr-[16px] py-[16px] flex items-center gap-[10px] border border-[#e0dac6] shadow-[0_12px_36px_-8px_rgba(6,179,73,0.25),0_2px_8px_rgba(11,34,17,0.06)] pointer-events-auto">
                       <div className="w-[36px] h-[36px] rounded-full bg-[#f8f5ec] flex items-center justify-center shrink-0">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2" strokeLinecap="round">
                           <line x1="12" y1="5" x2="12" y2="19" />
                           <line x1="5" y1="12" x2="19" y2="12" />
                         </svg>
                       </div>
-                      <div className="flex-1 relative overflow-hidden h-[22px]">
+                      <div className="flex-1 relative overflow-hidden h-[28px]">
                         <div
                           key={magicIdx}
                           className="absolute inset-0 flex items-center text-[#06b349] font-['Geist:Medium'] font-medium text-[26px] leading-none whitespace-nowrap magic-text-slide"
@@ -2903,19 +3054,19 @@ export default function Home() {
                           <img style={{ width: "100" }} src={ConnectMeta} alt="Connect Meta" />
                         </div>
                       )}
-                      {activeStep === 2 && (
+                      {/* {activeStep === 2 && (
                         <div className="relative">
                           <img style={{ width: "100" }} src={TrainAI} alt="Train the AI on your brand" />
 
                         </div>
-                      )}
-                      {activeStep === 3 && (
+                      )} */}
+                      {activeStep === 2 && (
                         <div className="relative">
                           <img style={{ width: "100" }} src={SetAutomation} alt="Set Automation" />
 
                         </div>
                       )}
-                      {activeStep === 4 && (
+                      {activeStep === 3 && (
                         <div className="relative">
                           <img style={{ width: "100" }} src={LaunchBroadcast} alt="Launch your first broadcast" />
 
