@@ -19,6 +19,7 @@ import ConversationalCommerce from "../assets/built-growth/ConversationalCommerc
 import EnterpriseGradeSecurity from "../assets/built-growth/Enterprise-grade security.png"
 import HeroV1 from "../components/HeroV1";
 import mobileMock from "../assets/mobile-mock.png";
+import SeamlessInegrations from "../assets/pain-points/seamless-integrations.png"
 
 /* ─────────────────────────────────────────────
    iPhone 15+ Mockup with animated WhatsApp chat
@@ -98,7 +99,7 @@ function IPhoneMockup() {
 
   // iPhone 15 Pro — Natural Titanium. Real 19.5:9 screen ratio (300 × 650 → 274 × 594 screen).
   return (
-    <div className="flex-1 mt-[28px] flex items-end justify-center min-h-[640px]">
+    <div className="flex-1 mt-[28px] flex items-center justify-center min-h-[540px]">
       <style>{`
         @keyframes iphMsgIn { from { opacity:0; transform:translateY(4px) scale(0.98); } to { opacity:1; transform:translateY(0) scale(1); } }
         @keyframes iphTyping { 0%,60%,100% { transform:translateY(0); opacity:0.45; } 30% { transform:translateY(-3px); opacity:1; } }
@@ -1973,140 +1974,52 @@ export default function Home() {
                     WhatsApp, Instagram DMs, Facebook comments and web chat — all in one screen. Assign to teammates, tag, snooze, never lose a lead again.
                   </Typography>
 
-                  {/* Stats row */}
-                  {/* <div className="flex items-start gap-[28px] mt-[32px]">
-                    {[{ v: '28%', l: 'Conversion Rate' }, { v: '19%', l: 'Avg. Order Value' }, { v: '42%', l: 'Cart Recovery' }].map((s) => (
-                      <div key={s.l}>
-                        <div className="flex items-center gap-[4px]">
-                          <Typography className="font-['Geist:SemiBold'] font-semibold text-[#06b349] text-[22px] tracking-[-0.5px] leading-none">{s.v}</Typography>
-                          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="18 15 12 9 6 15" />
-                          </svg>
-                        </div>
-                        <Typography className="font-['Geist:Regular'] text-[#60584c] text-[11px] mt-[4px]">{s.l}</Typography>
-                      </div>
-                    ))}
-                  </div> */}
 
                   {/* iPhone 15+ mockup with animated WhatsApp chat */}
                   <IPhoneMockup />
                 </div>
 
                 {/* ── COL 2 ROW 1 — Ads Management ── */}
-                <div className="border-r border-b border-[#e0dac6] p-[36px] flex flex-col ">
-                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" />
-                    </svg>
-                  </div> */}
-                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Ads Management
-                  </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                    See which broadcasts convert, which DMs become orders. Revenue attributed per channel, per template, per agent.
-                  </Typography>
-
-                  {/* Bar chart visualization */}
-                  <div className="flex-1 mt-[24px] bg-white rounded-[14px] border border-[#e8ebef] p-[16px] min-h-[160px]">
-                    <div className="flex items-center justify-between mb-[12px]">
-                      <div className="flex items-center gap-[6px]">
-                        <div className="bg-[#0c221f] rounded-full px-[8px] py-[2px]">
-                          <span className="text-white text-[9px] font-semibold">Broadcasts</span>
-                        </div>
-                        <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="#9ca3af" strokeWidth="2"><polyline points="7 17 17 7" /><polyline points="7 7 17 7 17 17" /></svg>
-                      </div>
-                    </div>
-                    {/* Bar chart */}
-                    <div className="flex items-end gap-[8px] h-[80px]">
-                      {[
-                        { h: '45%', month: 'Mar' },
-                        { h: '60%', month: 'Apr' },
-                        { h: '75%', month: 'May' },
-                        { h: '55%', month: 'Jun' },
-                        { h: '90%', month: 'Jul' },
-                        { h: '70%', month: 'Aug' },
-                      ].map((b) => (
-                        <div key={b.month} className="flex-1 flex flex-col items-center gap-[4px]">
-                          <div className="w-full rounded-t-[4px] bg-[#0c221f]" style={{ height: b.h }} />
-                          <span className="text-[8px] text-[#94a3b8]">{b.month}</span>
-                        </div>
-                      ))}
-                    </div>
+                <div className="border-r border-b border-[#e0dac6] flex flex-col ">
+                  <div className="p-[25px]">
+                    <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                      Ads Management
+                    </Typography>
+                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                      See which broadcasts convert, which DMs become orders. Revenue attributed per channel, per template, per agent.
+                    </Typography>
                   </div>
+
+                  <img src={SeamlessInegrations} alt="" />
+
                 </div>
 
                 {/* ── COL 3 ROW 1 — Smart Scheduling ── */}
-                <div className="border-b border-[#e0dac6] p-[36px] flex flex-col ">
-                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
-                    </svg>
-                  </div> */}
-                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Smart Scheduling
-                  </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                    UPI, cards, COD-to-prepaid — every payment option drops into the conversation. No checkout drop-off.
-                  </Typography>
-
-                  {/* UPI payment row visualization */}
-                  <div className="flex-1 mt-[24px] flex flex-col justify-end">
-                    <div className="bg-white rounded-[12px] border border-[#e8ebef] px-[16px] py-[14px] flex items-center gap-[12px] shadow-sm">
-                      {/* UPI logo */}
-                      <div className="size-[32px] rounded-[8px] bg-[#f3efe3] flex items-center justify-center shrink-0">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0c221f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 2v20M2 12h20" />
-                        </svg>
-                      </div>
-                      <div className="flex-1">
-                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[14px] leading-none">UPI · ₹2,490 · Riya</Typography>
-                      </div>
-                      <div className="size-[28px] rounded-full bg-[#e5f6e7] flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      </div>
-                    </div>
+                <div className="border-b border-[#e0dac6] flex flex-col ">
+                  <div className="p-[25px]">
+                    <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                      Smart Scheduling
+                    </Typography>
+                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                      UPI, cards, COD-to-prepaid — every payment option drops into the conversation. No checkout drop-off.
+                    </Typography>
                   </div>
+
+                  <img src={SeamlessInegrations} alt="" />
                 </div>
 
                 {/* ── COL 2 ROW 2 — Seamless Integrations ── */}
-                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col ">
-                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
-                      <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" /><line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-                    </svg>
-                  </div> */}
-                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Seamless Integrations
-                  </Typography>
-                  <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                    Trained on your catalog, FAQs and tone. Speaks Hindi, English and Hinglish. Hands off to humans when it matters.
-                  </Typography>
-
-                  {/* WeNext AI chat preview */}
-                  <div className="flex-1 mt-[24px] bg-white rounded-[14px] border border-[#e8ebef] overflow-hidden min-h-[130px]">
-                    <div className="px-[14px] py-[10px] flex items-center gap-[10px] border-b border-[#f1f3f6]">
-                      <div className="size-[30px] rounded-full bg-[#0c221f] flex items-center justify-center">
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <div>
-                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[12px] leading-none">WeNext AI</Typography>
-                        <div className="flex items-center gap-[4px] mt-[3px]">
-                          <div className="size-[5px] rounded-full bg-[#06b349]" />
-                          <Typography className="font-['Geist:Regular'] text-[#06b349] text-[10px]">Online · trained on 142 SKUs</Typography>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="px-[14px] py-[10px]">
-                      <div className="bg-[#f0fdf4] rounded-[8px] px-[12px] py-[8px]">
-                        <Typography className="font-['Geist:Regular'] text-[#0c221f] text-[12px] leading-[1.4]">Linen kurta size M · 3 left. Want a UPI link?</Typography>
-                      </div>
-                    </div>
+                <div className="border-r border-[#e0dac6] flex flex-col ">
+                  <div className="p-[25px]">
+                    <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
+                      Seamless Integrations
+                    </Typography>
+                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
+                      Trained on your catalog, FAQs and tone. Speaks Hindi, English and Hinglish. Hands off to humans when it matters.
+                    </Typography>
                   </div>
+                  <img src={SeamlessInegrations} alt="" />
+
                 </div>
 
                 {/* ── COL 3 ROW 2 — Dark CTA card ── */}
@@ -2115,11 +2028,11 @@ export default function Home() {
                   <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 
                   <div className="relative z-10 flex flex-col flex-1">
-                    <div className="size-[44px] rounded-[12px] bg-white/10 flex items-center justify-center mb-[20px]">
+                    {/* <div className="size-[44px] rounded-[12px] bg-white/10 flex items-center justify-center mb-[20px]">
                       <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14M13 6l6 6-6 6" />
                       </svg>
-                    </div>
+                    </div> */}
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[22px] tracking-[-0.4px] leading-[1.2] mb-[12px]">
                       Explore the recovery engine.
                     </Typography>
