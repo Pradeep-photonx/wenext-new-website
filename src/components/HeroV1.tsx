@@ -17,8 +17,8 @@ import SetAutomation from "../assets/speed-scale/Set Automations.jpg"
 import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast.png"
 import ConversationalCommerce from "../assets/built-growth/ConversationalCommerce.png"
 import EnterpriseGradeSecurity from "../assets/built-growth/Enterprise-grade security.png"
-import HeroV1 from "../components/HeroV1";
-import mobileMock from "../assets/mobile-mock.png";
+
+
 
 /* ─────────────────────────────────────────────
    iPhone 15+ Mockup with animated WhatsApp chat
@@ -110,212 +110,298 @@ function IPhoneMockup() {
         .iph-letter    { display: inline-block; max-width: 0; overflow: hidden; animation: iphLetterReveal 90ms linear forwards; }
       `}</style>
 
-      {/* Mobile Mockup Image with overlay */}
-      <div className="relative w-full max-w-[360px] mx-auto">
-        {/* Background Mobile Image */}
-        <img src={mobileMock} alt="Phone Mockup" className="w-full h-auto object-contain block pointer-events-none" />
-
-        {/* Screen Area Overlaid */}
+      {/* iPhone 15 Pro — Natural Titanium */}
+      <div className="relative" style={{ width: 320, height: 600 }}>
+        {/* Soft ground shadow */}
         <div
-          className="absolute overflow-hidden flex flex-col z-[10]"
+          className="absolute rounded-full pointer-events-none"
           style={{
-            top: '4%', bottom: '4.5%', left: '8%', right: '8%',
-            borderRadius: '46px',
-            background: '#e4ddd4',
-            backgroundImage: "radial-gradient(rgba(11,31,26,0.045) 1px, transparent 1.4px)",
-            backgroundSize: '18px 18px',
+            left: '10%', right: '10%', bottom: '-14px', height: 22,
+            background: 'radial-gradient(ellipse at center, rgba(12,34,31,0.28) 0%, rgba(12,34,31,0) 70%)',
+            filter: 'blur(6px)',
+          }}
+        />
+
+        {/* Titanium outer frame — brushed metal look */}
+        <div
+          className="relative w-full h-full rounded-[46px]"
+          style={{
+            background: 'linear-gradient(135deg, #b8b0a4 0%, #8a8377 24%, #d4ccbe 50%, #7d7669 74%, #b0a99b 100%)',
+            padding: '3px',
+            boxShadow: [
+              '0 40px 90px -30px rgba(20,25,30,0.55)',
+              '0 12px 30px -10px rgba(20,25,30,0.32)',
+              'inset 0 1px 0 rgba(255,255,255,0.55)',
+              'inset 0 -1px 0 rgba(0,0,0,0.35)',
+              'inset 1px 0 0 rgba(255,255,255,0.18)',
+              'inset -1px 0 0 rgba(0,0,0,0.22)',
+            ].join(', '),
           }}
         >
-          {/* Screen top status area — behind Dynamic Island */}
-          <div className="relative shrink-0" style={{ background: '#075E54' }}>
-            {/* iOS status bar — time / signal / battery, sized like real iOS */}
-            <div className="flex items-center justify-between pt-[10px] pb-[8px] px-[22px] relative" style={{ height: 48 }}>
-              <span className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold tracking-[-0.2px] leading-none">9:41</span>
-              <div className="flex items-center gap-[5px]">
-                {/* signal */}
-                <div className="flex items-end gap-[1.5px] h-[10px]">
-                  <div className="w-[3px] h-[4px] bg-white rounded-[0.5px]" />
-                  <div className="w-[3px] h-[6px] bg-white rounded-[0.5px]" />
-                  <div className="w-[3px] h-[8px] bg-white rounded-[0.5px]" />
-                  <div className="w-[3px] h-[10px] bg-white rounded-[0.5px]" />
-                </div>
-                {/* wifi */}
-                <svg width="14" height="10" viewBox="0 0 16 11" fill="white">
-                  <path d="M8 11l2-2.5a2.5 2.5 0 00-4 0L8 11zM3 5.2l1.6 1.6a4.8 4.8 0 016.8 0L13 5.2a7 7 0 00-10 0zM0 2.2l1.5 1.5a9.1 9.1 0 0113 0L16 2.2a11.2 11.2 0 00-16 0z" />
-                </svg>
-                {/* battery */}
-                <div className="relative flex items-center">
-                  <div className="w-[25px] h-[11px] rounded-[3px] border border-white/85 p-[1.5px] flex">
-                    <div className="h-full w-[78%] bg-white rounded-[1.5px]" />
-                  </div>
-                  <div className="w-[1.5px] h-[4px] bg-white/85 rounded-r-[1px] ml-[0.5px]" />
-                </div>
-              </div>
-            </div>
-
-            {/* Dynamic Island — sits inside status bar area */}
+          {/* Inner black bezel — thin, iPhone 15 Pro style */}
+          <div
+            className="relative w-full h-full rounded-[44px] overflow-hidden"
+            style={{
+              background: '#0a0a0a',
+              padding: '9px',
+              boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.03)',
+            }}
+          >
+            {/* Screen */}
             <div
-              className="absolute left-1/2 -translate-x-1/2 rounded-full flex items-center justify-between"
-              style={{ top: 11, left: 130, width: 108, height: 30, background: '#000', paddingLeft: 12, paddingRight: 12 }}
+              className="relative w-full h-full rounded-[36px] overflow-hidden flex flex-col"
+              style={{
+                background: '#e4ddd4',
+                backgroundImage: [
+                  "radial-gradient(rgba(11,31,26,0.045) 1px, transparent 1.4px)",
+                ].join(', '),
+                backgroundSize: '18px 18px',
+              }}
             >
-              {/* front camera lens (right) rendered inside island */}
-              <div className="flex-1" />
-              <div className="size-[14px] rounded-full relative" style={{ background: 'radial-gradient(circle at 32% 30%, #333947 0%, #0a0a12 70%)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.05)' }}>
-                <div className="absolute inset-[3px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #4a5164 0%, #0a0a12 80%)' }} />
-                <div className="absolute top-[3px] left-[3px] size-[3px] rounded-full bg-white/25" />
-              </div>
-            </div>
-          </div>
-
-          {/* WhatsApp header — Prathik Gadde */}
-          <div className="shrink-0 flex items-center gap-[8px] px-[10px] pt-[8px] pb-[10px]" style={{ background: '#075E54', boxShadow: '0 1px 0 rgba(0,0,0,0.05)' }}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.4" className="shrink-0"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            <div className="size-[30px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[11px] shrink-0" style={{ background: 'linear-gradient(135deg, #f4b860 0%, #d97a3f 100%)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)' }}>PG</div>
-            <div className="flex-1 flex flex-col min-w-0">
-              <span className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold leading-none tracking-[-0.1px] truncate">Prathik Gadde</span>
-              <span className="text-[#b8dcc9] text-[10px] font-['Geist:Regular'] leading-none mt-[3px]">online</span>
-            </div>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M15 8v8l6 4V4l-6 4zM4 5h9v14H4z" /></svg>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 00-1 .3l-2 2c-2.8-1.4-5-3.5-6.5-6.5l2-2c.3-.3.3-.7.2-1-.4-1.1-.6-2.3-.6-3.5A1 1 0 007.6 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z" /></svg>
-            <svg width="4" height="14" viewBox="0 0 4 24" fill="white" className="shrink-0"><circle cx="2" cy="5" r="2" /><circle cx="2" cy="12" r="2" /><circle cx="2" cy="19" r="2" /></svg>
-          </div>
-
-          {/* TODAY chip */}
-          <div className="text-center pt-[8px] pb-[4px] shrink-0">
-            <span className="text-[#54656F] text-[9px] font-['Geist:Medium'] font-medium px-[9px] py-[3px] rounded-[6px]" style={{ background: '#f7f2e8', boxShadow: '0 1px 0.5px rgba(11,20,26,0.08)' }}>TODAY</span>
-          </div>
-
-          {/* Chat body */}
-          <div className="flex-1 px-[10px] pb-[8px] flex flex-col gap-[6px] overflow-hidden justify-end">
-            {chatStep >= 0 && (
-              <div className="self-start relative iph-msg-in max-w-[78%]">
-                <div className="bg-white px-[10px] py-[7px] relative" style={{ borderRadius: '10px 10px 10px 0px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                  <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.3]">Hi! linen kurta still available?</div>
-                  <div className="text-[#667781] text-[9px] text-right mt-[2px] font-['Geist:Regular']">10:34</div>
-                </div>
-                {/* left tail */}
-                {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute left-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
-                      <path d="M8 0 L8 13 L0 0 Z" fill="white" />
-                    </svg> */}
-              </div>
-            )}
-
-            {chatStep === 1 && (
-              <div className="self-end relative iph-msg-in">
-                <div className="px-[12px] py-[9px] flex gap-[3.5px] items-center" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                  <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
-                  <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
-                  <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
-                </div>
-                {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
-                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
-                    </svg> */}
-              </div>
-            )}
-
-            {chatStep >= 2 && chatStep !== 1 && (
-              <div className="self-end relative iph-msg-in max-w-[84%]">
-                <div className="px-[10px] py-[7px] relative" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                  <div className="text-[#06846f] text-[9.5px] font-['Geist:SemiBold'] font-semibold mb-[2px] leading-none">WeNext AI</div>
-                  <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.35]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</div>
-                  <div className="flex items-center justify-end gap-[3px] mt-[2px]">
-                    <span className="text-[#667781] text-[9px] font-['Geist:Regular']">10:36</span>
-                    <svg width="14" height="9" viewBox="0 0 16 11" fill="#53bdeb"><path d="M11.1.4L4.9 6.6 2.4 4.1 1 5.5l3.9 3.9L12.5 1.8zm4 0L8.9 6.6 6.6 4.3 5.2 5.7 8.9 9.4 16.5 1.8z" /></svg>
-                  </div>
-                </div>
-                {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
-                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
-                    </svg> */}
-              </div>
-            )}
-
-            {chatStep >= 3 && (
-              <div className="self-start relative iph-msg-in max-w-[52%]">
-                <div className="bg-white px-[10px] py-[7px]" style={{ borderRadius: '10px 10px 10px 0px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                  <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.3]">Yes please.</div>
-                  <div className="text-[#667781] text-[9px] text-right mt-[2px] font-['Geist:Regular']">10:37</div>
-                </div>
-                {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute left-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
-                      <path d="M8 0 L8 13 L0 0 Z" fill="white" />
-                    </svg> */}
-              </div>
-            )}
-
-            {chatStep === 4 && (
-              <div className="self-end relative iph-msg-in">
-                <div className="px-[12px] py-[9px] flex gap-[3.5px] items-center" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
-                  <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
-                  <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
-                  <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
-                </div>
-                {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
-                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
-                    </svg> */}
-              </div>
-            )}
-
-            {chatStep >= 5 && (
-              <div className="self-end relative iph-msg-in max-w-[82%]">
-                <div
-                  className="px-[12px] py-[10px] flex flex-col items-start relative overflow-hidden"
-                  style={{
-                    background: '#FFF',
-                    borderRadius: '12px 12px 0px 12px',
-                    boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)',
-                  }}
-                >
-                  {/* subtle radial highlight */}
-                  <div className="absolute -top-4 -right-4 size-[70px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)' }} />
-                  <div className="flex items-center gap-[6px] relative">
-                    <div className="size-[16px] rounded-[4px] flex items-center justify-center text-[10.5px] font-['Geist:Bold'] font-bold text-white" style={{ background: '#111b21', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>₹</div>
-                    <span className="text-[#111b21] text-[10.5px] font-['Geist:SemiBold'] font-semibold tracking-[-0.1px]">UPI Payment Link</span>
-                  </div>
-                  <span className="text-[#111b21] text-[20px] font-['Geist:Bold'] font-bold leading-[1] mt-[8px] tracking-[-0.5px] relative">₹2,490</span>
-                  <span className="text-[#667781] text-[9px] font-['Geist:Regular'] mt-[3px] relative">Ivory Linen Kurta · Size M · Qty 1</span>
-                  <div className="h-[1px] w-full mt-[8px] mb-[6px] relative" style={{ background: 'rgba(17,27,33,0.08)' }} />
-                  <div className="flex items-center justify-between w-full relative">
-                    <span className="text-[#00A884] text-[10px] font-['Geist:Medium'] font-medium">Tap to pay →</span>
-                    <div className="flex items-center gap-[3px]">
-                      <span className="text-[#667781] text-[9px]">10:38</span>
-                      <svg width="14" height="9" viewBox="0 0 16 11" fill="#53bdeb"><path d="M11.1.4L4.9 6.6 2.4 4.1 1 5.5l3.9 3.9L12.5 1.8zm4 0L8.9 6.6 6.6 4.3 5.2 5.7 8.9 9.4 16.5 1.8z" /></svg>
+              {/* Screen top status area — behind Dynamic Island */}
+              <div className="relative shrink-0" style={{ background: '#075E54' }}>
+                {/* iOS status bar — time / signal / battery, sized like real iOS */}
+                <div className="flex items-center justify-between pt-[10px] pb-[8px] px-[22px] relative" style={{ height: 48 }}>
+                  <span className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold tracking-[-0.2px] leading-none">9:41</span>
+                  <div className="flex items-center gap-[5px]">
+                    {/* signal */}
+                    <div className="flex items-end gap-[1.5px] h-[10px]">
+                      <div className="w-[3px] h-[4px] bg-white rounded-[0.5px]" />
+                      <div className="w-[3px] h-[6px] bg-white rounded-[0.5px]" />
+                      <div className="w-[3px] h-[8px] bg-white rounded-[0.5px]" />
+                      <div className="w-[3px] h-[10px] bg-white rounded-[0.5px]" />
+                    </div>
+                    {/* wifi */}
+                    <svg width="14" height="10" viewBox="0 0 16 11" fill="white">
+                      <path d="M8 11l2-2.5a2.5 2.5 0 00-4 0L8 11zM3 5.2l1.6 1.6a4.8 4.8 0 016.8 0L13 5.2a7 7 0 00-10 0zM0 2.2l1.5 1.5a9.1 9.1 0 0113 0L16 2.2a11.2 11.2 0 00-16 0z" />
+                    </svg>
+                    {/* battery */}
+                    <div className="relative flex items-center">
+                      <div className="w-[25px] h-[11px] rounded-[3px] border border-white/85 p-[1.5px] flex">
+                        <div className="h-full w-[78%] bg-white rounded-[1.5px]" />
+                      </div>
+                      <div className="w-[1.5px] h-[4px] bg-white/85 rounded-r-[1px] ml-[0.5px]" />
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
 
-          {/* Composer */}
-          <div className="shrink-0 px-[7px] pt-[6px] pb-[4px] flex items-end gap-[6px]" style={{ background: '#f0f2f5' }}>
-            <div className="flex-1 bg-white rounded-[20px] min-h-[34px] flex items-center pl-[8px] pr-[8px] gap-[6px]" style={{ boxShadow: '0 1px 1px rgba(11,20,26,0.06)' }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0">
-                <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
-                <circle cx="8.6" cy="10.5" r="1.1" fill="#54656F" />
-                <circle cx="15.4" cy="10.5" r="1.1" fill="#54656F" />
-                <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.4" strokeLinecap="round" />
-              </svg>
-              <div className="flex-1 min-w-0 overflow-hidden" ref={iphInputScrollRef}>
-                <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] flex items-center w-max" style={{ lineHeight: '15px' }} key={iphInputText}>
-                  {iphInputText.length === 0 && <span className="text-[#8696a0]">Message</span>}
-                  {iphInputText.split('').map((c, idx) => (
-                    <span key={idx} className="iph-letter" style={{ animationDelay: `${idx * 60}ms`, whiteSpace: 'pre' }}>{c}</span>
-                  ))}
-                  <span className="iph-caret ml-[1px] block w-[1.5px] h-[14px] bg-[#00A884]" />
+                {/* Dynamic Island — sits inside status bar area */}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 rounded-full flex items-center justify-between"
+                  style={{ top: 11, left: 130, width: 108, height: 30, background: '#000', paddingLeft: 12, paddingRight: 12 }}
+                >
+                  {/* front camera lens (right) rendered inside island */}
+                  <div className="flex-1" />
+                  <div className="size-[14px] rounded-full relative" style={{ background: 'radial-gradient(circle at 32% 30%, #333947 0%, #0a0a12 70%)', boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.05)' }}>
+                    <div className="absolute inset-[3px] rounded-full" style={{ background: 'radial-gradient(circle at 30% 30%, #4a5164 0%, #0a0a12 80%)' }} />
+                    <div className="absolute top-[3px] left-[3px] size-[3px] rounded-full bg-white/25" />
+                  </div>
                 </div>
               </div>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" /><circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" /></svg>
-            </div>
-            <div className="size-[34px] rounded-full flex items-center justify-center shrink-0" style={{ background: '#00A884', boxShadow: '0 2px 4px rgba(0,168,132,0.35)' }}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
+
+              {/* WhatsApp header — Prathik Gadde */}
+              <div className="shrink-0 flex items-center gap-[8px] px-[10px] pt-[8px] pb-[10px]" style={{ background: '#075E54', boxShadow: '0 1px 0 rgba(0,0,0,0.05)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.4" className="shrink-0"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <div className="size-[30px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[11px] shrink-0" style={{ background: 'linear-gradient(135deg, #f4b860 0%, #d97a3f 100%)', boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25)' }}>PG</div>
+                <div className="flex-1 flex flex-col min-w-0">
+                  <span className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold leading-none tracking-[-0.1px] truncate">Prathik Gadde</span>
+                  <span className="text-[#b8dcc9] text-[10px] font-['Geist:Regular'] leading-none mt-[3px]">online</span>
+                </div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M15 8v8l6 4V4l-6 4zM4 5h9v14H4z" /></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white" className="shrink-0"><path d="M20 15.5c-1.2 0-2.4-.2-3.5-.6a1 1 0 00-1 .3l-2 2c-2.8-1.4-5-3.5-6.5-6.5l2-2c.3-.3.3-.7.2-1-.4-1.1-.6-2.3-.6-3.5A1 1 0 007.6 3H4a1 1 0 00-1 1c0 9.4 7.6 17 17 17a1 1 0 001-1v-3.5a1 1 0 00-1-1z" /></svg>
+                <svg width="4" height="14" viewBox="0 0 4 24" fill="white" className="shrink-0"><circle cx="2" cy="5" r="2" /><circle cx="2" cy="12" r="2" /><circle cx="2" cy="19" r="2" /></svg>
+              </div>
+
+              {/* TODAY chip */}
+              <div className="text-center pt-[8px] pb-[4px] shrink-0">
+                <span className="text-[#54656F] text-[9px] font-['Geist:Medium'] font-medium px-[9px] py-[3px] rounded-[6px]" style={{ background: '#f7f2e8', boxShadow: '0 1px 0.5px rgba(11,20,26,0.08)' }}>TODAY</span>
+              </div>
+
+              {/* Chat body */}
+              <div className="flex-1 px-[10px] pb-[8px] flex flex-col gap-[6px] overflow-hidden justify-end">
+                {chatStep >= 0 && (
+                  <div className="self-start relative iph-msg-in max-w-[78%]">
+                    <div className="bg-white px-[10px] py-[7px] relative" style={{ borderRadius: '10px 10px 10px 0px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.3]">Hi! linen kurta still available?</div>
+                      <div className="text-[#667781] text-[9px] text-right mt-[2px] font-['Geist:Regular']">10:34</div>
+                    </div>
+                    {/* left tail */}
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute left-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M8 0 L8 13 L0 0 Z" fill="white" />
+                    </svg> */}
+                  </div>
+                )}
+
+                {chatStep === 1 && (
+                  <div className="self-end relative iph-msg-in">
+                    <div className="px-[12px] py-[9px] flex gap-[3.5px] items-center" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
+                    </svg> */}
+                  </div>
+                )}
+
+                {chatStep >= 2 && chatStep !== 1 && (
+                  <div className="self-end relative iph-msg-in max-w-[84%]">
+                    <div className="px-[10px] py-[7px] relative" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <div className="text-[#06846f] text-[9.5px] font-['Geist:SemiBold'] font-semibold mb-[2px] leading-none">WeNext AI</div>
+                      <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.35]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</div>
+                      <div className="flex items-center justify-end gap-[3px] mt-[2px]">
+                        <span className="text-[#667781] text-[9px] font-['Geist:Regular']">10:36</span>
+                        <svg width="14" height="9" viewBox="0 0 16 11" fill="#53bdeb"><path d="M11.1.4L4.9 6.6 2.4 4.1 1 5.5l3.9 3.9L12.5 1.8zm4 0L8.9 6.6 6.6 4.3 5.2 5.7 8.9 9.4 16.5 1.8z" /></svg>
+                      </div>
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
+                    </svg> */}
+                  </div>
+                )}
+
+                {chatStep >= 3 && (
+                  <div className="self-start relative iph-msg-in max-w-[52%]">
+                    <div className="bg-white px-[10px] py-[7px]" style={{ borderRadius: '10px 10px 10px 0px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] leading-[1.3]">Yes please.</div>
+                      <div className="text-[#667781] text-[9px] text-right mt-[2px] font-['Geist:Regular']">10:37</div>
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute left-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M8 0 L8 13 L0 0 Z" fill="white" />
+                    </svg> */}
+                  </div>
+                )}
+
+                {chatStep === 4 && (
+                  <div className="self-end relative iph-msg-in">
+                    <div className="px-[12px] py-[9px] flex gap-[3.5px] items-center" style={{ background: '#d9fdd3', borderRadius: '10px 10px 0px 10px', boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)' }}>
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '0ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '180ms' }} />
+                      <span className="size-[5px] rounded-full bg-[#7a8f86] iph-typing" style={{ animationDelay: '360ms' }} />
+                    </div>
+                    {/* <svg width="8" height="13" viewBox="0 0 8 13" className="absolute right-[-6px] top-0" style={{ filter: 'drop-shadow(0 1px 0.5px rgba(11,20,26,0.13))' }}>
+                      <path d="M0 0 L0 13 L8 0 Z" fill="#d9fdd3" />
+                    </svg> */}
+                  </div>
+                )}
+
+                {chatStep >= 5 && (
+                  <div className="self-end relative iph-msg-in max-w-[82%]">
+                    <div
+                      className="px-[12px] py-[10px] flex flex-col items-start relative overflow-hidden"
+                      style={{
+                        background: '#FFF',
+                        borderRadius: '12px 12px 0px 12px',
+                        boxShadow: '0 1px 0.5px rgba(11,20,26,0.13)',
+                      }}
+                    >
+                      {/* subtle radial highlight */}
+                      <div className="absolute -top-4 -right-4 size-[70px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)' }} />
+                      <div className="flex items-center gap-[6px] relative">
+                        <div className="size-[16px] rounded-[4px] flex items-center justify-center text-[10.5px] font-['Geist:Bold'] font-bold text-white" style={{ background: '#111b21', boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>₹</div>
+                        <span className="text-[#111b21] text-[10.5px] font-['Geist:SemiBold'] font-semibold tracking-[-0.1px]">UPI Payment Link</span>
+                      </div>
+                      <span className="text-[#111b21] text-[20px] font-['Geist:Bold'] font-bold leading-[1] mt-[8px] tracking-[-0.5px] relative">₹2,490</span>
+                      <span className="text-[#667781] text-[9px] font-['Geist:Regular'] mt-[3px] relative">Ivory Linen Kurta · Size M · Qty 1</span>
+                      <div className="h-[1px] w-full mt-[8px] mb-[6px] relative" style={{ background: 'rgba(17,27,33,0.08)' }} />
+                      <div className="flex items-center justify-between w-full relative">
+                        <span className="text-[#00A884] text-[10px] font-['Geist:Medium'] font-medium">Tap to pay →</span>
+                        <div className="flex items-center gap-[3px]">
+                          <span className="text-[#667781] text-[9px]">10:38</span>
+                          <svg width="14" height="9" viewBox="0 0 16 11" fill="#53bdeb"><path d="M11.1.4L4.9 6.6 2.4 4.1 1 5.5l3.9 3.9L12.5 1.8zm4 0L8.9 6.6 6.6 4.3 5.2 5.7 8.9 9.4 16.5 1.8z" /></svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Composer */}
+              <div className="shrink-0 px-[7px] pt-[6px] pb-[4px] flex items-end gap-[6px]" style={{ background: '#f0f2f5' }}>
+                <div className="flex-1 bg-white rounded-[20px] min-h-[34px] flex items-center pl-[8px] pr-[8px] gap-[6px]" style={{ boxShadow: '0 1px 1px rgba(11,20,26,0.06)' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                    <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
+                    <circle cx="8.6" cy="10.5" r="1.1" fill="#54656F" />
+                    <circle cx="15.4" cy="10.5" r="1.1" fill="#54656F" />
+                    <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.4" strokeLinecap="round" />
+                  </svg>
+                  <div className="flex-1 min-w-0 overflow-hidden" ref={iphInputScrollRef}>
+                    <div className="text-[#111b21] text-[12px] font-['Geist:Regular'] flex items-center w-max" style={{ lineHeight: '15px' }} key={iphInputText}>
+                      {iphInputText.length === 0 && <span className="text-[#8696a0]">Message</span>}
+                      {iphInputText.split('').map((c, idx) => (
+                        <span key={idx} className="iph-letter" style={{ animationDelay: `${idx * 60}ms`, whiteSpace: 'pre' }}>{c}</span>
+                      ))}
+                      <span className="iph-caret ml-[1px] block w-[1.5px] h-[14px] bg-[#00A884]" />
+                    </div>
+                  </div>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" className="shrink-0"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" /><circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" /></svg>
+                </div>
+                <div className="size-[34px] rounded-full flex items-center justify-center shrink-0" style={{ background: '#00A884', boxShadow: '0 2px 4px rgba(0,168,132,0.35)' }}>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
+                </div>
+              </div>
+
+              {/* Home indicator */}
+              <div className="shrink-0 flex items-center justify-center pb-[7px] pt-[4px]" style={{ background: '#f0f2f5' }}>
+                <div className="w-[110px] h-[4px] rounded-full bg-[#0a0a0a]" />
+              </div>
             </div>
           </div>
 
-          {/* Home indicator */}
-          <div className="shrink-0 flex items-center justify-center pb-[7px] pt-[4px]" style={{ background: '#f0f2f5' }}>
-            <div className="w-[110px] h-[4px] rounded-full bg-[#0a0a0a]" />
-          </div>
+          {/* Screen glare — very subtle */}
+          <div
+            className="absolute inset-[3px] rounded-[43px] pointer-events-none"
+            style={{
+              background: 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.04) 100%)',
+              mixBlendMode: 'overlay',
+            }}
+          />
         </div>
+
+        {/* Side buttons — titanium — LEFT: silent switch + volume up + volume down */}
+        <div
+          className="absolute left-[-3px] rounded-l-[1.5px]"
+          style={{
+            top: 110, width: 3, height: 30,
+            background: 'linear-gradient(90deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        <div
+          className="absolute left-[-3px] rounded-l-[1.5px]"
+          style={{
+            top: 158, width: 3, height: 52,
+            background: 'linear-gradient(90deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        <div
+          className="absolute left-[-3px] rounded-l-[1.5px]"
+          style={{
+            top: 224, width: 3, height: 52,
+            background: 'linear-gradient(90deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        {/* RIGHT: action button (top) + power button (larger) */}
+        <div
+          className="absolute right-[-3px] rounded-r-[1.5px]"
+          style={{
+            top: 130, width: 3, height: 36,
+            background: 'linear-gradient(270deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
+        <div
+          className="absolute right-[-3px] rounded-r-[1.5px]"
+          style={{
+            top: 184, width: 3, height: 76,
+            background: 'linear-gradient(270deg, #6c655a 0%, #9a9184 100%)',
+            boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.25), inset 0 -1px 0 rgba(0,0,0,0.2)',
+          }}
+        />
       </div>
     </div>
   );
@@ -597,11 +683,571 @@ export default function Home() {
     <div className="bg-[#f8f5ec] relative size-full" data-node-id="467:951" data-name="Home">
       <div className="content-stretch flex flex-col items-start w-full w-full" data-node-id="467:952">
         <Header />
+        {/* <HeroV3 /> */}
         {/* <HeroV2 /> */}
         <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="467:971">
-          <HeroV3 />
-          {/* <HeroV1 /> */}
+          <div className="bg-[#092511] content-stretch flex flex-col items-start container mx-auto px-4 xl:px-0 relative shrink-0 w-full shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)]" data-node-id="467:972" data-name="Section">
+            <div className="relative shrink-0 w-full" data-node-id="467:973" data-name="Container">
+              <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-start overflow-clip relative rounded-[inherit] size-full">
+                <div className="absolute h-[860px] left-0 right-0 mix-blend-luminosity opacity-[0.02] top-0" data-node-id="467:974" data-name="image 27">
+                  <img alt="" className="absolute bg-clip-padding border-0 border-[transparent] border-solid inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage27} />
+                </div>
+                <div className="relative shrink-0 w-full" data-node-id="467:975">
+                  <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start justify-between relative size-full">
+                    <div className="border-[rgba(255,255,255,0.1)] border-l border-solid content-stretch flex min-h-[calc(100vh-80px)] items-center min-w-px max-w-[690px] pl-px relative" data-node-id="467:976" data-name="Container">
+                      <div className="flex-[1_0_0] min-w-px relative" data-node-id="467:977" data-name="Container">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[24px] items-start px-[64px] relative size-full">
+                          <div className="relative shrink-0 w-full" data-node-id="467:978" data-name="Container">
+                            <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col gap-[16px] items-start relative size-full">
+                              <Typography className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.2] min-w-full relative shrink-0 text-[68px] text-white tracking-[-1px] w-[min-content]" data-node-id="467:979">
+                                Turn every <span className="invisible inline-block w-[310px] align-middle"></span> chat into revenue.
+                              </Typography>
+                              <Typography className="[word-break:break-word] font-['Geist:Regular'] font-normal leading-[1.4] relative shrink-0 text-[#b7b7b7] text-[22px] w-[521px]" data-node-id="467:980">
+                                WeNext unifies your WhatsApp inbox, automates replies, runs campaigns, and converts leads — all powered by AI built.
+                              </Typography>
+                              <div
+                                className="absolute h-[84px] left-[2px] top-[85px] w-[310px]"
+                                data-node-id="467:981"
+                              >
+                                <div className="flex items-center overflow-clip py-[1.5px] relative rounded-[inherit] size-full gap-[16px]">
+                                  <div className="bg-white shrink-0 size-[60px] rounded-[16px] flex items-center justify-center">
+                                    <div
+                                      className="shrink-0 size-[40px]"
+                                      style={{
+                                        background: HERO_TABS[heroTab].iconPaint,
+                                        WebkitMaskImage: `url(${HERO_TABS[heroTab].icon})`,
+                                        maskImage: `url(${HERO_TABS[heroTab].icon})`,
+                                        WebkitMaskSize: 'contain',
+                                        maskSize: 'contain',
+                                        WebkitMaskRepeat: 'no-repeat',
+                                        maskRepeat: 'no-repeat',
+                                        WebkitMaskPosition: 'center',
+                                        maskPosition: 'center',
+                                      }}
+                                    />
+                                  </div>
+                                  <Typography
+                                    className="font-['Geist:SemiBold'] font-semibold leading-[48px] text-[48px] tracking-[-1.2px] whitespace-nowrap"
+                                    style={
+                                      HERO_TABS[heroTab].textPaint.startsWith('linear-gradient')
+                                        ? {
+                                          backgroundImage: HERO_TABS[heroTab].textPaint,
+                                          WebkitBackgroundClip: 'text',
+                                          backgroundClip: 'text',
+                                          WebkitTextFillColor: 'transparent',
+                                          color: 'transparent',
+                                          display: 'inline-block',
+                                        }
+                                        : { color: HERO_TABS[heroTab].textPaint }
+                                    }
+                                  >
+                                    {HERO_TABS[heroTab].name}
+                                  </Typography>
+                                </div>
+                                {/* <div className="absolute inset-0 pointer-events-none rounded-[inherit] shadow-[inset_0px_1px_0px_0px_rgba(255,255,255,0.6)]" /> */}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="relative shrink-0" data-node-id="467:988" data-name="Container">
+                            <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[16px] items-start relative size-full">
+                              <div className="bg-[#06b349] hover:bg-[#05a043] active:scale-[0.98] transition-all duration-150 relative rounded-[8px] shrink-0 cursor-pointer" data-node-id="467:989" data-name="Link">
+                                <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[11.992px] items-center overflow-clip pl-[20px] pr-[15px] py-[15px] relative rounded-[inherit] size-full">
+                                  <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[1410px] left-[calc(50%+0.5px)] mix-blend-color-burn top-1/2 w-[2115px]" data-node-id="467:990" data-name="image 27">
+                                    <img alt="" className="absolute bg-clip-padding border-0 border-[transparent] border-solid inset-0 max-w-none object-cover opacity-25 pointer-events-none size-full" src={imgImage27} />
+                                  </div>
+                                  <Typography className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-none relative shrink-0 text-[18px] text-white whitespace-nowrap" data-node-id="467:991">
+                                    Book a demo
+                                  </Typography>
+                                  <div className="relative shrink-0 size-[20px]" data-node-id="467:992" data-name="Icon">
+                                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon1} />
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="bg-white hover:bg-[#f8f5ec] active:scale-[0.98] transition-all duration-150 border border-[#dedace] border-solid relative rounded-[8px] shrink-0 cursor-pointer" data-node-id="467:994" data-name="Link">
+                                <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center overflow-clip pl-[21px] pr-[16px] py-[16px] relative rounded-[inherit] size-full">
+                                  <Typography className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-none relative shrink-0 text-[#092511] text-[18px] whitespace-nowrap" data-node-id="467:995">
+                                    Get Started
+                                  </Typography>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border-[rgba(255,255,255,0.1)] border-r border-solid content-stretch flex flex-col min-h-[calc(100vh-160px)] items-start overflow-clip pr-px relative shrink-0 w-[600px]" data-node-id="467:996" data-name="Container">
+                      <div className="h-[calc(100vh-80px)] min-h-[640px] relative shrink-0 w-full" data-node-id="467:997" data-name="Container">
+                        <div className="bg-clip-padding border-0 border-[transparent] border-solid overflow-clip relative rounded-[inherit] size-full z-10">
+                          <div className="-translate-x-1/2 absolute flex h-[80px] items-center justify-center left-[calc(50%+0.5px)] bottom-[450px] w-0">
+                            <div className="flex-none rotate-90">
+                              <div className="h-0 relative w-[80px]" data-node-id="467:998">
+                                <div className="absolute inset-[-4px_0_0_0]">
+                                  <img alt="" className="block max-w-none size-full" src={imgLine1} />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="absolute bg-[#0b2e15] shadow-[0_0_0_10px_#15371f] bottom-[-30px] h-[480px] left-[132px] opacity-50 rounded-tl-[30px] rounded-tr-[30px] w-[338px]" data-node-id="467:999" />
+                          <div className="absolute bg-white shadow-[0_0_0_10px_rgba(255,255,255,0.05)] bottom-[10px] h-[480px] left-[132px] rounded-tl-[30px] rounded-tr-[30px] w-[338px] overflow-hidden" data-node-id="467:1000">
+                            {heroTab === 0 && (
+                              <div className="flex flex-col h-full bg-[#e5ddd5]" style={{ backgroundImage: 'radial-gradient(rgba(11,31,26,0.04) 1px, transparent 1px)', backgroundSize: '14px 14px' }}>
+                                <div className="bg-[#075E54] px-[12px] pt-[18px] pb-[10px] flex items-center gap-[8px]">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                                  <div className="size-[32px] rounded-full bg-gradient-to-br from-[#25d366] to-[#128C7E] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[12px]">PG</div>
+                                  <div className="flex-1 flex flex-col">
+                                    <Typography className="text-white text-[13px] font-['Geist:SemiBold'] font-semibold leading-none">Prathik Gadde</Typography>
+                                    <Typography className="text-[#a3d5b4] text-[9.5px] font-['Geist:Regular'] leading-none mt-[2px]">online</Typography>
+                                  </div>
+                                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M15.91 8.41c.39.39.39 1.02 0 1.42L12.83 12.9l3.08 3.07a.996.996 0 1 1-1.41 1.41L8.5 11.34a.996.996 0 0 1 0-1.41l5.99-5.99a.996.996 0 0 1 1.42 1.06z" transform="rotate(180 12 12)" /><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" /></svg>
+                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" /></svg>
+                                  <svg width="4" height="14" viewBox="0 0 4 24" fill="white"><circle cx="2" cy="5" r="2" /><circle cx="2" cy="12" r="2" /><circle cx="2" cy="19" r="2" /></svg>
+                                </div>
+                                <div className="text-center py-[4px]"><span className="bg-[#E1F2FB] text-[#54656F] text-[8.5px] font-['Geist:Medium'] px-[8px] py-[2px] rounded-[7px]">TODAY</span></div>
+                                <div className="flex-1 px-[8px] pb-[8px] flex flex-col gap-[4px] overflow-hidden justify-end">
+                                  {chatStep >= 0 && (
+                                    <div className="self-start relative bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[78%] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in">
+                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Hi! linen kurta still available?</Typography>
+                                      <Typography className="text-[#667781] text-[8px] text-right mt-[1px]">10:34</Typography>
+                                    </div>
+                                  )}
+                                  {chatStep === 1 && (
+                                    <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in flex gap-[3px] items-center">
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '360ms' }} />
+                                    </div>
+                                  )}
+                                  {chatStep >= 2 && (
+                                    <div className="self-end relative bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[8px] py-[6px] max-w-[85%] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in">
+                                      <Typography className="text-[#7a8f86] text-[7.5px] font-['Geist:Medium'] mb-[1px]">WeNext AI</Typography>
+                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes! In stock — 3 pieces left. Want me to share a secure UPI link?</Typography>
+                                      <Typography className="text-[#667781] text-[8px] text-right mt-[1px]">10:36 <span className="text-[#53bdeb]">✓✓</span></Typography>
+                                    </div>
+                                  )}
+                                  {chatStep >= 3 && (
+                                    <div className="self-start relative bg-white rounded-[7px] rounded-tl-[0px] px-[8px] py-[6px] max-w-[55%] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in">
+                                      <Typography className="text-[#111b21] text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes please.</Typography>
+                                      <Typography className="text-[#667781] text-[8px] text-right mt-[1px]">10:37</Typography>
+                                    </div>
+                                  )}
+                                  {chatStep === 4 && (
+                                    <div className="self-end bg-[#d9fdd3] rounded-[7px] rounded-tr-[0px] px-[10px] py-[8px] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] msg-in flex gap-[3px] items-center">
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-[#7a8f86] typing-dot" style={{ animationDelay: '360ms' }} />
+                                    </div>
+                                  )}
+                                  {chatStep >= 5 && (
+                                    <div className="self-end relative bg-[#FFF] rounded-[10px] rounded-tr-[0px] px-[10px] py-[8px] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] flex flex-col items-start max-w-[78%] msg-in overflow-hidden">
+                                      <div className="absolute -top-4 -right-4 size-[60px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%)' }} />
+                                      <div className="flex items-center gap-[5px] relative">
+                                        <div className="size-[14px] rounded-[3px] bg-[#111b21] shadow-[0_1px_2px_rgba(0,0,0,0.1)] flex items-center justify-center text-[8px] font-bold text-white">₹</div>
+                                        <Typography className="text-[#111b21] text-[10px] font-['Geist:SemiBold'] tracking-[-0.1px]">UPI Payment Link</Typography>
+                                      </div>
+                                      <Typography className="text-[#111b21] text-[16px] font-['Geist:Bold'] font-bold leading-[1.1] mt-[6px] tracking-[-0.5px] relative">₹2,490</Typography>
+                                      <Typography className="text-[#667781] text-[8.5px] font-['Geist:Regular'] mt-[2px] relative">Ivory Linen Kurta · Size M · Qty 1</Typography>
+                                      <div className="h-[1px] w-full mt-[6px] mb-[5px] relative" style={{ background: 'rgba(17,27,33,0.08)' }} />
+                                      <div className="flex items-center justify-between w-full relative">
+                                        <Typography className="text-[#00A884] text-[9px] font-['Geist:Medium']">Tap to pay →</Typography>
+                                        <Typography className="text-[#667781] text-[8px]">10:38 <span className="text-[#53bdeb]">✓✓</span></Typography>
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="bg-[#f0f2f5] px-[8px] py-[6px] flex items-center gap-[6px]">
+                                  {/* Rounded pill input */}
+                                  <div className="flex-1 bg-white rounded-[999px] h-[30px] flex items-center pl-[6px] pr-[8px] gap-[6px] shadow-[0_1px_1px_rgba(0,0,0,0.04)]">
+                                    {/* Sticker/smiley face with tongue */}
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
+                                      <circle cx="8.6" cy="10" r="1.2" fill="#54656F" />
+                                      <circle cx="15.4" cy="10" r="1.2" fill="#54656F" />
+                                      <path d="M8.5 14c1 1.3 2.2 1.9 3.5 1.9s2.5-.6 3.5-1.9" stroke="#54656F" strokeWidth="1.5" strokeLinecap="round" />
+                                      <path d="M13 15.5v1.7c0 .55-.45 1-1 1s-1-.45-1-1v-1.7" fill="#F5A623" />
+                                    </svg>
+                                    {/* Typed text — reveals letter by letter, caret rides with the text; text scrolls to keep the caret in view */}
+                                    <div className="flex-1 min-w-0 overflow-hidden" ref={waInputScrollRef}>
+                                      <div className="text-[#111b21] text-[11px] font-['Geist:Regular'] flex items-center w-max" style={{ lineHeight: '13px' }} key={waInputText}>
+                                        {waInputText.split('').map((c, i) => (
+                                          <span key={i} className="wa-letter" style={{ animationDelay: `${i * 60}ms`, whiteSpace: 'pre' }}>{c}</span>
+                                        ))}
+                                        <span className="wa-caret ml-[1px] block w-[1.5px] h-[13px] bg-[#00A884]" />
+                                      </div>
+                                    </div>
+                                    {/* Paperclip */}
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <path d="M21 12l-8.5 8.5a5 5 0 01-7-7L14 5a3.5 3.5 0 014.9 5L10.5 18.5a2 2 0 01-2.8-2.8L15 8.5" stroke="#54656F" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {/* Rupee in circle */}
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <circle cx="12" cy="12" r="9" stroke="#54656F" strokeWidth="1.6" />
+                                      <path d="M8 7.5h8M8 10.5h8M9 7.5c2.4 0 3.5 1.3 3.5 2.8s-1.1 2.8-3.5 2.8H8l6 4.4" stroke="#54656F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {/* Camera */}
+                                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" className="shrink-0">
+                                      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z" stroke="#54656F" strokeWidth="1.5" strokeLinejoin="round" />
+                                      <circle cx="12" cy="14" r="3.3" stroke="#54656F" strokeWidth="1.5" />
+                                    </svg>
+                                  </div>
+                                  {/* Separate mic button */}
+                                  <div className="size-[30px] rounded-full bg-[#00A884] flex items-center justify-center shrink-0 shadow-[0_1px_2px_rgba(0,0,0,0.1)]">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 1a4 4 0 0 1 4 4v6a4 4 0 0 1-8 0V5a4 4 0 0 1 4-4zm6 11a6 6 0 0 1-12 0H4a8 8 0 0 0 7 7.93V23h2v-3.07A8 8 0 0 0 20 12h-2z" /></svg>
+                                  </div>
+                                </div>
+                                <style>{`
+                                  @keyframes waCaret { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+                                  .wa-caret { animation: waCaret 1s steps(2,start) infinite; }
+                                  .wa-letter { display: inline-block; max-width: 0; overflow: hidden; animation: waLetterReveal 90ms linear forwards; }
+                                  @keyframes waLetterReveal { to { max-width: 2em; } }
+                                  @keyframes typingDot { 0%,60%,100% { transform: translateY(0); opacity: 0.5; } 30% { transform: translateY(-3px); opacity: 1; } }
+                                  .typing-dot { animation: typingDot 1.2s ease-in-out infinite; }
+                                `}</style>
+                              </div>
+                            )}
+                            {heroTab === 1 && (
+                              <div className="relative h-full overflow-hidden bg-white">
+                                {/* Post content — scrolls up 25px just before the comments sheet opens */}
+                                <div
+                                  className="h-full flex flex-col"
+                                  style={{
+                                    transform: igPostShifted ? 'translateY(-25px)' : 'translateY(0)',
+                                    transition: 'transform 450ms cubic-bezier(0.4, 0, 0.2, 1)'
+                                  }}
+                                >
+                                  {/* Post header — avatar + username + three-dot menu */}
+                                  <div className="flex items-center gap-[5px] px-[10px] py-[12px] shrink-0">
+                                    {/* <div className="size-[30px] rounded-full flex items-center justify-center text-white text-[12px] font-['Geist:Bold'] font-bold shrink-0" style={{ background: 'linear-gradient(135deg, #1FBD79 0%, #0f7d4d 100%)', boxShadow: '0 0 0 1.5px #fff, 0 0 0 2.5px #dbdbdb' }}>W</div> */}
+                                    <div className='flex flex-col items-center justify-center'>
+                                      <img src={SmallLogo} width={32} alt="" />
+                                    </div>
+                                    <div className="flex-1 flex items-center gap-[3px]">
+                                      <Typography className="text-[#0c221f] text-[12px] font-['Geist:SemiBold'] font-semibold leading-none">wenext.ai</Typography>
+                                      <svg width="11" height="11" viewBox="0 0 24 24" fill="#0095F6"><path d="M23 12l-2.5-2.9.4-3.8-3.7-.8-2-3.3L11.5 2.4 8 .2 6 3.5l-3.7.8.4 3.8L.2 11l2.5 2.9-.4 3.8 3.7.8 2 3.3 3.5-1.4 3.5 1.4 2-3.3 3.7-.8-.4-3.8L23 12zm-12.7 4.7L6 12.4l1.4-1.4 2.9 2.9 6.3-6.3L18 9l-7.7 7.7z" /></svg>
+                                    </div>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#0c221f"><circle cx="5" cy="12" r="1.7" /><circle cx="12" cy="12" r="1.7" /><circle cx="19" cy="12" r="1.7" /></svg>
+                                  </div>
 
+                                  {/* Post image */}
+                                  <div className="w-full shrink-0 bg-[#fafafa]" style={{ height: 300 }}>
+                                    <img src={imgInstagramPost} alt="wenext.ai post" className="w-full h-full object-cover" />
+                                  </div>
+
+                                  {/* Actions row: heart | comment | share ......... bookmark */}
+                                  <div className="flex items-center justify-between px-[10px] pt-[8px] pb-[4px] shrink-0">
+                                    <div className="flex items-center gap-[14px]">
+                                      {/* Like */}
+                                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="#0c221f" strokeWidth="1.7" strokeLinejoin="round" />
+                                      </svg>
+                                      {/* Comment — carries the tap animation that motivates the sheet opening */}
+                                      <div className="ig-comment-tap" style={{ transformOrigin: 'center', lineHeight: 0 }}>
+                                        {/* <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" stroke="#0c221f" strokeWidth="1.7" strokeLinejoin="round" />
+                                      </svg> */}
+                                        <img src={CommentIcon} width={21} alt="" />
+                                      </div>
+                                      {/* Share */}
+                                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                        <path d="M22 2L11 13" stroke="#0c221f" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                        <path d="M22 2l-7 20-4-9-9-4 20-7z" stroke="#0c221f" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                      </svg>
+                                    </div>
+                                    {/* Bookmark right */}
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                      <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2v16z" stroke="#0c221f" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                  </div>
+
+                                  {/* Meta: likes, caption, view comments, timestamp */}
+                                  <div className="px-[10px] pb-[6px] shrink-0">
+                                    <Typography className="text-[#0c221f] text-[11.5px] font-['Geist:SemiBold'] font-semibold leading-none">1,247 likes</Typography>
+                                    <Typography className="text-[#0c221f] text-[11.5px] mt-[4px] leading-[1.3]">
+                                      <span className="font-['Geist:SemiBold'] font-semibold">wenext.ai</span> Turn every conversation into a customer ✨ <span className="text-[#00376b]">#whatsapp</span>
+                                    </Typography>
+                                    <Typography className="text-[#8e8e8e] text-[11px] mt-[4px] leading-none">View all 892 comments</Typography>
+                                    <Typography className="text-[#8e8e8e] text-[9px] mt-[4px] tracking-[0.5px] leading-none uppercase">3 hours ago</Typography>
+                                  </div>
+                                </div>
+
+                                {/* Comments sheet overlay — always at 60% when open, never full */}
+                                <div
+                                  className="absolute left-0 right-0 bottom-0 bg-white flex flex-col overflow-hidden z-20"
+                                  style={{
+                                    height: '66%',
+                                    transform: igOverlayOpen ? 'translateY(0)' : 'translateY(100%)',
+                                    transition: 'transform 500ms cubic-bezier(0.32, 0.72, 0.35, 1)',
+                                    borderTopLeftRadius: 14,
+                                    borderTopRightRadius: 14,
+                                    boxShadow: '0 -10px 30px rgba(0,0,0,0.25)'
+                                  }}
+                                >
+                                  {/* Comments sheet header */}
+                                  <div className="px-[12px] pt-[18px] pb-[8px] flex items-center gap-[8px] border-b border-[#efefef] relative">
+                                    <div className="absolute top-[8px] left-1/2 -translate-x-1/2 w-[32px] h-[3px] rounded-full bg-[#dbdbdb]" />
+                                    {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg> */}
+                                    <Typography className="flex-1 text-center text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold leading-none -translate-x-[6px]">Comments</Typography>
+                                    {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="#0c221f"><path d="M21 6.5A5.5 5.5 0 0 0 12 3a5.5 5.5 0 0 0-9 3.5C3 12 12 21 12 21s9-9 9-14.5z" fillOpacity="0" stroke="#0c221f" strokeWidth="1.8" /></svg> */}
+
+                                  </div>
+
+                                  {/* Reel context strip */}
+                                  {/* <div className="px-[10px] py-[6px] flex items-center gap-[8px] bg-[#fafafa] border-b border-[#efefef]">
+                                    <div className="size-[26px] rounded-[6px] relative overflow-hidden flex items-center justify-center" style={{ background: INSTAGRAM_GRADIENT }}>
+                                      <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z" /></svg>
+                                    </div>
+                                    <div className="size-[22px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[9px] shrink-0" style={{ background: 'linear-gradient(135deg, #1FBD79, #0f7d4d)' }}>W</div>
+                                    <div className='flex flex-col items-center justify-center'>
+                                      <img src={SmallLogo} width={32} alt="" />
+                                    </div>
+
+                                    <div className="flex-1 min-w-0 flex flex-col">
+                                      <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none flex items-center gap-[3px]">
+                                        wenext.ai
+                                        <svg width="9" height="9" viewBox="0 0 24 24" fill="#0095F6"><path d="M23 12l-2.5-2.9.4-3.8-3.7-.8-2-3.3L11.5 2.4 8 .2 6 3.5l-3.7.8.4 3.8L.2 11l2.5 2.9-.4 3.8 3.7.8 2 3.3 3.5-1.4 3.5 1.4 2-3.3 3.7-.8-.4-3.8L23 12zm-12.7 4.7L6 12.4l1.4-1.4 2.9 2.9 6.3-6.3L18 9l-7.7 7.7z" /></svg>
+                                      </Typography>
+                                      <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:Regular'] leading-none mt-[3px] truncate">Turn every conversation into a customer ✨</Typography>
+                                    </div>
+                                    <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:Medium']">892</Typography>
+                                  </div>  */}
+
+                                  {/* Comments list */}
+                                  <div className="flex-1 px-[10px] pt-[10px] pb-[6px] flex flex-col gap-[10px] overflow-hidden">
+                                    {/* Seed comment for context */}
+                                    <div className="flex gap-[8px] msg-in">
+                                      <div className="size-[26px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[10px] shrink-0" style={{ background: 'linear-gradient(135deg, #F5A16D, #E0653C)' }}>A</div>
+                                      <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-[4px]">
+                                          <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none">arjun_k</Typography>
+                                          <Typography className="text-[#8e8e8e] text-[9px] leading-none">· 3h</Typography>
+                                        </div>
+                                        <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3] mt-[2px]">This looks super clean 🔥</Typography>
+                                        <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:SemiBold'] font-semibold mt-[4px]">Reply</Typography>
+                                      </div>
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-[6px] shrink-0"><path d="M12 21s-7-4.5-9.5-9.2C.7 8.1 3.2 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.8 0 6.3 4.1 4.5 7.8C19 16.5 12 21 12 21z" stroke="#8e8e8e" strokeWidth="1.7" strokeLinejoin="round" /></svg>
+                                    </div>
+
+                                    {/* User's just-posted comment */}
+                                    {chatStep >= 2 && (
+                                      <div className="flex gap-[8px] msg-in">
+                                        <div className="size-[26px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[10px] shrink-0" style={{ background: 'linear-gradient(135deg, #F5A16D, #E0653C)' }}>K</div>
+
+                                        {/* <div className="size-[26px] rounded-full bg-gradient-to-br from-[#d0d5db] to-[#8f97a3] shrink-0" /> */}
+                                        <div className="flex-1 min-w-0">
+                                          <div className="flex items-center gap-[4px]">
+                                            <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none">Karthik Reddy</Typography>
+                                            <Typography className="text-[#8e8e8e] text-[9px] leading-none">· Just now</Typography>
+                                          </div>
+                                          <Typography className="text-[#0c221f] text-[12px] font-['Geist:SemiBold'] font-semibold leading-[1.3] mt-[2px] tracking-[0.5px]">WENEXT</Typography>
+                                          <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:SemiBold'] font-semibold mt-[4px]">Reply</Typography>
+                                        </div>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-[6px] shrink-0"><path d="M12 21s-7-4.5-9.5-9.2C.7 8.1 3.2 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.8 0 6.3 4.1 4.5 7.8C19 16.5 12 21 12 21z" stroke="#8e8e8e" strokeWidth="1.7" strokeLinejoin="round" /></svg>
+                                      </div>
+                                    )}
+
+                                    {/* wenext.ai auto-reply — appears at step 3 so it lands within the 2800ms tab window */}
+                                    {chatStep >= 3 && (
+                                      <div className="flex gap-[8px] pl-[34px] msg-in">
+                                        <div className='flex flex-col items-start justify-start'>
+                                          <img src={SmallLogo} width={32} alt="" />
+                                        </div>
+                                        {/* <div className="size-[22px] rounded-full flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[9px] shrink-0" style={{ background: 'linear-gradient(135deg, #1FBD79, #0f7d4d)' }}>W</div> */}
+                                        <div className="flex-1 min-w-0">
+                                          <div className="flex items-center gap-[4px] flex-wrap">
+                                            <Typography className="text-[#0c221f] text-[10.5px] font-['Geist:SemiBold'] font-semibold leading-none">wenext.ai</Typography>
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="#0095F6"><path d="M23 12l-2.5-2.9.4-3.8-3.7-.8-2-3.3L11.5 2.4 8 .2 6 3.5l-3.7.8.4 3.8L.2 11l2.5 2.9-.4 3.8 3.7.8 2 3.3 3.5-1.4 3.5 1.4 2-3.3 3.7-.8-.4-3.8L23 12zm-12.7 4.7L6 12.4l1.4-1.4 2.9 2.9 6.3-6.3L18 9l-7.7 7.7z" /></svg>
+                                            <Typography className="text-[#8e8e8e] text-[9px] leading-none">· Just now</Typography>
+                                          </div>
+                                          <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3] mt-[2px]">
+                                            Thank you for showing interest in Wenext, please check your DM ✨
+                                          </Typography>
+                                          <Typography className="text-[#8e8e8e] text-[9px] font-['Geist:SemiBold'] font-semibold mt-[4px]">Reply</Typography>
+                                        </div>
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" className="mt-[6px] shrink-0"><path d="M12 21s-7-4.5-9.5-9.2C.7 8.1 3.2 4 7 4c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 3.8 0 6.3 4.1 4.5 7.8C19 16.5 12 21 12 21z" stroke="#8e8e8e" strokeWidth="1.7" strokeLinejoin="round" /></svg>
+                                      </div>
+                                    )}
+                                  </div>
+
+                                  {/* Comment input */}
+                                  <div className="px-[10px] py-[7px] flex items-center gap-[8px] border-t border-[#efefef]">
+                                    <div>
+                                      <img src={User} alt="" width={22} />
+                                    </div>
+                                    {/* <div className="size-[26px] rounded-full bg-gradient-to-br from-[#d0d5db] to-[#8f97a3] shrink-0" /> */}
+                                    <div className={`flex-1 border rounded-[20px] h-[28px] flex items-center px-[12px] transition-colors ${chatStep < 2 ? 'border-[#0c221f]' : 'border-[#dbdbdb]'}`}>
+                                      {chatStep === 0 && (
+                                        <>
+                                          <Typography className="text-[#c7c7c7] text-[10px]">Add a comment for wenext.ai...</Typography>
+                                          <span className="ig-caret ml-[2px] block w-[1.5px] h-[12px] bg-[#0095F6]" />
+                                        </>
+                                      )}
+                                      {chatStep === 1 && (
+                                        <>
+                                          <span className="text-[#0c221f] text-[11px] font-['Geist:SemiBold'] font-semibold tracking-[0.5px]">
+                                            {'WENEXT'.split('').map((c, i) => (
+                                              <span key={i} className="ig-letter" style={{ animationDelay: `${100 + i * 150}ms` }}>{c}</span>
+                                            ))}
+                                          </span>
+                                          <span className="ig-caret ml-[1px] block w-[1.5px] h-[12px] bg-[#0095F6]" />
+                                        </>
+                                      )}
+                                      {chatStep >= 2 && (
+                                        <Typography className="text-[#8e8e8e] text-[10px]">Add a comment for wenext.ai...</Typography>
+                                      )}
+                                    </div>
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style={{ transition: 'stroke 0.2s ease' }}>
+                                      <path d="M22 2L11 13" stroke={chatStep === 1 ? '#0c221f' : '#eee'} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                      <path d="M22 2l-7 20-4-9-9-4 20-7z" stroke={chatStep === 1 ? '#0c221f' : '#eee'} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    {/* <Typography className="text-[11px] font-['Geist:SemiBold'] font-semibold" style={{ color: chatStep === 1 ? '#0095F6' : '#B2DFFC', transition: 'color 0.2s ease' }}>Post</Typography> */}
+                                  </div>
+
+                                  {/* Instagram mockup animations */}
+                                  <style>{`
+                                  @keyframes caretBlink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+                                  .ig-caret { animation: caretBlink 1s steps(2,start) infinite; }
+
+                                  /* Letter reveal — each letter appears at staggered delays */
+                                  .ig-letter { display: inline-block; opacity: 0; animation: igLetterIn 0.01s linear forwards; }
+                                  @keyframes igLetterIn { to { opacity: 1; } }
+
+                                  /* Comment icon tap right before overlay opens (~1400ms after Instagram tab activates) */
+                                  @keyframes igCommentTap {
+                                    0% { transform: scale(1); }
+                                    35% { transform: scale(0.82); }
+                                    65% { transform: scale(1.15); }
+                                    100% { transform: scale(1); }
+                                  }
+                                  .ig-comment-tap { animation: igCommentTap 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 1400ms both; }
+                                `}</style>
+                                </div>
+                              </div>
+                            )}
+                            {heroTab === 2 && (
+                              <div className="flex flex-col h-full bg-white">
+                                <div className="px-[12px] pt-[18px] pb-[10px] flex items-center gap-[8px]">
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1877F2" strokeWidth="2.5"><path d="M19 12H5M12 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                                  <div className="relative">
+                                    <div className="size-[32px] rounded-full bg-gradient-to-br from-[#1877F2] to-[#0d65d9] flex items-center justify-center text-white font-['Geist:Bold'] font-bold text-[12px]">PG</div>
+                                    <div className="absolute bottom-0 right-0 size-[10px] rounded-full bg-[#31a24c] border-2 border-white" />
+                                  </div>
+                                  <div className="flex-1 flex flex-col">
+                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold leading-none">Prathik Gadde</Typography>
+                                    <Typography className="text-[#65676b] text-[9.5px] font-['Geist:Regular'] leading-none mt-[2px]">Active now</Typography>
+                                  </div>
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M22 4.27v15.46c0 .65-.74 1.02-1.26.64L17 17.5V18a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v.5l3.74-2.87c.52-.38 1.26-.01 1.26.64z" /></svg>
+                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.05 15.05 0 0 1-6.59-6.58l2.2-2.21c.27-.27.35-.67.24-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" /></svg>
+                                </div>
+                                <div className="flex-1 px-[10px] py-[10px] flex flex-col gap-[5px] overflow-hidden justify-end">
+                                  {chatStep >= 0 && (
+                                    <div className="self-start bg-[#f0f2f5] rounded-[18px] rounded-bl-[4px] px-[12px] py-[7px] max-w-[78%] msg-in">
+                                      <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3]">Saw your post — is the linen kurta still up?</Typography>
+                                    </div>
+                                  )}
+                                  {chatStep === 1 && (
+                                    <div className="self-end bg-gradient-to-br from-[#0084ff] to-[#0064d8] rounded-[18px] rounded-br-[4px] px-[14px] py-[10px] flex gap-[4px] items-center msg-in">
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '360ms' }} />
+                                    </div>
+                                  )}
+                                  {chatStep >= 2 && (
+                                    <div className="self-end bg-gradient-to-br from-[#0084ff] to-[#0064d8] rounded-[18px] rounded-br-[4px] px-[12px] py-[7px] max-w-[85%] flex flex-col msg-in">
+                                      <Typography className="text-white/80 text-[7.5px] font-['Geist:Medium'] mb-[1px]">WeNext AI</Typography>
+                                      <Typography className="text-white text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes! Size M, 3 left. Want me to send a payment link?</Typography>
+                                    </div>
+                                  )}
+                                  {chatStep >= 3 && (
+                                    <div className="self-start bg-[#f0f2f5] rounded-[18px] rounded-bl-[4px] px-[12px] py-[7px] max-w-[55%] msg-in">
+                                      <Typography className="text-[#0c221f] text-[11px] font-['Geist:Regular'] leading-[1.3]">Yes please.</Typography>
+                                    </div>
+                                  )}
+                                  {chatStep === 4 && (
+                                    <div className="self-end bg-gradient-to-br from-[#0084ff] to-[#0064d8] rounded-[18px] rounded-br-[4px] px-[14px] py-[10px] flex gap-[4px] items-center msg-in">
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '0ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '180ms' }} />
+                                      <span className="size-[5px] rounded-full bg-white typing-dot" style={{ animationDelay: '360ms' }} />
+                                    </div>
+                                  )}
+                                  {chatStep >= 5 && (
+                                    <div className="self-end bg-white border border-[#e4e6eb] rounded-[16px] overflow-hidden max-w-[78%] msg-in">
+                                      <div className="bg-[#1877F2] px-[12px] py-[6px] flex items-center gap-[4px]">
+                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" /></svg>
+                                        <Typography className="text-white text-[9px] font-['Geist:Medium']">Secure checkout</Typography>
+                                      </div>
+                                      <div className="px-[12px] py-[10px]">
+                                        <Typography className="text-[#0c221f] text-[15px] font-['Geist:Bold'] font-bold leading-none">Pay ₹2,490</Typography>
+                                        <Typography className="text-[#65676b] text-[9px] font-['Geist:Regular'] mt-[2px]">linen kurta · size M</Typography>
+                                        <div className="mt-[6px] rounded-[8px] py-[5px] text-center text-[10px] text-white bg-[#1877F2] font-['Geist:SemiBold'] font-semibold">Open payment</div>
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                                <div className="px-[10px] py-[7px] flex items-center gap-[6px] border-t border-[#e4e6eb]">
+                                  <div className="size-[26px] rounded-full bg-[#e7f3ff] flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1877F2"><path d="M12 5v14m-7-7h14" strokeWidth="3" stroke="#1877F2" /></svg></div>
+                                  <div className="size-[26px] rounded-full bg-[#e7f3ff] flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 24 24" fill="#1877F2"><circle cx="12" cy="13" r="3" /><path d="M9 2L7.17 4H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-3.17L15 2H9z" fill="none" stroke="#1877F2" strokeWidth="2" /></svg></div>
+                                  <div className="flex-1 bg-[#f0f2f5] rounded-[18px] h-[24px] flex items-center px-[10px] justify-between"><Typography className="text-[#65676b] text-[10px]">Aa</Typography><svg width="14" height="14" viewBox="0 0 24 24" fill="#65676b"><circle cx="12" cy="12" r="10" fill="none" stroke="#65676b" strokeWidth="2" /><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" strokeLinecap="round" stroke="#65676b" strokeWidth="2" /></svg></div>
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z" /></svg>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                          <div className="-translate-x-1/2 absolute bg-[rgba(255,255,255,0.1)] flex items-center justify-center left-[calc(50%+0.5px)] p-[5px] rounded-[50px] bottom-[530px]" data-node-id="467:1001">
+                            {HERO_TABS.map((tab, i) => {
+                              const isActive = i === heroTab;
+                              return (
+                                <button
+                                  key={i}
+                                  onClick={() => { setHeroTab(i); setHeroProgress(0); }}
+                                  className={`relative shrink-0 rounded-[30px] overflow-hidden cursor-pointer outline-none ${isActive ? '' : 'hover:bg-white/5'}`}
+                                  style={isActive ? { background: tab.fillBg } : undefined}
+                                >
+                                  {isActive && (
+                                    <div
+                                      className="absolute inset-y-0 left-0 pointer-events-none transition-[width] duration-[60ms] ease-linear"
+                                      style={{ width: `${heroProgress}%`, background: 'linear-gradient(90deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.16) 100%)', backdropFilter: 'blur(1.5px)', WebkitBackdropFilter: 'blur(1.5px)' }}
+                                    />
+                                  )}
+                                  <div className="relative z-[1] flex gap-[5px] items-center justify-center px-[15px] py-[10px]">
+                                    <div className="relative shrink-0 size-[20px]">
+                                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={tab.icon} />
+                                    </div>
+                                    <Typography className={`font-['Geist:Medium'] font-medium leading-none text-[18px] text-center tracking-[-0.5px] whitespace-nowrap transition-colors duration-300 ${isActive ? 'text-white' : 'text-[#d8f1df]'}`}>
+                                      {tab.name}
+                                    </Typography>
+                                  </div>
+                                </button>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute h-[930px] left-[-20px] right-[-20px] top-[-20px] pointer-events-none overflow-hidden" data-node-id="467:1014">
+                  <div className="absolute inset-[-42.07%_-25.18%_-52.88%_-25.18%]">
+                    <img alt="" className="block w-full h-full object-cover" src={imgGroup7} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div className="bg-[#092511] border-[rgba(255,255,255,0.1)] border-b border-solid border-t content-stretch flex flex-col items-start overflow-clip py-[26px] relative shrink-0 w-full shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)]" data-node-id="467:1019" data-name="Container">
+            <div className="relative shrink-0 w-full overflow-hidden" data-node-id="467:1020">
+              <div className="flex gap-[60px] items-center w-max animate-[logos-scroll_30s_linear_infinite]">
+                {Array.from({ length: 2 }).flatMap((_, dup) => [
+                  <div key={`g14-${dup}-1`} className="h-[30px] shrink-0 w-[89px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage14} /></div>,
+                  <div key={`m21-${dup}-1`} className="h-[25px] shrink-0 w-[117px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage21} /></div>,
+                  <div key={`g14-${dup}-2`} className="h-[30px] shrink-0 w-[89px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage14} /></div>,
+                  <div key={`m21-${dup}-2`} className="h-[25px] shrink-0 w-[117px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage21} /></div>,
+                  <div key={`g14-${dup}-3`} className="h-[30px] shrink-0 w-[89px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage14} /></div>,
+                  <div key={`m21-${dup}-3`} className="h-[25px] shrink-0 w-[117px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage21} /></div>,
+                  <div key={`g14-${dup}-4`} className="h-[30px] shrink-0 w-[89px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage14} /></div>,
+                  <div key={`m21-${dup}-4`} className="h-[25px] shrink-0 w-[117px] relative"><img alt="" className="absolute inset-0 max-w-none object-cover opacity-50 pointer-events-none size-full" src={imgImage21} /></div>,
+                ])}
+              </div>
+            </div>
+          </div> */}
           <TrustedByStrip />
           <div className="content-stretch flex flex-col items-start overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1029" data-name="Container">
             <div className="border-[#e0dac6] border-b border-l border-r border-solid relative shrink-0 w-full" data-node-id="467:1030">
