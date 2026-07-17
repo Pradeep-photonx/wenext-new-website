@@ -5,21 +5,17 @@ import Footer from '../components/Footer';
 import { TrustedByStrip, SecuritySection, PricingTeaser, FinalCTA, HomeFeaturesMockup } from '../components/HomeSections';
 import HeroV2 from '../components/HeroV2';
 import HeroV3 from '../components/HeroV3';
-import imgInstagramPost from '../assets/instagram-post.png';
-import CommentIcon from '../assets/icons/comment.png';
-import SmallLogo from '../assets/icons/sm-logo.png';
-import User from '../assets/icons/user.png';
-import BorderX from "../assets/borders.png";
 import SignUp from "../assets/speed-scale/sign-up.png"
 import ConnectMeta from "../assets/speed-scale/ConnectMeta.png"
-import TrainAI from "../assets/speed-scale/Train the AI on your brand.png"
-import SetAutomation from "../assets/speed-scale/Set Automations.jpg"
+// import TrainAI from "../assets/speed-scale/Train the AI on your brand.png"
+import SetAutomation from "../assets/speed-scale/SetAutomations.png"
 import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast.png"
-import ConversationalCommerce from "../assets/built-growth/ConversationalCommerce.png"
-import EnterpriseGradeSecurity from "../assets/built-growth/Enterprise-grade security.png"
-import HeroV1 from "../components/HeroV1";
 import mobileMock from "../assets/mobile-mock.png";
-import SeamlessInegrations from "../assets/pain-points/seamless-integrations.png"
+import SeamlessInegrations from "../assets/pain-points/seamless-integrations1.png"
+import AdsManagement from "../assets/pain-points/ads-management1.png"
+import SmartScheduling from "../assets/pain-points/smart-scheduling1.svg"
+import imgImage3147 from "../assets/customers/karthik-bala.webp"
+import imgImage3148 from "../assets/customers/headrun_logo.png"
 
 /* ─────────────────────────────────────────────
    iPhone 15+ Mockup with animated WhatsApp chat
@@ -363,8 +359,8 @@ const imgImage14 = "/figma/imgImage14.png";
 const imgImage21 = "/figma/imgImage21.png";
 const imgImage3134 = "/figma/imgImage3134.png";
 const imgImage3145 = "/figma/imgImage3145.png";
-const imgImage3147 = "/figma/imgImage3147.png";
-const imgImage3148 = "/figma/imgImage3148.png";
+// const imgImage3147 = "/figma/imgImage3147.png";
+// const imgImage3148 = "/figma/imgImage3148.png";
 const imgImage3150 = "/figma/imgImage3150.png";
 const imgImage3151 = "/figma/imgImage3151.png";
 const imgIcon = "/figma/imgIcon.svg";
@@ -436,8 +432,8 @@ const TESTIMONIALS = [
   {
     quote: "Before WeNext, our leads were scattered across WhatsApp, Instagram, and Facebook, and our team struggled to follow up consistently. After switching to WeNext, we automated our conversations, centralized our lead management, and significantly improved our response time. ",
     highlight: "Within just 60 days, our qualified leads increased by 42%, and no inquiry goes unanswered anymore.",
-    author: "Rahul Sharma",
-    role: "Founder, Growing D2C Brand",
+    author: "Karthik Bala",
+    role: "Founder, Headrun",
     image: imgImage3147,
     logo: imgImage3148
   },
@@ -1957,10 +1953,10 @@ export default function Home() {
           <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-start overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full">
             <div className="border-[#cec9b8] border-l border-r border-solid border-t relative shrink-0 w-full">
               {/* 3-column grid: left tall | centre stacked | right stacked */}
-              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr_1fr]">
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr_1.1fr]">
 
                 {/* ── COL 1 — Conversational Commerce (tall, spans 2 rows) ── */}
-                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col  lg:row-span-2">
+                <div className="border-r border-[#e0dac6] p-[36px] flex flex-col  lg:row-span-2 bg-[#fcf8ee]">
                   {/* Icon */}
                   {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
                     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -1980,8 +1976,8 @@ export default function Home() {
                 </div>
 
                 {/* ── COL 2 ROW 1 — Ads Management ── */}
-                <div className="border-r border-b border-[#e0dac6] flex flex-col ">
-                  <div className="p-[25px]">
+                <div className="border-r border-b border-[#e0dac6] flex flex-col p-[20px] bg-[#fcf8ee]">
+                  <div className="">
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                       Ads Management
                     </Typography>
@@ -1990,13 +1986,13 @@ export default function Home() {
                     </Typography>
                   </div>
 
-                  <img src={SeamlessInegrations} alt="" />
+                  <img style={{ marginTop: "25px" }} src={AdsManagement} alt="" />
 
                 </div>
 
                 {/* ── COL 3 ROW 1 — Smart Scheduling ── */}
-                <div className="border-b border-[#e0dac6] flex flex-col ">
-                  <div className="p-[25px]">
+                <div className="border-b border-[#e0dac6] flex flex-col p-[20px] bg-[#fcf8ee]">
+                  <div className="">
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                       Smart Scheduling
                     </Typography>
@@ -2005,12 +2001,13 @@ export default function Home() {
                     </Typography>
                   </div>
 
-                  <img src={SeamlessInegrations} alt="" />
+                  <img style={{ marginTop: "20px" }} src={SmartScheduling} alt="" />
+                  {/* <img src={AdsManagement} alt="" /> */}
                 </div>
 
                 {/* ── COL 2 ROW 2 — Seamless Integrations ── */}
-                <div className="border-r border-[#e0dac6] flex flex-col ">
-                  <div className="p-[25px]">
+                <div className="border-r border-[#e0dac6] flex flex-col p-[20px] bg-[#fbf6ec]">
+                  <div className="">
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
                       Seamless Integrations
                     </Typography>
@@ -2023,7 +2020,7 @@ export default function Home() {
                 </div>
 
                 {/* ── COL 3 ROW 2 — Dark CTA card ── */}
-                <div className="p-[36px] flex flex-col bg-[#0c221f] relative overflow-hidden">
+                <div className="p-[20px] flex flex-col bg-[#0c221f] relative overflow-hidden">
                   {/* subtle dot pattern */}
                   <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 
@@ -2201,8 +2198,8 @@ export default function Home() {
                 className='flex flex-col items-center justify-center w-full'
                 style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #e0dac6 0, #e0dac6 1px, transparent 1px, transparent 8px)' }}
               >
-                <div className="grid grid-cols-2 relative w-[90%] bg-[#f8f5ec] border-l border-r border-[#e0dac6]">
-                  <div className="p-[60px] flex flex-col justify-center border-r border-[#e0dac6]">
+                <div className="grid grid-cols-2 relative w-[100%] bg-[#f8f5ec] border-l  border-[#e0dac6]">
+                  <div className="p-[40px] flex flex-col justify-center border-r border-[#e0dac6]">
                     <div className="flex gap-[10px] items-center mb-[16px]">
                       <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
                       <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Speed & Scale</Typography>
@@ -2258,85 +2255,32 @@ export default function Home() {
                       })}
                     </div>
                   </div>
-                  <div className="bg-gradient-to-br from-[#f8f5ec] to-[#f3efe3] relative self-stretch overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 pointer-events-none" />
-                    <div key={activeStep} className="relative w-full max-w-[80%] step-panel">
+                  <div className="bg-[#fef9f2] relative self-stretch overflow-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 pointer-events-none"
+                      style={{
+                        backgroundImage: "radial-gradient(circle, rgba(81, 93, 86, 0.17) 1px, transparent 1.2px)",
+                        backgroundSize: "24px 24px"
+                      }}
+                    />
+                    <div key={activeStep} className="relative w-full max-w-[100%] step-panel h-full">
                       {activeStep === 0 && (
-                        <div className="relative">
-                          {/* <img style={{ width: "100" }} src={ConnectMeta} alt="Sign Up" /> */}
-                          <img style={{ width: "100" }} src={SignUp} alt="Sign Up" />
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <img src={ConnectMeta} alt="Sign Up" />
                         </div>
                       )}
                       {activeStep === 1 && (
-                        <div className="relative">
-                          {/* <div className="bg-white rounded-[24px] shadow-[0_40px_100px_-30px_rgba(11,31,26,0.22),0_0_0_1px_rgba(11,31,26,0.04)] overflow-hidden">
-                          <div className="px-[24px] pt-[22px] pb-[18px] border-b border-[#f3efe3] flex items-center justify-between">
-                            <div className="flex items-center gap-[10px]">
-                              <div className="relative">
-                                <div className="size-[36px] rounded-[10px] bg-[#0b1f1a] flex items-center justify-center">
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#06b349"><path d="M3 12h4l3-9 4 18 3-9h4" /></svg>
-                                </div>
-                                <div className="absolute -bottom-[2px] -right-[2px] size-[12px] rounded-full bg-[#06b349] border-[2px] border-white" />
-                              </div>
-                              <div>
-                                <Typography className="text-[#0c221f] text-[14px] font-['Geist:SemiBold'] font-semibold">Channel Hub</Typography>
-                                <Typography className="text-[#60584c] text-[10.5px]">3 of 3 connected · syncing live</Typography>
-                              </div>
-                            </div>
-                            <div className="bg-[#e5f6e7] text-[#06b349] text-[10px] px-[8px] py-[3px] rounded-full font-['Geist:Medium']">All live</div>
-                          </div>
-                          <div className="px-[18px] py-[16px] flex flex-col gap-[10px] step-stagger">
-                            {[
-                              { name: 'WhatsApp Business', detail: 'API · +91 98765 43210', color: '#25d366', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487m-3.421-12.18A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>, latency: '1.2s', volume: '8,412 chats/day' },
-                              { name: 'Instagram DMs', detail: '@linen.co · Posts + DMs', color: INSTAGRAM_GRADIENT, svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919zM12 8a4 4 0 100 8 4 4 0 000-8zm5.122-.838a.96.96 0 100-1.92.96.96 0 000 1.92z" /></svg>, latency: '0.9s', volume: '3,210 DMs/day' },
-                              { name: 'Facebook Pages', detail: 'Linen.co · Messages', color: '#1877F2', svg: <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>, latency: '1.1s', volume: '1,840 msgs/day' },
-                            ].map((c, i) => (
-                              <div key={i} className="step-shimmer bg-[#fbfaf2] border border-[#f0e9d7] rounded-[14px] p-[12px] flex items-center gap-[12px]">
-                                <div className="size-[40px] rounded-[12px] flex items-center justify-center shrink-0 shadow-[0_6px_16px_-6px_rgba(11,31,26,0.25)]" style={{ background: c.color }}>{c.svg}</div>
-                                <div className="flex-1 min-w-0">
-                                  <div className="flex items-center gap-[6px]">
-                                    <Typography className="text-[#0c221f] text-[13px] font-['Geist:SemiBold'] font-semibold truncate">{c.name}</Typography>
-                                    <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
-                                  </div>
-                                  <Typography className="text-[#60584c] text-[10.5px] mt-[1px] truncate">{c.detail}</Typography>
-                                  <div className="flex items-center gap-[10px] mt-[6px]">
-                                    <Typography className="text-[#60584c] text-[9.5px]">↗ {c.volume}</Typography>
-                                    <Typography className="text-[#60584c] text-[9.5px]">⚡ {c.latency} reply</Typography>
-                                    <div className="step-signal flex items-end gap-[2px] h-[11px] ml-auto">
-                                      {[6, 9, 5, 11, 7].map((h, k) => (<span key={k} className="w-[2.5px] rounded-full bg-[#06b349]" style={{ height: `${h}px` }} />))}
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                          <div className="border-t border-[#f3efe3] px-[18px] py-[12px] flex items-center justify-between bg-[#fafaf6]">
-                            <Typography className="text-[#60584c] text-[10.5px]">Inbox synced 6 sec ago</Typography>
-                            <div className="flex items-center gap-[6px]">
-                              <div className="size-[6px] rounded-full bg-[#06b349] step-live-dot" />
-                              <Typography className="text-[#06b349] text-[10.5px] font-['Geist:Medium']">Auto-pilot ON</Typography>
-                            </div>
-                          </div>
-                        </div> */}
-                          <img style={{ width: "100" }} src={ConnectMeta} alt="Connect Meta" />
+                        <div className="relative w-full h-full flex items-center justify-center ">
+                          <img src={ConnectMeta} alt="Connect Meta" />
                         </div>
                       )}
-                      {/* {activeStep === 2 && (
-                        <div className="relative">
-                          <img style={{ width: "100" }} src={TrainAI} alt="Train the AI on your brand" />
-
-                        </div>
-                      )} */}
                       {activeStep === 2 && (
-                        <div className="relative">
-                          <img style={{ width: "100" }} src={SetAutomation} alt="Set Automation" />
-
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <img src={SetAutomation} alt="Set Automation" />
                         </div>
                       )}
                       {activeStep === 3 && (
-                        <div className="relative">
-                          <img style={{ width: "100" }} src={LaunchBroadcast} alt="Launch your first broadcast" />
-
+                        <div className="relative w-full h-full flex items-center justify-center">
+                          <img src={ConnectMeta} alt="Launch your first broadcast" />
                         </div>
                       )}
                     </div>
@@ -2371,8 +2315,8 @@ export default function Home() {
                 {TESTIMONIALS.map((testimonial, idx) => (
                   <div key={idx} className="flex w-full shrink-0 items-stretch">
                     <div className="bg-white border-[#e0dac6] border-r border-solid content-stretch flex items-center overflow-clip p-[10px] relative shrink-0 size-[400px]" data-node-id="467:1597">
-                      <div className="bg-[#e9e9e9] content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1598">
-                        <div className="-translate-x-1/2 absolute h-[354px] left-1/2 top-[41.05px] w-[530px]" data-node-id="467:1599" data-name="image 3147">
+                      <div className="content-stretch flex flex-[1_0_0] flex-col h-full items-start min-w-px overflow-clip p-[30px] relative" data-node-id="467:1598">
+                        <div className="-translate-x-1/2 absolute h-[372px] left-1/2 top-[3.05px] w-[100%]" data-node-id="467:1599" data-name="image 3147">
                           <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={testimonial.image} />
                         </div>
                       </div>

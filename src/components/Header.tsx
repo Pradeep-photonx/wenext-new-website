@@ -6,6 +6,7 @@ const imgVector = "/figma/imgVector.png";
 const imgIcon = "/figma/imgIcon.svg";
 const imgImage27 = "/figma/imgImage27.png";
 const imgIcon1 = "/figma/imgIcon1.svg";
+import imgVector1 from "../assets/black-logo.svg"
 
 export default function Header() {
   const navigate = useNavigate();
@@ -123,13 +124,14 @@ export default function Header() {
 
       {/* ── Header bar (original clip-path fully restored, no change to hero) ── */}
       <div
-        className="fixed top-0 left-0 right-0 h-[80px] bg-[#092511] border-[rgba(255,255,255,0.1)] border-b border-solid flex items-center w-full"
+        className={`fixed top-0 left-0 right-0 h-[80px] border-[rgba(255,255,255,0.1)] border-b border-solid flex items-center w-full transition-colors duration-300 ${navScrolled ? 'bg-[#092511]' : 'bg-[#f8f5ec]'}`}
         style={{
           zIndex: 100,
           transform: (navHidden && !companyOpen && !industriesOpen) ? 'translateY(-100%)' : 'translateY(0)',
           boxShadow: navScrolled ? '0 14px 34px -14px rgba(0,0,0,0.6)' : '0 0 0 0 rgba(0,0,0,0)',
-          transition: 'transform 0.42s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease',
-          willChange: 'transform',
+          transition: 'transform 0.42s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background-color 0.3s ease',
+          willChange: 'transform, background-color',
+          borderBlock: '1px solid rgba(9,37,17,0.08)',
         }}
         data-node-id="467:953"
         data-name="Container"
@@ -144,7 +146,8 @@ export default function Header() {
               data-node-id="467:955"
               data-name="Vector"
             >
-              <img alt="" className="absolute block inset-0 max-w-none size-full" height="38" src={imgVector} width="150" />
+              <img alt="" className={`absolute block inset-0 max-w-none size-full transition-opacity duration-300 ${navScrolled ? 'opacity-100' : 'opacity-0'}`} height="38" src={imgVector} width="150" />
+              <img alt="" className={`absolute block inset-0 max-w-none size-full transition-opacity duration-300 ${!navScrolled ? 'opacity-100' : 'opacity-0'}`} height="38" src={imgVector1} width="150" />
             </div>
 
             {/* Nav links */}
@@ -156,14 +159,14 @@ export default function Header() {
 
                       <Typography
                         onClick={() => navigate('/features')}
-                        className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] text-white whitespace-nowrap hover:opacity-70 transition-opacity cursor-pointer  transition-colors"
+                        className={`[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] whitespace-nowrap hover:opacity-70 transition-colors cursor-pointer ${navScrolled ? 'text-white' : 'text-[#092511]'}`}
                         data-node-id="467:958"
                       >
                         Features
                       </Typography>
 
                       <Typography
-                        className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] text-white whitespace-nowrap hover:opacity-70 transition-opacity cursor-pointer"
+                        className={`[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] whitespace-nowrap hover:opacity-70 transition-colors cursor-pointer ${navScrolled ? 'text-white' : 'text-[#092511]'}`}
                         data-node-id="467:959"
                       >
                         Solutions
@@ -172,11 +175,12 @@ export default function Header() {
                       {/* Industries trigger */}
                       <div
                         ref={industriesTriggerRef}
-                        className="content-stretch flex gap-[5px] items-center cursor-pointer select-none"
+                        className={`content-stretch flex gap-[5px] items-center cursor-pointer select-none transition-colors ${navScrolled ? 'text-white' : 'text-[#092511]'}`}
                         onClick={toggleIndustries}
                       >
                         <Typography
-                          className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] text-white whitespace-nowrap hover:opacity-70 transition-opacity"
+                          className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity color-inherit"
+                          style={{ color: 'inherit' }}
                         >
                           Industries
                         </Typography>
@@ -187,19 +191,20 @@ export default function Header() {
                             transition: 'transform 0.2s ease',
                           }}
                         >
-                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" style={{ filter: navScrolled ? 'none' : 'invert(1) brightness(0)' }} src={imgIcon} />
                         </div>
                       </div>
 
                       {/* Company trigger — ref measured for dropdown positioning */}
                       <div
                         ref={triggerRef}
-                        className="content-stretch flex gap-[5px] items-center cursor-pointer select-none"
+                        className={`content-stretch flex gap-[5px] items-center cursor-pointer select-none transition-colors ${navScrolled ? 'text-white' : 'text-[#092511]'}`}
                         data-node-id="467:960"
                         onClick={toggleDropdown}
                       >
                         <Typography
-                          className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] text-white whitespace-nowrap hover:opacity-70 transition-opacity"
+                          className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] whitespace-nowrap hover:opacity-70 transition-opacity color-inherit"
+                          style={{ color: 'inherit' }}
                           data-node-id="467:961"
                         >
                           Company
@@ -213,13 +218,13 @@ export default function Header() {
                           data-node-id="467:962"
                           data-name="Icon"
                         >
-                          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgIcon} />
+                          <img alt="" className="absolute block inset-0 max-w-none size-full" style={{ filter: navScrolled ? 'none' : 'invert(1) brightness(0)' }} src={imgIcon} />
                         </div>
                       </div>
 
                       <Typography
                         onClick={() => navigate('/pricing')}
-                        className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] text-white whitespace-nowrap hover:opacity-70 transition-opacity cursor-pointer"
+                        className={`[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.4] relative shrink-0 text-[16px] whitespace-nowrap hover:opacity-70 transition-colors cursor-pointer ${navScrolled ? 'text-white' : 'text-[#092511]'}`}
                       >
                         Pricing
                       </Typography>

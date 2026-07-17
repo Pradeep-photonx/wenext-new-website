@@ -315,11 +315,11 @@ export function HomeFeaturesMockup({ tab }: { tab: number }) {
   const title = ['Unified Inbox', 'AI Agents & Assistants', 'Campaigns', 'CRM', 'Social Media Posts'][tab];
 
   const convos: { i: string; bg: string; c: string; n: string; prev: string; t: string; badge?: string; star?: boolean; sel?: boolean }[] = [
-    { i: 'G', bg: '#fce7ef', c: '#d9577e', n: 'Gireesha Vallabhaneni', badge: 'MK', prev: 'Thank you for your patience! Your ord...', t: '3/17/2026' },
+    { i: 'SK', bg: '#fce7ef', c: '#d9577e', n: 'Sai Krishna', badge: 'MK', prev: 'Thank you for your patience! Your ord...', t: '3/17/2026' },
     { i: 'S', bg: '#fce7ef', c: '#d9577e', n: 'Sahith', badge: 'MK', star: true, prev: 'Template message', t: '3/17/2026', sel: true },
     { i: 'T', bg: '#dbeafe', c: '#3f6cab', n: 'Thanmayee Koganti', badge: 'MK', prev: 'Message', t: '3/16/2026' },
     { i: 'C', bg: '#dbeafe', c: '#3f6cab', n: 'Chaitanya Krishna', prev: 'Interactive message', t: '3/13/2026' },
-    { i: 'S', bg: '#f3f4f6', c: '#64748b', n: 'Sarika Reddy', star: true, prev: 'Interactive message', t: '3/12/2026' },
+    { i: 'S', bg: '#f3f4f6', c: '#64748b', n: 'Sandeep Reddy', star: true, prev: 'Interactive message', t: '3/12/2026' },
     { i: 'P', bg: '#fce7ef', c: '#d9577e', n: 'Prakash R', badge: 'MK', prev: 'Template message', t: '3/13/2026' },
     { i: 'N', bg: '#dbeafe', c: '#3f6cab', n: 'Nanne', prev: 'hiii', t: '3/12/2026' },
   ];
