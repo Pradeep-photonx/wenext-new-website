@@ -106,11 +106,9 @@ function useInView<T extends HTMLElement = HTMLDivElement>(threshold = 0.25) {
 // Reusable section eyebrow (green square + Courier Prime label)
 function Eyebrow({ label, light = false, center = false }: { label: string; light?: boolean; center?: boolean }) {
   return (
-    <div className={`flex gap-[10px] items-center mb-[16px] ${center ? 'justify-center' : ''}`}>
-      <div className="bg-[#06b349] size-[8px]" />
-      <Typography sx={{
-        lineHeight: "100%"
-      }} className={`font-['Courier_Prime'] text-[14px] uppercase tracking-[0.2em] ${light ? 'text-[#06b349]' : 'text-[#0c221f]'}`}>
+    <div className={`content-stretch flex gap-[10px] items-center mb-[16px] relative shrink-0 ${center ? 'justify-center' : ''}`}>
+      <div className="bg-[#06b349] relative top-[-2px] shrink-0 size-[10px]" />
+      <Typography className={`[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime'] leading-[1.4] not-italic relative shrink-0 text-[18px] whitespace-nowrap ${light ? 'text-[#06b349]' : 'text-[#0c221f]'}`}>
         {label}
       </Typography>
     </div>
@@ -381,10 +379,10 @@ export default function About() {
           2 · SOCIAL PROOF
       ══════════════════════════════════════════════════ */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
-        <div className="px-4 xl:px-[75px] pt-[44px] pb-[10px] text-center flex items-center justify-center">
+        <div className="px-4 xl:px-[56px] pt-[44px] pb-[10px] text-center flex items-center justify-center">
           <Eyebrow label="Join 100+ brands and businesses growing on WeNext" />
         </div>
-        <div className="px-4 xl:px-[75px] py-[28px] overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+        <div className="px-4 xl:px-[56px] py-[28px] overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
           <div className="flex items-center gap-[56px] w-max" style={{ animation: 'aboutMarquee 32s linear infinite' }}>
             {[...BRANDS, ...BRANDS].map((b, i) => (
               <Typography key={i} className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[24px] tracking-[-0.5px] opacity-30 hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">{b}</Typography>
@@ -399,7 +397,7 @@ export default function About() {
           6.5 · OUR VALUES
       ══════════════════════════════════════════════════ */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[75px] flex flex-col items-center text-center">
+        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[56px] flex flex-col items-center text-center">
           <Eyebrow label="What We Stand For" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.2px] leading-[1.2] max-w-[680px]">
             The principles behind every release
@@ -429,7 +427,7 @@ export default function About() {
         <Typography className="absolute -top-[20px] right-[20px] font-['Geist:SemiBold'] font-semibold text-[240px] leading-none text-[#0c221f] opacity-[0.03] select-none pointer-events-none tracking-[-10px] z-0">50M</Typography>
 
         {/* header row */}
-        <div className="border-b border-[#e0dac6] py-[56px] px-4 xl:px-[75px] flex items-end justify-between gap-[40px] relative z-10">
+        <div className="border-b border-[#e0dac6] py-[56px] px-4 xl:px-[56px] flex items-end justify-between gap-[40px] relative z-10">
           <div className="max-w-[620px]">
             <Eyebrow label="By The Numbers" />
             <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[44px] tracking-[-1.5px] leading-[1.12]">
@@ -468,7 +466,7 @@ export default function About() {
           8 · EVERYTHING YOU NEED — capabilities bento
       ══════════════════════════════════════════════════ */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
-        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[75px] flex flex-col items-center text-center">
+        <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[56px] flex flex-col items-center text-center">
           <Eyebrow label="Platform" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.2px] leading-[1.2] max-w-[680px]">
             Everything you need to win on WhatsApp
@@ -728,138 +726,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      {/* ══════════════════════════════════════════════════
-          8.5 · BACKED BY PHOTONX TECH — full-bleed highlight
-      ══════════════════════════════════════════════════ */}
-      <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] p-[75px] relative overflow-hidden flex flex-col items-center">
-          {/* backdrop */}
-          <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)', backgroundSize: '46px 46px', maskImage: 'radial-gradient(circle at 50% 50%, #000 30%, transparent 80%)', WebkitMaskImage: 'radial-gradient(circle at 50% 50%, #000 30%, transparent 80%)' }} />
-          {/* <div className="absolute -top-[150px] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#06b349] opacity-[0.08] blur-[120px] rounded-full pointer-events-none" /> */}
-
-          {/* Heading Area */}
-          <div className="w-full max-w-[800px] flex flex-col items-center text-center relative z-10 mb-[60px]">
-            <Eyebrow label="Our Parent Company" light center />
-            <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-transparent bg-clip-text bg-gradient-to-b from-white to-[rgba(255,255,255,0.7)] text-[80px] tracking-[-2.5px] leading-[1.02] mb-[20px]">
-              PhotonX Tech
-            </Typography>
-            <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[18px] leading-[1.65] max-w-[620px]">
-              A product-driven technology company specialising in SaaS communication automation and cloud-based CRM. The same engineers build, ship, support, and secure WeNext — end to end.
-            </Typography>
-          </div>
-
-          {/* Premium Bento Grid */}
-          <div className="grid grid-cols-12 gap-[24px] w-full max-w-[1100px] relative z-10">
-
-            {/* Top Left: Enterprise Architecture */}
-            <div className="col-span-8 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.08)] rounded-[24px] p-[40px] flex items-center justify-between overflow-hidden relative group hover:bg-[rgba(255,255,255,0.03)] transition-colors duration-500">
-              <div className="absolute top-0 right-0 w-[400px] h-full bg-gradient-to-l from-[rgba(6,179,73,0.05)] to-transparent pointer-events-none" />
-
-              <div className="relative z-10 max-w-[340px] flex flex-col justify-center">
-                <div className="size-[44px] rounded-[12px] bg-[rgba(6,179,73,0.15)] border border-[rgba(6,179,73,0.3)] flex items-center justify-center mb-[24px]">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                </div>
-                <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[28px] leading-[1.1] tracking-[-0.5px] mb-[12px]">Audited Enterprise Architecture</Typography>
-                <Typography className="font-['Geist:Regular'] text-[#7aaa88] text-[15px] leading-[1.6]">
-                  India-hosted servers with full DPDP & GDPR compliance. Your customer data never leaves the country and is protected by military-grade encryption.
-                </Typography>
-              </div>
-
-              <div className="relative z-10 flex-1 flex justify-end">
-                {/* Simulated Server Rack / Security visual */}
-                <div className="w-[280px] h-[180px] bg-[#0c1f15] border border-[rgba(6,179,73,0.2)] rounded-[16px] p-[16px] flex flex-col gap-[12px] shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)]">
-                  {[...Array(3)].map((_, i) => (
-                    <div key={i} className="flex items-center justify-between p-[10px] bg-[rgba(255,255,255,0.03)] rounded-[8px] border border-[rgba(255,255,255,0.05)] relative overflow-hidden">
-                      <div className="absolute left-0 top-0 h-full w-[2px] bg-[#06b349] opacity-50" />
-                      <div className="flex items-center gap-[10px]">
-                        <div className="size-[6px] rounded-full bg-[#06b349] animate-pulse shadow-[0_0_8px_rgba(6,179,73,0.8)]" />
-                        <Typography className="text-white text-[11px] font-['Geist:Medium'] tracking-widest uppercase">Node {i + 1} · Active</Typography>
-                      </div>
-                      <div className="flex gap-[4px]">
-                        {[...Array(6)].map((_, j) => (
-                          <div key={j} className="w-[4px] h-[12px] bg-[#06b349] rounded-sm opacity-40" style={{ animation: `pulse 1.5s ease-in-out infinite alternate`, animationDelay: `${(i * 6 + j) * 0.1}s` }} />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Top Right: Meta Partner */}
-            <div className="col-span-4 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.08)] rounded-[24px] p-[40px] flex flex-col items-center justify-center text-center relative hover:bg-[rgba(255,255,255,0.03)] transition-colors duration-500">
-              <div className="size-[64px] rounded-[16px] bg-[rgba(24,119,242,0.1)] border border-[rgba(24,119,242,0.2)] flex items-center justify-center mb-[20px] shadow-[0_0_30px_rgba(24,119,242,0.15)]">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="#1877F2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" /></svg>
-              </div>
-              <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[24px] leading-[1.2] tracking-[-0.5px] mb-[8px]">Official Meta<br />Partner</Typography>
-              <Typography className="font-['Geist:Regular'] text-[#7aaa88] text-[14px] leading-[1.5]">Direct API connectivity. No third-party proxies.</Typography>
-            </div>
-
-            {/* Bottom Left: Uptime */}
-            <div className="col-span-6 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.08)] rounded-[24px] p-[40px] flex items-center gap-[30px] hover:bg-[rgba(255,255,255,0.03)] transition-colors duration-500">
-              <div className="relative size-[100px] flex items-center justify-center shrink-0">
-                <div className="absolute inset-0 rounded-full border border-[rgba(6,179,73,0.2)]" />
-                <div className="absolute inset-[-10px] rounded-full border border-[rgba(6,179,73,0.4)] animate-[spin_8s_linear_infinite]" style={{ borderTopColor: 'transparent', borderBottomColor: 'transparent' }} />
-                <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[28px] tabular-nums">99.9<span className="text-[#06b349]">%</span></Typography>
-              </div>
-              <div>
-                <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[24px] leading-[1.2] tracking-[-0.5px] mb-[8px]">SLA Uptime</Typography>
-                <Typography className="font-['Geist:Regular'] text-[#7aaa88] text-[14px] leading-[1.6]">Redundant infrastructure built to handle millions of messages without dropping a single packet.</Typography>
-              </div>
-            </div>
-
-            {/* Bottom Right: NOC Monitoring */}
-            <div className="col-span-6 bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.08)] rounded-[24px] p-[40px] flex flex-col justify-between hover:bg-[rgba(255,255,255,0.03)] transition-colors duration-500 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(6,179,73,0.03)] to-transparent pointer-events-none" />
-              <div className="flex flex-col mb-[24px] relative z-10">
-                <div className="flex items-center justify-between mb-[8px]">
-                  <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[24px] leading-[1.2] tracking-[-0.5px]">24/7 NOC Monitoring</Typography>
-                  <div className="flex items-center gap-[6px] bg-[rgba(6,179,73,0.1)] px-[10px] py-[4px] rounded-full border border-[rgba(6,179,73,0.2)]">
-                    <div className="size-[6px] rounded-full bg-[#06b349] animate-pulse" />
-                    <Typography className="font-['Geist:Medium'] font-medium text-[#06b349] text-[11px] uppercase tracking-wider">All Systems Operational</Typography>
-                  </div>
-                </div>
-                <Typography className="font-['Geist:Regular'] text-[#7aaa88] text-[14px]">Proactive issue detection before your customers even notice.</Typography>
-              </div>
-
-              <div className="space-y-[8px] relative z-10 flex-1">
-                {[
-                  { label: 'API Gateway (ap-south-1)', ping: '12ms' },
-                  { label: 'Database Cluster (Primary)', ping: '8ms' },
-                  { label: 'Webhook Processors', ping: '18ms' }
-                ].map((s, i) => (
-                  <div key={i} className="flex items-center justify-between px-[16px] py-[12px] bg-[rgba(0,0,0,0.2)] border border-[rgba(255,255,255,0.05)] rounded-[12px] backdrop-blur-sm relative overflow-hidden hover:bg-[rgba(255,255,255,0.03)] transition-colors">
-                    <div className="absolute left-0 top-0 h-full w-[2px] bg-[#06b349]" />
-                    <div className="flex items-center gap-[12px]">
-                      <div className="relative flex items-center justify-center size-[12px]">
-                        <div className="absolute inset-0 rounded-full bg-[#06b349] animate-[ping_2s_ease-out_infinite] opacity-50" style={{ animationDelay: `${i * 0.3}s` }} />
-                        <div className="size-[6px] rounded-full bg-[#06b349]" />
-                      </div>
-                      <Typography className="text-white text-[13px] font-['Geist:Medium']">{s.label}</Typography>
-                    </div>
-                    <div className="flex items-center gap-[12px]">
-                      <svg width="40" height="16" viewBox="0 0 40 16" fill="none" stroke="rgba(6,179,73,0.5)" strokeWidth="1.5"><path d="M0 8h5l3-6 4 12 3-6h25" strokeLinejoin="round" /></svg>
-                      <Typography className="text-[#06b349] text-[12px] font-['Courier_Prime'] tabular-nums">{s.ping}</Typography>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-
-          <div className="mt-[50px] relative z-10">
-            <a href="https://photonxtech.com" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center gap-[12px] bg-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.1)] border border-[rgba(255,255,255,0.15)] hover:border-[rgba(6,179,73,0.5)] rounded-[12px] pl-[26px] pr-[20px] py-[16px] transition-all duration-300 shadow-[0_8px_20px_-8px_rgba(0,0,0,0.5)]">
-              <Typography className="font-['Geist:Medium'] font-medium text-white text-[16px]">Visit PhotonX Tech</Typography>
-              <div className="size-[24px] rounded-full bg-[rgba(255,255,255,0.1)] flex items-center justify-center group-hover:bg-[#06b349] transition-colors duration-300">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-[2px] transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
 
       {/* ══════════════════════════════════════════════════
           10 · FAQ

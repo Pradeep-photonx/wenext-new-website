@@ -12,9 +12,7 @@ export default function Footer() {
       <div className="border-[#cec9b8] border-b border-l border-r border-solid h-[64px] overflow-clip relative shrink-0 w-full" data-node-id="467:1965">
         {Array.from({ length: 169 }).map((_, idx) => (
           <div key={idx} className="absolute size-[93px] top-[-28.5px]" style={{ left: `${-60.5 + idx * 10}px` }}>
-            {/* <div className="absolute inset-[-0.38%]">
-              <img alt="" className="block max-w-none size-full" src={imgVector4} />
-            </div> */}
+
           </div>
         ))}
       </div>

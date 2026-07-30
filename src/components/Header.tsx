@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   ChevronRight, BarChart2, Activity, Smile, BookOpen,
   MessageSquare, PlayCircle, Building, Box, Zap, Globe, Users,
@@ -33,14 +33,14 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const MENU_DATA = {
   features: [
-    { id: 'f1', title: 'Unified Inbox', description: 'Analyze conversion rates and improve your sales revenue.', icon: UnifiedInboxIcon, to: '/features#convert' },
-    { id: 'f2', title: 'Ai Agents', description: 'Measure active usage and target areas to improve your product.', icon: AgentsIcon, to: '/features#engage' },
-    { id: 'f3', title: 'Campaigns', description: 'Find your retention drivers and make your customers smile.', icon: CampaignsIcon, to: '/features#retain' },
-    { id: 'f4', title: 'CRM', description: 'Analyze conversion rates and improve your sales revenue.', icon: CRMIcon, to: '/features#convert' },
-    { id: 'f5', title: 'Social Media Post', description: 'Measure active usage and target areas to improve your product.', icon: SocialMediaIcon, to: '/features#engage' },
-    { id: 'f6', title: 'Ads Management', description: 'Find your retention drivers and make your customers smile.', icon: AdsManagementIcon, to: '/features#retain' },
-    { id: 'f7', title: 'Smart Scheduling', description: 'Analyze conversion rates and improve your sales revenue.', icon: SmartSchedulingIcon, to: '/features#convert' },
-    { id: 'f8', title: 'Inegrations', description: 'Measure active usage and target areas to improve your product.', icon: IntegrationIcon, to: '/features#engage' },
+    { id: 'f1', title: 'Unified Inbox', description: 'Every WhatsApp, Instagram & Facebook chat in one shared team inbox.', icon: UnifiedInboxIcon, to: '/features/unified-inbox' },
+    { id: 'f2', title: 'Ai Agents', description: 'Measure active usage and target areas to improve your product.', icon: AgentsIcon, to: '/features/ai-agents' },
+    { id: 'f3', title: 'Campaigns', description: 'Find your retention drivers and make your customers smile.', icon: CampaignsIcon, to: '/features/campaigns' },
+    { id: 'f4', title: 'CRM', description: 'Analyze conversion rates and improve your sales revenue.', icon: CRMIcon, to: '/features/crm' },
+    { id: 'f5', title: 'Social Media Post', description: 'Measure active usage and target areas to improve your product.', icon: SocialMediaIcon, to: '/features/social-media-post' },
+    { id: 'f6', title: 'Ads Management', description: 'Find your retention drivers and make your customers smile.', icon: AdsManagementIcon, to: '/features/ads-management' },
+    { id: 'f7', title: 'Smart Scheduling', description: 'Analyze conversion rates and improve your sales revenue.', icon: SmartSchedulingIcon, to: '/features/smart-scheduling' },
+    { id: 'f8', title: 'Integrations', description: 'Measure active usage and target areas to improve your product.', icon: IntegrationIcon, to: '/features/integrations' },
   ],
   solutions: [
     { id: 's1', title: 'Enterprise', description: 'Scalable infrastructure for large teams.', icon: Building, to: '/solutions#enterprise' },
@@ -48,7 +48,7 @@ const MENU_DATA = {
     { id: 's3', title: 'Agencies', description: 'Manage multiple clients efficiently.', icon: Users, to: '/solutions#agencies' },
   ],
   industries: [
-    { id: 'ind1', title: 'Health', description: 'Automated patient booking, consultation & lab alerts.', icon: HeartPulse, to: '/industries/health' },
+    { id: 'ind1', title: 'Health Care', description: 'Automated patient booking, consultation & lab alerts.', icon: HeartPulse, to: '/industries/health-care' },
     { id: 'ind2', title: 'Education', description: 'Admissions, student inquiries & fee notification bots.', icon: GraduationCap, to: '/industries/education' },
     { id: 'ind3', title: 'Jewellery', description: 'Digital catalog showcase & custom order inquiries.', icon: Gem, to: '/industries/jewellery' },
     { id: 'ind4', title: 'Real Estate', description: 'Property lead generation, site visits & automated CRM.', icon: Building, to: '/industries/real-estate' },
@@ -66,11 +66,15 @@ const MENU_DATA = {
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const isFeaturePage = location.pathname.startsWith('/features');
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   const [navHidden, setNavHidden] = useState(false);
   const [navScrolled, setNavScrolled] = useState(false);
   const menuTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const isDarkHeader = navScrolled || isFeaturePage;
 
   const handleMouseEnterNav = (menuKey: string) => {
     if (menuTimeoutRef.current) {
@@ -99,7 +103,7 @@ export default function Header() {
       setNavScrolled(y > 8);
       if (y > lastY && y > 140) setNavHidden(true);
       else if (y < lastY - 2) setNavHidden(false);
-      
+
       // Only close if scrolling significantly
       if (Math.abs(y - lastY) > 30) {
         if (menuTimeoutRef.current) clearTimeout(menuTimeoutRef.current);
@@ -115,7 +119,7 @@ export default function Header() {
     const isActive = activeMenu === menuKey;
     return (
       <div
-        className={`content-stretch h-full flex gap-[0px] items-center cursor-pointer select-none transition-colors ${navScrolled ? 'text-white hover:text-gray-300' : 'text-[#092511] hover:text-[#06b349]'}`}
+        className={`content-stretch h-full flex gap-[0px] items-center cursor-pointer select-none transition-colors ${isDarkHeader ? 'text-white hover:text-gray-300' : 'text-[#092511] hover:text-[#06b349]'}`}
         onMouseEnter={() => menuKey && handleMouseEnterNav(menuKey)}
         onMouseLeave={handleMouseLeaveNav}
         onClick={onClick}
@@ -134,7 +138,7 @@ export default function Header() {
               transition: 'transform 0.2s ease',
             }}
           >
-            <img alt="" className="absolute block inset-0 max-w-none size-full" style={{ filter: navScrolled ? 'none' : 'invert(1) brightness(0)' }} src={imgIcon} />
+            <img alt="" className="absolute block inset-0 max-w-none size-full" style={{ filter: isDarkHeader ? 'none' : 'invert(1) brightness(0)' }} src={imgIcon} />
           </div>
         )}
       </div>
@@ -144,14 +148,14 @@ export default function Header() {
   return (
     <div id="main-header" className="relative shrink-0 w-full" style={{ height: '80px', zIndex: 100 }}>
       <div
-        className={`fixed top-0 left-0 right-0 h-[80px] border-[rgba(255,255,255,0.1)] border-b border-solid flex items-center w-full transition-colors duration-300 ${navScrolled ? 'bg-[#092511]' : 'bg-[#f8f5ec]'}`}
+        className={`fixed top-0 left-0 right-0 h-[80px] border-b border-solid flex items-center w-full transition-colors duration-300 ${isDarkHeader ? 'bg-[#092511] border-[rgba(255,255,255,0.1)]' : 'bg-[#f8f5ec] border-[rgba(9,37,17,0.08)]'}`}
         style={{
           zIndex: 100,
           transform: (navHidden && !activeMenu) ? 'translateY(-100%)' : 'translateY(0)',
           boxShadow: navScrolled ? '0 14px 34px -14px rgba(0,0,0,0.6)' : '0 0 0 0 rgba(0,0,0,0)',
           transition: 'transform 0.42s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s ease, background-color 0.3s ease',
           willChange: 'transform, background-color',
-          borderBlock: '1px solid rgba(9,37,17,0.08)',
+          borderBlock: isDarkHeader ? '1px solid rgba(255,255,255,0.1)' : '1px solid rgba(9,37,17,0.08)',
         }}
       >
         <div className="container mx-auto px-4 xl:px-0 relative h-full w-full">
@@ -162,8 +166,8 @@ export default function Header() {
               className="relative shrink-0 w-[150px] cursor-pointer"
               onClick={() => navigate('/')}
             >
-              <img alt="" className={`block w-full h-auto object-contain transition-opacity duration-300 ${navScrolled ? 'opacity-100' : 'opacity-0'}`} src={imgVector} />
-              <img alt="" className={`absolute top-0 left-0 w-full h-auto object-contain transition-opacity duration-300 ${!navScrolled ? 'opacity-100' : 'opacity-0'}`} src={imgVector1} />
+              <img alt="" className={`block w-full h-auto object-contain transition-opacity duration-300 ${isDarkHeader ? 'opacity-100' : 'opacity-0'}`} src={imgVector} />
+              <img alt="" className={`absolute top-0 left-0 w-full h-auto object-contain transition-opacity duration-300 ${!isDarkHeader ? 'opacity-100' : 'opacity-0'}`} src={imgVector1} />
             </div>
 
             {/* Nav links */}
@@ -174,7 +178,6 @@ export default function Header() {
                     <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[20px] items-center justify-end relative size-full h-full">
 
                       <NavItem label="Features" menuKey="features" />
-                      <NavItem label="Solutions" menuKey="solutions" />
                       <NavItem label="Industries" menuKey="industries" />
                       <NavItem label="Pricing" onClick={() => { navigate('/pricing'); setActiveMenu(null); }} />
                       <NavItem label="About" onClick={() => { navigate('/about'); setActiveMenu(null); }} />
@@ -240,11 +243,9 @@ export default function Header() {
                         <div
                           key={item.id}
                           onClick={() => { navigate(item.to); setActiveMenu(null); }}
-                          className={`flex items-start gap-4 p-5 bg-white hover:bg-gray-50/80 cursor-pointer transition-colors duration-150 group ${
-                            isLeftColumn ? 'md:border-r border-gray-200/80' : ''
-                          } ${
-                            !isLastRow ? 'border-b border-gray-200/80' : ''
-                          }`}
+                          className={`flex items-start gap-4 p-5 bg-white hover:bg-gray-50/80 cursor-pointer transition-colors duration-150 group ${isLeftColumn ? 'md:border-r border-gray-200/80' : ''
+                            } ${!isLastRow ? 'border-b border-gray-200/80' : ''
+                            }`}
                         >
                           <div className={`w-10 h-10 rounded-xl ${iconStyle} flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform p-2`}>
                             {typeof item.icon === 'string' ? (
