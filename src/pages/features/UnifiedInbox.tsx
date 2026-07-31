@@ -401,34 +401,34 @@ function HowItWorks() {
 // ── SUB-FEATURES (alternating image / text rows) ───────────────────────────────
 const SUB_FEATURES = [
   {
-    tag: 'Templates',
-    title: 'Send approved templates in one click',
-    body: 'Reply in seconds with WhatsApp-approved message templates — order updates, offers and reminders — personalised with each customer’s details.',
-    points: ['Pre-approved template library', 'Dynamic variables like {{name}} & {{order}}', 'One-click send from any chat'],
+    tag: 'Smart Templates',
+    title: 'Send personalized messages in seconds',
+    body: 'Create reusable templates that automatically insert customer details, helping your team deliver fast, accurate, and consistent communication across every conversation..',
+    points: ['Pre-built and customizable templates', 'Dynamic customer personalization', 'One-click messaging from any chat', 'Consistent communication across your team'],
   },
   {
     tag: 'Payment Links',
-    title: 'Share secure payment links inside the chat',
-    body: 'Turn conversations into checkout. Drop a secure UPI or card payment link straight into the thread and get paid without the customer ever leaving WhatsApp.',
-    points: ['UPI, cards & wallets', 'Live payment status updates', 'Razorpay & Stripe ready'],
+    title: 'Turn customer conversations into successful payments',
+    body: 'Share secure payment links directly within the chat and let customers pay instantly using their preferred payment method. Reduce checkout friction, speed up transactions, and close more sales without leaving the conversation.',
+    points: ['Secure payment links in every chat', 'UPI, cards, net banking, and digital wallet support', 'Real-time payment notifications', 'Integrates with Razorpay, Stripe, and other leading gateways'],
   },
   {
     tag: 'Reminders',
-    title: 'Never let a conversation go cold',
-    body: 'Set a reminder on any chat and WeNext nudges you to follow up, re-engage or close — so high-intent customers never slip through the cracks.',
-    points: ['Follow-up reminders', 'Snooze & schedule for later', 'Team-wide alerts'],
+    title: 'Never miss the perfect time to follow up',
+    body: 'Keep customer conversations active with intelligent reminders that help your team reconnect, respond on time, and convert more opportunities into lasting relationships.',
+    points: ['Set reminders for any conversation', 'Snooze chats and resume them when needed', 'Receive instant reminder notifications', 'Stay organized across your entire team'],
   },
   {
     tag: 'Notes',
-    title: 'Keep your whole team in context',
-    body: 'Leave private internal notes on any conversation — visible only to your team — so nothing is lost when a chat is handed to another agent.',
-    points: ['Private internal notes', 'Mention teammates', 'Pinned to the customer profile'],
+    title: 'Keep your team aligned on every conversation',
+    body: 'Add private notes to any chat so your team always has the right context. Share updates, highlight important details, and ensure seamless handovers without exposing internal discussions to customers.',
+    points: ['Private notes visible only to your team', 'Mention teammates for quick collaboration', 'Keep notes attached to the customer profile'],
   },
   {
     tag: 'Deal Value',
-    title: 'Track the revenue behind every chat',
-    body: 'Attach a deal value to conversations and see exactly how much pipeline is sitting in your inbox — from the first message to a closed sale.',
-    points: ['Deal value per conversation', 'Live pipeline totals', 'Won / lost tracking'],
+    title: 'Know the value behind every conversation',
+    body: 'Assign a deal value to every customer interaction and track potential revenue as conversations progress. Get complete visibility into your sales pipeline without leaving your inbox.',
+    points: ['Assign deal values to individual conversations', 'Monitor your sales pipeline in real time', 'Track won, lost, and active opportunities'],
   },
 ];
 

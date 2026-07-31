@@ -64,7 +64,7 @@ function PrimaryButton({ label }: { label?: string }) {
         <div className="absolute inset-0 pointer-events-none"><img alt="" className="size-full object-cover opacity-20 mix-blend-color-burn" src={imgImage27} /></div>
         <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap relative">Let's Talk</Typography>
         <div className="size-[20px] relative shrink-0 text-white flex items-center justify-center">
-          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
         </div>
       </div>
     </a>
@@ -121,32 +121,32 @@ const STATS = [
 type Card = { icon: LucideIcon; t: string; d: string };
 
 const CHALLENGES: Card[] = [
-  { icon: CalendarX, t: 'No-shows & missed bookings', d: 'Patients can’t book directly, so slots sit empty and revenue slips away.' },
-  { icon: MessageCircle, t: 'A front desk buried in questions', d: 'Timings, location, fees, doctors — the same questions, all day long.' },
-  { icon: ClipboardList, t: 'Reports & reminders by hand', d: 'Lab reports, prescriptions and follow-ups chased manually, one by one.' },
+  { icon: CalendarX, t: 'Missed Appointments', d: 'Patients miss bookings, leaving schedules underutilized and reducing revenue.' },
+  { icon: MessageCircle, t: 'Busy Front Desk', d: 'Repetitive patient queries keep staff occupied and slow response times.' },
+  { icon: ClipboardList, t: 'Manual Follow-ups', d: 'Reports, reminders, and prescriptions take time, increasing delays and workload.' },
 ];
 
 const CAPABILITIES: Card[] = [
-  { icon: CalendarCheck, t: 'Appointment booking', d: 'Patients pick a doctor and slot right inside WhatsApp — auto-confirmed.' },
-  { icon: BellRing, t: 'Smart reminders', d: 'Automated visit, medication and follow-up reminders that cut no-shows.' },
-  { icon: FileText, t: 'Reports on WhatsApp', d: 'Send lab results and prescriptions securely straight to the patient’s chat.' },
-  { icon: Sparkles, t: 'AI patient assistant', d: 'Answers timings, services and fees 24/7 — escalates to staff when needed.' },
-  { icon: CreditCard, t: 'Payments & invoices', d: 'Share consultation payment links and receipts without leaving the chat.' },
-  { icon: HeartPulse, t: 'Follow-up care', d: 'Post-visit check-ins and recall campaigns that bring patients back.' },
+  { icon: CalendarCheck, t: 'Appointment booking', d: 'Enable patients to book appointments instantly on WhatsApp.' },
+  { icon: BellRing, t: 'Smart reminders', d: 'Reduce no-shows with automated reminders.' },
+  { icon: FileText, t: 'Reports & Prescriptions', d: 'Share medical reports and prescriptions securely.' },
+  { icon: Sparkles, t: 'AI patient assistant', d: 'Answer patient queries instantly, 24/7.' },
+  { icon: CreditCard, t: 'Payments & Billing', d: 'Collect payments and send invoices with ease.' },
+  { icon: HeartPulse, t: 'Post-Visit Follow-ups', d: 'Automate follow-ups to improve patient care.' },
 ];
 
 const HIGHLIGHTS = [
   {
     tag: 'Before the visit',
-    title: 'Turn every inquiry into a booked consultation',
-    body: 'Patients ask about timings, doctors and fees at all hours — and WeNext answers instantly, then guides them straight to an open slot. Phone tag and missed callbacks become confirmed appointments, day and night.',
-    points: ['Instant answers to common questions', 'Live availability, booked in the chat', 'Auto-confirmation the moment it’s booked'],
+    title: 'Convert patient enquiries into confirmed appointments',
+    body: 'Help patients find the right doctor, check availability, and book appointments instantly through WhatsApp. Reduce missed calls and simplify the booking experience.',
+    points: ['Instant responses to patient enquiries', 'Real-time appointment scheduling', 'Automatic booking confirmations'],
   },
   {
     tag: 'After the visit',
-    title: 'Care that continues long after they leave',
-    body: 'Lab results, medication reminders and recovery check-ins go out on their own — securely on WhatsApp — so patients feel looked after, stick to their treatment, and come back when it matters.',
-    points: ['Secure reports and prescriptions', 'Timely medication and follow-up nudges', 'Recall and check-up reminders'],
+    title: 'Keep patients engaged beyond every appointment',
+    body: 'Stay connected with patients after every consultation through automated follow-ups, secure report sharing, medication reminders, and recovery updates—all on WhatsApp.',
+    points: ['Share reports and prescriptions instantly', 'Send automated medication reminders', 'Schedule recovery and follow-up messages'],
   },
 ];
 
@@ -165,10 +165,10 @@ const FAQS = [
 ];
 
 const BENEFITS: { icon: LucideIcon; t: string; c: string; d: string; items: string[] }[] = [
-  { icon: Users, t: 'Front desk & reception', c: '#0a8f5a', d: 'Answer, book and confirm without picking up the phone.', items: ['Answer patient questions 24/7 with AI', 'Cut no-shows with automatic reminders', 'Book, confirm and reschedule in one tap'] },
-  { icon: Stethoscope, t: 'Doctors & clinical team', c: '#3f6cab', d: 'Full patient context, shared securely in seconds.', items: ['Every patient’s history and notes in one place', 'Share pre- and post-visit instructions instantly', 'Send lab reports securely on WhatsApp'] },
-  { icon: Megaphone, t: 'Patient growth & retention', c: '#7c5bd6', d: 'Bring patients back and turn them into referrals.', items: ['Bring patients back with recall reminders', 'Collect reviews and referrals automatically', 'Reactivate patients who haven’t visited in a while'] },
-  { icon: Receipt, t: 'Billing & coordination', c: '#c98a3a', d: 'Estimates, invoices and payments, right in the chat.', items: ['Send estimates, invoices and payment links', 'Coordinate multi-visit treatment plans', 'Share cost breakdowns and confirmations'] },
+  { icon: Users, t: 'Reception & Front Desk', c: '#0a8f5a', d: 'Handle patient enquiries and appointments with ease.', items: ['Answer patient queries instantly with AI', 'Reduce no-shows with automated reminders', 'Book, confirm, and reschedule appointments'] },
+  { icon: Stethoscope, t: 'Doctors & Care Teams', c: '#3f6cab', d: 'Access everything needed for better patient care.', items: ['View complete patient conversations', 'Share prescriptions and care instructions', 'Send reports securely via WhatsApp'] },
+  { icon: Megaphone, t: 'Patient Engagement', c: '#7c5bd6', d: 'Build stronger relationships beyond the clinic.', items: ['Automate follow-up and recall reminders', 'Collect patient feedback and reviews', 'Reconnect inactive patients effortlessly'] },
+  { icon: Receipt, t: 'Billing & Payments', c: '#c98a3a', d: 'Simplify payments and treatment coordination.', items: ['Send invoices and payment links instantly', 'Manage treatment plans with ease', 'Share payment confirmations automatically'] },
 ];
 
 const OUTCOMES: { label: string; before: string; after: string; pct: number }[] = [
@@ -195,10 +195,10 @@ export default function Health() {
             {/* <Typography className="font-['Courier_Prime'] text-[#06b349] text-[14px] uppercase tracking-[0.2em]">Industries · Healthcare</Typography> */}
           </div>
           <Typography component="h1" className="font-['Geist:SemiBold'] font-semibold leading-[1.1] text-white text-[58px] tracking-[-2px] max-w-[840px] mb-[22px] relative">
-            Every patient, booked and cared for — on <span className="text-[#25d366]">WhatsApp</span>
+            The Complete WhatsApp Platform for <span className="text-[#25d366]">Modern Healthcare</span>
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[20px] max-w-[660px] leading-[1.6] mb-[40px] relative">
-            WeNext turns WhatsApp into a booking, reports and reminders system for clinics — no missed appointments, no delayed replies, no front-desk overload.
+            Reduce missed appointments, automate routine communication, and keep patients informed at every stage of their healthcare journey—all through the channel they already use every day.
           </Typography>
           <div className="flex gap-[16px] items-center relative">
             <PrimaryButton label="Book a Demo" />
@@ -223,12 +223,12 @@ export default function Health() {
       {/* THE PROBLEM */}
       <div className="container mx-auto border-x border-[#e0dac6]">
         <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
-          <Eyebrow label="The Problem" />
+          <Eyebrow label="The Challenge" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[600px]">
-            What’s quietly slowing your clinic down
+            The biggest challenges clinics face every day
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] max-w-[560px] leading-[1.55] mt-[14px]">
-            Three everyday problems cost clinics time, revenue and patient trust — and WeNext fixes each one.
+            Manual processes slow operations, increase staff workload, and impact the patient experience.
           </Typography>
         </div>
       </div>
@@ -252,8 +252,8 @@ export default function Health() {
       <div className="container mx-auto border-x border-[#e0dac6]">
         <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
           <Eyebrow label="Built for Healthcare" />
-          <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[560px]">
-            One platform for every patient conversation
+          <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[600px]">
+            Everything you need to streamline patient communication
           </Typography>
         </div>
       </div>
@@ -292,7 +292,21 @@ export default function Health() {
                     </div>
                     <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[34px] text-[#0c221f] tracking-[-1px] leading-[1.15]">{f.title}</Typography>
                     <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.62] mt-[16px] max-w-[480px]">{f.body}</Typography>
-
+                    {f.points && f.points.length > 0 && (
+                      <div className="mt-[24px]">
+                        <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[15px] mb-[12px]">
+                          Key Benefits
+                        </Typography>
+                        <ul className="flex flex-col gap-[12px]">
+                          {f.points.map((p) => (
+                            <li key={p} className="flex items-start gap-[11px]">
+                              <CircleCheck />
+                              <span className="font-['Geist:Regular'] text-[#3a4540] text-[15px] leading-[1.5]">{p}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Reveal>
@@ -307,10 +321,10 @@ export default function Health() {
           <div className="max-w-[600px] mb-[40px]">
             <Eyebrow label="For every team" />
             <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.4px] leading-[1.14]">
-              How your whole clinic benefits
+              Empowering every team in your clinic
             </Typography>
             <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.55] mt-[14px]">
-              One shared WhatsApp workspace — every part of your practice works from the same place, in sync.
+              Manage patient communication, appointments, billing, and follow-ups from one shared WhatsApp workspace.
             </Typography>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2">
