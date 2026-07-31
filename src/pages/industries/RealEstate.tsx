@@ -5,6 +5,7 @@ import {
   CalendarCheck, BellRing, FileText, Sparkles, CreditCard, HeartPulse,
   MessageCircle, CalendarX, ClipboardList, Users, Stethoscope, Megaphone,
   Receipt, TrendingUp, Clock, type LucideIcon,
+  Building, MapPin, Key, Home, Compass, Layers
 } from 'lucide-react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -97,7 +98,6 @@ function DummyImage({ tag, ratio = 'aspect-[3/3]' }: { tag: string; ratio?: stri
   return (
     <div className={`relative overflow-hidden ${ratio} flex items-center justify-center`} style={{ background: PANEL }}>
       <div className="absolute inset-0 pointer-events-none" style={grainStyle} />
-
     </div>
   );
 }
@@ -112,108 +112,115 @@ function CircleCheck() {
 
 // ── DATA ────────────────────────────────────────────────────────────────────────
 const STATS = [
-  { v: '8×', l: 'Faster response speed' },
-  { v: '92%', l: 'Appointment show rate' },
-  { v: '5–6h', l: 'Staff time saved daily' },
-  { v: '24/7', l: 'Always-on care AI' },
+  { v: '5×', l: 'Faster site visit bookings' },
+  { v: '85%', l: 'Lead qualification rate' },
+  { v: '5–6h', l: 'Agent hours saved daily' },
+  { v: '24/7', l: 'Always-on property AI' },
 ];
 
 type Card = { icon: LucideIcon; t: string; d: string };
 
 const CHALLENGES: Card[] = [
-  { icon: CalendarX, t: 'No-shows & missed bookings', d: 'Patients can’t book directly, so slots sit empty and revenue slips away.' },
-  { icon: MessageCircle, t: 'A front desk buried in questions', d: 'Timings, location, fees, doctors — the same questions, all day long.' },
-  { icon: ClipboardList, t: 'Reports & reminders by hand', d: 'Lab reports, prescriptions and follow-ups chased manually, one by one.' },
+  { icon: MessageCircle, t: 'Ad leads going cold in Meta DMs', d: 'Click-to-WhatsApp ad leads wait hours for callback and buy elsewhere.' },
+  { icon: CalendarX, t: 'Site visit no-shows', d: 'Prospective buyers book site visits but forget without automated reminders.' },
+  { icon: ClipboardList, t: 'Manual floor plan sharing', d: 'Agents manually email brochures, floor plans and pricing PDFs to hundreds of leads.' },
 ];
 
 const CAPABILITIES: Card[] = [
-  { icon: CalendarCheck, t: 'Appointment booking', d: 'Patients pick a doctor and slot right inside WhatsApp — auto-confirmed.' },
-  { icon: BellRing, t: 'Smart reminders', d: 'Automated visit, medication and follow-up reminders that cut no-shows.' },
-  { icon: FileText, t: 'Reports on WhatsApp', d: 'Send lab results and prescriptions securely straight to the patient’s chat.' },
-  { icon: Sparkles, t: 'AI patient assistant', d: 'Answers timings, services and fees 24/7 — escalates to staff when needed.' },
-  { icon: CreditCard, t: 'Payments & invoices', d: 'Share consultation payment links and receipts without leaving the chat.' },
-  { icon: HeartPulse, t: 'Follow-up care', d: 'Post-visit check-ins and recall campaigns that bring patients back.' },
+  { icon: CalendarCheck, t: 'Site visit scheduling', d: 'Buyers schedule and confirm site visits directly inside WhatsApp with live calendar sync.' },
+  { icon: FileText, t: 'Instant brochure & floor plans', d: 'Deliver project brochures, floor plans, and layout PDFs in one click.' },
+  { icon: BellRing, t: 'Automated visit reminders', d: 'Send GPS directions, agent details, and reminder nudges before the site visit.' },
+  { icon: Sparkles, t: 'AI property assistant', d: 'Qualifies buyer budget, location preference, and configuration 24/7 before routing to agents.' },
+  { icon: CreditCard, t: 'Booking deposit checkout', d: 'Share token payment links for unit blockings and instant digital receipts.' },
+  { icon: HeartPulse, t: 'Project construction updates', d: 'Broadcast milestone progress photos and video updates automatically to buyers.' },
 ];
 
 const HIGHLIGHTS = [
   {
-    tag: 'Before the visit',
-    title: 'Turn every inquiry into a booked consultation',
-    body: 'Patients ask about timings, doctors and fees at all hours — and WeNext answers instantly, then guides them straight to an open slot. Phone tag and missed callbacks become confirmed appointments, day and night.',
-    points: ['Instant answers to common questions', 'Live availability, booked in the chat', 'Auto-confirmation the moment it’s booked'],
+    tag: 'Lead Qualification & Site Visits',
+    title: 'Qualify property buyers and book site visits automatically',
+    body: 'Filter serious buyers by budget, BHK configuration and timeline in real-time. Schedule site visits with automated calendar invitations and location pins.',
+    points: ['Instant budget & requirement qualification', 'Automated site visit scheduling with GPS pins', 'Agent instant notification on high-intent leads'],
   },
   {
-    tag: 'After the visit',
-    title: 'Care that continues long after they leave',
-    body: 'Lab results, medication reminders and recovery check-ins go out on their own — securely on WhatsApp — so patients feel looked after, stick to their treatment, and come back when it matters.',
-    points: ['Secure reports and prescriptions', 'Timely medication and follow-up nudges', 'Recall and check-up reminders'],
+    tag: 'Post-Visit & Deal Closure',
+    title: 'Nurture leads from first visit to token payment',
+    body: 'Send automated follow-up messages after site visits, share price sheets, and collect token booking deposits right inside WhatsApp.',
+    points: ['Automated post-visit feedback & follow-ups', 'Token payment links with instant receipts', 'Construction milestone updates for existing buyers'],
   },
 ];
 
 const TESTIMONIALS = [
-  { q: 'Appointment booking on WhatsApp used to be chaos. Now it runs end-to-end automatically and our no-shows dropped sharply.', c: 'Neehar Neuro', r: 'Neurology Clinic' },
-  { q: 'Our front desk used to drown in repeat questions. WeNext’s AI handles them 24/7 — the team finally has time for patients.', c: 'Sanjeevani Care', r: 'Multi-speciality' },
-  { q: 'Lab reports and reminders go out on their own now. It feels like we hired a full coordination team overnight.', c: 'Lotus Dental', r: 'Dental Care' },
+  { q: 'Click-to-WhatsApp ads integrated with WeNext doubled our site visit conversion rate within 30 days.', c: 'Prestige Realty', r: 'Real Estate Developer' },
+  { q: 'Our sales agents spend zero time answering repetitive budget and location questions — AI qualifies every lead first.', c: 'Sobha Developers', r: 'Residential Projects' },
+  { q: 'Automated site visit location pins and reminders cut our weekend visit drop-off rate by 50%.', c: 'Urban Spaces', r: 'Commercial & Housing' },
 ];
 
 const FAQS = [
-  { q: 'Can patients book appointments directly on WhatsApp?', a: 'Yes. Patients see live doctor availability and confirm a slot right inside the chat. Every booking is auto-confirmed, synced to your calendar and followed up with reminders — no front-desk effort.' },
-  { q: 'How does WeNext reduce no-shows?', a: 'Automated reminders go out before every appointment, with one-tap confirm or reschedule. Combined with follow-up nudges, clinics typically see show rates climb above 90%.' },
-  { q: 'Is it safe to send lab reports and prescriptions?', a: 'Reports and prescriptions are delivered to the patient’s own verified WhatsApp number through the official WhatsApp Business API, so records reach the right person securely.' },
-  { q: 'Will the AI replace my front-desk staff?', a: 'No — it removes the repetitive load. The AI answers timings, fees and FAQs 24/7 and only escalates to your team when a patient genuinely needs a human.' },
-  { q: 'Does it work with our existing tools?', a: 'WeNext connects alongside your calendar, payments and EHR — one layer on top of your stack, not a rip-and-replace.' },
+  { q: 'Can WeNext integrate with Meta Click-to-WhatsApp ads?', a: 'Yes. WeNext seamlessly connects Meta Click-to-WhatsApp and Instagram ads so incoming leads trigger instant AI lead qualification.' },
+  { q: 'How does site visit booking work for prospective buyers?', a: 'Buyers select their preferred project location, date, and time slot right inside WhatsApp. They receive an instant calendar confirmation and Google Maps pin.' },
+  { q: 'Can we send project brochures and floor plans automatically?', a: 'Yes. You can attach project brochures, floor plans, pricing sheets, and video walk-through links for immediate delivery in the chat.' },
+  { q: 'Does it integrate with real estate CRMs like Salesforce or Zoho?', a: 'Yes. WeNext syncs lead status, visit dates, and conversation logs back into your CRM in real time.' },
+  { q: 'Can sales agents take over when a lead is qualified?', a: 'Yes. Once the AI qualifies a buyer’s budget and interest, the lead is immediately assigned to a sales manager with a full summary.' },
 ];
 
 const BENEFITS: { icon: LucideIcon; t: string; c: string; d: string; items: string[] }[] = [
-  { icon: Users, t: 'Front desk & reception', c: '#0a8f5a', d: 'Answer, book and confirm without picking up the phone.', items: ['Answer patient questions 24/7 with AI', 'Cut no-shows with automatic reminders', 'Book, confirm and reschedule in one tap'] },
-  { icon: Stethoscope, t: 'Doctors & clinical team', c: '#3f6cab', d: 'Full patient context, shared securely in seconds.', items: ['Every patient’s history and notes in one place', 'Share pre- and post-visit instructions instantly', 'Send lab reports securely on WhatsApp'] },
-  { icon: Megaphone, t: 'Patient growth & retention', c: '#7c5bd6', d: 'Bring patients back and turn them into referrals.', items: ['Bring patients back with recall reminders', 'Collect reviews and referrals automatically', 'Reactivate patients who haven’t visited in a while'] },
-  { icon: Receipt, t: 'Billing & coordination', c: '#c98a3a', d: 'Estimates, invoices and payments, right in the chat.', items: ['Send estimates, invoices and payment links', 'Coordinate multi-visit treatment plans', 'Share cost breakdowns and confirmations'] },
+  { icon: Users, t: 'Sales & Field Agents', c: '#0a8f5a', d: 'Close properties faster with qualified leads.', items: ['Instant lead routing with budget tags', 'Automated site visit calendar reminders', 'Instant brochure and price sheet dispatch'] },
+  { icon: Stethoscope, t: 'CRM & Admin Team', c: '#3f6cab', d: 'Zero manual data entry between WhatsApp & CRM.', items: ['Auto-sync conversation notes to CRM', 'Track site visit attendance live', 'Manage buyer documents & KYC digitally'] },
+  { icon: Megaphone, t: 'Performance Marketing', c: '#7c5bd6', d: 'Maximize ROI on Meta & Google ad campaigns.', items: ['Connect Click-to-WhatsApp ad campaigns', 'Track ad source per lead in chat', 'Retarget unbooked leads with offer broadcasts'] },
+  { icon: Receipt, t: 'Finance & Booking Desk', c: '#c98a3a', d: 'Fast token payment collection inside WhatsApp.', items: ['Send token booking payment links', 'Generate instant booking receipts', 'Share payment schedule reminders'] },
 ];
 
-const OUTCOMES: { label: string; before: string; after: string; pct: number }[] = [
-  { label: 'Appointment show rate', before: '68%', after: '92%', pct: 92 },
-  { label: 'Average first reply', before: '4 hrs', after: 'under 30s', pct: 96 },
-  { label: 'Staff hours on admin, daily', before: '6 hrs', after: '~1 hr', pct: 82 },
-  { label: 'Returning patients', before: 'baseline', after: '+30%', pct: 60 },
-];
-
-// ══════════════════════════════════════════════════════════════════════════════
-export default function Health() {
+export default function RealEstate() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
   return (
     <div className="bg-[#f8f5ec] relative size-full min-h-screen flex flex-col overflow-x-clip">
       <Header />
 
       {/* HERO */}
       <div className="bg-[#092511] shadow-[0_0_0_100vmax_#092511] [clip-path:inset(0_-100vmax)] shrink-0 w-full">
-        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[96px] flex flex-col items-center text-center relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-[0.03]"><img alt="" className="size-full object-cover" src={imgImage27} /></div>
-          <div className="absolute -top-[120px] left-1/2 -translate-x-1/2 size-[420px] bg-[#06b349] opacity-[0.14] blur-[110px] rounded-full pointer-events-none" />
-          <div className="flex gap-[10px] items-center justify-center mb-[20px] relative">
-            {/* <div className="bg-[#06b349] relative top-[-2px] size-[8px] rounded-full" /> */}
-            {/* <Typography className="font-['Courier_Prime'] text-[#06b349] text-[14px] uppercase tracking-[0.2em]">Industries · Healthcare</Typography> */}
+        <div className="container mx-auto border-x border-[rgba(255,255,255,0.08)] px-4 xl:px-[75px] py-[90px] lg:py-[100px] flex flex-col items-center text-center relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+            <img alt="" className="size-full object-cover" src={imgImage27} />
           </div>
-          <Typography component="h1" className="font-['Geist:SemiBold'] font-semibold leading-[1.1] text-white text-[58px] tracking-[-2px] max-w-[840px] mb-[22px] relative">
-            Every patient, booked and cared for — on <span className="text-[#25d366]">WhatsApp</span>
+          <div className="absolute -top-[120px] left-1/2 -translate-x-1/2 size-[420px] bg-[#06b349] opacity-[0.14] blur-[110px] rounded-full pointer-events-none" />
+
+          <Eyebrow label="Real Estate Solution" light center />
+
+          <Typography component="h1" className="font-['Geist:SemiBold'] font-semibold leading-[1.14] text-white text-[44px] md:text-[60px] tracking-[-2px] max-w-[840px] mb-[20px] relative">
+            WhatsApp Site Visits,<br />Lead Qualification & <span className="text-[#25d366]">Property Sales</span>
           </Typography>
-          <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[20px] max-w-[660px] leading-[1.6] mb-[40px] relative">
-            WeNext turns WhatsApp into a booking, reports and reminders system for clinics — no missed appointments, no delayed replies, no front-desk overload.
+
+          <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[18px] md:text-[20px] max-w-[660px] leading-[1.6] mb-[40px] relative">
+            Connect ad leads to instant site visits — automated qualification, instant brochure sharing, token payment links and 24/7 AI lead nurturing.
           </Typography>
-          <div className="flex gap-[16px] items-center relative">
-            <PrimaryButton label="Book a Demo" />
-            <GhostButton label="Get Started" dark />
+
+          <div className="flex flex-wrap gap-[16px] items-center justify-center relative">
+            <PrimaryButton label="Book a Real Estate Demo" />
+            <GhostButton label="Get Started Free" dark />
           </div>
         </div>
       </div>
 
+      {/* STATS BAND */}
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#e0dac6]">
+          {STATS.map((s) => (
+            <Reveal key={s.l} className="px-[24px] py-[36px] flex flex-col items-center text-center">
+              <Typography className="font-['Geist:SemiBold'] font-semibold text-[#06b349] text-[44px] tracking-[-1.5px] leading-none">{s.v}</Typography>
+              <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] mt-[10px] leading-[1.4] max-w-[170px]">{s.l}</Typography>
+            </Reveal>
+          ))}
+        </div>
+      </div>
 
       {/* TRUST STRIP */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
         <div className="px-4 xl:px-[56px] py-[36px] flex flex-col items-center gap-[20px]">
-          <Typography className="font-['Courier_Prime'] text-[#8a938e] text-[12.5px] uppercase tracking-[0.18em]">Trusted by growing clinics across India</Typography>
+          <Typography className="font-['Courier_Prime'] text-[#8a938e] text-[12.5px] uppercase tracking-[0.18em]">Trusted by top builders & developers</Typography>
           <div className="flex flex-wrap items-center justify-center gap-x-[44px] gap-y-[18px]">
-            {['Neehar Neuro', 'Sanjeevani Care', 'Lotus Dental', 'Arogya Clinic', 'CityCare Hospital'].map((n) => (
+            {['Prestige Realty', 'Sobha Developers', 'Urban Spaces', 'Skyline Infra', 'Apex Homes'].map((n) => (
               <Typography key={n} className="font-['Geist:SemiBold'] font-semibold text-[#9aa39c] text-[19px] tracking-[-0.4px] hover:text-[#0c221f] transition-colors">{n}</Typography>
             ))}
           </div>
@@ -225,41 +232,16 @@ export default function Health() {
         <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
           <Eyebrow label="The Problem" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[600px]">
-            What’s quietly slowing your clinic down
+            What’s quietly dropping your site visit conversions
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] max-w-[560px] leading-[1.55] mt-[14px]">
-            Three everyday problems cost clinics time, revenue and patient trust — and WeNext fixes each one.
+            Three everyday sales friction points cost real estate teams site visits and bookings — WeNext resolves all three.
           </Typography>
         </div>
       </div>
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-[#e0dac6]">
           {CHALLENGES.map((c, i) => {
-            const Icon = c.icon;
-            return (
-              <Reveal key={c.t} className="border-r border-b border-[#e0dac6] p-[28px]" delay={(i % 3) * 0.05}>
-                <div className="size-[46px] rounded-[6px] bg-[#fbeee5] border border-[#f2d9c6] flex items-center justify-center mb-[16px]">
-                  <Icon size={21} strokeWidth={1.9} color="#d9773f" /></div>
-                <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[17px] tracking-[-0.3px] mb-[8px]">{c.t}</Typography>
-                <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">{c.d}</Typography>
-              </Reveal>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* CAPABILITIES — built for the industry */}
-      <div className="container mx-auto border-x border-[#e0dac6]">
-        <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
-          <Eyebrow label="Built for Healthcare" />
-          <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[560px]">
-            One platform for every patient conversation
-          </Typography>
-        </div>
-      </div>
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[#e0dac6]">
-          {CAPABILITIES.map((c, i) => {
             const Icon = c.icon;
             return (
               <Reveal key={c.t} className="border-r border-b border-[#e0dac6] p-[28px] group hover: transition-colors duration-200" delay={(i % 3) * 0.05}>
@@ -274,25 +256,55 @@ export default function Health() {
         </div>
       </div>
 
-      {/* HIGHLIGHTS — alternating image / text */}
+      {/* CAPABILITIES */}
+      <div className="container mx-auto border-x border-[#e0dac6]">
+        <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
+          <Eyebrow label="Solutions" />
+          <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[600px]">
+            Built specifically for real estate developers & brokers
+          </Typography>
+        </div>
+      </div>
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-l border-[#e0dac6]">
+          {CAPABILITIES.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <Reveal key={c.t} className="border-r border-b border-[#e0dac6] p-[28px]" delay={(i % 3) * 0.05}>
+                <div className="size-[42px] rounded-[8px] bg-[#eef6f0] flex items-center justify-center mb-[18px]">
+                  <Icon size={20} strokeWidth={2} color="#06b349" />
+                </div>
+                <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[18px] tracking-[-0.3px] mb-[8px]">{c.t}</Typography>
+                <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14.5px] leading-[1.55]">{c.d}</Typography>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* HIGHLIGHT FEATURES */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
-        <div className="px-4 xl:px-[56px] py-[56px] flex flex-col gap-[84px] lg:gap-[104px]">
+        <div className="px-4 xl:px-[56px] py-[70px] flex flex-col gap-[90px]">
           {HIGHLIGHTS.map((f, i) => {
-            const reversed = i % 2 === 1;
+            const rev = i % 2 === 1;
             return (
               <Reveal key={f.title}>
-                <div className="grid lg:grid-cols-2 gap-[40px] lg:gap-[72px] items-center">
-                  <div className={reversed ? 'lg:order-2' : ''}>
-                    <DummyImage tag={f.tag} />
+                <div className="grid lg:grid-cols-2 gap-[44px] lg:gap-[70px] items-center">
+                  <div className={rev ? 'lg:order-2' : ''}>
+                    <DummyImage tag={f.tag} ratio="aspect-[4/3]" />
                   </div>
-                  <div className={reversed ? 'lg:order-1' : ''}>
-                    <div className="inline-flex items-center gap-[8px] mb-[18px]">
-                      {/* <span className="size-[6px] relative top-[-2px] rounded-full bg-[#06b349]" /> */}
-                      <Typography className="font-['Courier_Prime'] text-[#06824f] text-[13px] uppercase tracking-[0.16em]">{f.tag}</Typography>
-                    </div>
-                    <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[34px] text-[#0c221f] tracking-[-1px] leading-[1.15]">{f.title}</Typography>
-                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.62] mt-[16px] max-w-[480px]">{f.body}</Typography>
-
+                  <div className={rev ? 'lg:order-1' : ''}>
+                    <Typography className="font-['Courier_Prime'] text-[#06b349] text-[13.5px] uppercase tracking-[0.16em] mb-[12px]">{f.tag}</Typography>
+                    <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[32px] text-[#0c221f] tracking-[-1px] leading-[1.18]">{f.title}</Typography>
+                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[16px] leading-[1.6] mt-[16px] max-w-[500px]">{f.body}</Typography>
+                    <ul className="flex flex-col gap-[12px] mt-[26px]">
+                      {f.points.map((p) => (
+                        <li key={p} className="flex items-start gap-[11px]">
+                          <CircleCheck />
+                          <span className="font-['Geist:Regular'] text-[#3a4540] text-[15px] leading-[1.5]">{p}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </Reveal>
@@ -301,16 +313,16 @@ export default function Health() {
         </div>
       </div>
 
-      {/* TEAM BENEFITS — how each team benefits */}
+      {/* TEAM BENEFITS */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
         <div className="px-4 xl:px-[56px] py-[64px]">
           <div className="max-w-[600px] mb-[40px]">
             <Eyebrow label="For every team" />
             <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.4px] leading-[1.14]">
-              How your whole clinic benefits
+              How your whole sales engine benefits
             </Typography>
             <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.55] mt-[14px]">
-              One shared WhatsApp workspace — every part of your practice works from the same place, in sync.
+              One shared WhatsApp workspace — sales, CRM, marketing and finance working together in sync.
             </Typography>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2">
@@ -343,7 +355,6 @@ export default function Health() {
         </div>
       </div>
 
-
       {/* FAQ ACCORDION — Homepage Style */}
       <div className="border-[#e0dac6] border-b border-solid content-stretch flex flex-col items-center justify-center overflow-clip container mx-auto relative shrink-0 w-full">
         <div className="border-[#e0dac6] border-l border-r border-solid relative shrink-0 w-full">
@@ -359,7 +370,7 @@ export default function Health() {
                     </Typography>
                   </div>
                   <div className="font-['Geist:SemiBold'] font-semibold relative shrink-0 text-[#0c221f] text-[36px] lg:text-[42px] tracking-[-1px]">
-                    <Typography className="leading-[1.3] text-[#0c221f] text-[36px] lg:text-[42px] font-['Geist:SemiBold'] font-semibold">Questions clinics ask</Typography>
+                    <Typography className="leading-[1.3] text-[#0c221f] text-[36px] lg:text-[42px] font-['Geist:SemiBold'] font-semibold">Questions developers ask</Typography>
                   </div>
                 </div>
               </div>

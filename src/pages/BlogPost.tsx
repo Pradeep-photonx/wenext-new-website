@@ -362,13 +362,12 @@ export default function BlogPost() {
           <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[17px] max-w-[500px] leading-[1.55] mb-[30px] relative">
             See how WeNext brings every conversation into one inbox — book a walkthrough with our team.
           </Typography>
-          <div className="bg-[#06b349] hover:bg-[#05a043] active:scale-[0.98] transition-all duration-150 rounded-[8px] cursor-pointer overflow-hidden relative inline-flex">
+          <a href="https://app.wenext.ai/book/wenext-platform-walkthrough" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-[#f8f5ec] active:scale-[0.98] transition-all duration-150 rounded-[8px] cursor-pointer overflow-hidden relative inline-flex">
             <div className="flex gap-[10px] items-center px-[22px] py-[15px]">
-              <div className="absolute inset-0 pointer-events-none"><img alt="" className="size-full object-cover opacity-20 mix-blend-color-burn" src={imgImage27} /></div>
-              <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap relative">Book a Demo</Typography>
-              <div className="size-[20px] relative shrink-0"><img alt="" className="absolute inset-0 size-full" src={imgIcon1} /></div>
+              <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-[#092511] whitespace-nowrap relative">Book a Demo</Typography>
+              <svg className="size-[20px] shrink-0 text-[#092511]" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3.75 10h12.5M11.25 15l5-5-5-5" /></svg>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 

@@ -17,6 +17,13 @@ import Integrations from './pages/features/Integrations';
 import D2C from './pages/D2C';
 import Hospitality from './pages/Hospitality';
 import Health from './pages/industries/HealthCare';
+import Education from './pages/industries/Education';
+import Jewellery from './pages/industries/Jewellery';
+import RealEstate from './pages/industries/RealEstate';
+import ECommerce from './pages/industries/ECommerce';
+import Food from './pages/industries/Food';
+import EventManagement from './pages/industries/EventManagement';
+import Insurance from './pages/industries/Insurance';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import ScrollToTop from './components/ScrollToTop';
@@ -40,10 +47,17 @@ function App() {
             <Route path="/features/ads-management" element={<AdsManagement />} />
             <Route path="/features/smart-scheduling" element={<SmartScheduling />} />
             <Route path="/features/integrations" element={<Integrations />} />
-            <Route path="/industries/d2c" element={<D2C />} />
-            <Route path="/industries/hospitality" element={<Hospitality />} />
             <Route path="/industries/health" element={<Health />} />
             <Route path="/industries/health-care" element={<Health />} />
+            <Route path="/industries/education" element={<Education />} />
+            <Route path="/industries/jewellery" element={<Jewellery />} />
+            <Route path="/industries/real-estate" element={<RealEstate />} />
+            <Route path="/industries/d2c" element={<ECommerce />} />
+            <Route path="/industries/e-commerce" element={<ECommerce />} />
+            <Route path="/industries/hospitality" element={<Food />} />
+            <Route path="/industries/food" element={<Food />} />
+            <Route path="/industries/event-management" element={<EventManagement />} />
+            <Route path="/industries/insurance" element={<Insurance />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

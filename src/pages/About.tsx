@@ -287,19 +287,26 @@ function Sparkline({ points, color = '#06b349' }: { points: number[]; color?: st
 
 // ─── Reusable CTA buttons ───────────────────────────────────────────────────
 
-function PrimaryButton({ label, light = false }: { label: string; light?: boolean }) {
+function PrimaryButton({ label = "Let's Talk", light = false }: { label?: string; light?: boolean }) {
   return (
-    <div className="bg-[#06b349] hover:bg-[#05a043] active:scale-[0.98] transition-all duration-150 rounded-[8px] cursor-pointer overflow-hidden relative inline-flex">
-      <div className="flex gap-[12px] items-center pl-[20px] pr-[15px] py-[15px]">
+    <a
+      href="https://api.whatsapp.com/send?phone=918977232350"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-[#06b349] hover:bg-[#05a043] active:scale-[0.98] transition-all duration-150 rounded-[8px] cursor-pointer overflow-hidden relative inline-flex"
+    >
+      <div className="flex gap-[10px] items-center pl-[20px] pr-[15px] py-[15px]">
         {light && (
           <div className="absolute inset-0 pointer-events-none">
             <img alt="" className="size-full object-cover opacity-20 mix-blend-color-burn" src={imgImage27} />
           </div>
         )}
         <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap relative">{label}</Typography>
-        <div className="size-[20px] relative shrink-0"><img alt="" className="absolute inset-0 size-full" src={imgIcon1} /></div>
+        <div className="size-[20px] relative shrink-0 text-white flex items-center justify-center">
+          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -344,10 +351,11 @@ export default function About() {
             scale communication, enhance customer relationships, and boost sales through WhatsApp Business API.
           </Typography>
           <div className="flex gap-[16px] items-center relative">
-            <PrimaryButton label="Book a Demo" light />
-            <a href="https://app.wenext.ai" target="_blank" rel="noopener noreferrer"
-              className="bg-transparent border border-[rgba(255,255,255,0.2)] hover:border-[rgba(255,255,255,0.4)] hover:bg-[rgba(255,255,255,0.05)] active:scale-[0.98] transition-all duration-150 rounded-[8px] cursor-pointer flex items-center px-[21px] py-[15px]">
-              <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap">Get Started Free</Typography>
+            <PrimaryButton label="Let's Talk" light />
+            <a href="https://app.wenext.ai/book/wenext-platform-walkthrough" target="_blank" rel="noopener noreferrer"
+              className="bg-transparent border border-[rgba(255,255,255,0.2)] hover:border-[rgba(255,255,255,0.4)] hover:bg-[rgba(255,255,255,0.05)] active:scale-[0.98] transition-all duration-150 rounded-[8px] cursor-pointer flex items-center gap-[10px] px-[21px] py-[15px]">
+              <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap">Book a Demo</Typography>
+              <svg className="size-[20px] shrink-0 text-white" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3.75 10h12.5M11.25 15l5-5-5-5" /></svg>
             </a>
           </div>
           {/* trust row */}
@@ -617,113 +625,6 @@ export default function About() {
               <Typography className="font-['Geist:Regular'] text-[#60584c] text-[15px] leading-[1.6]">{it.desc}</Typography>
             </div>
           ))}
-        </div>
-      </div>
-
-      <div className="container mx-auto border-x border-b border-[#e0dac6] bg-[#fbf8f1] py-[80px] relative overflow-hidden">
-        <style>{`
-          @keyframes scrollMarqueeLeft {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0); }
-          }
-          @keyframes scrollMarqueeRight {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .animate-marquee-left {
-            animation: scrollMarqueeLeft 50s linear infinite;
-            display: flex;
-            width: max-content;
-          }
-          .animate-marquee-right {
-            animation: scrollMarqueeRight 50s linear infinite;
-            display: flex;
-            width: max-content;
-          }
-          .animate-marquee-left:hover, .animate-marquee-right:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
-
-        <div className="flex flex-col items-center text-center relative z-10 mb-[60px] px-4 xl:px-[75px]">
-          <Eyebrow label="Loved by Teams" center />
-          <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[52px] tracking-[-1.5px] leading-[1.1] max-w-[720px] mb-[16px]">
-            The brands building on WeNext
-          </Typography>
-          <Typography className="font-['Geist:Regular'] text-[#60584c] text-[19px] max-w-[600px] leading-[1.6]">
-            Founders, marketers and support leaders share what changed after switching to WeNext.
-          </Typography>
-        </div>
-
-        {/* 2 Scrolling Rows */}
-        <div className="relative w-full overflow-hidden flex flex-col gap-[30px] z-10 py-[10px]">
-          {/* Fades */}
-          <div className="absolute top-0 left-0 h-full w-[150px] bg-gradient-to-r from-[#fbf8f1] to-transparent z-20 pointer-events-none" />
-          <div className="absolute top-0 right-0 h-full w-[150px] bg-gradient-to-l from-[#fbf8f1] to-transparent z-20 pointer-events-none" />
-
-          {/* Row 1: Left to Right */}
-          <div className="animate-marquee-left gap-[30px] px-[15px]">
-            {[...ABOUT_TESTIMONIALS, ...ABOUT_TESTIMONIALS].reverse().map((t, i) => (
-              <div key={`r1-${i}`} className="w-[550px] shrink-0  rounded-[10px] p-[20px] border border-[#e0dac6] flex flex-col justify-between gap-[28px] hover:-translate-y-[4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300 group shadow-[0_8px_30px_rgba(0,0,0,0.03)] cursor-pointer relative overflow-hidden">
-                {/* <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-transparent via-[#06b349] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> */}
-                <div>
-                  <div className="flex items-center gap-[4px] mb-[24px]">
-                    {[...Array(5)].map((_, idx) => (
-                      <svg key={idx} width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                    ))}
-                  </div>
-                  <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[17px] leading-[1.65]">
-                    "{t.quote}"
-                  </Typography>
-                </div>
-
-                <div className="flex items-center gap-[16px] pt-[24px] border-t border-[#e0dac6]">
-                  <div className="relative size-[50px] rounded-full flex items-center justify-center shrink-0 text-white font-['Geist:SemiBold'] font-semibold text-[16px]" style={{ background: t.accent }}>
-                    {t.initials}
-                    <div className="absolute -bottom-[2px] -right-[2px] size-[18px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#06b349"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" /></svg>
-                    </div>
-                  </div>
-                  <div>
-                    <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-[1.2]">{t.name}</Typography>
-                    <Typography className="font-['Geist:Medium'] text-[#7aaa88] text-[13px] mt-[4px]">{t.role}, <span className="text-[#60584c]">{t.company}</span></Typography>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Row 2: Right to Left */}
-          <div className="animate-marquee-right gap-[30px] px-[15px]">
-            {[...ABOUT_TESTIMONIALS, ...ABOUT_TESTIMONIALS].map((t, i) => (
-              <div key={`r2-${i}`} className="w-[550px] shrink-0  rounded-[10px] p-[20px] border border-[#e0dac6] flex flex-col justify-between gap-[28px] hover:-translate-y-[4px] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300 group shadow-[0_8px_30px_rgba(0,0,0,0.03)] cursor-pointer relative overflow-hidden">
-                {/* <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-transparent via-[#06b349] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" /> */}
-                <div>
-                  <div className="flex items-center gap-[4px] mb-[24px]">
-                    {[...Array(5)].map((_, idx) => (
-                      <svg key={idx} width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                    ))}
-                  </div>
-                  <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[17px] leading-[1.65]">
-                    "{t.quote}"
-                  </Typography>
-                </div>
-
-                <div className="flex items-center gap-[16px] pt-[24px] border-t border-[#e0dac6]">
-                  <div className="relative size-[50px] rounded-full flex items-center justify-center shrink-0 text-white font-['Geist:SemiBold'] font-semibold text-[16px]" style={{ background: t.accent }}>
-                    {t.initials}
-                    <div className="absolute -bottom-[2px] -right-[2px] size-[18px] bg-white rounded-full flex items-center justify-center shadow-sm">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#06b349"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" /></svg>
-                    </div>
-                  </div>
-                  <div>
-                    <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[16px] leading-[1.2]">{t.name}</Typography>
-                    <Typography className="font-['Geist:Medium'] text-[#7aaa88] text-[13px] mt-[4px]">{t.role}, <span className="text-[#60584c]">{t.company}</span></Typography>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
