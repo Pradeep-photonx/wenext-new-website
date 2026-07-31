@@ -92,7 +92,7 @@ function PrimaryButton({ label }: { label?: string }) {
         <div className="absolute inset-0 pointer-events-none"><img alt="" className="size-full object-cover opacity-20 mix-blend-color-burn" src={imgImage27} /></div>
         <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap relative">Let's Talk</Typography>
         <div className="size-[20px] relative shrink-0 text-white flex items-center justify-center">
-          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
         </div>
       </div>
     </a>
@@ -348,19 +348,19 @@ function Check() {
 
 function HowItWorks() {
   const items = [
-    { icon: Inbox, title: 'Bring every channel together', desc: 'WhatsApp, Instagram and Facebook messages all land in one shared inbox — connected in a few clicks, no code required.' },
-    { icon: Sparkles, title: 'Reply in seconds with AI', desc: 'WeNext drafts on-brand replies from your catalog and past chats, so your team answers in a single tap.' },
-    { icon: Users, title: 'Assign and collaborate', desc: 'Auto-route chats to the right teammate, leave private notes, and keep every conversation clearly owned.' },
-    { icon: BarChart3, title: 'Measure what matters', desc: 'Track first-response time, resolution rate and deal value to see exactly what’s improving.' },
+    { icon: Inbox, title: 'Connect Your Channels', desc: 'Bring all customer messages into one shared workspace in minutes.' },
+    { icon: Sparkles, title: 'Respond with AI', desc: 'Provide instant, accurate replies while reducing manual effort.' },
+    { icon: Users, title: 'Collaborate as a Team', desc: 'Assign chats, share notes, and keep every conversation organized.' },
+    { icon: BarChart3, title: 'Optimize with Insights', desc: ' Track key performance metrics and continuously improve customer engagement.' },
   ];
   return (
     <div className="container mx-auto border-x border-b border-[#e0dac6]">
       <div className="px-4 xl:px-[50px] py-[80px]">
         {/* header */}
-        <div className="max-w-[560px] mb-[52px]">
-          <Eyebrow label="How it works" />
+        <div className="max-w-[620px] mb-[52px]">
+          <Eyebrow label="How it Works" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.4px] leading-[1.12]">
-            One inbox, from first message to closed deal
+            Simplify customer conversations from start to finish
           </Typography>
         </div>
 
@@ -454,13 +454,13 @@ function SubFeatures() {
     <div className="container mx-auto border-x border-b border-[#e0dac6]">
       <div className="px-4 xl:px-[56px] py-[56px]">
         {/* header */}
-        <div className=" mb-[64px]">
-          <Eyebrow label="Inside the inbox" />
+        <div className="max-w-[670px] mb-[64px]">
+          <Eyebrow label="Inside the Inbox" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.4px] leading-[1.12]">
-            Everything you need to close the conversation
+            Everything you need to move conversations forward
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#60584c] text-[18px] leading-[1.6] mt-[14px]">
-            From the first “hi” to a paid order — templates, payment links, reminders, notes and deal value all live inside the same chat.
+            From answering questions to confirming orders and sending follow-ups, manage every customer interaction from one unified workspace—without switching between tools.
           </Typography>
         </div>
 
@@ -537,10 +537,10 @@ export default function UnifiedInbox() {
             {/* <Typography className="font-['Courier_Prime'] text-[#06b349] text-[14px] uppercase tracking-[0.2em]">Feature · Unified Inbox</Typography> */}
           </div>
           <Typography component="h1" className="font-['Geist:SemiBold'] font-semibold leading-[1.15] text-white text-[60px] tracking-[-2px] max-w-[800px] mb-[24px] relative">
-            Every Conversation.<br /><span className="text-[#25d366]">One</span> Shared Inbox.
+            Every Conversation.<br /><span className="text-[#25d366]">One</span> Intelligent Inbox.
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[20px] max-w-[680px] leading-[1.6] mb-[44px] relative">
-            Bring WhatsApp, Instagram and Facebook messages into a single team inbox — with AI-suggested replies, assignments and full customer history. Never miss a customer conversation again.
+            Keep every customer conversation organized in one place. Assign chats, collaborate with teammates, and respond instantly across all your communication channels.
           </Typography>
           <div className="flex gap-[16px] items-center relative">
             <PrimaryButton label="Book a Demo" />

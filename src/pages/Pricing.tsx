@@ -176,7 +176,6 @@ export default function Pricing() {
       ],
     },
   ];
-  const imgIcon1 = "/figma/imgIcon1.svg";
   const imgImage27 = "/figma/imgImage27.png";
 
 

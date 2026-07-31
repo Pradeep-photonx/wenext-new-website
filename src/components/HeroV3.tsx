@@ -183,11 +183,11 @@ export default function HeroV4() {
           {/* LEFT */}
           <div className="flex flex-col gap-[24px] lg:pl-[48px]">
             <Typography className="[word-break:break-word] font-['Geist:Medium'] font-medium leading-[1.05] text-[#092511] text-[44px] sm:text-[56px] lg:text-[68px] tracking-[-1.5px]">
-              Turn every  <br />{active.name} chat into revenue.
+              {/* Turn every  <br />{active.name} chat into revenue. */}
+              Every Message Is a Sales Opportunity.
             </Typography>
             <Typography className="text-[#4a5a52] text-[17px] lg:text-[20px] leading-[1.5] max-w-[520px]">
-              WeNext unifies WhatsApp, Instagram, and Facebook — replying, recommending, and closing orders like your best agent, 24/7.
-            </Typography>
+              Connect all your customer conversations in one place. Let AI handle responses, product recommendations, and order management while your business grows.            </Typography>
             <div className="flex flex-wrap gap-[14px] mt-[4px]">
               <div className="relative shrink-0">
                 <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-start relative size-full">

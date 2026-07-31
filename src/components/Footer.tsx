@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 const imgVector4 = "/figma/imgVector4.svg";
 const imgImageWenext = "/figma/imgImageWenext.svg";
 const imgImage27 = "/figma/imgImage27.png";
-const imgIcon1 = "/figma/imgIcon1.svg";
 const imgWenextLarge = "/figma/imgWenextLarge.svg";
 
 export default function Footer() {

@@ -18,7 +18,6 @@ import IntegrationIcon from "../assets/icons/navbar/integration.png"
 const imgVector = "/figma/imgVector.png";
 const imgIcon = "/figma/imgIcon.svg";
 const imgImage27 = "/figma/imgImage27.png";
-const imgIcon1 = "/figma/imgIcon1.svg";
 import imgVector1 from "../assets/logo.svg"
 
 const InstagramIcon = ({ className }: { className?: string }) => (

@@ -4,16 +4,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const imgImage27 = "/figma/imgImage27.png";
-const imgIcon1 = "/figma/imgIcon1.svg";
-const imgWhatsApp = "/figma/imgImage1.svg";
-const imgInstagram = "/figma/imgImage2.svg";
-const imgFacebook = "/figma/imgImage3.svg";
-const imgImage3145 = "/figma/imgImage3145.png";
-
-// import imgShopify from '../assets/icons/shopify.png';
-// import imgZoho from '../assets/icons/zoho.png';
-// import imgRazorpay from '../assets/icons/razorpay.svg';
-// import imgUpi from '../assets/icons/upi.png';
 
 // ─── Animated Counter ─────────────────────────────────────────────────────────
 
@@ -404,6 +394,69 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           6.5 · OUR VALUES
       ══════════════════════════════════════════════════ */}
+      {/* ══════════════════════════════════════════════════
+          OUR STORY
+      ══════════════════════════════════════════════════ */}
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="px-4 xl:px-[75px] py-[88px]">
+          <Eyebrow label="Our story" />
+          <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[40px] lg:text-[52px] tracking-[-1.8px] leading-[1.08] max-w-[900px] mb-[44px]">
+            We built WeNext so a five-person business could run like a <span className="text-[#06b349]">five-hundred</span>-person one.
+          </Typography>
+          <div className="grid md:grid-cols-2 gap-[32px] lg:gap-[64px] max-w-[920px]">
+            <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[17px] leading-[1.8]">
+              Most small businesses in India run on WhatsApp — but they run it by hand. Orders in one chat, payments in another, follow-ups lost in the rush. The tools that could fix it were built for enterprises, priced for enterprises, and needed a developer just to switch on.
+            </Typography>
+            <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[17px] leading-[1.8]">
+              So the team at <span className="text-[#0c221f] font-medium">PhotonX Tech</span> built WeNext — one AI-powered platform that unifies WhatsApp, Instagram and Facebook, automates the busywork, and turns every conversation into a chance to grow. Today it powers 100+ businesses across retail, fintech and services — and we’re only getting started.
+            </Typography>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-[48px] gap-y-[20px] mt-[52px] pt-[36px] border-t border-[#e0dac6]">
+            {[['Est.', '2021'], ['Built by', 'PhotonX Tech'], ['HQ', 'India'], ['Focus', 'WhatsApp AI · CRM']].map(([k, v]) => (
+              <div key={k} className="flex flex-col gap-[5px]">
+                <span className="font-['Courier_Prime'] text-[#8a938e] text-[11px] uppercase tracking-[0.14em]">{k}</span>
+                <span className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[18px] tracking-[-0.3px]">{v}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════
+          MISSION & VISION
+      ══════════════════════════════════════════════════ */}
+      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="relative overflow-hidden p-[44px] xl:p-[64px] bg-[#f3fbf5] md:border-r border-[#e0dac6]">
+            <span className="absolute top-[30px] right-[42px] font-['Geist:SemiBold'] font-semibold text-[#06b349] opacity-[0.13] text-[84px] leading-none select-none pointer-events-none">01</span>
+            <div className="flex items-center gap-[11px] mb-[26px] relative">
+              <span className="size-[44px] rounded-[12px] bg-[#06b349] flex items-center justify-center shadow-[0_10px_24px_-8px_rgba(6,179,73,0.55)]">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
+              </span>
+              <Typography className="font-['Courier_Prime'] text-[#06824f] text-[13px] uppercase tracking-[0.2em]">Our Mission</Typography>
+            </div>
+            <Typography className="font-['Geist:SemiBold'] font-semibold text-[30px] xl:text-[33px] text-[#0c221f] tracking-[-1px] leading-[1.22] max-w-[460px] relative">
+              Help every business automate, engage and grow — from one AI-powered platform.
+            </Typography>
+          </div>
+          <div className="relative overflow-hidden p-[44px] xl:p-[64px] bg-white">
+            <span className="absolute top-[30px] right-[42px] font-['Geist:SemiBold'] font-semibold text-[#0c221f] opacity-[0.05] text-[84px] leading-none select-none pointer-events-none">02</span>
+            <div className="flex items-center gap-[11px] mb-[26px] relative">
+              <span className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center">
+                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#25d366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+              </span>
+              <Typography className="font-['Courier_Prime'] text-[#0c221f] text-[13px] uppercase tracking-[0.2em]">Our Vision</Typography>
+            </div>
+            <Typography className="font-['Geist:SemiBold'] font-semibold text-[30px] xl:text-[33px] text-[#0c221f] tracking-[-1px] leading-[1.22] max-w-[460px] relative">
+              A world where a small team can deliver the responsiveness, speed and care of a much larger one.
+            </Typography>
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════
+          6.5 · OUR VALUES
+      ══════════════════════════════════════════════════ */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
         <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[56px] flex flex-col items-center text-center">
           <Eyebrow label="What We Stand For" center />
@@ -490,42 +543,6 @@ export default function About() {
           <div className="group border-r border-[#e0dac6] relative overflow-hidden">
             <div className="h-[300px] relative overflow-hidden flex items-center justify-center p-[36px]" style={{ background: 'linear-gradient(135deg, #eef6ee 0%, #e7eef4 100%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.03) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-              {/* <div className="relative w-full max-w-[380px] bg-white rounded-[16px] border border-[#e0dac6] shadow-[0_22px_55px_-28px_rgba(11,31,26,0.45)] overflow-hidden">
-                <div className="px-[18px] py-[13px] border-b border-[#eee7d6] flex items-center justify-between">
-                  <div className="flex items-center gap-[9px]">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0c221f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2" /><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></svg>
-                    <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13px]">Unified Inbox</Typography>
-                  </div>
-                  <div className="flex items-center gap-[5px] bg-[#e5f6e7] rounded-full px-[9px] py-[3px]">
-                    <span className="relative flex size-[6px]"><span className="absolute inline-flex size-full rounded-full bg-[#06b349] opacity-60 animate-ping" /><span className="relative inline-flex size-[6px] rounded-full bg-[#06b349]" /></span>
-                    <Typography className="font-['Courier_Prime'] text-[#06824f] text-[10px] uppercase tracking-[0.08em]">3 channels</Typography>
-                  </div>
-                </div>
-                <div className="p-[10px] flex flex-col gap-[4px]">
-                  {[
-                    { n: 'Aarav Shah', m: 'Is size M in stock?', t: '4s', ch: imgWhatsApp, c: '#25d366', initials: 'AS', active: true, unread: true },
-                    { n: 'Meera Iyer', m: 'Loved the kurta! 😍', t: '2m', ch: imgInstagram, c: '#DD2A7B', initials: 'MI', active: false, unread: true },
-                    { n: 'Dev Kapoor', m: 'Order #4821 shipped', t: '8m', ch: imgFacebook, c: '#1877F2', initials: 'DK', active: false, unread: false },
-                  ].map((r) => (
-                    <div key={r.n} className={`flex items-center gap-[11px] rounded-[10px] px-[10px] py-[9px] transition-colors duration-200 ${r.active ? 'bg-[#e5f6e7]' : 'hover:bg-[#f8f5ec]'}`}>
-                      <div className="relative shrink-0">
-                        <div className="size-[34px] rounded-full flex items-center justify-center text-white font-['Geist:SemiBold'] font-semibold text-[12px]" style={{ background: r.c }}>{r.initials}</div>
-                        <div className="absolute -bottom-[2px] -right-[2px] size-[16px] rounded-full bg-white flex items-center justify-center shadow-sm">
-                          <img alt="" src={r.ch} className="size-[11px]" />
-                        </div>
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <Typography className="font-['Geist:Medium'] font-medium text-[#0c221f] text-[13px] truncate">{r.n}</Typography>
-                        <Typography className="font-['Geist:Regular'] text-[#60584c] text-[12px] truncate">{r.m}</Typography>
-                      </div>
-                      <div className="flex flex-col items-end gap-[5px] shrink-0">
-                        <Typography className="font-['Courier_Prime'] text-[#9a9384] text-[10px]">{r.t}</Typography>
-                        {r.unread && <span className="size-[7px] rounded-full bg-[#06b349]" />}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div> */}
             </div>
             <div className="p-[40px]">
               <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[22px] text-[#0c221f] tracking-[-0.4px] mb-[8px]">Every channel, one inbox</Typography>
@@ -536,18 +553,6 @@ export default function About() {
           <div className="group relative overflow-hidden">
             <div className="h-[300px] relative overflow-hidden flex items-center justify-center p-[36px]" style={{ background: 'linear-gradient(135deg, #eef6ee 0%, #e3f1e6 100%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(6,179,73,0.08) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-              {/* <div className="relative w-full max-w-[330px] flex flex-col gap-[12px]">
-                <div className="self-start max-w-[80%] bg-white rounded-[16px] rounded-tl-[4px] px-[16px] py-[11px] shadow-[0_8px_20px_-12px_rgba(11,31,26,0.3)]">
-                  <Typography className="font-['Geist:Regular'] text-[#0c221f] text-[15px]">नमस्ते! क्या यह स्टॉक में है? 🙏</Typography>
-                </div>
-                <div className="self-end max-w-[82%] bg-[#06b349] rounded-[16px] rounded-tr-[4px] px-[16px] py-[11px] shadow-[0_8px_20px_-12px_rgba(6,179,73,0.5)]">
-                  <Typography className="font-['Geist:Regular'] text-white text-[15px]">जी हाँ! Size M available hai 😊</Typography>
-                </div>
-                <div className="self-center mt-[6px] flex items-center gap-[8px] bg-white/85 backdrop-blur border border-[rgba(6,179,73,0.25)] rounded-full px-[14px] py-[7px] shadow-sm">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
-                  <Typography className="font-['Courier_Prime'] text-[#06824f] text-[12px]">Auto-detected: Hinglish</Typography>
-                </div>
-              </div> */}
             </div>
             <div className="p-[40px]">
               <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[22px] text-[#0c221f] tracking-[-0.4px] mb-[8px]">Speaks every language your customers do</Typography>
@@ -562,33 +567,6 @@ export default function About() {
           <div className="group border-r border-[#e0dac6] relative overflow-hidden">
             <div className="h-[300px] relative overflow-hidden flex items-center justify-center p-[36px]" style={{ background: 'linear-gradient(135deg, #f4f1e7 0%, #eef6ee 100%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.03) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-              {/* <div className="relative w-full max-w-[360px] flex items-center gap-[16px]">
-                <div className="flex flex-col gap-[10px] flex-1">
-                  {[{ n: 'catalog.csv', c: '#06b349' }, { n: 'faqs.pdf', c: '#1877F2' }, { n: 'policy.pdf', c: '#F58529' }].map((f) => (
-                    <div key={f.n} className="flex items-center gap-[10px] bg-white rounded-[10px] px-[12px] py-[10px] shadow-[0_6px_16px_-12px_rgba(11,31,26,0.35)]">
-                      <div className="size-[26px] rounded-[7px] flex items-center justify-center shrink-0" style={{ background: `${f.c}1a` }}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={f.c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
-                      </div>
-                      <Typography className="font-['Courier_Prime'] text-[#0c221f] text-[13px]">{f.n}</Typography>
-                    </div>
-                  ))}
-                </div>
-                <div className="relative h-[2px] w-[34px] bg-[rgba(6,179,73,0.3)] shrink-0 overflow-hidden rounded-full">
-                  <div className="absolute top-0 h-full w-[12px] bg-[#06b349]" style={{ animation: 'photonxFlow 1.8s linear infinite' }} />
-                </div>
-                <div className="relative size-[96px] shrink-0 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border-2 border-[rgba(6,179,73,0.2)]" />
-                  <div className="absolute inset-[-8px] rounded-full border border-[rgba(6,179,73,0.3)]" style={{ animation: 'photonxPulse 2.6s ease-in-out infinite' }} />
-                  <div className="size-[68px] rounded-full bg-gradient-to-br from-[#06b349] to-[#048234] flex flex-col items-center justify-center shadow-[0_0_36px_rgba(6,179,73,0.45)]">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" /><path d="M19 10v2a7 7 0 0 1-14 0v-2" /><line x1="12" y1="19" x2="12" y2="22" /></svg>
-                    <Typography className="font-['Courier_Prime'] text-white text-[9px] mt-[3px] uppercase tracking-[0.1em]">AI</Typography>
-                  </div>
-                </div>
-              </div> */}
-              {/* <div className="absolute bottom-[20px] left-1/2 -translate-x-1/2 flex items-center gap-[6px] bg-white/85 backdrop-blur border border-[rgba(6,179,73,0.25)] rounded-full px-[12px] py-[6px] shadow-sm">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#06b349" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
-                <Typography className="font-['Courier_Prime'] text-[#06824f] text-[11px] uppercase tracking-[0.08em]">Trained · 190 sources</Typography>
-              </div> */}
             </div>
             <div className="p-[40px]">
               <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[22px] text-[#0c221f] tracking-[-0.4px] mb-[8px]">Branded knowledge base</Typography>
@@ -600,12 +578,6 @@ export default function About() {
           <div className="group relative overflow-hidden">
             <div className="h-[300px] relative overflow-hidden flex items-center justify-center p-[36px]" style={{ background: 'linear-gradient(135deg, #eef2f6 0%, #eef6ee 100%)' }}>
               <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(9,37,17,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(9,37,17,0.03) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
-              {/* <div className="relative w-full max-w-[340px] bg-white rounded-[16px] border border-[#e0dac6] shadow-[0_20px_50px_-26px_rgba(11,31,26,0.4)] overflow-hidden">
-                <div className="px-[18px] py-[14px] border-b border-[#eee7d6] flex items-center justify-between">
-                  <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[13px]">Revenue this month</Typography>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className="p-[40px]">
               <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[22px] text-[#0c221f] tracking-[-0.4px] mb-[8px]">Real-time analytics</Typography>
@@ -618,9 +590,6 @@ export default function About() {
         <div className="grid grid-cols-3 divide-x divide-[#e0dac6]">
           {INTEGRATIONS.map((it) => (
             <div key={it.name} className="group p-[40px] relative overflow-hidden">
-              {/* <div className="flex items-start justify-between mb-[18px]">
-                <img src={it.img} alt={it.name} className="h-[36px] w-auto object-contain" />
-              </div> */}
               <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[19px] text-[#0c221f] tracking-[-0.3px] mb-[8px]">{it.name}</Typography>
               <Typography className="font-['Geist:Regular'] text-[#60584c] text-[15px] leading-[1.6]">{it.desc}</Typography>
             </div>
@@ -647,13 +616,6 @@ export default function About() {
                 Everything you might want to know about the company behind WeNext.
               </Typography>
             </div>
-            {/* <div className="flex gap-[16px] items-start">
-              <PrimaryButton label="Book a demo" light />
-              <a href="https://app.wenext.ai" target="_blank" rel="noopener noreferrer"
-                className="bg-white hover:bg-[#f8f5ec] active:scale-[0.98] transition-all duration-150 border border-[#dedace] rounded-[8px] cursor-pointer flex items-center pl-[21px] pr-[16px] py-[16px]">
-                <Typography className="font-['Geist:Medium'] font-medium text-[#092511] text-[18px] leading-none whitespace-nowrap">Get Started</Typography>
-              </a>
-            </div> */}
           </div>
 
           {/* Right: accordion */}

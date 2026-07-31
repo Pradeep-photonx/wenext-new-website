@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const imgImage27 = '/figma/imgImage27.png';
-const imgIcon1 = '/figma/imgIcon1.svg';
 const imgWhatsApp = '/figma/imgImage1.svg';
 const imgInstagram = '/figma/imgImage2.svg';
 const imgFacebook = '/figma/imgImage3.svg';

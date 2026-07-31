@@ -2,12 +2,10 @@ import Typography from '@mui/material/Typography';
 import { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { TrustedByStrip, SecuritySection, PricingTeaser, FinalCTA, HomeFeaturesMockup } from '../components/HomeSections';
-import HeroV2 from '../components/HeroV2';
+import { TrustedByStrip, HomeFeaturesMockup } from '../components/HomeSections';
 import HeroV3 from '../components/HeroV3';
 import SignUp from "../assets/speed-scale/sign-up.png"
 import ConnectMeta from "../assets/speed-scale/ConnectMeta.png"
-// import TrainAI from "../assets/speed-scale/Train the AI on your brand.png"
 import SetAutomation from "../assets/speed-scale/SetAutomations.png"
 import LaunchBroadcast from "../assets/speed-scale/Launch your first broadcast.png"
 import mobileMock from "../assets/mobile-mock.png";
@@ -594,10 +592,8 @@ export default function Home() {
     <div className="bg-[#f8f5ec] relative size-full" data-node-id="467:951" data-name="Home">
       <div className="content-stretch flex flex-col items-start w-full w-full" data-node-id="467:952">
         <Header />
-        {/* <HeroV2 /> */}
         <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-node-id="467:971">
           <HeroV3 />
-          {/* <HeroV1 /> */}
 
           <TrustedByStrip />
           <div className="content-stretch flex flex-col items-start overflow-clip container mx-auto px-4 xl:px-0 relative shrink-0 w-full" data-node-id="467:1029" data-name="Container">
@@ -610,7 +606,8 @@ export default function Home() {
                   </Typography>
                 </div>
                 <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1034">
-                  Every growing business <br /> hits this stage
+                  Growing businesses need
+                  <br /> smarter customer engagement
                 </Typography>
               </div>
             </div>
@@ -706,10 +703,10 @@ export default function Home() {
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1113">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1114">
-                      Customers don't wait.
+                      Never miss a customer message.
                     </Typography>
                     <Typography className="font-['Geist:Regular'] font-normal leading-[1.4] relative shrink-0 text-[#60584c] text-[16px] w-full" data-node-id="467:1115">
-                      Your team shouldn't have to search across apps to find them.
+                      Manage every conversation from one centralized platform.
                     </Typography>
                   </div>
                 </div>
@@ -755,10 +752,10 @@ export default function Home() {
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1165">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1166">
-                      Intent doesn't last forever.
+                      Respond while interest is high.
                     </Typography>
                     <div className="font-['Geist:Regular'] font-normal leading-[0] relative shrink-0 text-[#60584c] text-[16px] w-full" data-node-id="467:1167">
-                      <Typography className="leading-[1.4] mb-0">Every delayed follow-up is a sale someone else wins.</Typography>
+                      <Typography className="leading-[1.4] mb-0">Instant replies and timely follow-ups improve conversion rates.</Typography>
                       {/* <Typography className="leading-[1.4]">​</Typography> */}
                     </div>
                   </div>
@@ -804,8 +801,6 @@ export default function Home() {
                               Draft a Diwali campaign for repeat customers with 15% off, launching next Friday.
                             </Typography>
                           </div>
-                          {/* <div className="absolute -bottom-[3px] -right-[6px] size-[7px] rounded-full bg-[#092511]" /> */}
-                          {/* <div className="absolute -bottom-[6px] -right-[10px] size-[3px] rounded-full bg-[#092511]" /> */}
                         </div>
 
                         {/* Bot typing */}
@@ -828,46 +823,14 @@ export default function Home() {
                           </div>
                         </div>
                       </div>
-
-                      {/* Input pill */}
-                      {/* <div className="px-[16px] pb-[12px]">
-                        <div className="bg-[#f4f6f8] rounded-[14px] px-[14px] pt-[12px] pb-[10px]">
-                          <Typography className="text-[#a1a1aa] text-[13px] mb-[10px]">Reply....</Typography>
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-[14px]">
-                              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M12 5v14M5 12h14" />
-                              </svg>
-                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                                <rect x="9" y="3" width="6" height="11" rx="3" />
-                                <path d="M5 11a7 7 0 0 0 14 0" />
-                                <line x1="12" y1="18" x2="12" y2="22" />
-                              </svg>
-                            </div>
-                            <button className="size-[30px] rounded-[9px] bg-[#092511] flex items-center justify-center">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M12 19V5M5 12l7-7 7 7" />
-                              </svg>
-                            </button>
-                          </div>
-                        </div>
-                      </div> */}
-
-                      {/* Footer */}
-                      {/* <div className="pb-[14px]">
-                        <Typography className="text-[#a1a1aa] text-[11px] text-center">
-                          WeNext AI may make mistakes. Verify info.
-                        </Typography>
-                      </div> */}
                     </div>
                   </div>
                   <div className="[word-break:break-word] content-stretch flex flex-col gap-[5px] items-start relative shrink-0 text-center w-full" data-node-id="467:1217">
                     <Typography className="font-['Geist:SemiBold'] font-semibold leading-[1.1] relative shrink-0 text-[#08090a] text-[24px] w-full" data-node-id="467:1218">
-                      Conversations aren't scripts.
+                      Automation with a human touch.
                     </Typography>
                     <div className="font-['Geist:Regular'] font-normal leading-[0] relative shrink-0 text-[#60584c] text-[16px] w-full" data-node-id="467:1219">
-                      <Typography className="leading-[1.4] mb-0">Your AI should know when to answer—and when to bring in your team.</Typography>
-                      {/* <Typography className="leading-[1.4]">​</Typography> */}
+                      <Typography className="leading-[1.4] mb-0"> AI handles common questions and seamlessly hands over important conversations to your team.</Typography>
                     </div>
                   </div>
                 </div>
@@ -884,9 +847,9 @@ export default function Home() {
                   </Typography>
                 </div>
                 <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.2] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1225">
-                  Everything your business needs
+                  AI-powered features that simplify
                   <br aria-hidden />
-                  to keep conversations moving.
+                  conversations and accelerate sales.
                 </Typography>
               </div>
             </div>
@@ -1943,7 +1906,8 @@ export default function Home() {
                   <Typography className="font-['Courier_Prime:Regular'] text-[#0c221f] text-[16px] tracking-[0.5px]">Pain Points</Typography>
                 </div>
                 <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[52px] tracking-[-2px] leading-[1.05] max-w-[700px]">
-                  Everything you need.<br />Nothing you don't
+                  The hidden challenges slowing
+                  your business growth
                 </Typography>
               </div>
             </div>
@@ -1957,17 +1921,11 @@ export default function Home() {
 
                 {/* ── COL 1 — Conversational Commerce (tall, spans 2 rows) ── */}
                 <div className="border-r border-[#e0dac6] p-[36px] flex flex-col  lg:row-span-2 bg-[#fcf8ee]">
-                  {/* Icon */}
-                  {/* <div className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center mb-[20px]">
-                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                    </svg>
-                  </div> */}
                   <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                    Conversational Commerce
+                    Messages are scattered across platforms.
                   </Typography>
                   <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                    WhatsApp, Instagram DMs, Facebook comments and web chat — all in one screen. Assign to teammates, tag, snooze, never lose a lead again.
+                    Customers contact you through WhatsApp, Instagram, Facebook, and your website. Managing multiple inboxes leads to missed messages, delayed responses, and lost opportunities.
                   </Typography>
 
 
@@ -1979,10 +1937,10 @@ export default function Home() {
                 <div className="border-r border-b border-[#e0dac6] flex flex-col p-[20px] bg-[#fcf8ee]">
                   <div className="">
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                      Ads Management
+                      You don't know what's driving sales.
                     </Typography>
                     <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                      See which broadcasts convert, which DMs become orders. Revenue attributed per channel, per template, per agent.
+                      Without accurate attribution and reporting, it's difficult to identify which campaigns, channels, or conversations generate real business results.
                     </Typography>
                   </div>
 
@@ -1994,10 +1952,10 @@ export default function Home() {
                 <div className="border-b border-[#e0dac6] flex flex-col p-[20px] bg-[#fcf8ee]">
                   <div className="">
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                      Smart Scheduling
+                      Your team spends too much time on repetitive tasks.
                     </Typography>
                     <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                      UPI, cards, COD-to-prepaid — every payment option drops into the conversation. No checkout drop-off.
+                      Manually assigning chats, following up with leads, and answering common questions reduces productivity and slows customer response times.
                     </Typography>
                   </div>
 
@@ -2009,10 +1967,10 @@ export default function Home() {
                 <div className="border-r border-[#e0dac6] flex flex-col p-[20px] bg-[#fbf6ec]">
                   <div className="">
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[22px] tracking-[-0.4px] leading-[1.2] mb-[10px]">
-                      Seamless Integrations
+                      Your systems don't communicate with each other.
                     </Typography>
                     <Typography className="font-['Geist:Regular'] text-[#60584c] text-[14px] leading-[1.55]">
-                      Trained on your catalog, FAQs and tone. Speaks Hindi, English and Hinglish. Hands off to humans when it matters.
+                      Switching between CRMs, messaging apps, payment platforms, and spreadsheets creates inefficiencies and increases the risk of errors.
                     </Typography>
                   </div>
                   <img src={SeamlessInegrations} alt="" />
@@ -2025,16 +1983,11 @@ export default function Home() {
                   <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.4) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
 
                   <div className="relative z-10 flex flex-col flex-1">
-                    {/* <div className="size-[44px] rounded-[12px] bg-white/10 flex items-center justify-center mb-[20px]">
-                      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#06b349" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M5 12h14M13 6l6 6-6 6" />
-                      </svg>
-                    </div> */}
                     <Typography className="font-['Geist:SemiBold'] font-semibold text-white text-[22px] tracking-[-0.4px] leading-[1.2] mb-[12px]">
-                      Explore the recovery engine.
+                      Potential customers leave before they buy.
                     </Typography>
                     <Typography className="font-['Geist:Regular'] text-white/65 text-[14px] leading-[1.55] flex-1">
-                      Abandoned carts, COD-to-prepaid nudges, post-purchase re-engagement — the loops that quietly grow revenue.
+                      Delayed replies, abandoned carts, and inconsistent follow-ups cause qualified leads to lose interest and choose competitors instead.
                     </Typography>
                     <a href="https://api.whatsapp.com/send?phone=918977232350" target="_blank" rel="noopener noreferrer" className="bg-[#06b349] hover:bg-[#05a043] active:scale-[0.98] transition-all duration-150 relative rounded-[8px] shrink-0 cursor-pointer" data-node-id="467:989" data-name="Link">
                       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[10px] justify-center items-center overflow-clip pl-[20px] pr-[15px] py-[15px] relative rounded-[inherit] size-full">
@@ -2045,7 +1998,7 @@ export default function Home() {
                           Let's Talk
                         </Typography>
                         <div className="relative shrink-0 size-[20px] text-white flex items-center justify-center">
-                          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
                         </div>
                       </div>
                     </a>
@@ -2202,13 +2155,12 @@ export default function Home() {
                   <div className="p-[40px] flex flex-col justify-center border-r border-[#e0dac6]">
                     <div className="flex gap-[10px] items-center mb-[16px]">
                       <div className="bg-[#06b349] relative shrink-0 size-[10px]" />
-                      <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Speed & Scale</Typography>
+                      <Typography className="font-['Courier_Prime'] leading-[1.4] text-[18px] text-[#0c221f]">Quick Onboarding</Typography>
                     </div>
                     <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.3px] leading-[1.12] mb-[18px]">
-                      From setup to selling <br />in 15 minutes.
-                    </Typography>
-                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7] mb-[28px] max-w-[460px]">
-                      Everything your front office handles today, done automatically and at any hour.
+                      Launch your AI customer assistant in under 15 minutes.                     </Typography>
+                    <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.7] mb-[28px] max-w-[500px]">
+                      No coding. No lengthy onboarding. Connect your channels, configure your AI, and start delivering exceptional customer experiences from day one.
                     </Typography>
                     <div className="flex flex-col gap-[8px]">
                       {STEPS.map((step, i) => {
@@ -2297,7 +2249,7 @@ export default function Home() {
                 <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0" data-node-id="467:1591">
                   <div className="bg-[#06b349] relative shrink-0 size-[10px]" data-node-id="467:1592" />
                   <Typography className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [word-break:break-word] font-['Courier_Prime:Regular'] leading-[1.4] not-italic relative shrink-0 text-[#0c221f] text-[18px] text-center whitespace-nowrap" data-node-id="467:1593">
-                    Pain Points
+                    Our Customers
                   </Typography>
                 </div>
                 <Typography className="[word-break:break-word] font-['Geist:SemiBold'] font-semibold leading-[1.4] min-w-full relative shrink-0 text-[#0c221f] text-[42px] tracking-[-1px] w-[min-content]" data-node-id="467:1594">
