@@ -399,7 +399,7 @@ export default function About() {
             <div className="flex items-center gap-[11px] mb-[26px] relative">
               <Typography className="font-['Courier_Prime'] text-[#06824f] text-[13px] uppercase tracking-[0.2em]">Our Mission</Typography>
             </div>
-            <Typography className="font-['Geist:SemiBold'] font-semibold text-[26px] xl:text-[26px] text-[#0c221f] tracking-[-1px] leading-[1.22] relative uppercase">
+            <Typography className="font-['Geist:SemiBold'] font-semibold text-[26px] xl:text-[26px] text-[#0c221f] tracking-[-1px] leading-[1.22] relative">
               Help every business automate, engage and grow — from one AI-powered platform.
             </Typography>
           </div>
@@ -408,7 +408,7 @@ export default function About() {
             <div className="flex items-center gap-[11px] mb-[26px] relative">
               <Typography className="font-['Courier_Prime'] text-[#06824f] text-[13px] uppercase tracking-[0.2em]">Our Vision</Typography>
             </div>
-            <Typography className="font-['Geist:SemiBold'] font-semibold text-[26px] xl:text-[26px] text-[#0c221f] tracking-[-1px] leading-[1.22] relative uppercase">
+            <Typography className="font-['Geist:SemiBold'] font-semibold text-[26px] xl:text-[26px] text-[#0c221f] tracking-[-1px] leading-[1.22] relative">
               A world where a small team can deliver the responsiveness, speed and care of a much larger one.
             </Typography>
           </div>
