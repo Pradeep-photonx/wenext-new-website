@@ -293,7 +293,7 @@ function PrimaryButton({ label = "Let's Talk", light = false }: { label?: string
         )}
         <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap relative">{label}</Typography>
         <div className="size-[20px] relative shrink-0 text-white flex items-center justify-center">
-          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
         </div>
       </div>
     </a>
@@ -348,28 +348,6 @@ export default function About() {
               <svg className="size-[20px] shrink-0 text-white" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3.75 10h12.5M11.25 15l5-5-5-5" /></svg>
             </a>
           </div>
-          {/* trust row */}
-          <div className="flex flex-wrap gap-x-[28px] gap-y-[14px] items-center justify-center mt-[44px] relative">
-            <div className="flex items-center gap-[10px]">
-              <div className="flex -space-x-[10px]">
-                {['#06b349', '#1877F2', '#DD2A7B', '#F58529'].map((c) => (
-                  <div key={c} className="size-[30px] rounded-full border-[2px] border-[#092511]" style={{ background: c }} />
-                ))}
-              </div>
-              <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[14px]">Trusted by <span className="text-white font-medium">100+ businesses</span></Typography>
-            </div>
-            <div className="hidden sm:block w-px h-[20px] bg-[rgba(255,255,255,0.12)]" />
-            <div className="flex items-center gap-[8px]">
-              <div className="flex items-center gap-[2px]">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="#06b349"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z" /></svg>
-                ))}
-              </div>
-              <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[14px]"><span className="text-white font-medium">4.9/5</span> average rating</Typography>
-            </div>
-            <div className="hidden sm:block w-px h-[20px] bg-[rgba(255,255,255,0.12)]" />
-            <Typography className="font-['Courier_Prime'] text-[#7aaa88] text-[13px] uppercase tracking-[0.12em]">Backed by PhotonX Tech</Typography>
-          </div>
         </div>
       </div>
 
@@ -403,21 +381,10 @@ export default function About() {
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[40px] lg:text-[52px] tracking-[-1.8px] leading-[1.08] max-w-[900px] mb-[44px]">
             We built WeNext so a five-person business could run like a <span className="text-[#06b349]">five-hundred</span>-person one.
           </Typography>
-          <div className="grid md:grid-cols-2 gap-[32px] lg:gap-[64px] max-w-[920px]">
+          <div className="">
             <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[17px] leading-[1.8]">
               Most small businesses in India run on WhatsApp — but they run it by hand. Orders in one chat, payments in another, follow-ups lost in the rush. The tools that could fix it were built for enterprises, priced for enterprises, and needed a developer just to switch on.
             </Typography>
-            <Typography className="font-['Geist:Regular'] text-[#3a4540] text-[17px] leading-[1.8]">
-              So the team at <span className="text-[#0c221f] font-medium">PhotonX Tech</span> built WeNext — one AI-powered platform that unifies WhatsApp, Instagram and Facebook, automates the busywork, and turns every conversation into a chance to grow. Today it powers 100+ businesses across retail, fintech and services — and we’re only getting started.
-            </Typography>
-          </div>
-          <div className="flex flex-wrap items-center gap-x-[48px] gap-y-[20px] mt-[52px] pt-[36px] border-t border-[#e0dac6]">
-            {[['Est.', '2021'], ['Built by', 'PhotonX Tech'], ['HQ', 'India'], ['Focus', 'WhatsApp AI · CRM']].map(([k, v]) => (
-              <div key={k} className="flex flex-col gap-[5px]">
-                <span className="font-['Courier_Prime'] text-[#8a938e] text-[11px] uppercase tracking-[0.14em]">{k}</span>
-                <span className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[18px] tracking-[-0.3px]">{v}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>
@@ -427,27 +394,21 @@ export default function About() {
       ══════════════════════════════════════════════════ */}
       <div className="container mx-auto border-x border-b border-[#e0dac6]">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="relative overflow-hidden p-[44px] xl:p-[64px] bg-[#f3fbf5] md:border-r border-[#e0dac6]">
-            <span className="absolute top-[30px] right-[42px] font-['Geist:SemiBold'] font-semibold text-[#06b349] opacity-[0.13] text-[84px] leading-none select-none pointer-events-none">01</span>
+          <div className="relative overflow-hidden p-[44px] xl:p-[64px] md:border-r border-[#e0dac6]">
+            <span className="absolute top-[12px] right-[42px] font-['Geist:SemiBold'] font-semibold text-[#0c221f] opacity-[0.13] text-[84px] leading-none select-none pointer-events-none">01</span>
             <div className="flex items-center gap-[11px] mb-[26px] relative">
-              <span className="size-[44px] rounded-[12px] bg-[#06b349] flex items-center justify-center shadow-[0_10px_24px_-8px_rgba(6,179,73,0.55)]">
-                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
-              </span>
               <Typography className="font-['Courier_Prime'] text-[#06824f] text-[13px] uppercase tracking-[0.2em]">Our Mission</Typography>
             </div>
-            <Typography className="font-['Geist:SemiBold'] font-semibold text-[30px] xl:text-[33px] text-[#0c221f] tracking-[-1px] leading-[1.22] max-w-[460px] relative">
+            <Typography className="font-['Geist:SemiBold'] font-semibold text-[26px] xl:text-[26px] text-[#0c221f] tracking-[-1px] leading-[1.22] relative uppercase">
               Help every business automate, engage and grow — from one AI-powered platform.
             </Typography>
           </div>
-          <div className="relative overflow-hidden p-[44px] xl:p-[64px] bg-white">
-            <span className="absolute top-[30px] right-[42px] font-['Geist:SemiBold'] font-semibold text-[#0c221f] opacity-[0.05] text-[84px] leading-none select-none pointer-events-none">02</span>
+          <div className="relative overflow-hidden p-[44px] xl:p-[64px]">
+            <span className="absolute top-[12px] right-[42px] font-['Geist:SemiBold'] font-semibold text-[#0c221f] opacity-[0.05] text-[84px] leading-none select-none pointer-events-none">02</span>
             <div className="flex items-center gap-[11px] mb-[26px] relative">
-              <span className="size-[44px] rounded-[12px] bg-[#0c221f] flex items-center justify-center">
-                <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#25d366" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
-              </span>
-              <Typography className="font-['Courier_Prime'] text-[#0c221f] text-[13px] uppercase tracking-[0.2em]">Our Vision</Typography>
+              <Typography className="font-['Courier_Prime'] text-[#06824f] text-[13px] uppercase tracking-[0.2em]">Our Vision</Typography>
             </div>
-            <Typography className="font-['Geist:SemiBold'] font-semibold text-[30px] xl:text-[33px] text-[#0c221f] tracking-[-1px] leading-[1.22] max-w-[460px] relative">
+            <Typography className="font-['Geist:SemiBold'] font-semibold text-[26px] xl:text-[26px] text-[#0c221f] tracking-[-1px] leading-[1.22] relative uppercase">
               A world where a small team can deliver the responsiveness, speed and care of a much larger one.
             </Typography>
           </div>
@@ -507,12 +468,6 @@ export default function About() {
               key={s.label}
               className={`group relative bg-[#f8f5ec]  p-[36px] overflow-hidden transition-colors duration-300 ${i < NUMBER_STATS.length - 1 ? 'border-r border-[#e0dac6]' : ''}`}
             >
-              {/* top accent line */}
-              {/* <div className="absolute top-0 left-0 h-[3px] w-0 bg-gradient-to-r from-[#06b349] to-[#25d366] group-hover:w-full transition-all duration-500" /> */}
-              <div className="flex items-center justify-between mb-[24px] relative">
-                <div className="size-[46px] rounded-[12px] bg-[#e5f6e7] border border-[rgba(6,179,73,0.2)] flex items-center justify-center group-hover:scale-110 transition-transform duration-300">{s.icon}</div>
-                {/* <Sparkline points={s.spark} /> */}
-              </div>
               <Typography className="font-['Geist:SemiBold'] font-semibold text-[#0c221f] text-[46px] leading-none tracking-[-1.8px] tabular-nums mb-[10px] relative">
                 <AnimatedCounter target={s.target} prefix={s.prefix ?? ''} suffix={s.suffix} duration={1800} />
               </Typography>
@@ -526,7 +481,7 @@ export default function About() {
       {/* ══════════════════════════════════════════════════
           8 · EVERYTHING YOU NEED — capabilities bento
       ══════════════════════════════════════════════════ */}
-      <div className="container mx-auto border-x border-b border-[#e0dac6]">
+      <div className="container mx-auto border-x border-[#e0dac6]">
         <div className="border-b border-[#e0dac6] py-[64px] px-4 xl:px-[56px] flex flex-col items-center text-center">
           <Eyebrow label="Platform" center />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.2px] leading-[1.2] max-w-[680px]">
@@ -584,16 +539,6 @@ export default function About() {
               <Typography className="font-['Geist:Regular'] text-[#60584c] text-[15px] leading-[1.6]">Track message performance, conversion and revenue with precision dashboards — and know exactly what's working.</Typography>
             </div>
           </div>
-        </div>
-
-        {/* Row C: integrations 3-col */}
-        <div className="grid grid-cols-3 divide-x divide-[#e0dac6]">
-          {INTEGRATIONS.map((it) => (
-            <div key={it.name} className="group p-[40px] relative overflow-hidden">
-              <Typography component="h3" className="font-['Geist:SemiBold'] font-semibold text-[19px] text-[#0c221f] tracking-[-0.3px] mb-[8px]">{it.name}</Typography>
-              <Typography className="font-['Geist:Regular'] text-[#60584c] text-[15px] leading-[1.6]">{it.desc}</Typography>
-            </div>
-          ))}
         </div>
       </div>
 
