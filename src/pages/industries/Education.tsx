@@ -65,7 +65,7 @@ function PrimaryButton({ label }: { label?: string }) {
         <div className="absolute inset-0 pointer-events-none"><img alt="" className="size-full object-cover opacity-20 mix-blend-color-burn" src={imgImage27} /></div>
         <Typography className="font-['Geist:Medium'] font-medium text-[17px] text-white whitespace-nowrap relative">Let's Talk</Typography>
         <div className="size-[20px] relative shrink-0 text-white flex items-center justify-center">
-          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          <svg className="size-[20px]" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
         </div>
       </div>
     </a>
@@ -121,39 +121,33 @@ const STATS = [
 type Card = { icon: LucideIcon; t: string; d: string };
 
 const CHALLENGES: Card[] = [
-  { icon: CalendarX, t: 'Missed inquiry follow-ups', d: 'Students & parents ask about courses, but delayed responses lead to dropped admissions.' },
-  { icon: MessageCircle, t: 'Counselors overwhelmed by FAQs', d: 'Fee structure, batch timings, eligibility — the same questions answered repeatedly all day.' },
-  { icon: ClipboardList, t: 'Fee reminders sent manually', d: 'Chasing pending fee payments, hall tickets, and exam schedules by hand takes endless staff time.' },
+  { icon: CalendarX, t: 'Missed Admission Enquiries', d: 'Slow responses cause prospective students to lose interest and choose other institutions.' },
+  { icon: MessageCircle, t: 'Overloaded Admission Team', d: 'Staff spend hours answering the same questions about courses, fees, eligibility, and admissions.' },
+  { icon: ClipboardList, t: 'Manual Fee & Student Updates', d: 'Sending fee reminders, exam alerts, and important notices manually takes valuable time.' },
 ];
 
 const CAPABILITIES: Card[] = [
-  { icon: CalendarCheck, t: 'Automated admissions', d: 'Guide prospective students through course selection, eligibility, and application forms on WhatsApp.' },
-  { icon: BellRing, t: 'Fee & exam alerts', d: 'Automated fee payment reminders, hall ticket downloads, and exam schedule nudges.' },
-  { icon: FileText, t: 'Brochure & syllabus sharing', d: 'Deliver instant course brochures, fee breakdowns, and syllabus PDFs directly to chats.' },
-  { icon: Sparkles, t: 'AI admission assistant', d: 'Answers admissions FAQs 24/7 and seamlessly routes high-intent leads to counselors.' },
-  { icon: CreditCard, t: 'Instant fee payments', d: 'Send secure fee payment links and generate digital receipts instantly inside WhatsApp.' },
-  { icon: HeartPulse, t: 'Student engagement', d: 'Automate orientation updates, workshop invites, and alumni re-engagement campaigns.' },
+  { icon: CalendarCheck, t: 'Smart Admissions', d: 'Guide students from enquiry to enrollment with automated admission workflows.' },
+  { icon: BellRing, t: 'Fee & Exam Notifications', d: 'Send timely reminders for fees, exams, and important academic updates.' },
+  { icon: FileText, t: 'Brochure & Document Sharing', d: 'Share brochures, fee structures, syllabi, and application forms instantly.' },
+  { icon: Sparkles, t: 'AI Admission Assistant', d: 'Answer student and parent queries 24/7 with AI-powered conversations.' },
+  { icon: CreditCard, t: 'Online Fee Collection', d: 'SCollect fees securely through WhatsApp with instant payment confirmations.' },
+  { icon: HeartPulse, t: 'Student & Parent Engagement', d: 'Keep students and parents informed with announcements, reminders, and personalized updates.' },
 ];
 
 const HIGHLIGHTS = [
   {
-    tag: 'Admissions & Inquiries',
-    title: 'Turn prospective student inquiries into enrolled students',
-    body: 'Parents and students ask about fees, courses and batches at all hours — WeNext answers instantly and guides them through the application steps.',
-    points: ['Instant answers to course and fee questions', 'Automatic brochure and prospectus delivery', 'Counselor notification on high-intent leads'],
+    tag: 'Admissions & Enquiries',
+    title: 'Convert every enquiry into a successful admission',
+    body: 'Guide students from their first question to final enrollment with instant responses, automated follow-ups, and a seamless admission journey on WhatsApp.',
+    points: ['Instantly answer admission and course enquiries', 'Share brochures, fee details, and application forms automatically', 'Notify counselors about high-intent admission leads'],
   },
   {
     tag: 'Student Operations',
-    title: 'Keep students, parents and staff aligned on one platform',
-    body: 'Fee reminders, exam dates and timetable updates reach parents and students on WhatsApp — where they actually read them.',
-    points: ['Automated fee payment links & receipts', 'Exam schedules and result announcements', 'Attendance and holiday notifications'],
+    title: 'Keep your campus connected with smarter communication',
+    body: 'Manage fee reminders, academic updates, attendance, and announcements from one platform—keeping students, parents, and staff informed in real time.',
+    points: ['Send fee reminders and payment links automatically', 'Share exam schedules, results, and important notices', 'Notify parents about attendance, holidays, and campus updates'],
   },
-];
-
-const TESTIMONIALS = [
-  { q: 'Inquiry response time dropped from hours to seconds. Admissions increased by 35% in our very first term with WeNext.', c: 'Apex Academy', r: 'Coaching Institute' },
-  { q: 'Our counselors saved 5 hours daily on fee reminders and basic questions. Highly recommended for any educational institute.', c: 'Scholars Public School', r: 'K-12 School' },
-  { q: 'Sharing course brochures and booking counseling slots on WhatsApp has made our enrollment process frictionless.', c: 'Vanguard Institute', r: 'Higher Education' },
 ];
 
 const FAQS = [
@@ -165,10 +159,10 @@ const FAQS = [
 ];
 
 const BENEFITS: { icon: LucideIcon; t: string; c: string; d: string; items: string[] }[] = [
-  { icon: Users, t: 'Admissions & Counseling', c: '#0a8f5a', d: 'Qualify and enroll prospective students faster.', items: ['Answer inquiry FAQs 24/7 with AI', 'Automated counselor lead routing', 'Course brochure & fee structure sharing'] },
-  { icon: Stethoscope, t: 'Academic Administration', c: '#3f6cab', d: 'Smooth operations from enrollment to exams.', items: ['Exam schedule & hall ticket delivery', 'Class timetable updates & announcements', 'Attendance tracking alerts'] },
-  { icon: Megaphone, t: 'Marketing & Student Growth', c: '#7c5bd6', d: 'Engage students and drive re-enrollments.', items: ['Retarget past applicants with new batch offers', 'Collect student reviews and feedback automatically', 'Re-engage alumni for advanced courses'] },
-  { icon: Receipt, t: 'Accounts & Finance', c: '#c98a3a', d: 'Collect fees faster with in-chat checkout.', items: ['Send fee reminders and payment links', 'Generate instant payment receipts', 'Track installment pipelines'] },
+  { icon: Users, t: 'Admissions & Counseling', c: '#0a8f5a', d: 'Convert enquiries into successful enrollments.', items: ['Answer admission queries with AI', 'Route high-intent leads instantly', 'Share brochures and application details'] },
+  { icon: Stethoscope, t: 'Academic Administration', c: '#3f6cab', d: 'Keep students informed throughout the academic year.', items: ['Send exam schedules and hall tickets', 'Share timetables and campus announcements', 'Notify attendance and academic updates'] },
+  { icon: Megaphone, t: 'Marketing & Student Growth', c: '#7c5bd6', d: 'Strengthen relationships beyond admissions.', items: ['Re-engage prospective students automatically', 'Collect reviews and student feedback', 'Promote new courses and campus events'] },
+  { icon: Receipt, t: 'Accounts & Finance', c: '#c98a3a', d: 'Simplify fee collection and payment management.', items: ['Send fee reminders and payment links', 'Generate digital payment receipts instantly', 'Track pending and completed fee payments'] },
 ];
 
 export default function Education() {
@@ -189,11 +183,11 @@ export default function Education() {
           <Eyebrow label="Education Solution" light center />
 
           <Typography component="h1" className="font-['Geist:SemiBold'] font-semibold leading-[1.14] text-white text-[44px] md:text-[60px] tracking-[-2px] max-w-[840px] mb-[20px] relative">
-            WhatsApp Admissions,<br />Fee Alerts & <span className="text-[#25d366]">Student Engagement</span>
+            Transform Every Student Interaction into a Better  <span className="text-[#25d366]">Learning Experience</span>
           </Typography>
 
           <Typography className="font-['Geist:Regular'] text-[#a0b8a8] text-[18px] md:text-[20px] max-w-[660px] leading-[1.6] mb-[40px] relative">
-            Connect students, parents and counselors on WhatsApp — automated admissions, instant fee collection, exam updates and 24/7 inquiry AI.
+            From admission enquiries and fee payments to exam updates and parent communication, WeNext helps educational institutions automate conversations, improve engagement, and simplify operations through WhatsApp.
           </Typography>
 
           <div className="flex flex-wrap gap-[16px] items-center justify-center relative">
@@ -232,10 +226,10 @@ export default function Education() {
         <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
           <Eyebrow label="The Problem" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[600px]">
-            What’s slowing your admissions & admin down
+            What's holding your institution back?
           </Typography>
           <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] max-w-[560px] leading-[1.55] mt-[14px]">
-            Three everyday bottlenecks slow education institutes — and WeNext automates all of them.
+            Manual communication, repetitive enquiries, and outdated processes slow admissions and increase administrative workload.
           </Typography>
         </div>
       </div>
@@ -261,7 +255,7 @@ export default function Education() {
         <div className="px-4 xl:px-[56px] py-[56px] pb-[36px]">
           <Eyebrow label="Solutions" />
           <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[38px] text-[#0c221f] tracking-[-1.2px] leading-[1.14] max-w-[600px]">
-            Built specifically for educational institutes
+            Built for modern educational institutions
           </Typography>
         </div>
       </div>
@@ -319,10 +313,10 @@ export default function Education() {
           <div className="max-w-[600px] mb-[40px]">
             <Eyebrow label="For every team" />
             <Typography component="h2" className="font-['Geist:SemiBold'] font-semibold text-[42px] text-[#0c221f] tracking-[-1.4px] leading-[1.14]">
-              How your whole institute benefits
+              Empowering every department on campus
             </Typography>
             <Typography className="font-['Geist:Regular'] text-[#60584c] text-[17px] leading-[1.55] mt-[14px]">
-              One shared WhatsApp workspace — admissions, academics and finance working together in sync.
+              Manage admissions, academics, finance, and student engagement from one shared WhatsApp platform.
             </Typography>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2">
